@@ -543,11 +543,20 @@ footer .copyright a:focus {
 footer .heart {
     display: inline-block;
     color: #f44;
-    font-size: 24px;
-    -webkit-animation: pulse 1.4s infinite;
-    padding-right: 1px;
+    -webkit-animation: zhangweiwei 1.4s infinite;
     position: relative;
-    top: 2px;
+    top: -1px;
+}
+@-webkit-keyframes zhangweiwei {
+  0% {
+        -webkit-transform: scale(0.75);
+  }
+  50% {
+      -webkit-transform: scale(1);
+  }
+  100% {
+      -webkit-transform: scale(0.75);
+  }
 }
 .floating-label-form-group {
   font-size: 14px;
