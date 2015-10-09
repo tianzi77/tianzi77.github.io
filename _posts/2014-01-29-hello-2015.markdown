@@ -1,77 +1,334 @@
 ---
 layout:     post
-title:      "Hello 2015"
+title:      "Float nothing, flex everything［关于flex布局］"
 subtitle:   " \"Hello World, Hello Blog\""
-date:       2015-01-29 12:00:00
-author:     "Hux"
+date:       2015-10-09 21:00:00
+author:     "ZWW"
 header-img: "img/post-bg-2015.jpg"
 tags:
-    - 生活
+    - flex
 ---
 
 > **“Yeah It's on. ”**
 
 
-Hux 的 Blog 就这么开通了。
+每个css属性都有一段故事，需要我们静下心来发现，体会。
+ 开始前复习一下最新看苏宁和京东用到的侧边栏导航的实现方式：
+        
+            position:fixed top left +margin-left
+            position:fixed top right+margin-right 实现侧边栏不随屏幕大小而滚动。
+            
+            
+    
+flex正文开始
+            
+            float nothing,flex everything~
+            概念:Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
+任何一个容器都可以指定为Flex布局。
+            块元素：display:flex;行内元素：display:inline-flex;注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
+            以下6个属性设置在容器上。flex-direction
+                                flex-wrap
+                                flex-flow 包含前面两者
+                                justify-content
+                                align-items
+                                align-content
+           
+           1,flex-direction: row | row-reverse | column | column-reverse;
+                row（默认值）：主轴为水平方向，起点在左端。
+                row-reverse：主轴为水平方向，起点在右端。
+                column：主轴为垂直方向，起点在上沿。
+                column-reverse：主轴为垂直方向，起点在下沿。
+            2,flex-wrap: nowrap | wrap | wrap-reverse;换行
+                flex-wrap属性定义，如果一条轴线排不下，如何换行。nowrap（默认）：不换行。wrap：换行，第一行在上方。wrap-reverse：换行，第一行在下方。
+            3，flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+        
+            4，justify-content属性定义了项目在主轴上的对齐方式。
+        属性值：justify-content: flex-start | flex-end | center | space-between | space-around;
+        flex-start（默认值）：左对齐
+        flex-end：右对齐
+        center： 居中
+        space-between：两端对齐，项目之间的间隔都相等。
+        space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+        
+            5，align-items属性定义项目在交叉轴上如何对齐。
+                align-items: flex-start | flex-end | center | baseline | stretch;
+            
+                flex-start：交叉轴的起点对齐。
+                flex-end：交叉轴的终点对齐。
+                center：交叉轴的中点对齐。
+                baseline: 项目的第一行文字的基线对齐。
+                stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。    
+            6，align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+                flex-start：与交叉轴的起点对齐。
+                flex-end：与交叉轴的终点对齐。
+                center：与交叉轴的中点对齐。
+                space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+                space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+                stretch（默认值）：轴线占满整个交叉轴。
+        
+        
+            以下6个属性设置在项目上。
+                    order
+                    flex-grow
+                    flex-shrink
+                    flex-basis
+                    flex
+                    align-self
+                order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+                flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+                flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+                如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。负值对该属性无效。
+                flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+                flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+                该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
+                建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
+                align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+         align-self: auto | flex-start | flex-end | center | baseline | stretch;
+        该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
+        
+        
+写了一个demo：
+            http://codepen.io/tianzi77/full/rOLrGL
+            
+    <body class="flex-wrap col-flex">
+    <header class="midCenter flex-wrap row-flex">我是标题flex布局</header>
 
-[跳过废话，直接看技术实现 ](#build) 
+    <div class="page flex-wrap col-flex">
+        <div class="scroll-wrap">
+            <section class="midCenter flex-wrap" id="banner">
+                <div>我是banner</div>
+            </section>
+
+            <section id="quirk" class="flex-wrap row-flex">
+                <div></div>
+                <div class="flex-wrap col-flex">
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+
+            <section id="four-col" class="flex-wrap row-flex">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+
+            <section id="two-col" class="flex-wrap row-flex">
+                <div></div>
+                <div></div>
+            </section>
+
+            <section id="three-col" class="flex-wrap row-flex">
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+        </div>
+    </div>
+
+
+    <footer class="flex-wrap row-flex">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </footer>
+    </body>
+    
+    样式：
+    html{
+            height:100%;
+        }
+
+        body{
+            background: #fff;
+            margin:0;
+            padding:0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /** 水平伸缩容器**/
+        .row-flex{
+            -moz-box-orient: horizontal;
+            -webkit-box-orient: horizontal;
+            -moz-box-direction: normal;
+            -webkit-box-direction: normal;
+            -moz-box-lines: multiple;
+            -webkit-box-lines: multiple;
+            -ms-flex-flow: row wrap;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+        }
+
+        /** 垂直伸缩容器**/
+        .col-flex{
+            -moz-box-orient: vertical;
+            -webkit-box-orient: vertical;
+            -moz-box-direction: normal;
+
+            -moz-box-lines: multiple;
+            -webkit-box-lines: multiple;
+            -webkit-flex-flow: column wrap;
+            -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+        }
+
+        /** 伸缩容器**/
+        .flex-wrap{
+            /** 各种版本兼容**/
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        /** 垂直居中**/
+        .midCenter{
+            /** 垂直居中核心**/
+            -moz-box-pack: center;
+            -webkit-box-pack: center;
+            box-pack:center;
+            -moz-box-align: center;
+            -webkit-box-align: center;
+            box-align: center;
+            box-pack:center;
+            -ms-flex-pack:center;
+            display: -ms-flexbox;
+            -ms-flex-align:center;
+            justify-content:center;
+            align-items: center;
+        }
+
+        /** 占位器**/
+        .page{
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /** 真正滚动**/
+        .scroll-wrap{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+
+        /** 头和尾巴**/
+        header,footer{
+            background:#f7f7f7;
+            height:44px;
+        }
+
+        footer>div{
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            border:1px solid #666;
+            margin:4px;
+        }
 
 
 
-2015 年，Hux 总算有个地方可以好好写点东西了。
+        section{
+            margin:3px 5px;
+        }
+
+        /** 真正设置高度 **/
+        #banner{
+            border:2px solid #999;
+            margin:1px;
+            height:100px;
+        }
+        #quirk,#four-col{
+            height:150px;
+        }
+        #three-col,#two-col{
+            height:100px;
+        }
 
 
-作为一个 ITer，其实早就有写 Blog 的想法了。**但是既然作为一个 ITer，而且还算个程序员……** Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩（可是又懒）……结果就一直连个写 Blog 的地儿都没有。
+        /** 内部组件**/
+        #four-col>div,#three-col>div,#two-col>div{
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+        #four-col>div{
+            background: #aaebbe;
+            margin:0 2px;
+        }
+        #three-col>div{
+            background: #8f82bc;
+            margin:0 2px;
+        }
+        #two-col>div{
+            background: #f7baba;
+            margin:0 2px;
+        }
 
-后来喜欢在知乎上扯扯，也是因为能稍微写点东西。可是没够开专栏，所以还是常常被问题限制住。
+        #quirk>div{
+            margin:0 2px;
+        }
 
-转眼进入 2015 ，觉得还是有很多话想要说，很多经历和感悟可以写，也想丰富下自己的个站（之前的[个人网站](http://huangxuan.me/portfolio)是作品集形式的，现在集成进来了。），**想来想去还是弄个 Blog 最适合……**罢罢罢，花一天搞一个吧！  
-（搭起来是只用了一天，后来经常 update 样式功能就不提了）
+        #quirk>div:nth-child(1){
+            background: #b9e2ee;
+            -webkit-box-flex: 200;
+            -moz-box-flex: 200;
+            -ms-flex: 200;
+            -webkit-flex: 200;
+            flex: 200;
+        }
 
+        #quirk>div:nth-child(2){
+            -webkit-box-flex: 175;
+            -moz-box-flex: 175;
+            -ms-flex: 175;
+            -webkit-flex: 175;
+            flex: 175;
 
+        }
+        #quirk>div:nth-child(2)>div:nth-child(1){
+            background: #b9e2ee;
 
-<p id = "build"></p>
----
-那么接下来就说说 Building Blog 的技术细节。
+            -webkit-box-flex: 60;
+            -moz-box-flex: 60;
+            -ms-flex: 60;
+            -webkit-flex: 60;
+            flex: 60;
+            margin-bottom: 4px;
+        }
+        #quirk>div:nth-child(2)>div:nth-child(2){
+            background: #b9e2ee;
 
-正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速建 Blog 的技术方案，觉得非常适合。
+            -webkit-box-flex: 30;
+            -moz-box-flex: 30;
+            -ms-flex: 30;
+            -webkit-flex: 30;
+            flex: 30;
+        }
+        
+参考文献：
+阮一峰Flex 布局教程：实例篇：http://www.ruanyifeng.com/blog/2015/07/flex-examples.html?bsh_bid=683103006
+ <br>阮一峰flex布局：语法：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+<br>Introducing Flexbox Fridays：https://lincolnloop.com/blog/introducing-flexbox-fridays/
 
-优点非常明显：
-
-* 利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
-	* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了 
-* 非常熟悉的 Git Flow ，**Git Commit 即 Blog Post**
-	* 前端最爱啊，自从换 Mac 后，Terminal(Z-Shell) + Git 玩起来太爽了
-* **Markdown** 写作环境
-	* 这就是 Jekyll 的魔法了，习惯了 Markdown 排版后也是离不开
-* Jekyll 的自定制还是相当容易的，基本就是个模版引擎
-
-
-之前觉得最大的缺点就是 GitHub 在国内访问起来太慢，所以第二天一起床就想着迁移到 GitCafe (Chinese GitHub Copy) 上，结果还是巨慢。
-
-**我可是个前端好吗！** 果断开 Chrome DevTool 查了下网络请求，原来是 **pending 在了 Google Fonts** 上，页面渲染一直被阻塞到请求超时为止，难怪这么慢。
-于是只好忍痛把 Web Fonts 去了（反正超时后看到的也是 Fallback ），果然一下就快了起来，而且 GitHub 和 GitCafe 对比并没有感受到明显的速度差异。
-
-[这是 gitcafe.io 上的镜像地址](http://huxpro.gitcafe.io)
-
----
-
-配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手
-
-大的 Jekyll 框架上直接 clone 了一个 Theme（但是这个 Theme 没有 tag 标签支持，后来自己写了个）
-
-本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功
-
-Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 Scss ），**不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在阿里参与的团队内部 CSS 框架差多了……**所以就经常要为了体验补 CSS
-
-最后就进入了耗时反而最长的**做图、写字**阶段了。也算是进入了**写博客**的正轨，因为是类似 Hack Day 的方式去搭这个站的，所以折腾折腾着大半夜就过去了。
-
-第二天考虑中文字体的渲染，fork 了 [Type is Beautiful](http://www.typeisbeautiful.com/) 的 `font` CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。
-
-
-大约就是这样，结尾就不要 Hello 2015 了，来试试 Markdown 的魔法：
-
-### *"Goodbye 2014"*  
+### *"come on"*  
 
 
 
