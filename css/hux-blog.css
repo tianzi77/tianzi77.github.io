@@ -326,7 +326,6 @@ pre,
   }
           .navbar-custom.is-fixed .nav li a:hover {
             text-shadow: 1px 0 20px #0085a1;
-            position:absolute;
         }
         
         .navbar-custom.is-fixed .nav li a:hover:before {
