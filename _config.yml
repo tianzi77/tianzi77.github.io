@@ -22,7 +22,7 @@ facebook_username:  huxpro
 # Build settings
 highlighter: pygments
 permalink: pretty
-paginate: 20
+paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true      # if you want to customize anchor. check out line:129 of `post.html`
 
@@ -57,13 +57,10 @@ sidebar-avatar: /img/avatar-hux.jpg     # use absolute URL.
 # Friends
 friends: [
     {
-        title: "天镶的博客",
-        href: "http://lingyu.wang/"
+        title: "腾讯博客",
+        href: "http://512932926.qzone.qq.com/"
     },{
-        title: "Luke的自留地",
-        href: "http://hmqk1995.github.io"
-    },{
-        title: "SmdCn's Blog",
-        href: "http://blog.smdcn.net"
+        title: "csdn",
+        href: "http://blog.csdn.net/u011263845"
     }
 ]
