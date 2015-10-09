@@ -540,6 +540,15 @@ footer .copyright a:hover,
 footer .copyright a:focus {
   color: #0085a1;
 }
+footer .heart {
+    display: inline-block;
+    color: #f44;
+    font-size: 24px;
+    -webkit-animation: pulse 1.4s infinite;
+    padding-right: 1px;
+    position: relative;
+    top: 2px;
+}
 .floating-label-form-group {
   font-size: 14px;
   position: relative;
