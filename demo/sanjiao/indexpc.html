@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>好玩的三角形</title>
+    <style>
+        .hello {
+            position: relative;
+            background: red;
+            padding: 20px;
+            color: #fff;
+            margin-bottom: 30px;
+            margin: 50px auto;
+        }
+        
+        .example1 {
+            position: absolute;
+            left: 30px;
+            top: -32px;
+            width: 0;
+            height: 0;
+            font-size: 0;
+            border-width: 16px;
+            border-style: dashed dashed solid dashed;
+            border-color: transparent transparent red transparent;
+        }
+        
+        .test {
+            position: relative;
+            border: 4px solid red;
+            padding: 20px;
+            margin: 100px auto;
+            width: 500px;
+        }
+        
+        .outer {
+            position: absolute;
+            left: 30px;
+            top: -32px;
+            width: 0;
+            height: 0;
+            font-size: 0;
+            border-bottom: 32px solid red;
+            border-left: 16px solid transparent;
+            border-right: 16px solid transparent;
+        }
+        
+        .inner {
+            position: absolute;
+            left: 30px;
+            top: -24px;
+            width: 0;
+            height: 0;
+            font-size: 0;
+            border-bottom: 32px solid #fff;
+            border-left: 16px solid transparent;
+            border-right: 16px solid transparent;
+        }
+        
+        .tixing {
+            background: red;
+            width: 160px;
+            padding: 20px;
+            color: #fff;
+            margin-bottom: 30px;
+            position: relative;
+            margin: 150px auto;
+        }
+        
+        .outer2 {
+            position: absolute;
+            left: 0px;
+            top: -12px;
+            width: 188px;
+            height: 0;
+            font-size: 0;
+            border-width: 6px;
+            border-style: dashed dashed solid dashed;
+            border-color: transparent transparent red transparent;
+        }
+        
+        .inner2 {
+            position: absolute;
+            left: 0px;
+            bottom: -12px;
+            width: 188px;
+            height: 0;
+            font-size: 0;
+            border-width: 6px;
+            border-style: solid dashed dashed dashed;
+            border-color: red transparent transparent transparent;
+        }
+        
+        .scale-TEST {
+            border-width: 40px;
+            border-style: solid;
+            border-color: red green black blue;
+            line-height: 0;
+            font-size: 0;
+            overflow: hidden;
+            width: 100px;
+            height: 0;
+            margin: 200px auto;
+        }
+        
+        .circle {
+            width: 0;
+            height: 0;
+            border-bottom: 100px solid red;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            position: relative;
+            margin: 250px auto;
+        }
+        
+        .circle::before,
+        .circle::after {
+            position: absolute;
+        }
+        
+        .circle::before {
+            width: 0;
+            height: 0;
+            content: '';
+            border-bottom: 100px solid red;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+        
+        .circle::after {
+            width: 0;
+            height: 0;
+            content: '';
+            border-bottom: 100px solid red;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            position: absolute;
+            right: 0;
+            top: 100px;
+        }
+        h1{
+            margin: 0 auto ;
+            color: #abcdef;
+            text-align: center;
+        }
+        body{
+            background: -webkit-repeating-linear-gradient(bottom,#fff);
+        }
+    </style>
+</head>
+
+<body>
+   <h1>实心的三角形  </h1>
+    <div class="hello">
+        <span class="example1"></span>“三角形箭头”例1</div>
+<h1>空心三角形</h1>
+    <div class="test">
+        <div class="outer"></div>
+        <div class="inner"></div>“三角形箭头”EXAMPLE
+    </div>
+
+<h1>梯形</h1>
+    <div class="tixing">
+        <span class="outer2"></span> 模拟梯形边
+        <span class="inner2"></span>
+    </div>
+<h1>普通三角形</h1>
+    <div class="scale-TEST"></div>
+    <h1>金字塔三角形</h1>
+    <div class="circle"></div>
+
+
+
+
+</body>
+
+</html>
