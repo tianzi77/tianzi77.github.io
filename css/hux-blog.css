@@ -325,16 +325,17 @@ pre,
     color: #0085a1;
   }
           .navbar-custom.is-fixed .nav li a:hover {
-            text-shadow: 1px 0 20px #accdef;
+            text-shadow: 1px 0 20px #0085a1;
+            position:absolute;
         }
         
         .navbar-custom.is-fixed .nav li a:hover:before {
-            background: #abcdef;
+            background: #0085a1;
             left: 0;
         }
         
         .navbar-custom.is-fixed .nav li a:hover:after {
-            background: #abcdef;
+            background: #0085a1;
             right: 0;
         }
         
@@ -344,7 +345,7 @@ pre,
             height: 4px;
             background: none;
             position: absolute;
-            top: 30px;
+            top: 40px;
             left: 50%;
             width: 50%;
             -webkit-transition: 0.5s;
@@ -357,7 +358,7 @@ pre,
             height: 4px;
             background: none;
             position: absolute;
-            top: 30px;
+            top: 40px;
             right: 50%;
             width: 50%;
             -webkit-transition: 0.5s;
