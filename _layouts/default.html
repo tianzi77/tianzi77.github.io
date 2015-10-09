@@ -19,6 +19,34 @@
 
 <!-- Tencent QQ Analysis -->
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=43623438" charset="UTF-8"></script>
+<!-- 163 music player -->
+    <div id="music-panel">
+        <a id="music-control" href="javascript:;" onclick="toggleMusicPanel()"></a>
+        <div id="music-content">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=0&amp;id=102978561&amp;auto=0&amp;height=430"></iframe>
+        </div>
+    </div>
+
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        var isFirstToggleMusic = true;
+        function toggleMusicPanel() {
+            $('#music-control').toggleClass('on');
+            if (isFirstToggleMusic) {
+                isFirstToggleMusic = false;
+            }
+        }
+        $(function() {
+            $('#music-control').mouseenter(function() {
+                $('#music-control').addClass('on');
+                $('#music-content').show();
+            })
+            $('#music-content').mouseleave(function() {
+                $('#music-control').removeClass('on');
+                $('#music-content').hide();
+            })
+        })
+    </script>
 </body>
 
 </html>
