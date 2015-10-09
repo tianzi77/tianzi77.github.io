@@ -56,7 +56,7 @@ jQuery(document).ready(function($) {
                     }
                 } else {
                     //if scrolling down...
-                    $('.navbar-custom').removeClass('is-visible');
+                    //$('.navbar-custom').removeClass('is-visible');
                     if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) $('.navbar-custom').addClass('is-fixed');
                 }
                 this.previousTop = currentTop;
