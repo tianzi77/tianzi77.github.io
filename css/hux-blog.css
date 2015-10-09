@@ -324,6 +324,45 @@ pre,
   .navbar-custom.is-fixed .nav li a:focus {
     color: #0085a1;
   }
+          .navbar-custom.is-fixed .nav li a:hover {
+            text-shadow: 1px 0 20px #accdef;
+        }
+        
+        .navbar-custom.is-fixed .nav li a:hover:before {
+            background: #abcdef;
+            left: 0;
+        }
+        
+        .navbar-custom.is-fixed .nav li a:hover:after {
+            background: #abcdef;
+            right: 0;
+        }
+        
+        .navbar-custom.is-fixed .nav li a:before {
+            content: "";
+            display: block;
+            height: 4px;
+            background: none;
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            width: 50%;
+            -webkit-transition: 0.5s;
+            transition: all 0.5s;
+        }
+        
+        .navbar-custom.is-fixed .nav li a:after {
+            content: "";
+            display: block;
+            height: 4px;
+            background: none;
+            position: absolute;
+            top: 30px;
+            right: 50%;
+            width: 50%;
+            -webkit-transition: 0.5s;
+            transition: all 0.5s;
+        }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
     -webkit-transform: translate3d(0, 100%, 0);
