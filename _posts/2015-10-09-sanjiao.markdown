@@ -1,0 +1,186 @@
+---
+layout:     post
+title:      "好玩的三角"
+subtitle:   " \"形形色色的css玩转三角\""
+date:       2015-10-09 23:00:00
+author:     "ZWW"
+header-img: "img/post-sample-image.jpg"
+tags:
+    - 三角
+---
+
+> **“好玩的三角 ”**
+
+
+#####如今css3盛行的时代，用canvas，svg以及linear-gradient，radio－gradient都能画出各种各样的图形。
+
+但是早在css2时代，画三角形就不是什么新鲜事。这里简单总结一下，也方便自己查阅。
+
+ 
+ <div class="triangle-up"></div>
+
+写出通用结构，
+
+       <div class="triangle-up"></div>
+然后我们在对这个div添加一下简单的  s样式：
+
+        .triangle-up {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-left: 100px solid red;
+            border-bottom: 50px solid transparent;
+        }
+
+如果这样写样式的话，由于没有设置border－right 会导致三角形的尖角指向右方。这个发挥一下空间想象力，纸上画一下就知道了。
+
+如果要三角尖朝上只需不设置border-top即可。
+
+
+        .triangle-up {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid red;
+}
+
+
+
+同理： 
+三角尖朝左：
+
+
+    .triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 100px solid red;
+    border-bottom: 50px solid transparent;
+    }
+三角尖朝下：
+
+    .triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+    }
+
+当然如果我把border-top设置100px 红色 ，border-left设置为100px 透明的话 会得到一个折角的效果：
+
+    .triangle-topright {
+    width: 0;
+    height: 0;
+    border-top: 100px solid red;
+    border-left: 100px solid transparent;
+
+   }
+
+这样又是可以设置四个方向的。原理都一样。 
+http://codepen.io/tianzi77/pen/WQeGmx
+http://codepen.io/tianzi77/full/PPbBrd
+
+
+
+####三角形的功能远不止这么多，虽然css3的border－radius能方便我们做很多事情，但是还是满足不了有一些特殊的需求：
+如：模拟梯形，空心三角形，凹出框，内陷框等等。
+
+用一个div写一个金字塔，觉得挺好玩的：
+
+        <div class="circle"></div>
+
+然后在处理一些样式：
+            .circle {
+            width: 0;
+            height: 0;
+            border-bottom: 100px solid red;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            position: relative;
+            margin: 250px auto;
+        }
+        
+        .circle::before,
+        .circle::after {
+            position: absolute;
+        }
+        
+        .circle::before {
+            width: 0;
+            height: 0;
+            content: '';
+            border-bottom: 100px solid red;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+        
+        .circle::after {
+            width: 0;
+            height: 0;
+            content: '';
+            border-bottom: 100px solid red;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            position: absolute;
+            right: 0;
+            top: 100px;
+        }
+        
+        
+        最后会得到一个三个三角形重叠的金字塔效果。
+        
+        
+
+
+我把一些常见的用法都写在了这个demo，方便复用：http://www.zhangweiwei.cn/demo/sanjiao/indexpc.html
+#####最后说一下三角原理：
+首先，需要把元素的宽度、高度设为0。
+
+然后设置边框样式。最关键的也在这里。
+
+这里我们先做一个实验，如果一个元素具有下列样式：
+
+    {
+    width: 0;
+    height: 0;
+    border: 4px solid;
+    }
+ 效果是什么？没错是个正方形：
+
+
+
+因为元素宽度、高度都为0，只有4px的边框，于是变成了只有8像素边框的正方形的效果。
+
+再来，我们把样式改成下面这样：
+
+    {
+    width: 0;
+    height: 0;
+    border-top: 40px solid #000;
+    border-right: 40px solid #ff0000;
+    border-left: 40px solid #ff0000;
+    border-bottom: 40px solid #000;
+    }
+ 这会是什么效果呢？可能你不会想到：
+
+
+
+这是为什么呢？我们打个比方，有四块红色和黑色的木板代表元素的四个边框，把他们两横两竖重叠起来，这时候他们在二维平面的投影便成了上面的效果。
+
+说到这里，大家该明白了上面的三角形图标是怎么来的了吧：元素没有下边框，而左右边框又是透明的，相当于只有上图中的上面的黑色三角形部分。
+
+所以，如果我们要做倒立三角形、向右的、或者向左的三角形，只需要为三角形底部设置边框，两腰边框透明即可。
+
+
+
+
+
+
+ 
+
+
