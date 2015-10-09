@@ -39,11 +39,6 @@
   width: 80%;
   display: block;
   border-radius: 5px;
-  -webkit-transition:all .5s linear;
-  transition:all .5s linear;
-}
-.sidebar-container .short-about img:hover{
-    width: 100%;
 }
 .sidebar-container .short-about p {
   margin: 20px 0;
