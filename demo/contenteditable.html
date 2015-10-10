@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style type="text/css">
+    .p20 {
+        padding: 20px;
+    }
+    body style {
+        display: block;
+        padding: 0.6em 0.8em;
+        border: 1px dashed #ccc;
+        background-color: #f5f5f5;
+        color: #000;
+        font-family: Monaco, monospace;
+        font-size: 12px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    body style:focus {
+        -moz-box-shadow: 0 0 4px green;
+        box-shadow: 0 0 4px blue;
+    }
+</style>
+</head>
+<body>
+	<div id="main">
+	<h1>CSS style样式的实时编辑与效果显示实例页面</h1>
+    <div id="body">
+    	<div id="code" class="part">
+        	<h3>代码：</h3>
+            <div class="show p20">
+                <style contenteditable>.test_image{ padding: 3px; border: 1px solid #ccc; background-color: #fff;width:50%;height:50%; }</style>
+            </div>
+        </div>
+        <div id="effect" class="part">
+        	<h3>效果：</h3>
+            <div class="show">
+            	<div class="demo">
+                	<img class="test_image" src="http://www.zhangweiwei.cn/img/about-bg.jpg" />
+                </div>
+            </div>
+        </div>       
+    </div>
+</div>
+</body>
+</html>
