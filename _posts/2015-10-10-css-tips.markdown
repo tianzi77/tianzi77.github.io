@@ -1,0 +1,220 @@
+---
+layout:     post
+title:      "[译文]css超实用技巧"
+subtitle:   " \"css一些常见的小tips\""
+date:       2015-10-10 10:20:00
+author:     "ZWW"
+header-img: "img/post-bg-unix-linux.jpg"
+tags:
+    - css
+---
+
+> **“本文为翻译文章. ”**
+
+
+##css超实用技巧
+####一篇收藏帮助你提高css技能的文章
+
+1,`用:not()选择器去适应边框`
+
+2,`为网页的body设置行高`
+
+3,`垂直居中任何元素`
+
+4,`逗号分割选择器`
+
+5,`用nth-child选择需要的元素`
+
+6,`用svg制作icon图标`
+
+7,`字体显示最佳优化`
+
+8,`在纯css里用max-height`
+
+9,`继承box-sizing`
+
+10,`Table Cells固定宽度`
+
+11,`Flexbox布局避免边框hacks`
+
+12,`对空链接实用属性选择器`
+
+
+<br>
+####用:not()选择器去适应边框
+
+替换对border进行样式设置...
+
+```css
+  /* add border */
+.nav li {
+  border-right: 1px solid #666;
+}
+```
+...然后对最后一个元素取消边框...
+
+```css
+/* remove border */
+.nav li:last-child {
+  border-right: none;
+}
+
+```
+...用伪类选择器:not() 去选择你需要的元素:
+```css
+.nav li:not(:last-child) {
+  border-right: 1px solid #666;
+}
+```
+
+这很清晰明了，可读性强，不需要写额外的代码易于理解
+
+####为网页的body设置行高
+
+你不需要对每个`<p>`标签, `<h*>`标签设置行高，直接设置在body上把
+```css
+body {
+  line-height: 1;
+}
+```
+
+这样文本元素自然会继承body的行高
+
+####垂直居中任何元素
+
+这不是黑色幽默，你真的可以垂直居中任何元素
+```css
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  -webkit-align-items: center;  
+  -ms-flex-align: center;  
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+```
+
+看这多简单，
+注意：flexbox 在IE11有一些hacks [buggy behavior](https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items)
+####逗号分割选择器
+
+让html文件看起来像一个真的，分割的列表
+```css
+ul > li:not(:last-child)::after {
+  content: ",";
+}
+```
+对最后一个元素实用:not()伪类选择器
+####用nth-child选择需要的元素
+用负的nth-child去选择1-n个元素
+```css
+li {
+  display: none;
+}
+
+/* select items 1 through 3 and display them */
+li:nth-child(-n+3) {
+  display: block;
+}
+```
+
+这相当简单
+####用svg制作icon图标
+没理由不用svg制作icon
+```css
+.logo {
+  background: url("logo.svg");
+}
+```
+仍掉你的.png, .jpg, or .gif-jif格式把，svg在ie9以上的浏览器兼容性很好
+####字体显示最佳优化
+有时候字体不在所有的设备上正常显示
+```css
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+```
+注意：IE/Edge不支持文字渲染，[Please play with optimizeLegibility responsibly](https://bocoup.com/weblog/text-rendering/)
+####在纯css里用max-height
+css搬运工应对设置了overflow hidden的滚动元素设置max-height:
+```css
+.slider ul {
+  max-height: 0;
+  overlow: hidden;
+}
+
+.slider:hover ul {
+  max-height: 1000px;
+  transition: .3s ease;
+}
+```
+####继承box-sizing
+```css
+让box-sizing属性从html里继承
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+```
+这使得在插件或其他组件里面改变box-sizing变得更容易
+
+
+####Table Cells固定宽度
+
+用table-layout: fixed实用table里面的等宽布局
+```css
+.calendar {
+  table-layout: fixed;
+}
+```
+
+合适的table布局
+####Flexbox布局避免边框hacks
+用boxflex布局时用space-between属性避免nth-, first-, and last-child所产生的hacks
+```css
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list .person {
+  flex-basis: 23%;
+}
+```
+现在多列布局总是自适应空隙
+
+####对空链接实用属性选择器
+
+当`<a>`标签没文字却有链接的时候使用很方便
+```css
+a[href^="http"]:empty::before {
+  content: attr(href);
+}
+```
+支持：
+这些技巧在Chrome, Firefox, Safari, and Edge, and in IE11上有效.
+
+注：本文为翻译文章
+
+
+原文地址：https://github.com/AllThingsSmitty/css-protips
+
+
+
+
+
+
+
+
+ 
+
+
