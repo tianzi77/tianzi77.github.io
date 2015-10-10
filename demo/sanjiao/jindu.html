@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            position: relative;
+        }
+        div{
+            text-align: center;
+        }
+        div.firstStep {
+            width: 200px;
+            height: 20px;
+            background: linear-gradient(-135deg, transparent 30px, #58a 0) top right, linear-gradient(-45deg, transparent 30px, #58a 0) bottom right;
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 100px;
+            margin-left: 50px;
+            color: red;
+        }
+        
+        div.secondStep {
+            width: 200px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent 30px, #58a 0) top left, linear-gradient(135deg, transparent 30px, #58a 0) bottom left, linear-gradient(-135deg, transparent 30px, #58a 0) top right, linear-gradient(-45deg, transparent 30px, #58a 0) bottom right;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 180px;
+            top: 100px;
+            color: pink;
+        }
+        div.thirdStep{
+                        width: 200px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent 30px, #58a 0) top left, linear-gradient(135deg, transparent 30px, #58a 0) bottom left, linear-gradient(-135deg, transparent 30px, #58a 0) top right, linear-gradient(-45deg, transparent 30px, #58a 0) bottom right;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 310px;
+            top: 100px;
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+   <h1>linear-gradient实现步骤条</h1>
+    <div class="firstStep">第一步</div>
+    <div class="secondStep">第二步</div>
+    <div class="thirdStep">第三步</div>
+</body>
+
+</html>
