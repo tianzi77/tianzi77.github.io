@@ -1,7 +1,12 @@
 # Site settings
+<<<<<<< HEAD
 title: ZWW Blog
 SEOTitle: 张威的博客 | zhangweiwei Blog
 shareTitle: "@张威的博客 | zhangweiwei Blog"
+=======
+title: Hux Blog
+SEOTitle: 黄玄的博客 | Hux Blog
+>>>>>>> Huxpro/master
 header-img: img/home-bg.jpg
 email: 512932926@qq.com
 description: "关于前端与设计、页面仔 | 张魏魏 | 这里是张威个人博客，与你一起发现更大的世界。"
@@ -37,8 +42,10 @@ kramdown:
 
 # Duoshuo settings
 # please set your own DuoShuo account in `post.html` and `about.html`
+# seeing the Share component is depend on Comment so we can NOT use share only.
 useDuoshuo: true    # use both Comment and Share
-useShare: true      # use Comment only. seeing the Share component is depend on Comment so we can NOT use share only.
+useShare: true      # set to false if you want to use Comment only
+
 
 
 # Todo: Analysis settings
@@ -49,10 +56,19 @@ useGoogleAnalysis: true     # TODO
 
 
 # Sidebar settings
+<<<<<<< HEAD
 sidebar: true
 sidebar-featured-tags: true
 sidebar-about-description: "写写代码，做做设计，看看商界。游泳资深玩家，拜仁死忠。"
+=======
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
+>>>>>>> Huxpro/master
 sidebar-avatar: /img/avatar-hux.jpg     # use absolute URL.
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value 
 
 # Friends
 friends: [

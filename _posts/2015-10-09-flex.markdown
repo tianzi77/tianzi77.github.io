@@ -1,40 +1,263 @@
+@@ -1,334 +1,245 @@
 ---
 layout:     post
+title:      "Float nothing, flex everything［关于flex布局］"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2015-10-09 21:00:00
 title:      "再次回味background"
 subtitle:   " \"每个css属性都是一段故事，需要我们认真体会发现\""
 date:       2015-10-11 11:00:00
 author:     "ZWW"
+header-img: "img/post-bg-2015.jpg"
 header-img: "img/post-bg-universe.jpg"
 tags:
+    - flex
     - background
 ---
 
+> **“Yeah It's on. ”**
 > **“周末闲下来玩玩background. ”**
 
 首先**background**是一个符合属性，从原来的css2属性有：
 
+每个css属性都有一段故事，需要我们静下心来发现，体会。
+ 开始前复习一下最新看苏宁和京东用到的侧边栏导航的实现方式：
+        
+            position:fixed top left +margin-left
+            position:fixed top right+margin-right 实现侧边栏不随屏幕大小而滚动。
+            
+            
+    
+flex正文开始
+            
+            float nothing,flex everything~
+            概念:Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
+任何一个容器都可以指定为Flex布局。
+            块元素：display:flex;行内元素：display:inline-flex;注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
+            以下6个属性设置在容器上。flex-direction
+                                flex-wrap
+                                flex-flow 包含前面两者
+                                justify-content
+                                align-items
+                                align-content
+           
+           1,flex-direction: row | row-reverse | column | column-reverse;
+                row（默认值）：主轴为水平方向，起点在左端。
+                row-reverse：主轴为水平方向，起点在右端。
+                column：主轴为垂直方向，起点在上沿。
+                column-reverse：主轴为垂直方向，起点在下沿。
+            2,flex-wrap: nowrap | wrap | wrap-reverse;换行
+                flex-wrap属性定义，如果一条轴线排不下，如何换行。nowrap（默认）：不换行。wrap：换行，第一行在上方。wrap-reverse：换行，第一行在下方。
+            3，flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+        
+            4，justify-content属性定义了项目在主轴上的对齐方式。
+        属性值：justify-content: flex-start | flex-end | center | space-between | space-around;
+        flex-start（默认值）：左对齐
+        flex-end：右对齐
+        center： 居中
+        space-between：两端对齐，项目之间的间隔都相等。
+        space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+        
+            5，align-items属性定义项目在交叉轴上如何对齐。
+                align-items: flex-start | flex-end | center | baseline | stretch;
+            
+                flex-start：交叉轴的起点对齐。
+                flex-end：交叉轴的终点对齐。
+                center：交叉轴的中点对齐。
+                baseline: 项目的第一行文字的基线对齐。
+                stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。    
+            6，align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+                flex-start：与交叉轴的起点对齐。
+                flex-end：与交叉轴的终点对齐。
+                center：与交叉轴的中点对齐。
+                space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+                space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+                stretch（默认值）：轴线占满整个交叉轴。
+        
+        
+            以下6个属性设置在项目上。
+                    order
+                    flex-grow
+                    flex-shrink
+                    flex-basis
+                    flex
+                    align-self
+                order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+                flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+                flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+                如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。负值对该属性无效。
+                flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+                flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+                该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
+                建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
+                align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+         align-self: auto | flex-start | flex-end | center | baseline | stretch;
+        该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
+        
+        
+写了一个demo：
+            http://codepen.io/tianzi77/full/rOLrGL
+            
+    <body class="flex-wrap col-flex">
+    <header class="midCenter flex-wrap row-flex">我是标题flex布局</header>
+
+    <div class="page flex-wrap col-flex">
+        <div class="scroll-wrap">
+            <section class="midCenter flex-wrap" id="banner">
+                <div>我是banner</div>
+            </section>
+
+            <section id="quirk" class="flex-wrap row-flex">
+                <div></div>
+                <div class="flex-wrap col-flex">
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+
+            <section id="four-col" class="flex-wrap row-flex">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+
+            <section id="two-col" class="flex-wrap row-flex">
+                <div></div>
+                <div></div>
+            </section>
+
+            <section id="three-col" class="flex-wrap row-flex">
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+        </div>
+    </div>
 `background-color`
 
 `background-image`
 
+    <footer class="flex-wrap row-flex">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </footer>
+    </body>
+    
+    样式：
+    html{
+            height:100%;
+        }
 `background-position`
 
+        body{
+            background: #fff;
+            margin:0;
+            padding:0;
+            width: 100%;
+            height: 100%;
+        }
 `background-attachment`
 
+        /** 水平伸缩容器**/
+        .row-flex{
+            -moz-box-orient: horizontal;
+            -webkit-box-orient: horizontal;
+            -moz-box-direction: normal;
+            -webkit-box-direction: normal;
+            -moz-box-lines: multiple;
+            -webkit-box-lines: multiple;
+            -ms-flex-flow: row wrap;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+        }
 `background-repeat`
 
+        /** 垂直伸缩容器**/
+        .col-flex{
+            -moz-box-orient: vertical;
+            -webkit-box-orient: vertical;
+            -moz-box-direction: normal;
+
+            -moz-box-lines: multiple;
+            -webkit-box-lines: multiple;
+            -webkit-flex-flow: column wrap;
+            -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+        }
 然后随着CSS3这个强大的东西到来之后，又新增了几个属性：
 
+        /** 伸缩容器**/
+        .flex-wrap{
+            /** 各种版本兼容**/
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
 `background-size`
 
+        /** 垂直居中**/
+        .midCenter{
+            /** 垂直居中核心**/
+            -moz-box-pack: center;
+            -webkit-box-pack: center;
+            box-pack:center;
+            -moz-box-align: center;
+            -webkit-box-align: center;
+            box-align: center;
+            box-pack:center;
+            -ms-flex-pack:center;
+            display: -ms-flexbox;
+            -ms-flex-align:center;
+            justify-content:center;
+            align-items: center;
+        }
 `background-origin`
 
+        /** 占位器**/
+        .page{
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            overflow: hidden;
+        }
 `background-clip`
 
+        /** 真正滚动**/
+        .scroll-wrap{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
 
+        /** 头和尾巴**/
+        header,footer{
+            background:#f7f7f7;
+            height:44px;
+        }
 #background-color
 这个属性可以把背景色设置为比如十六进制的方式`#F32600`、或者用RGB的方式`rgb(200,200,125)`，当然还有hsl之类的方式，最常用的就是直接`red yellow`之类的颜色值。
 
+        footer>div{
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            border:1px solid #666;
+            margin:4px;
 回味一点：这个属性和`background-clip`擦出火花
 
 
@@ -54,15 +277,53 @@ tags:
 
 回味一点他会覆盖`background-color`的背景，然后就是他可以设置多图背景显示：
 
+        section{
+            margin:3px 5px;
+        }
 `background-image: url(name1.jpg), url(name2.png), url(name3.gif);`。结合`background-position`可以设置多张背景图片的显示位置其他没什么好玩的
 
+        /** 真正设置高度 **/
+        #banner{
+            border:2px solid #999;
+            margin:1px;
+            height:100px;
+        }
+        #quirk,#four-col{
+            height:150px;
+        }
+        #three-col,#two-col{
+            height:100px;
+        }
 #background-position
 
 这个属性值都是`top、left、center、bottom`等组合，或者要么就是百分值和px值这几种，对于这几种大家都已经很属性了，也没什么好说的，都是相对于容器的左上角来计算的。
 回味一点`background-position`的位置是跟`background-origin`相关的，并且如果设置了`background-clip`的话，那么效果又不一样了，
 还有好玩的一点，`background-position`设置为百分比的时候是大盒子的百分比减去自身的百分比，这点需要注意～
 
+        /** 内部组件**/
+        #four-col>div,#three-col>div,#two-col>div{
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+        #four-col>div{
+            background: #aaebbe;
+            margin:0 2px;
+        }
+        #three-col>div{
+            background: #8f82bc;
+            margin:0 2px;
+        }
+        #two-col>div{
+            background: #f7baba;
+            margin:0 2px;
+        }
 
+        #quirk>div{
+            margin:0 2px;
+        }
 #background-origin
 
 `background-origin的作用是用于处理背景定位的原点坐标位置`，共有三个属性值：
@@ -112,7 +373,21 @@ tags:
 
 `background-repeat`这个也是大家最常用的一个背景属性了，对于这个属性，我们一般也就是用到`repeat、no-repeat、repeat-x和repeat-y`四种，对于这四种，其实大家也都是很好理解的，无非就是各个方向都重复、都不重复、X轴重复和Y轴重复，然后结合盒模型的原理，就可以猜想到是从容器的原点位置，以X轴或者Y轴进行重复平铺背景图片，如果一张图片在容器中没有完全显示的话。
 
+        #quirk>div:nth-child(1){
+            background: #b9e2ee;
+            -webkit-box-flex: 200;
+            -moz-box-flex: 200;
+            -ms-flex: 200;
+            -webkit-flex: 200;
+            flex: 200;
+        }
 
+        #quirk>div:nth-child(2){
+            -webkit-box-flex: 175;
+            -moz-box-flex: 175;
+            -ms-flex: 175;
+            -webkit-flex: 175;
+            flex: 175;
 css3新增了2个属性`space，round玩起来有点意思`
 
 `background-repeat: space;`
@@ -139,6 +414,15 @@ http://codepen.io/tianzi77/full/QjMWRg
             color: blue;
             text-align: center;
         }
+        #quirk>div:nth-child(2)>div:nth-child(1){
+            background: #b9e2ee;
+
+            -webkit-box-flex: 60;
+            -moz-box-flex: 60;
+            -ms-flex: 60;
+            -webkit-flex: 60;
+            flex: 60;
+            margin-bottom: 4px;
         
         div.space {
             width: 500px;
@@ -149,6 +433,14 @@ http://codepen.io/tianzi77/full/QjMWRg
             background-color: pink;
             float: left;
         }
+        #quirk>div:nth-child(2)>div:nth-child(2){
+            background: #b9e2ee;
+
+            -webkit-box-flex: 30;
+            -moz-box-flex: 30;
+            -ms-flex: 30;
+            -webkit-flex: 30;
+            flex: 30;
         
         div.round {
             width: 500px;
@@ -160,6 +452,10 @@ http://codepen.io/tianzi77/full/QjMWRg
             float: right;
         }
         
+参考文献：
+阮一峰Flex 布局教程：实例篇：http://www.ruanyifeng.com/blog/2015/07/flex-examples.html?bsh_bid=683103006
+ <br>阮一峰flex布局：语法：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+<br>Introducing Flexbox Fridays：https://lincolnloop.com/blog/introducing-flexbox-fridays/
         div.clear {
             overflow: hidden;
             /*清除float*/
@@ -239,11 +535,8 @@ http://www.zhangweiwei.cn//demo/sanjiao/image.html
 林小志github：http://linxz.github.io/blog/css%E5%B1%9E%E6%80%A7%E5%9F%BA%E7%A1%80/2015/06/think-about-background.html
 
 
+### *"come on"*  
 ### *"不玩了，骑车出去玩一转，周末快乐。"*  
 
-
-
-
- 
 
 
