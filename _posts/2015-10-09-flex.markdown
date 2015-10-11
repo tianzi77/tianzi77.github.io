@@ -11,12 +11,7 @@ tags:
 ---
 
 > **“Yeah It's on. ”**
-<<<<<<< HEAD
  开始前复习一下最新看苏宁和京东用到的侧边栏导航的实现方式：
-=======
-开始前复习一下最新看苏宁和京东用到的侧边栏导航的实现方式：
-        
->>>>>>> origin/master
         
             position:fixed top left +margin-left
             position:fixed top right+margin-right 实现侧边栏不随屏幕大小而滚动。
