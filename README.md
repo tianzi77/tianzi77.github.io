@@ -8,35 +8,29 @@
 
 ## Features
 
-
-#### New Feature (V1.4)
-
-- **[Featured Tags](#featured-tags)** is now independent of [SideBar](#sidebar). Both documents is updated.
-- New **[SEO Title](#seo-title)** for SEO usage which is differ from the site title
-
-#### New Feature (V1.3.1)
+### New Feature (V1.3.1)
 
 - Support **PingFang (苹方)**, the new Chinese font presented by [OS X El Capitan](http://www.apple.com/cn/osx/whats-new/)
 
 
-#### New Feature (V1.3)
+### New Feature (V1.3)
 
 - Big Improvement to the **Navigation Menu** *(especially in Android)*:  Dropping the old, stuttering, low-performance [Bootstrap collapse.js](http://getbootstrap.com/javascript/#collapse),  replaced with an own wrote, [jank free](http://jankfree.org/) navbar menu in a pretty high-performance implementation of [Google Material Design](https://www.google.com/design/spec/material-design/introduction.html).
 
 <img src="http://huangxuan.me/img/blog-md-navbar.gif" width="320" />
 
 
-#### New Feature (V1.2)
+### New Feature (V1.2)
 
 - Brand new **[Keynote Layout](#keynote-layout)** is provided for easily posting beautiful HTML presentations you have created with this blog
 
 
-#### New Feature (V1.1)
+### New Feature (V1.1)
 
 - We now support a clean and gorgeous **[SideBar](#sidebar)** for displaying more info
 - **[Friends](#friends)** is also added as a common feature of blog help you do SEO
 
-#### V1.0
+### V1.0
 
 - Full-feature **Tag** support
 - **Mobile first** user experience optimization
@@ -49,10 +43,10 @@
 
 ## Support
 
-- **Feel free to fork. Appreciated if you keep the Author & Github link in the footer**
-- Give it a **Star** if you like, fork or just clone to use this theme ;)
+- **Feel free to fork. Appreciated if you keep the author & fork link in the footer**
+- Give it a **Star** if you like or fork this theme ;)
 - Any problem or requirement, just open an issue here and I will help you.
-- 如果有需要，我可以更新一篇中文文档 ;)
+- 如果有需要，可以更新一篇中文文档 ;)
 
 
 ## Document
@@ -63,11 +57,8 @@
 * [Header Image](#header-image)
 * [Advanced](#advanced)
 * [SideBar](#sidebar)
-* [Mini About Me](#mini-about-me)
-* [Featured Tags](#featured-tags)
 * [Friends](#friends)
 * [Keynote Layout](#keynote-layout)
-* [SEO Title](#seo-title)
 
 ### Environment
 
@@ -81,9 +72,8 @@ You can easily get started by modifying `_config.yml`:
 
 ```
 # Site settings
-title: Hux Blog             # title of your website
-SEOTitle: Hux Blog			# check out docs for more detail
-description: "Cool Blog"    # ...
+title: Hux Blog             # title of your website..
+description: .....          # ...
 
 # SNS settings      
 github_username: huxpro     # modify this account to yours
@@ -93,8 +83,9 @@ weibo_username: huxpro      # and the links in footer woule be auto-updated.
 # paginate: 10              # nums of posts in one page
 
 # Duoshuo settings          # Please set your own DuoShuo account.
-useDuoshuo: true            # use both Comment and Share
-useShare: true              # set to false if you want to use Comment only 
+useDuoshuo: true            # Comment and Share
+useShare: true              # use Comment only. seeing the Share component is depend on Comment so we can NOT use share only.
+
 ```
 
 There are more options you can check out in the [Jekyll - Official Site](http://jekyllrb.com/), or you can directly dive into code to find more.
@@ -102,9 +93,7 @@ There are more options you can check out in the [Jekyll - Official Site](http://
 
 ### Write Posts
 
-Feel free to checkout Markdown files in the `_posts/`, you will quickly realized how to post your articles with magical markdown plus this nice theme.
-
-The **front-matter** of a post looks like that:
+Feel free to checkout Markdown files in the `_posts/`, you will quickly realized how to post your articles with magic Markdown plus this theme:
 
 ```
 ---
@@ -137,49 +126,30 @@ If you wanna change code yourself, a [Grunt](gruntjs.com) environment is also in
 
 There are a number of tasks it performs like minification of the JavaScript, compiling of the LESS files, adding banners to keep the Apache 2.0 license intact, and watching for changes. Run the grunt default task by entering `grunt ` into your command line which will build the files. You can use `grunt watch` if you are working on the JavaScript or the LESS.
 
-**Try to understand code in `_include/` and `_layouts/`, then you can modify Jekyll [Liquid](https://github.com/Shopify/liquid/wiki) template directly to do more creative customization.**
+**Try to understand code in `_include/`, `_layouts/`, then you can modify Jekyll [Liquid](https://github.com/Shopify/liquid/wiki) template directly to do more creative customization.**
 
 ### SideBar
 
 ![](http://huangxuan.me/img/blog-sidebar.jpg)
 
-Seeing more information may be necessary for you to display, from V1.1, a clean, gorgeous **SideBar** is added for you, which provide more area for displaying possible modules. You can enable *(it is default enable)* this feature by simply config:
+Seeing more information may be necessary for you to display, from V1.1, a clean, gorgeous **SideBar** is added for you, which provide more area for displaying possible modules including *Featured Tags*, *Mini About Me*, *Friends* etc. You can enable *(it is default enable)* this feature by simply config:
 
 ```
 # Sidebar settings
 sidebar: true
+sidebar-feature-tags: true
 sidebar-about-description: "your description here"
 sidebar-avatar: /img/avatar-hux.jpg     # use absolute URL.
 ```
 
-We default support *[Featured Tags](#featured-tags)*, *[Mini About Me](#mini-about-me)* and *[Friends](#friends)* these three modules and you can add your own. The sidebar is naturally responsive and would be push to bottom in a small screen size (`<= 992px`, according to [Bootstarp Grid System](http://getbootstrap.com/css/#grid))  
-More details of these three separate modules are talking below.
+We default support *Featured Tags*, *Mini About Me*, *Friends* these three modules and you can add your own. The Sidebar is naturally responsive and would be push to bottom in a small screen (<768px), the *Short About Me* would be also hidden in small screen.
 
-### Mini About Me
+you can disable *Featured Tags* by removing `sidebar-featured-tags` and disable *Mini About Me* by removing `sidebar-about-description` plus `sidebar-avatar`. More details of *Friends* are talking below.
 
-Mini-About-Me module display all your SNS buttons also your avatar and the description if you set `sidebar-avatar` and `sidebar-about-description` which is very useful and common for a sidebar so it is default with your sidebar.
-
-It is really nice-looking and well-designed. It would be hidden in a small screen seeing the sidebar would be push to bottom and there is already a footer including SNS feature which is similar.
-
-### Featured Tags
-
-Considering the Featured-Tags feature in [Medium](http://medium.com) is pretty cool, so I add it in my blog theme also.   
-This module is independent of sidebar from V1.4, so it can definitely live without enable sidebar, which would be displayed in the bottom when `sidebar` set to false, and it is not only displayed in home page but also every post page bottom.
-
-
-```
-# Featured Tags
-featured-tags: true  
-featured-condition-size: 1     # A tag will be featured if the size of it is more than this condition value
-```
-
-The only one thing need to be paid attention to is the `featured-condition-size`: A tag will be featured if the size of it is more than this condition value.  
-Internally, a condition template `{% if tag[1].size > {{site.featured-condition-size}} %}` is used to do the filter.
 
 ### Friends
 
-Friends is a very common feature of a blog seeing the SEO, so I add it in V1.1 release to help that.   
-Friends can also live without enable sidebar, also be displayed in the bottom when sidebar unable, and be displayed in every post page bottom.
+Friends is a very common feature of blog seeing the SEO, so I add it in V1.1 release to help that. One of the awesome point of *Friends* is that it can live without enable sidebar. The *Friends* would display in the bottom auto when `sidebar` set to false.
 
 
 You can just add your friends information in `_config.yml` with a familiar JSON syntax and everything is done, very easy:
@@ -212,16 +182,11 @@ Under the hood, a `iframe` is used to include webpage from outer source, so the 
 layout:     keynote
 iframe:     "http://huangxuan.me/js-module-7day/"
 ---
+
 ```
 
-The iframe will be automatically resized to adapt different form factors also the device orientation. A padding is left to imply user that there has more content below, also to ensure that there is a area for user to scroll down in mobile device seeing most of the keynote framework prevent the browser default scroll behavior.
+The iframe will be automatically resized to adapt different form factors also the device orientation. A padding is left to imply user there has more content below, also ensure there is a area user can scrolled in mobile device seeing most of the keynote framework prevent the browser default scroll behavior.
 
-### SEO Title
-
-Before V1.4, site setting `title` is not only used for displayed in Home Page and Navbar, but also used to generate the `<title>` in HTML.
-It's possible that you want the two things different. For me, my site-title is **“Hux Blog”** but I want the title shows in search engine is **“黄玄的博客 | Hux Blog”** which is multi-language.
-
-So, the SEO Title is introduced to solve this problem, you can set `SEOTitle` different from `title`, and it would be only used to generate HTML `<title>` and setting DuoShuo Sharing.
 
 ## Thanks
 
