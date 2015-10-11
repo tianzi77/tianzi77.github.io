@@ -1,13 +1,15 @@
 ---
 layout:     post
-title:      "Float nothing, flex everything［关于flex布局］"
-subtitle:   " \"flex布局自我总结\""
+title:      "flex布局总结"
+subtitle:   " \"常见flex的语法及用处\""
 date:       2015-10-11 13:00:00
 author:     "ZWW"
-header-img: "img/post-bg-2015.jpg
+header-img: "img/post-bg-2015.jpg"
 tags:
-    - flex
+    - background
 ---
+
+> **“关于flex的文章 ”**
 
 开始前复习一下最新看苏宁和京东用到的侧边栏导航的实现方式：
         
