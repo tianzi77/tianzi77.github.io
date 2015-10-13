@@ -388,7 +388,7 @@ pre,
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 0px;
-  height: 650px;
+/*  height: 650px;*/
   /* 0 on mobile, modify by Hux */
 }
 @media only screen and (min-width: 768px) {
@@ -969,11 +969,12 @@ body {
             right: 60px;
             display: none
         }
+/* zww blog hover animation */
         [class*="link-"] {
             outline: none;
             text-decoration: none;
             position: relative;
-            line-height: 1;
+            line-height: 1.2;
             display: inline-block;
         }
         
