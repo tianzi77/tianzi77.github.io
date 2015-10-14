@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>星星评级的几种方法</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        h4{
+            text-align: center;
+            color: window;
+        }
+        /*第一种方法样式*/
+        
+        div.demo {
+            width: 100px;
+            height: 20px;
+            overflow: hidden;
+            /*clear float*/
+        }
+        
+        div.star {
+            float: left;
+        }
+        
+        div.star input {
+            width: 20px;
+            height: 20px;
+            background: url(./img/star_sprite.png) no-repeat 0 -32px;
+            -webkit-appearance: none;
+            border-width: 0;
+            border-style: solid;
+            float: right;
+            outline: 0 none;
+            -webkit-transition: all .3s ease-out;
+            opacity: .3;
+        }
+        
+        div.star input:hover,
+        div.star input:checked,
+        div.star input:checked~input {
+            background-position: 0 0;
+            opacity: 1;
+        }
+        /*第二种方法样式*/
+        
+        span.star_rotate {
+            position: absolute;
+            top: 0;
+            left: -100px;
+            background-color: #ccc;
+            width: 100px;
+            height: 20px;
+            border-left: 100px solid red;
+            border-right: 100px solid green;
+            z-index: 2;
+        }
+        
+        .demo2 {
+            width: 100px;
+            height: 20px;
+            position: relative;
+            background: #ccc;
+            overflow: hidden;
+        }
+        
+        .demo2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 20px;
+            background: url(./img/star_rating.png) 0 0 no-repeat;
+            pointer-events: none;
+            z-index: 7777;
+        }
+        
+        .demo2 input {
+            background: none;
+            float: left;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            -webkit-appearance: none;
+            border: 0 none;
+            outline: 0 none;
+            z-index: 3;
+        }
+        
+        .demo2 input:checked~.star_rotate {
+            right: 80px;
+            left: auto;
+        }
+        
+        .demo2 input+input:checked~.star_rotate {
+            right: 60px;
+        }
+        
+        .demo2 input+input+input:checked~.star_rotate {
+            right: 40px;
+        }
+        
+        .demo2 input+input+input+input:checked~.star_rotate {
+            right: 20px;
+        }
+        
+        .demo2 input+input+input+input+input:checked~.star_rotate {
+            right: 0px;
+        }
+        
+        .demo2 input:hover~.star_rotate {
+            left: -80px;
+        }
+        
+        .demo2 input+input:hover~.star_rotate {
+            left: -60px;
+        }
+        
+        .demo2 input+input+input:hover~.star_rotate {
+            left: -40px;
+        }
+        
+        .demo2 input+input+input+input:hover~.star_rotate {
+            left: -20px;
+        }
+        
+        .demo2 input+input+input+input+input:hover~.star_rotate {
+            left: 0px;
+        }
+        /*第三种样式*/
+        
+        div.demo3 {
+            width: 100px;
+            height: 20px;
+            position: relative;
+            overflow: hidden;
+            background: #ccc;
+        }
+        
+        div.demo3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 20px;
+            background: url(./img/star_rating.png) 0 0 no-repeat;
+            pointer-events: none;
+        }
+        
+        div.demo3 a {
+            text-decoration: none;
+            position: relative;
+            float: left;
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+        }
+        
+        div.demo3 .demo3_star {
+            position: static;
+            display: none;
+            width: 0;
+            border: 0 none;
+            background-color: #f32600;
+            height: 0;
+        }
+        
+        div.demo3 span#zww1:target {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+        
+        div.demo3 span#zww2:target {
+            display: block;
+            width: 40px;
+            height: 20px;
+        }
+        
+        div.demo3 span#zww3:target {
+            display: block;
+            width: 60px;
+            height: 20px;
+        }
+        
+        div.demo3 span#zww4:target {
+            display: block;
+            width: 80px;
+            height: 20px;
+        }
+        
+        div.demo3 span#zww5:target {
+            display: block;
+            width: 100px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap_star">
+        <h4>E~F选择+左右浮动+webkit-appearance+pointer-events注意伪input写上name</h4>
+        <div class="demo">
+            <div class="star">
+                <input type="radio" name="star_demo">
+                <input type="radio" name="star_demo">
+                <input type="radio" name="star_demo">
+                <input type="radio" name="star_demo">
+                <input type="radio" name="star_demo">
+            </div>
+        </div>
+        <hr>
+        <h4>E~+F选择+checked</h4>
+        <div class="demo2">
+            <input type="radio" name="demo2">
+            <input type="radio" name="demo2">
+            <input type="radio" name="demo2">
+            <input type="radio" name="demo2">
+            <input type="radio" name="demo2">
+            <span class="star_rotate"></span>
+        </div>
+        <hr>
+        <h4>a标签中的锚点跳转结合:target选择符方式实现</h4>
+        <div class="demo3">
+            <a href="#zww1"></a>
+            <a href="#zww2"></a>
+            <a href="#zww3"></a>
+            <a href="#zww4"></a>
+            <a href="#zww5"></a>
+            <span class="demo3_star" id="zww1"></span>
+            <span class="demo3_star" id="zww2"></span>
+            <span class="demo3_star" id="zww3"></span>
+            <span class="demo3_star" id="zww4"></span>
+            <span class="demo3_star" id="zww5"></span>
+        </div>
+    </div>
+</body>
+
+</html>
