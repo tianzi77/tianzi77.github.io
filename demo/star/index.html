@@ -9,9 +9,9 @@
             padding: 0;
             margin: 0;
         }
-        h4{
+        
+        h4 {
             text-align: center;
-            color: window;
         }
         /*第一种方法样式*/
         
@@ -239,6 +239,22 @@
             <span class="demo3_star" id="zww5"></span>
         </div>
     </div>
+    <script>
+        function randomColor() {
+            var arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'],
+                color = "#",
+                index;
+            for (var i = 0; i < 6; i++) {
+                index = Math.floor(Math.random() * arr.length);
+                color += arr[index];
+            }
+            return color;
+        }
+        var H = document.getElementsByTagName("h4");
+        H[0].style.color = randomColor();
+        H[1].style.color = randomColor();
+        H[2].style.color = randomColor();
+    </script>
 </body>
 
 </html>
