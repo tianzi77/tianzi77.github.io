@@ -16,8 +16,49 @@ tags:
             position:fixed top left +margin-left
             position:fixed top right+margin-right 实现侧边栏不随屏幕大小而滚动。
             
+ 新浪是这样的：
+ 
+ 			.W_gotop { 
+    		position: fixed;
+    		left: 50%;
+    		margin-left: 476px; /*这个显然经过了计算，且受限于容器宽度值*/
+    	bottom: 100px;
+			}
             
-    
+   
+   如果对absolute绝对定位有更深的理解还有一种更巧妙的办法，`没有应用left/top等属性值的absolute元素就是个不占据空间的普通元素，如果是block水平的，换行显示；如果是inline水平的，跟在前面的文字后面显示`。 
+   
+       <div class="sina_box">
+        <div class="sina_backtop_box">
+            &nbsp;<a href="#" class="sina_backtop">返回顶部</a>
+        </div>
+    </div>
+            .sina_box {
+            width: 960px;
+            height: 2000px;
+            margin: 0 auto;
+            background: url(http://img1.t.sinajs.cn/t4/skin/skin000/images/body_bg.jpg) top center;
+        }
+        
+        .sina_backtop_box {
+            text-align: right;
+        }
+        
+        .sina_backtop {
+            width: 20px;
+            padding: 5px 0;
+            background-color: #DFF3FD;
+            text-align: center;
+            position: fixed;
+            bottom: 100px;
+        }
+        .sina_backtop_box a{
+            text-decoration: none;
+            color: black;
+        }
+        
+添加空格是为了兼容ie。text-align：center会作用于inline-inline-block元素，但是`text-align属性对应用了position:absloute/fixed声明的元素无效！而是absolute元素之前的inline/inline-block水平的元素。`
+
 flex正文开始
             
             float nothing,flex everything~
