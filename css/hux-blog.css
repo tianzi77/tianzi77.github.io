@@ -36,7 +36,7 @@
   border-color: #0085a1;
 }
 .sidebar-container .short-about img {
-  width: 80%;
+  width: 200px;
   display: block;
   border-radius: 5px;
 }
@@ -1098,7 +1098,8 @@ body {
         left: 0;
         width: 200px;
         height: 150px;
-        z-index: 2
+        z-index: 2;
+        border-radius: 5px;
     }
     .back-content {
         padding: 10px;
