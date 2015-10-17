@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>daily js</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .wrap {
+            height: 170px;
+            width: 490px;
+            margin: 60px auto;
+            overflow: hidden;
+            position: relative;
+            margin: 100px auto;
+        }
+        
+        .wrap ul {
+            position: absolute;
+        }
+        
+        .wrap ul li {
+            height: 170px;
+        }
+        
+        .wrap ol {
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+        }
+        
+        .wrap ol li {
+            height: 20px;
+            width: 20px;
+            background: #ccc;
+            border: solid 1px #666;
+            margin-left: 5px;
+            color: #000;
+            float: left;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .wrap ol .on {
+            background: #E97305;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" id='wrap'>
+        <ul id="pic">
+            <li><img src="http://img.mukewang.com/54111cd9000174cd04900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111dac000118af04900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d9c0001998204900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d8a0001f41704900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d7d00018ba604900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111cd9000174cd04900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111dac000118af04900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d9c0001998204900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d8a0001f41704900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d7d00018ba604900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d9c0001998204900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d8a0001f41704900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d7d00018ba604900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d9c0001998204900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d8a0001f41704900170.jpg" alt=""></li>
+            <li><img src="http://img.mukewang.com/54111d7d00018ba604900170.jpg" alt=""></li>
+        </ul>
+        <!--
+        <ol id="list">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+-->
+    </div>
+    <script>
+        var wrap = document.getElementById("wrap"),
+            pic = document.getElementById("pic"),
+            aImg = pic.getElementsByTagName("img"),
+            list = pic.getElementsByTagName("li"),
+            listArr = [],
+            index = 0,
+            timer = null;
+
+        /*动态创建按钮*/
+        for (var l = 0; l < list.length; l++) {
+            listArr.push("<li>" + (l + 1) + "</li>");
+        }
+        var ul = document.createElement("ol");
+        ul.className = "count";
+        ul.innerHTML = listArr.join("");
+        wrap.appendChild(ul);
+        var list = document.getElementsByTagName("ol")[0].getElementsByTagName("li");
+
+        console.log(listArr);
+        /*第一次循环绑定鼠标事件和pic位置*/
+        for (var i = 0; i < list.length; i++) {
+            list[i].id = i;
+            list[i].onmouseover = function() {
+                clearInterval(count);
+                id = this.id;
+                changeIndex(id);
+
+            };
+        }
+        /*改变list索引单独踢出来以便自动播放*/
+        function changeIndex(currentIndex) {
+            for (var j = 0; j < list.length; j++) {
+                list[j].className = '';
+            }
+            list[currentIndex].className = "on";
+            //            pic.style.marginTop = currentIndex * -170 + "px";
+            startMove(-(currentIndex * aImg[0].offsetHeight));
+            index = currentIndex;
+        }
+        /*自动播放事件*/
+        function autoPlay() {
+            count = setInterval(function() {
+                index++;
+                if (index >= list.length) {
+                    index = 0;
+                }
+                changeIndex(index);
+            }, 2000);
+            /*鼠标移入幻灯区域停止自动播放*/
+            wrap.onmouseover = function() {
+                clearInterval(count);
+            }
+            wrap.onmouseout = autoPlay;
+        }
+        autoPlay();
+
+        /*改变速度动画效果*/
+        function startMove(iTarget) {
+            clearInterval(timer);
+            timer = setInterval(function() {
+                doMove(iTarget)
+            }, 30)
+        }
+
+        function doMove(iTarget) {
+            var iSpeed = (iTarget - pic.offsetTop) / 10;
+            iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+            pic.offsetTop == iTarget ? clearInterval(timer) : pic.style.top = pic.offsetTop + iSpeed + "px";
+        }
+    </script>
+</body>
+
+</html>
