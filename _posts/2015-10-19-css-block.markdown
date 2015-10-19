@@ -1,0 +1,101 @@
+---
+layout:     post
+title:      "css中的各种框"
+subtitle:   " \"视觉格式化模型Visual formatting model\""
+date:       2015-10-19 11:00:00
+author:     "ZWW"
+header-img: "img/post-bg-miui6.jpg"
+tags:
+    - css中的框
+---
+
+> **“块元素块级元素傻傻分不清”**
+
+在我理解来看`视觉格式化模型`就是浏览器或者浏览器代理对dom结构进行解析过程中所生成的demo树结构。英文是这样叫：`Visual formatting model`
+
+然后说说css中的各种框：
+
+###Containing block（包含块）
+一个元素，它的框的尺寸和位置会相对于一个特定的矩形框边缘来计算而得到，这个特定的矩形框称之为该元素的`包含块`，写过css的都应该接触过这个概念。
+
+说一下包含块的特殊地方：
+
+* 由根元素生成的包含块叫做 初始包含块（initial containing block）。
+* 对于其它元素，如果元素的 position 值是 relative 或者 static，其包含块由最近的祖先 块容器框 的内容边界形成。
+
+       举个例子，td, th 就算有父容器 tr，但它们的包含块却是由 table 生成，因为 table 是 块容器框 而 tr 不是
+
+* 绝对定位元素的包含块由最近的定位（position 值非 static）祖先生成，如果不存在这样的祖先，则采用初始包含块；
+* 固定定位元素（position: fixed）的包含块一般情况下都由视口生成；
+* 其实上面说明一个重要结论就是并不是所有的包含块都是由其父元素生成的！！！
+
+###Block-level element（块级元素）
+
+ 刚开始学css的时候首先接触的就是什么块级元素，行内元素，大家都知道块级元素会独占一行，可以设置`width  height`，比如`div`。行内元素会成行排列，不能设置宽高比如`span`。今天学到了块元素的概念，我才发现这东西其实挺好玩的，才发现原来很多理论都是错的，块级元素块元素傻傻分不清。
+ 
+ 简单来说一个元素是块元素那么它一定是块级元素，但相反则不成立。
+ `块级元素是那些视觉上会被格式化成块状的元素，通俗一点来说就是那些会换新行的元素。display 属性的：block, list-item, table, flex, grid 值都可以将一个元素设置成块级元素。`
+ 
+ `而块元素的话只是display：block的元素`
+ 
+ 考擦如下代码：
+ 
+ 	  <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+
+这里li是块级元素，但不是块元素。因为li的display是list-item。
+###Block-level box（块级框）, Block container box（块容器框）, Block box（块框）
+
+它们之间总结为一张图。
+
+![block-boxs](img/post-img/block-boxes.png)
+
+
+###Inline-level element（行内级元素）
+###Inline element（行内元素）
+
+这个概念和块元素与块级元素类似。也就是行内元素只是`display：inline`的元素，而行内级元素`display 属性的：inline, inline-table, inline-block, inline-flex, inline-grid `值都可以将一个元素设置成行内级元素。
+
+###Inline-level box（行内级框）, Atomic inline-level box（原子行内级框）, Inline box（行内框）
+
+同样用一张图片表示它们之间的关系：
+![inline-boxs](img/post-img/inline-boxes.png)	
+
+###Anonymous boxes（匿名框）
+
+最后说说有意思的匿名框
+`匿名框 包括 匿名块框 和 匿名行内框。`
+假设一个` div `中包含有一个 `p` 和一段纯文本 xxx。由于 块容器框 只允许要么包含 块级框，要么包含 行内级框，所以，为了符合这种情况，div 会生成一个匿名的块级框用于包裹 xxx，这个匿名框就叫做 `匿名块框。`
+如下代码：
+
+	 <div>
+        just for fun
+        <p>hello world</p>
+    </div>
+     <!-- 这里的just for fun就是升级一个匿名框，而且是块级匿名框。
+    所以just for fun和hello world会成两行排列。-->
+
+
+这段代码：
+
+	  <div>
+        just for fun
+        <span>hello world</span>
+    </div>
+     <!--首先div生成一个块框，hello world由 span 生成一个行内框，由于just for fun没有与之相关的行级元素，将由 div 为其生成一个行内框用以包裹，这个框称为匿名行内框。所以它们会排在同行显示，然后被div块框包围-->
+     
+  
+* 各种框框好像很有点意思，妈妈再也不用担心我傻傻分不清了~
+
+参考：
+
+<a href="http://blog.doyoe.com/2015/03/09/css/%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E6%A1%86/#inline-level-element" target="_blank" style="text-decoration:none">CSS探索之旅</a>
+
+<a href="http://www.w3.org/TR/CSS/" target="_blank" style="text-decoration:none">w3c</a>
