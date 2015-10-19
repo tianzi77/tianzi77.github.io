@@ -15,7 +15,7 @@ tags:
 
 然后说说css中的各种框：
 
-###Containing block（包含块）
+<p style="font-size:20px;color:deeppink">Containing block（包含块）</p>
 一个元素，它的框的尺寸和位置会相对于一个特定的矩形框边缘来计算而得到，这个特定的矩形框称之为该元素的`包含块`，写过css的都应该接触过这个概念。
 
 说一下包含块的特殊地方：
@@ -29,7 +29,8 @@ tags:
 * 固定定位元素（position: fixed）的包含块一般情况下都由视口生成；
 * 其实上面说明一个重要结论就是并不是所有的包含块都是由其父元素生成的！！！
 
-###Block-level element（块级元素）
+<p style="font-size:20px;color:deeppink">Block-level element（块级元素）</p>
+
 
  刚开始学css的时候首先接触的就是什么块级元素，行内元素，大家都知道块级元素会独占一行，可以设置`width  height`，比如`div`。行内元素会成行排列，不能设置宽高比如`span`。今天学到了块元素的概念，我才发现这东西其实挺好玩的，才发现原来很多理论都是错的，块级元素块元素傻傻分不清。
  
@@ -51,24 +52,31 @@ tags:
     </ul>
 
 这里li是块级元素，但不是块元素。因为li的display是list-item。
-###Block-level box（块级框）, Block container box（块容器框）, Block box（块框）
+
+<p style="font-size:20px;color:deeppink">Block-level box（块级框）, Block container box（块容器框）, Block box（块框）</p>
+
 
 它们之间总结为一张图。
 
-![block-boxs](img/post-img/block-boxes.png)
+![block-boxs](/img/post-img/block-boxes.png)
 
 
-###Inline-level element（行内级元素）
-###Inline element（行内元素）
+<p style="font-size:20px;color:deeppink">Inline-level element（行内级元素）</p>
+<p style="font-size:20px;color:deeppink">Inline element（行内元素）</p>
+
 
 这个概念和块元素与块级元素类似。也就是行内元素只是`display：inline`的元素，而行内级元素`display 属性的：inline, inline-table, inline-block, inline-flex, inline-grid `值都可以将一个元素设置成行内级元素。
 
-###Inline-level box（行内级框）, Atomic inline-level box（原子行内级框）, Inline box（行内框）
+
+<p style="font-size:20px;color:deeppink">Inline-level box（行内级框）, Atomic inline-level box（原子行内级框）, Inline box（行内框）</p>
+
 
 同样用一张图片表示它们之间的关系：
-![inline-boxs](img/post-img/inline-boxes.png)	
+![inline-boxs](/img/post-img/inline-boxes.png)	
 
-###Anonymous boxes（匿名框）
+
+<p style="font-size:20px;color:deeppink">Anonymous boxes（匿名框）</p>
+
 
 最后说说有意思的匿名框
 `匿名框 包括 匿名块框 和 匿名行内框。`
