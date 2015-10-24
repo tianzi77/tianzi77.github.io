@@ -1,0 +1,89 @@
+---
+layout:     post
+title:      "button向外扩散动画效果"
+subtitle:   " \"鼠标hover的时候边框向外缩放动画\""
+date:       2015-10-24 11:56:00
+author:     "ZWW"
+header-img: "img/post-bg-miui-ux.jpg"
+tags:
+    - css动画
+---
+
+> **“after伪元素实现动画效果”**
+
+实现类似向外放光的效果，主要实现原理就是after伪元素结合hover时候让button产生动画。很多这种jquery插件，实现各种各样的扩散效果，原理类似。说一下css的一种实现方式把！
+
+
+定义一个样式a标签或者button标签
+	
+	<a class="button">Fake Button</a>
+	
+为这个链接写上基本的样式：
+
+        .button {
+            cursor: pointer;
+            text-decoration: none;
+            padding: 10px;
+            color: #fff;
+            border-radius: 10px;
+            position: absolute;
+            top: 100px;
+            left: 48%;
+            background: linear-gradient(#93c, #50c);
+            border: 1px solid purple;
+        }
+      //用after为元素加上绝对定位产生一层覆盖在a标签上面的边框
+              .button:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            opacity: 0;
+            border: 1px solid purple;
+        }
+        
+然后定义动画效果，实际就是缩放scale属性
+
+ 	        @-webkit-keyframes boom {
+            0% {
+                opacity: 0
+            }
+            50% {
+                opacity: 1
+            }
+            100% {
+                -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+                opacity: 0
+            }
+        }
+        
+        @keyframes boom {
+            0% {
+                opacity: 0
+            }
+            50% {
+                opacity: 1
+            }
+            100% {
+                transform: scale(1.3);
+                transform: scale(1.3);
+                opacity: 0
+            }
+        }
+        最后使用动画
+        
+                .button:hover:after {
+            -webkit-animation: boom 0.5s ease;
+            animation: boom 0.5s ease;
+        }
+
+最终就是整个效果：
+
+![css animation](/img/post-img/button.gif)	     
+        
+整个过程很容易，需要考虑的是何时引入动画，这将会产生不同的动画效果，还有<span style="color:blue">lineargradient</span>背景有很多值得玩的东西
+
