@@ -1,0 +1,266 @@
+---
+layout:     post
+title:      "曾经火爆的瀑布流布局"
+subtitle:   " \"到达浏览器底部时像瀑布一样加载滚动\""
+date:       2015-10-25 18:00:00
+author:     "ZWW"
+header-img: "img/post-bg-kuaidi.jpg"
+tags:
+    - 瀑布流
+---
+
+> **“什么是瀑布流”**
+
+这种布局适合于小数据块，每个数据块内容相近且没有侧重。通常，随着页面滚动条向下滚动，这种布局还会不断加载数据块并附加至当前尾部。所以，我们给这样的布局起了一个形象的名字 — `瀑布流式布局`。
+
+布局的两种思路：
+	1，传统多列浮动
+	2，css3的columns属性
+	
+	#container {
+        -webkit-column-count: 5；
+        /*-webkit-column-gap: 10px；
+        -webkit-column-rule: 5px solid #333；
+        -webkit-column-width: 210px；*/
+
+        -moz-column-count: 5；
+        /*-moz-column-gap: 20px；
+        -moz-column-rule: 5px solid #333；
+        -moz-column-width: 210px；*/
+
+        column-count: 5；
+        /*column-gap: 10px；
+        column-rule: 5px solid #333；
+        column-width: 210px；*/
+    }
+    
+    column-count 为列数； 
+    column-gap 为每列间隔距离； 
+    column-rule 为间隔边线大小； 
+    column-width 为每列宽度； 
+    
+    当只设置 column-width 时，浏览器窗口小于一列宽度时，列中内容自动隐藏； 
+    
+    当只设置 column-count 时，平均计算每列宽度，列内内容超出则隐藏； 
+    
+    都设了 column-count 和column-width，浏览器会根据 count 计算宽度和 width 比较，取大的那个值作为每列宽度，然后当窗口缩小时，width 的值为每列最小宽度。
+   [more information](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Using_multi-column_layouts)
+
+  3，绝对定位
+  
+  
+  
+css3存在很多浏览器不支持的问题,我用传统的浮动布局。
+
+
+    <div class="Pinterest">
+        <ul class="list1">
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+        </ul>
+        <ul class="list2">
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+        </ul>
+        <ul class="list3">
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+        </ul>
+        <ul class="list4">
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+        </ul>
+    </div>
+    
+写一下基本的样式：
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .Pinterest {
+            width: 960px;
+            margin: 0 auto;
+        }
+        
+        .Pinterest ul {
+            float: left;
+            width: 25%;
+        }
+        
+        .Pinterest ul li {
+            list-style: none;
+            text-align: center;
+            margin-right: 10px;
+        }
+        
+        .Pinterest ul.list1 li img {
+            width: 100%;
+            height: 140px;
+        }
+        
+        .Pinterest ul.list2 li img {
+            width: 100%;
+            height: 130px;
+        }
+        
+        .Pinterest ul.list3 li img {
+            width: 100%;
+            height: 120px;
+        }
+        
+        .Pinterest ul.list4 li img {
+            width: 100%;
+            height: 100px;
+        }
+
+
+
+	/*定义瀑布流方法*/
+ 
+        var load = false;
+        function Pinterest() {
+            var list = {
+                "list": [{
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流test just for fun"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达瀑布流思密达瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "8等哈克h发发s客户方卡斯"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达"
+                }]
+            },
+            load = true;
+            for (i in list.list) {
+                var pic = list.list[i].pic;
+                var title = list.list[i].txt;
+                var oUl = $('.Pinterest ul');
+                oUl.sort(function (a, b) {
+                    return $(a).height() - $(b).height();
+                })
+                var HTMLstr2 = '<li>' +
+                    '<img src="' + pic + '" alt="">' +
+                    '<p>' + title + '</p>' +
+                    '</li>';
+                $(oUl[0]).append(HTMLstr2);
+            }
+            load = false;
+        }
+        
+ 对几个list的高度进行从小到达的队列排序，值最小的那个则插入一个HTMLstr2，这样做不会出现只有一个list向下插入内容的情况。load主要是一个判断滚动的媒介。
+ 
+ 
+         $(function () {
+            var p = $("p");
+            for (i = 0; i < p.length; i++) {
+                p.css('color', randomColor());
+                $(window).scroll(function () {
+                    var top = $(window).scrollTop(),
+                        winH = $(window).height(),
+                        docH = $(document).height();
+                    if (docH == (top + winH)) {
+                        if(!load){
+                            Pinterest();
+                        }
+                    }
+                });
+            }
+        });
+        /*当网页的高度等于滚动条的垂直偏移+可见区域高度*/
+        
+        
+        
+顺便：
+
+`jQuery(window).height()`代表了当前可见区域的大小，而`jQuery(document).height()`则代表了整个文档的高度，可视具体情况使用.
+
+ 注意当浏览器窗口大小改变时(如最大化或拉大窗口后) 
+ 
+ jQuery(window).height() 随之改变，
+ 
+但是jQuery(document).height()是不变的。
+
+ 
+
+$(document).scrollTop() 获取垂直滚动的距离即当前滚动的地方的窗口顶端到整个页面顶端的距离
+$(document).scrollLeft() 这是获取水平滚动条的距离
+
+要获取顶端 只需要获取到scrollTop()==0的时候，就是顶端了
+
+要获取底端 只要获取scrollTop()>=$(document).height()-$(window).height()  就可以知道已经滚动到底端了
+
+$(document).height()  //是获取整个页面的高度
+$(window).height()  //是获取当前 也就是你浏览器所能看到的页面的那部分的高度  这个大小在你缩放浏览器窗口大小时 会改变 与document是不一样的，根据英文应该也能理解吧
+
+自己做个实验就知道了 
+
+
+		$(document).scroll(function(){
+    $("#lb").text($(document).scrollTop());
+	})
+	<span id="lb" style="top:100px;left:100px;position:fixed;"></span><!--一个固定的span标记 滚动时方便查看-->
+ 
+ 
+ <a href="http://www.zhangweiwei.cn/demo/article/pubu.html" target="_blank">瀑布流demo</a>
+ 

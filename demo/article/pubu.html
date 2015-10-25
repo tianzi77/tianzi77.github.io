@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流布局</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .Pinterest {
+            width: 960px;
+            margin: 0 auto;
+        }
+        
+        .Pinterest ul {
+            float: left;
+            width: 25%;
+        }
+        
+        .Pinterest ul li {
+            list-style: none;
+            text-align: center;
+            margin-right: 10px;
+        }
+        
+        .Pinterest ul.list1 li img {
+            width: 100%;
+            height: 140px;
+        }
+        
+        .Pinterest ul.list2 li img {
+            width: 100%;
+            height: 130px;
+        }
+        
+        .Pinterest ul.list3 li img {
+            width: 100%;
+            height: 120px;
+        }
+        
+        .Pinterest ul.list4 li img {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Pinterest">
+        <ul class="list1">
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+        </ul>
+        <ul class="list2">
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+        </ul>
+        <ul class="list3">
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+        </ul>
+        <ul class="list4">
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+            <li><img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="">
+                <p class="title">here is just some title</p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        function randomColor() {
+            var color = '#',
+                index,
+                arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e'];
+            for (var i = 0; i < 6; i++) {
+                index = Math.floor(Math.random() * arr.length);
+                color += arr[index];
+            }
+
+            return color;
+
+        }
+        
+        var load = false;
+        function Pinterest() {
+            var list = {
+                "list": [{
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流test just for fun"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达瀑布流思密达瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "8等哈克h发发s客户方卡斯"
+                }, {
+                    "pic": "http://www.zhangweiwei.cn/img/home-bg.jpg",
+                    "txt": "瀑布流思密达"
+                }]
+            },
+            load = true;
+            for (i in list.list) {
+                var pic = list.list[i].pic;
+                var title = list.list[i].txt;
+                var oUl = $('.Pinterest ul');
+                oUl.sort(function (a, b) {
+                    return $(a).height() - $(b).height();
+                })
+                var HTMLstr2 = '<li>' +
+                    '<img src="' + pic + '" alt="">' +
+                    '<p>' + title + '</p>' +
+                    '</li>';
+                $(oUl[0]).append(HTMLstr2);
+            }
+            load = false;
+        }
+
+        $(function () {
+            var p = $("p");
+            for (i = 0; i < p.length; i++) {
+                p.css('color', randomColor());
+                $(window).scroll(function () {
+                    var top = $(window).scrollTop(),
+                        winH = $(window).height(),
+                        docH = $(document).height();
+                    if (docH == (top + winH)) {
+                        if(!load){
+                            Pinterest();
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
