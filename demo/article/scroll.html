@@ -6,16 +6,16 @@
     <title>scroll-snap-points</title>
     <style>
         .full {
-            width: 200px;
-            scroll-snap-type: mandatory;
-            scroll-snap-points-x: repeat(220px);
-            overflow: hidden;
+/*            width: 200px;*/
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: mandatory;
+            overflow: auto;
             font-size: 0;
-            padding: 10px;
+/*            padding: 10px;*/
             background: pink;
-            -webkit-overflow-scrolling: touch;
+/*            -webkit-overflow-scrolling: touch;*/
             -webkit-scroll-snap-type:mandatory;
-            -webkit-snap-points-x:repeat(220px);
+            -webkit-scroll-snap-points-x:repeat(100%);
         }
         
         .full>div {
