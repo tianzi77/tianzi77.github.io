@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
 
     //primary navigation slide-in effect
     $(window).scroll(function(){
-        $('.navbar-custom').addClass('is-visible');
+        $('.navbar-custom').addClass('is-fixed');
     });
     
 //    if ($(window).width() > MQL) {
