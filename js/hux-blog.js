@@ -41,8 +41,8 @@ $(document).ready(function () {
     //primary navigation slide-in effect
     $(function(){
         $(window).scroll(function(){
+        alert(999)
         $('.navbar-custom').addClass('is-fixed');
-        console.log(1111)
     });
     })
 
