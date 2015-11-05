@@ -35,13 +35,17 @@ $(document).ready(function () {
 });
 
 // Navigation Scripts to Show Header on Scroll-Up
-jQuery(document).ready(function($) {
-    var MQL = 1170;
+//jQuery(document).ready(function($) {
+//    var MQL = 1170;
 
     //primary navigation slide-in effect
-    $(window).scroll(function(){
+    $(function(){
+        $(window).scroll(function(){
         $('.navbar-custom').addClass('is-fixed');
+        console.log(1111)
     });
+    })
+
     
 //    if ($(window).width() > MQL) {
 //        var headerHeight = $('.navbar-custom').height();
@@ -66,4 +70,4 @@ jQuery(document).ready(function($) {
 //                this.previousTop = currentTop;
 //            });
 //    }
-});
+//});
