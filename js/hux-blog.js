@@ -66,3 +66,12 @@ jQuery(document).ready(function($) {
 //            });
 //    }
 });
+
+$(function(){
+        $(window).scroll(function(){
+        if($(document).scrollTop>0){
+            alert(999);
+            $('.navbar-custom').addClass('is-visible');
+        }
+    })
+})
