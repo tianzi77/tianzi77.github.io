@@ -39,12 +39,7 @@ $(document).ready(function () {
 //    var MQL = 1170;
 
     //primary navigation slide-in effect
-    $(function(){
-        $(window).scroll(function(){
-        alert(999)
-        $('.navbar-custom').addClass('is-fixed');
-    });
-    })
+    $(window).ready(function(){$(window).scroll( function() { alert("ss") }); });
 
     
 //    if ($(window).width() > MQL) {
