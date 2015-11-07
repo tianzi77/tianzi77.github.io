@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>slide door</title>
+</head>
+<style type="text/css" rel="stylesheet">
+    #box {
+        background: url(images/bottom_left.png) no-repeat left bottom;
+        width: 300px;
+    }
+    
+    #hook1 {
+        background: url(images/bottom_right.png) no-repeat right bottom;
+    }
+    
+    #hook2 {
+        background: url(images/top_left.png) no-repeat left top;
+    }
+    
+    h1 {
+        background: url(images/top_right.png) no-repeat right top;
+        font-size: 20px;
+        line-height: 2;
+        padding: 10px 10px 0 30px;
+    }
+    
+    p {
+        padding: 0 30px 20px 30px;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div id="hook1">
+            <div id="hook2">
+                <h1>滑动门技术，宽度是可以任意设定哦 示例一</h1>
+                <p>使用两个钩子，也就是高手们说的hook，用来加上额外的图像</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="box">
+        <div id="hook1">
+            <div id="hook2">
+                <h1>滑动门技术，宽度是可以任意设定哦 示例二</h1>
+                <p>在这里并没有设置高度，所以高度会自动扩充</p>
+                <p>在这里并没有设置高度，所以高度会自动扩充</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="box" style="width:400px;">
+        <div id="hook1">
+            <div id="hook2">
+                <h1>滑动门技术，宽度是可以任意设定哦 示例三</h1>
+                <p>在这里把最外层的div宽度改了，这个圆角模型依然可以用哦</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

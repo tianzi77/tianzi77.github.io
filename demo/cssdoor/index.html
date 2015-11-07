@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>滑动门测试</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .wrap-box {
+            background: url(images/bottom_left.png) no-repeat left bottom;
+            width: 500px;
+        }
+        
+        .outer-box {
+            background: url(images/bottom_right.png) no-repeat right bottom;
+        }
+        
+        .inner-box {
+            background: url(images/top_left.png) no-repeat left top;
+        }
+        
+        h1 {
+            background: url(images/top_right.png) no-repeat right top;
+            font-size: 20px;
+            line-height: 2;
+            padding: 10px 10px 0 30px;
+        }
+        
+        p {
+            padding: 0 30px 20px 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap-box">
+        <div class="outer-box">
+            <div class="inner-box">
+                <h1>滑动门技术</h1>
+                <p>可以随便改变长度哦</p>      
+                <p>可以随便改变长度哦</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
