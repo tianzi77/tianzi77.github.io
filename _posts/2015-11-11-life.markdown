@@ -4,7 +4,7 @@ title:      "愿我能"
 subtitle:   " \"他有故事他有愁\""
 date:       2015-11-11 15:20:00
 author:     "ZWW"
-header-img: "img/post-bg-android.jpg"
+header-img: "img/post-bg-alitrip.jpg"
 tags:
     - life
 ---
