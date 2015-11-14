@@ -299,14 +299,14 @@ pre,
     height: 56px;
     line-height: 25px;
     background: url('/img/logo.png');
-    text-indent: -10em;
+    text-indent: -100em;
     width: 56px;
     height: 100%;
     background-size: cover;
     border-radius: 50%;
     -webkit-border-radius: 50%; 
     -moz-border-radius: 50%;
-    transition: all .5s linear;
+    transition: all .28s linear;
 }
 
 .navbar-custom .navbar-brand:hover {
