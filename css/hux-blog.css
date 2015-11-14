@@ -328,6 +328,12 @@ pre,
         color: white;
         padding: 20px;
         line-height: 20px;
+        background: url('./img/logo.png');
+        text-indent: -10em;
+        width: 61px;
+        height: 100%;
+        background-size: cover;
+        border-radius: 50%;
     }
     .navbar-custom .navbar-brand:hover,
     .navbar-custom .navbar-brand:focus {
