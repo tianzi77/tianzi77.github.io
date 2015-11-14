@@ -439,6 +439,7 @@ pre,
 @media only screen and (min-width: 768px) {
     .intro-header {
         margin-bottom: 20px;
+        margin-top: 61px;
         /* response on desktop */
     }
 }
