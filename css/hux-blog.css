@@ -299,7 +299,7 @@ pre,
     height: 56px;
     line-height: 25px;
     background: url('/img/logo.png');
-    text-indent: -100em;
+    text-indent: -10000em;
     width: 56px;
     height: 100%;
     background-size: cover;
