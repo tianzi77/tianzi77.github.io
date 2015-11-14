@@ -298,6 +298,14 @@ pre,
     color: white;
     height: 56px;
     line-height: 25px;
+    background: url('/img/logo.png');
+    text-indent: -10em;
+    width: 56px;
+    height: 100%;
+    background-size: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%; 
+    -moz-border-radius: 50%;
 }
 
 .navbar-custom .navbar-brand:hover {
