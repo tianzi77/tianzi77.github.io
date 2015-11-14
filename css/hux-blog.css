@@ -306,11 +306,14 @@ pre,
     border-radius: 50%;
     -webkit-border-radius: 50%; 
     -moz-border-radius: 50%;
+    -webkit-transition: all .28s linear;
     transition: all .28s linear;
 }
 
 .navbar-custom .navbar-brand:hover {
     color: rgba(255, 255, 255, 0.8);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 
@@ -339,7 +342,7 @@ pre,
         padding: 20px;
         line-height: 20px;
         background: url('/img/logo.png');
-        text-indent: -10em;
+/*        text-indent: -10em;*/
         width: 61px;
         height: 100%;
         background-size: cover;
