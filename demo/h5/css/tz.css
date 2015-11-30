@@ -671,7 +671,7 @@ span {
 
 /*i4媒介*/
 
-@media screen and (device-width: 320px) and (device-height: 480px) {
+@media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2) {
     .swiper-slide .answer {
         top: 35%;
     }
@@ -706,7 +706,7 @@ span {
 
 /*i6媒介*/
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
     .main-quiz-holder .question {
         height: 205px;
         top: 1%;
@@ -729,7 +729,7 @@ span {
 
 /*i6 plus*/
 
-@media only screen and (min-width: 414px) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
     .main-quiz-holder .question {
         height: 225px;
     }
