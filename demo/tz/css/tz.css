@@ -505,9 +505,9 @@ span {
 }
 .slide1 .button {
     width: 200px;
-    height: 80px;
+    height: 70px;
     background-color: #ff5d1d;
-    line-height: 80px;
+    line-height: 70px;
     position: absolute;
     top: 75%;
     left: 50%;
