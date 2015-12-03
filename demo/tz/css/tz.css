@@ -187,6 +187,7 @@ span {
     color: #ffffff;
     border: 5px solid #ffffff;
     border-radius: 10px;
+    text-align: left;
 }
 .main-quiz-holder .slide-container ul.answers .on {
     background-color: #ccc;
@@ -804,7 +805,10 @@ span {
 }
 
 /*公共指引动画一屏展示则不调用*/
-
+.slide1 .img-2,.slide1 .img-3,.slide1 .img-4{
+    -webkit-animation: swing 1s linear infinite;
+    animation: swing 1s linear infinite;
+}
 @-webkit-keyframes cirle {
     0% {
         padding: 0;

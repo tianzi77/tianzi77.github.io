@@ -112,22 +112,18 @@ author by tz 2015.11.30
                     $('.slide2').css('background', '#2a4456');
                     $('.logo').hide();
                     $('.result1').delay(300).fadeIn(0);
-                    $('.slide2').addClass('swiper-no-swiping'); //禁止滑动
                 } else if (score >= 15 && score <= 29) {
                     $('.slide2').css('background', '#2a4456');
                     $('.result2').delay(300).fadeIn(0);
                     $('.logo').hide();
-                    $('.slide2').addClass('swiper-no-swiping');
                 } else if (score >= 30 && score <= 40) {
                     $('.slide2').css('background', '#2a4456');
                     $('.result3').delay(300).fadeIn(0);
                     $('.logo').hide();
-                    $('.slide2').addClass('swiper-no-swiping');
                 } else if (score >= 8 && score <= 14) {
                     $('.slide2').css('background', '#2a4456');
                     $('.result1').delay(300).fadeIn(0);
                     $('.logo').hide();
-                    $('.slide2').addClass('swiper-no-swiping');
                 }
                 console.log('用户得分:' + score);
                 console.log("选A的题数" + secectTotal1);

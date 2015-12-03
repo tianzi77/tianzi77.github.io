@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="./css/tz.css" />
     <script src="./js/swiper.min.js" type="text/javascript"></script>
     <script src="./js/swiper.animate1.0.2.min.js" type="text/javascript"></script>
-    <script src="./js/zepto.min.js" type="text/javascript"></script>
     <script src="./js/jquery-1.10.1.min.js" type="text/javascript"></script>
     <script src="./js/quiz.js" type="text/javascript"></script>
 </head>
@@ -70,10 +69,9 @@
     <script type="text/javascript">
         var mySwiper = new Swiper('.swiper-container', {
             direction: 'vertical',
-            mousewheelControl: 'true',
-            paginationClickable: true,
             hashnav: false,
-            noSwiping: true, //第二屏题目答完后禁止滑动
+            preventLinksPropagation: true,
+            preventClicks: false,
             onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
                 swiperAnimateCache(swiper); //隐藏动画元素 
                 swiperAnimate(swiper); //初始化完成开始动画
