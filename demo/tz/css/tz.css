@@ -218,6 +218,8 @@ span {
     -moz-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
 */
     background-color: none;
+    -ms-touch-action: none;
+    touch-action: none;
 }
 .main-quiz-holder .slide-container .prev,
 .main-quiz-holder .slide-container .next {
