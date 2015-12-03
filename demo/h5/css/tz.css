@@ -111,6 +111,7 @@ span {
 .main-quiz-holder {
     margin: 0 auto;
     width: 100%;
+    height: 100%;
 }
 .main-quiz-holder * {
     margin: 0;
@@ -123,6 +124,7 @@ span {
 }
 .main-quiz-holder .slide-container {
     width: 100%;
+    height: 100%;
 }
 .results-container,
 .intro-container {
@@ -131,7 +133,7 @@ span {
 .results-container {}
 .main-quiz-holder .slide-container .question,
 .main-quiz-holder h2.qTitle {
-    margin: 10px 0 20px 0;
+    margin: 10px 5% 20px 5%;
     font-size: 20px;
     font-weight: normal;
 }
@@ -157,13 +159,13 @@ span {
     width: 100%;
     height: 60%;
     position: absolute;
-    top: 33%;
+    top: 36%;
     left: 0;
 }
 .main-quiz-holder .slide-container ul.answers li {
     height: 20%;
     margin: 5%;
-    text-align: left;
+    padding: 0px 5%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -192,18 +194,24 @@ span {
 .main-quiz-holder .slide-container ul.answers li:nth-child(1) {
     background: #f19900;
 }
+.main-quiz-holder .slide-container ul.answers li:nth-child(1):active {
+    background: #cc8200;
+}
 .main-quiz-holder .slide-container ul.answers li:nth-child(2) {
     background: #f85b36;
+}
+.main-quiz-holder .slide-container ul.answers li:nth-child(2):active {
+    background: #c93c1c;
 }
 .main-quiz-holder .slide-container ul.answers li:nth-child(3) {
     background: #03b394;
 }
+.main-quiz-holder .slide-container ul.answers li:nth-child(3):active {
+    background: #037964;
+}
 .main-quiz-holder .slide-container ul.answers li.selected {
-    background: #6fb2e5;
-    box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
-    -o-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
-    -webkit-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
-    -moz-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
+    -ms-touch-action: none;
+    touch-action: none;
 }
 .main-quiz-holder .slide-container .prev,
 .main-quiz-holder .slide-container .next {
@@ -283,10 +291,8 @@ span {
 }
 .main-quiz-holder .nav-start {
     display: block;
-    margin: 40% auto 0 auto;
-    line-height: 32px;
-    font-size: 20px;
-    font-weight: bold;
+    width: 100%;
+    height: 100%;
 }
 .main-quiz-holder .nav-container {
     padding: 5px;
@@ -295,6 +301,7 @@ span {
     top: 81%;
     right: 8%;
     width: 81%;
+    display: none;
 }
 .main-quiz-holder .result-row {
     width: 80px;
@@ -372,7 +379,7 @@ span {
     color: #474747;
 }
 .main-quiz-holder .question {
-    width: 100%;
+    width: 90%;
     height: 100%;
     height: 161.5px;
     background: url(../images/bg.png) no-repeat;
@@ -396,6 +403,9 @@ span {
     -ms-flex-pack: center;
     justify-content: center;
 }
+.main-quiz-holder .question span {
+    padding: 0 5%;
+}
 .main-quiz-holder .share-button {
     display: block;
     margin: 15px 0;
@@ -409,9 +419,12 @@ span {
 .main-quiz-holder img {
     border: none;
 }
+
 /*question style E*/
 
+
 /* main  based on i5*/
+
 
 /* commmon guide button */
 
@@ -502,6 +515,9 @@ span {
     font-size: 3rem;
     color: #fff;
     box-shadow: 5px 5px 5px #ccc;
+}
+.slide1 .button:active {
+    background-color: #d84105;
 }
 
 /*slide2*/
@@ -611,10 +627,10 @@ span {
 .result1 .bg1,
 .result2 .bg1,
 .result3 .bg1 {
-    width: 100%;
+    width: 90%;
     position: absolute;
     top: 26%;
-    left: 0;
+    left: 5%;
 }
 .result1 .bg1,
 .result2 .bg1 {
@@ -627,10 +643,10 @@ span {
 .result2 .details,
 .result3 .details {
     position: absolute;
-    top: 40%;
+    top: 37%;
     color: #666666;
     font-size: 15px;
-    padding: 3% 5%;
+    margin: 3% 12%;
     text-align: justify;
     line-height: 2rem;
 }
@@ -643,7 +659,7 @@ span {
 .result2 .down,
 .result3 .down {
     position: absolute;
-    bottom: 5%;
+    bottom: 6%;
     width: 80%;
     right: 2%;
     text-decoration: none;
@@ -660,7 +676,7 @@ span {
     width: 54px;
     height: 54px;
     bottom: 5%;
-    left: 2%;
+    left: 1.5%;
 }
 .result1 .down span,
 .result2 .down span,
@@ -669,7 +685,7 @@ span {
     font-size: 2rem;
 }
 
-/*i4媒介*/
+/*i4媒介设备像素比为2*/
 
 @media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2) {
     .swiper-slide .answer {
@@ -699,14 +715,49 @@ span {
     .slide-down {
         top: 93%;
     }
-    .main-quiz-holder .question{
+    .main-quiz-holder .question {
         top: 0%;
+    }
+    .slide1 .button {
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+/*i4媒介设备像素比为1*/
+
+@media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1) {
+    .swiper-slide .logo {
+        bottom: .5%;
+    }
+    .main-quiz-holder .question {
+        top: 0;
+    }
+    .main-quiz-holder .nav-container {
+        top: 82%;
+    }
+    .main-quiz-holder .notice {
+        bottom: 65px;
+    }
+    .result1 i,
+    .result2 i,
+    .result3 i {
+        bottom: 0;
+    }
+    .result1 .down,
+    .result2 .down,
+    .result3 .down {
+        bottom: 1%;
+    }
+    .slide1 .button {
+        height: 60px;
+        line-height: 60px;
     }
 }
 
 /*i6媒介*/
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
     .main-quiz-holder .question {
         height: 205px;
         top: 1%;
@@ -721,7 +772,7 @@ span {
     .result3 .bg1 {
         top: 25%;
     }
-    .main-quiz-holder .notice{
+    .main-quiz-holder .notice {
         right: 30px;
         bottom: 99px;
     }
@@ -729,7 +780,7 @@ span {
 
 /*i6 plus*/
 
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
     .main-quiz-holder .question {
         height: 225px;
     }
@@ -740,13 +791,20 @@ span {
     .result3 .bg1 {
         top: 22%;
     }
-    .main-quiz-holder .notice{
+    .main-quiz-holder .notice {
         right: 33px;
         bottom: 120px;
     }
+    .result1 i,
+    .result2 i,
+    .result3 i {
+        left: 5%;
+        right: 3%;
+    }
 }
 
-/*公共动画*/
+/*公共指引动画一屏展示则不调用*/
+
 @-webkit-keyframes cirle {
     0% {
         padding: 0;
@@ -791,3 +849,5 @@ span {
         margin-left: -24px;
     }
 }
+
+/* the end */

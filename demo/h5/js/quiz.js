@@ -1,12 +1,12 @@
 /*
 js计算用户答题分数
-common for ued h5
+common for Ctrip ued h5 project
 based on jquery
 author by tz 2015.11.30
 */
 
 (function ($) {
-    $.fn.jquizzy = function (settings) {
+    $.fn.quiz = function (settings) {
         var defaults = {
             questions: null,
             startImg: 'images/start.gif',
@@ -22,16 +22,18 @@ author by tz 2015.11.30
         }
         var superContainer = $(this),
             answers = [],
-            introFob = '	<div class="intro-container slide-container ani" swiper-animate-effect="lightSpeedIn"><a class="nav-start" href="#"><p>人在职场漂，哪有不出差。</p><p>肩上责任重，不敢有懈怠。</p><p>顿顿飞机餐，夜夜睡宾馆。</p><p>弱弱问一句，你是哪一级的出差侠？</p><br/><br/><span><img src="' + config.startImg + '"></span></a></div>	',
-            exitFob = '<div class="results-container slide-container"><div class="question-number">' + config.endText + '</div><div class="result-keeper"></div></div><div class="notice">请选择一个选项！</div><div class="progress-keeper" ><div class="progress"></div></div>',
+            //插入介绍页面dom结构并定义动画
+            introFob = '<div class="intro-container slide-container"><div class="nav-start"><div class="swiper-slide slide1"><img src="./images/man.png" alt="超人" class="img-1 ani fadeInUp animated"><img src="./images/left-yun.png" alt="云" class="img-2 ani bounceInDown animated "><img src="./images/center-yun.png" alt="云" class="img-3 ani bounceInDown animated"><img src="./images/right-yun.png" alt="云" class="img-4 ani bounceInDown animated"><img src="./images/middle.png" alt="形状" class="img-5 ani fadeInLeft animated"><img src="./images/middle2.png" alt="test" class="img-6 ani fadeInLeft animated"><div class="button ani rubberBand animated">开始测验</div></div></div></div>	',
+
+            exitFob = '<div class="results-container slide-container"><div class="question-number">' + config.endText + '</div><div class="result-keeper"></div></div><div class="notice"></div><div class="progress-keeper" ><div class="progress"></div></div>',
             contentFob = '',
             questionsIteratorIndex,
             answersIteratorIndex;
         superContainer.addClass('main-quiz-holder');
         for (questionsIteratorIndex = 0; questionsIteratorIndex < config.questions.length; questionsIteratorIndex++) {
-            contentFob += '<div class="slide-container"><div class="question-number">' + (questionsIteratorIndex + 1) + '/' + config.questions.length + '</div><div class="question ani" swiper-animate-effect="lightSpeedIn">' + config.questions[questionsIteratorIndex].question + '</div><ul class="answers">';
+            contentFob += '<div class="slide-container"><div class="question-number">' + (questionsIteratorIndex + 1) + '/' + config.questions.length + '</div><div class="question"><span class="ani lightSpeedIn animated">' + config.questions[questionsIteratorIndex].question + '</span></div><ul class="answers">';
             for (answersIteratorIndex = 0; answersIteratorIndex < config.questions[questionsIteratorIndex].answers.length; answersIteratorIndex++) {
-                contentFob += '<li class="ani" swiper-animate-effect="flipInX">' + config.questions[questionsIteratorIndex].answers[answersIteratorIndex] + '</li>';
+                contentFob += '<li class="">' + config.questions[questionsIteratorIndex].answers[answersIteratorIndex] + '</li>';
             }
             contentFob += '</ul><div class="nav-container">';
             if (questionsIteratorIndex !== 0) {
@@ -88,7 +90,10 @@ author by tz 2015.11.30
                 thisLi.addClass('selected');
             }
         });
-        superContainer.find('.nav-start').click(function () {
+
+        superContainer.find('.button').click(function () {
+            console.log($(this));
+            console.log("测试开始");
             $(this).parents('.slide-container').fadeOut(500,
                 function () {
                     $(this).next().fadeIn(500);
@@ -98,16 +103,18 @@ author by tz 2015.11.30
         });
 
 
-        superContainer.find('.next').click(function () {
+        superContainer.find('li').click(function () {
             if ($(this).parents('.slide-container').find('li.selected').length === 0) {
                 notice.fadeIn(300).fadeOut(3000);
                 return false;
             }
             notice.hide();
-            $(this).parents('.slide-container').fadeOut(500,
+
+            $(this).parents('.slide-container').fadeOut(0,
                 function () {
-                    $(this).next().fadeIn(500);
+                    $(this).next().fadeIn(0);//立即消失和出现 不延迟
                 });
+
             progress.animate({
                     width: progress.width() + Math.round(progressWidth / questionLength)
                 },
@@ -126,9 +133,9 @@ author by tz 2015.11.30
                 500);
             return false;
         });
-        superContainer.find('.final').click(function () {
+        $("ul:last() li").click(function () {
             if ($(this).parents('.slide-container').find('li.selected').length === 0) {
-                notice.fadeIn(300).fadeOut(3000);
+//                notice.fadeIn(300).fadeOut(3000);
                 return false;
             }
             superContainer.find('li.selected').each(function (index) {
@@ -187,25 +194,31 @@ author by tz 2015.11.30
                 if ($('.answers li:nth-child(1)').last().hasClass('selected')) {
                     $('.slide2').css('background', '#2a4456');
                     $('.logo').hide();
-                    $('.result1').fadeIn(500);
-                    $('.result1').addClass('swiper-no-swiping'); //禁止滑动
+                    $('.result1').delay(300).fadeIn(0);
+                    $('.slide2').addClass('swiper-no-swiping'); //禁止滑动
                 } else if (score >= 15 && score <= 29) {
                     $('.slide2').css('background', '#2a4456');
-                    $('.result2').fadeIn(500);
+                    $('.result2').delay(300).fadeIn(0);
                     $('.logo').hide();
-                    $('.result2').addClass('swiper-no-swiping');
+                    $('.slide2').addClass('swiper-no-swiping');
                 } else if (score >= 30 && score <= 40) {
                     $('.slide2').css('background', '#2a4456');
-                    $('.result3').fadeIn(500);
+                    $('.result3').delay(300).fadeIn(0);
                     $('.logo').hide();
-                    $('.result3').addClass('swiper-no-swiping');
+                    $('.slide2').addClass('swiper-no-swiping');
                 } else if (score >= 8 && score <= 14) {
                     $('.slide2').css('background', '#2a4456');
-                    $('.result1').fadeIn(500);
+                    $('.result1').delay(300).fadeIn(0);
                     $('.logo').hide();
-                    $('.result1').addClass('swiper-no-swiping');
+                    $('.slide2').addClass('swiper-no-swiping');
                 }
                 console.log('用户得分:' + score);
+                console.log("选A的题数" + secectTotal1);
+                console.log("选B的题数" + secectTotal2);
+                console.log("选C的题数" + secectTotal3);
+                console.log("选A的分数" + total1);
+                console.log("选B的分数" + total2);
+                console.log("选C的分数" + total3);
             }
 
 
@@ -223,6 +236,7 @@ author by tz 2015.11.30
                     $(this).next().fadeIn(500);
                 });
             return false;
+
         });
     };
 })(jQuery);
