@@ -210,14 +210,6 @@ span {
     background: #037964;
 }
 .main-quiz-holder .slide-container ul.answers li.selected {
-    /*
-    background: #6fb2e5;
-    box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
-    -o-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
-    -webkit-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
-    -moz-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
-*/
-    background-color: none;
     -ms-touch-action: none;
     touch-action: none;
 }

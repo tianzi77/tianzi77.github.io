@@ -110,7 +110,7 @@ author by tz 2015.11.30
             }
             notice.hide();
 
-            $(this).parents('.slide-container').delay(500).fadeOut("fast",
+            $(this).parents('.slide-container').fadeOut("fast",
                 function () {
                     $(this).next().fadeIn("fast");//立即消失和出现 不延迟
                 });
