@@ -25,7 +25,7 @@ author by tz 2015.11.30
             //插入介绍页面dom结构并定义动画
             introFob = '<div class="intro-container slide-container"><div class="nav-start"><div class="swiper-slide slide1"><img src="./images/man.png" alt="超人" class="img-1 ani fadeInUp animated"><img src="./images/left-yun.png" alt="云" class="img-2 ani bounceInDown animated "><img src="./images/center-yun.png" alt="云" class="img-3 ani bounceInDown animated"><img src="./images/right-yun.png" alt="云" class="img-4 ani bounceInDown animated"><img src="./images/middle.png" alt="形状" class="img-5 ani fadeInLeft animated"><img src="./images/middle2.png" alt="test" class="img-6 ani fadeInLeft animated"><div class="button ani rubberBand animated">开始测验</div></div></div></div>	',
 
-            exitFob = '<div class="results-container slide-container"><div class="question-number">' + config.endText + '</div><div class="result-keeper"></div></div><div class="notice">请选择一个选项！</div><div class="progress-keeper" ><div class="progress"></div></div>',
+            exitFob = '<div class="results-container slide-container"><div class="question-number">' + config.endText + '</div><div class="result-keeper"></div></div><div class="notice"></div><div class="progress-keeper" ><div class="progress"></div></div>',
             contentFob = '',
             questionsIteratorIndex,
             answersIteratorIndex;
@@ -105,14 +105,14 @@ author by tz 2015.11.30
 
         superContainer.find('li').click(function () {
             if ($(this).parents('.slide-container').find('li.selected').length === 0) {
-                notice.fadeIn(300).fadeOut(3000);
+//                notice.fadeIn(300).fadeOut(3000);
                 return false;
             }
             notice.hide();
 
-            $(this).parents('.slide-container').fadeOut("fast",
+            $(this).parents('.slide-container').delay(500).fadeOut("fast",
                 function () {
-                    $(this).next().fadeIn();//立即消失和出现 不延迟
+                    $(this).next().fadeIn("fast");//立即消失和出现 不延迟
                 });
 
             progress.animate({
