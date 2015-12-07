@@ -26,9 +26,8 @@
             <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=0&amp;id=102978561&amp;auto=0&amp;height=430"></iframe>
         </div>
     </div>
-    <div id="scrollTop" >
-        <div class="level-2"></div>
-        <div class="level-3"></div>
+    <div class="actGotop">
+        <a href="javascript:;" title="Top"></a>
     </div>
     <!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
     <script>
@@ -43,53 +42,21 @@
             $('#music-control').mouseenter(function() {
                 $('#music-control').addClass('on');
                 $('#music-content').show();
-            })
+            });
             $('#music-content').mouseleave(function() {
                 $('#music-control').removeClass('on');
                 $('#music-content').hide();
-            })
+            });
+        $(window).scroll(function() {		
+		  if($(window).scrollTop() >= 100){
+			$('.actGotop').fadeIn(300); 
+		  }else{    
+			$('.actGotop').fadeOut(300);    
+		}  
+	});
+	   $('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});	
         })
         
-$(document).ready(function(){
-	/*侧边二维码 点击变小，再点变大*/
-	function  showErweima()
-	{
-		$('#mumayiright').hover(function()
-		{
-			$('#mumayiright').find('div').addClass('block');
-		},function()
-		{
-			$('#mumayiright').find('div').removeClass('block');
-		});
-		
-		$('#closeright').click(function()
-		{
-			$('#box_erwei').addClass('none');	
-			$('#box_erwei_s').removeClass('none');	
-		});
-		$('#box_erwei_s').click(function()
-		{
-			$('#box_erwei_s').addClass('none');
-			$('#box_erwei').removeClass('none');
-		});
-	};
-	showErweima();
-});
-
-
-/*如果在IE6 侧边二维码处理方式 */
-if(window.navigator.userAgent.indexOf('MSIE 6')!=-1)
-{
-	//是
-	window.onload=window.onscroll=window.onresize=function ()
-	{
-		var oDiv=document.getElementById('box_erwei');
-		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
-		
-		oDiv.style.top=scrollTop+document.documentElement.clientHeight/2+'px';
-	};
-}
-
     </script>
 </body>
 
