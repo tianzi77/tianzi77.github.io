@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>这是一份残酷的90后测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="text/javascript" src="./images/jquery.min.js"></script>
+    <style type="text/css">
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        #h1,
+        #h2,
+        #h3,
+        #h4 {
+            width: 120px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        
+        #h1 img,
+        #h2 img,
+        #h3 img,
+        #h4 img {
+            width: 100%;
+        }
+        
+        #h2,
+        #h4 {
+            width: 220px;
+            margin-top: 0px;
+        }
+        
+        #bg-image,
+        #page,
+        #page1,
+        #s-0-img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        
+        #q-content,
+        #btn-group,
+        #p3c,
+        #btn2-group {
+            width: 280px;
+            margin: 0 auto;
+        }
+        
+        #title-img {
+            width: 35px;
+            float: left;
+        }
+        
+        #q-title {
+            line-height: 40px;
+            color: #ffffff;
+            font-weight: bold;
+            height: 40px;
+        }
+        
+        #title {
+            float: left;
+            width: 242px;
+            line-height: 25px;
+            margin-left: 3px;
+        }
+        
+        #q-ans p {
+            line-height: 25px;
+            color: #ffffff;
+            font-weight: bold;
+            margin-left: 30px;
+        }
+        
+        #btn,
+        #btn2,
+        #btn3 {
+            width: 120px;
+        }
+        
+        #btn2,
+        #btn3 {
+            float: left;
+            margin-left: 10px;
+        }
+        
+        #btn3 {
+            margin-left: 15px;
+        }
+        
+        #p1-c,
+        #p2c,
+        #p3c {
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        
+        .p1-m {
+            width: 250px;
+            margin: 0 auto;
+        }
+        
+        .p1-m img {
+            width: 100%;
+        }
+        
+        #result-msg {
+            width: 280px;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        #btn-group {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        var answers = [{
+            title: "以下哪个成语不是90后的杰作?",
+            ans: [
+                "地命海心",
+                "毒德大学",
+                "口嫌体正直",
+                "拿经滚"
+            ],
+            right: 1
+        }, {
+            title: "世界上第一个使用全息投影技术举办演唱会的虚拟偶像是?",
+            ans: [
+                "洛天依",
+                "初音未来",
+                "镜音双子",
+                "凉宫春日"
+            ],
+            right: 1
+        }, {
+            title: "宅舞你知道是啥吗?",
+            ans: [
+                "和御宅文化相关的舞蹈",
+                "非洲刚果部落的传统舞蹈",
+                "宅男们为了减肥跳的健身舞",
+                "郑多燕健美操的居家版"
+            ],
+            right: 0
+        }, {
+            title: "以下哪一个不是TFboys的成员?",
+            ans: [
+                "王俊凯",
+                "易烊千玺",
+                "黄子韬",
+                "王源"
+            ],
+            right: 2
+        }, {
+            title: "最火的QQ群兴趣部落是?",
+            ans: [
+                "TFBOYS",
+                "EXO",
+                "陈伟霆",
+                "李易峰"
+            ],
+            right: 0
+        }];
+        $(document).ready(function() {
+
+
+            var w = $(window).width();
+            var h = $(window).height();
+            $("#q-l").width(w * 0.4);
+            $("#q-0").width(w * 0.3);
+            $("#q-1").width(w * 0.64);
+            $("#q-2").width(w * 0.5);
+            $("#btn-q").width(w * 0.3);
+            if (h <= 420) {
+                $("#q-l").width(100);
+                $("#btn-q").width(80);
+                $("#q-1").width(150);
+                $("#q-2").width(120);
+                $("#q-0").width(120);
+            }
+            $("#page,#page1,#bg-image,#s-0-img,#p2-img,#page2,#share").width(w).height(h);
+            var init = function(index) {
+                if (index == 4) {
+                    $("#btn").attr("src", "assets/images/b2.png");
+                }
+                var an = answers[index];
+                $("#title-img").attr("src", "images/" + index + ".png");
+                $("#title").html(an.title);
+                var html = "";
+                for (var i = 0; i < an.ans.length; i++) {
+                    html += '<label for="a_' + i + '"><p><input type="radio" name="an" value="' + i + '" id="a_' + i + '">' + an.ans[i] + '</p></label>';
+                }
+                $("#q-ans").html(html);
+            }
+            var cindex = 0;
+            init(cindex);
+            var hd = [];
+            $("#btn").click(function() {
+                var ans = $("input[name='an']:checked").val();
+                if (!ans) {
+                    alert("至少选择一项");
+                    return;
+                }
+                hd.push(ans);
+                if (hd.length == 5) {
+                    $("#page").hide();
+                    $("#page2").show();
+                    var result = 0;
+                    for (var i = 0; i < hd.length; i++) {
+                        if (answers[i].right == hd[i])
+                            result += 20;
+                    }
+                    $("#result").attr("src", "assets/images/r" + result + ".png");
+                    if (result >= 0 && result <= 20) {
+                        $("#result-msg").html("最美不过夕阳红，温馨又从容");
+                    }
+                    if (result > 20 && result <= 40) {
+                        $("#result-msg").html("您在公园遛鸟和跳广场舞的同时，建议也发挥余热，跟上时代哦");
+                    }
+                    if (result > 40 && result <= 60) {
+                        $("#result-msg").html("想接近90后吗？快去报补习班吧...");
+                    }
+                    if (result > 60 && result <= 80) {
+                        $("#result-msg").html("我掐脚一算，你身上年轻的基因还没消散");
+                    }
+                    if (result >= 100) {
+                        $("#result-msg").html("喜大普奔！快去和90后愉快地玩耍吧！！");
+                    }
+                    return;
+                }
+                cindex++;
+                init(cindex);
+            });
+            $("#bt1").click(function() {
+                $("#page1").hide();
+                $("#page").show();
+            });
+            $("#btn2").click(function() {
+                location.reload(true);
+            });
+            $("#btn3").click(function() {
+                $("#share").show();
+            });
+            $("#share").click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+    <style type="text/css"></style>
+</head>
+
+<body style="zoom: 1;">
+    <img src="./images/s-4.png" style="display:none;">
+    <div id="page1" style="width: 1680px; height: 881px;">
+        <img src="./images/s-0.png" id="s-0-img" style="width: 1680px; height: 881px;">
+        <div id="p1-c">
+            <div class="p1-m" style="width: 504px; margin-top: 40px;" id="q-0">
+                <img src="./images/s-1.png">
+            </div>
+            <div class="p1-m" style="width: 1075.2px; margin-top: 20px;" id="q-1">
+                <img src="./images/s-2.png">
+            </div>
+            <div class="p1-m" style="width: 840px; margin-top: 20px;" id="q-2">
+                <img src="./images/s-3.png">
+            </div>
+            <div class="p1-m" style="width: 672px;" id="q-l">
+                <img src="./images/s-4.png">
+            </div>
+            <div class="p1-m" style="width: 504px; text-align: center;" id="btn-q">
+                <img src="./images/s-5.png" id="bt1">
+            </div>
+        </div>
+    </div>
+    <div id="page" style="display: none; width: 1680px; height: 881px;">
+        <img src="./images/1-0.jpg" id="bg-image" style="width: 1680px; height: 881px;">
+        <div id="p2c">
+            <div id="h1" style="margin-top: 15px;">
+                <img src="./images/1-1.png">
+            </div>
+            <div id="h2" style="margin-top: 15px;">
+                <img src="./images/1-2.png">
+            </div>
+            <div id="q-content" style="margin-top: 15px;">
+                <div id="q-title">
+                    <div><img id="title-img" src="./images/0.png"></div>
+                    <div id="title">以下哪个成语不是90后的杰作?</div>
+                </div>
+                <div id="q-ans">
+                    <label for="a_0">
+                        <p>
+                            <input type="radio" name="an" value="0" id="a_0">地命海心</p>
+                    </label>
+                    <label for="a_1">
+                        <p>
+                            <input type="radio" name="an" value="1" id="a_1">毒德大学</p>
+                    </label>
+                    <label for="a_2">
+                        <p>
+                            <input type="radio" name="an" value="2" id="a_2">口嫌体正直</p>
+                    </label>
+                    <label for="a_3">
+                        <p>
+                            <input type="radio" name="an" value="3" id="a_3">拿经滚</p>
+                    </label>
+                </div>
+            </div>
+            <div id="btn-group" style="margin-top: 5px;">
+                <img src="./images/btn.png" id="btn">
+            </div>
+        </div>
+    </div>
+    <div id="page2" style="display: none; width: 1680px; height: 881px;">
+        <img src="./images/1-0.jpg" id="p2-img" style="width: 1680px; height: 881px;">
+        <div id="p3c">
+            <div id="h3">
+                <img src="./images/1-1.png">
+            </div>
+            <div id="h4" style="margin-top: 15px;">
+                <img src="./images/1-2(1).png">
+            </div>
+            <div>
+                <div style="width: 120px;height: 120px;margin: 0 auto;position: relative;margin-top: 15px;">
+                    <img src="./images/w-1.png" style="width: 120px;position: absolute;" id="result">
+                </div>
+            </div>
+            <div id="result-msg"></div>
+            <div id="btn2-group">
+                <img src="./images/w-2.png" id="btn2">
+                <img src="./images/w-3.png" id="btn3">
+            </div>
+        </div>
+    </div>
+    <div id="share" style="position: fixed; top: 0px; left: 0px; text-align: right; display: none; width: 1680px; height: 881px; background-color: rgba(0, 0, 0, 0.498039);">
+        <img src="./images/share.png" style="width: 230px;">
+    </div>
+    <script type="text/javascript">
+        var shareFriend = function(r, fn) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url": r.imgurl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": r.link,
+                "desc": r.desc,
+                "title": r.title
+            }, function(res) {
+                setTimeout(fn, 1);
+            });
+        };
+        var shareTimeline = function(r, fn) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": r.imgurl,
+                "img_width": "200",
+                "img_height": "200",
+                "link": r.link,
+                "desc": r.title + r.desc,
+                "title": r.title
+            }, function(res) {
+                setTimeout(fn, 1);
+            });
+        };
+        document.addEventListener('WeixinJSBridgeReady', function() {
+            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+                shareFriend({
+                    imgurl: "http://" + location.host + "/q90/assets/images/QQ123.jpg",
+                    title: "这是一份残酷的90后测试，各位请慎点……",
+                    desc: "",
+                    link: location.href
+                }, function() {});
+            });
+            WeixinJSBridge.on('menu:share:timeline', function(argv) {
+                shareTimeline({
+                    imgurl: "http://" + location.host + "/q90/assets/images/QQ123.jpg",
+                    title: "这是一份残酷的90后测试，各位叔叔阿姨请慎点……",
+                    desc: "",
+                    link: location.href
+                }, function() {});
+            });
+
+            WeixinJSBridge.call('showOptionMenu');
+        }, false);
+    </script>
+    <div style="display: none;">
+        <script type="text/javascript" src="./images/stats" charset="UTF-8"></script>
+    </div>
+
+</body>
+
+</html>
