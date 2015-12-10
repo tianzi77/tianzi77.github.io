@@ -1163,10 +1163,8 @@ body {
 .actGotop {
     position: fixed;
     _position: absolute;
-    bottom: -20px;
-    right: 50px;
-    width: 150px;
-    height: 195px;
+    bottom: 77px;
+    right: 10px;
     display: none;
 }
 .actGotop  .plane{
@@ -1184,24 +1182,10 @@ body {
     line-height: 16px;
     color: #fff;
     font-size: 12px;
+    -webkit-transition: all linear .5s;
+    transition: all linear .5s;
     
 }
 .actGotop:hover .back-info{
     background-color: #abcdef;
 }
-/*
-.actGotop a,
-.actGotop a:link {
-    width: 150px;
-    height: 195px;
-    display: inline-block;
-    background: url(../img/blog7year_gotop.png) no-repeat;
-    _background: url(../img/blog7year_gotop.gif) no-repeat;
-    outline: none;
-}
-.actGotop a:hover {
-    width: 150px;
-    height: 195px;
-    background: url(../img/blog7year_gotopd.gif) no-repeat;
-    outline: none;
-}*/
