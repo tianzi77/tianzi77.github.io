@@ -1169,6 +1169,27 @@ body {
     height: 195px;
     display: none;
 }
+.actGotop  .plane{
+    background:url(../img/top.gif) no-repeat;
+    width: 54px;
+    height: 30px;
+    zoom:1;
+}
+.actGotop .back-info{
+    border-radius: 3px;
+    background-color: #b4b4b4;
+    width:5em;
+    text-align:center;
+    height: 16px;
+    line-height: 16px;
+    color: #fff;
+    font-size: 12px;
+    
+}
+.actGotop:hover .back-info{
+    background-color: #abcdef;
+}
+/*
 .actGotop a,
 .actGotop a:link {
     width: 150px;
@@ -1183,4 +1204,4 @@ body {
     height: 195px;
     background: url(../img/blog7year_gotopd.gif) no-repeat;
     outline: none;
-}
+}*/
