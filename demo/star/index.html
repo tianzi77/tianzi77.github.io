@@ -199,6 +199,91 @@
             width: 100px;
             height: 20px;
         }
+        /*第四种方式*/
+        
+        #demo4 {
+            transform: rotateY(180deg);
+            display: inline-block;
+            background: #FFF;
+            font-size: 40px;
+        }
+        
+        #demo4 input[type="radio"] {
+            display: none;
+        }
+        
+        #demo4 input[type="radio"]:checked + label>span,
+        #demo4 input[type="radio"]:checked ~ label>span,
+        #demo4 input[type="radio"] + label:hover > span,
+        #demo4 input[type="radio"] + label:hover ~ label > span {
+            color: gold;
+        }
+        
+        #demo4 input[type="radio"] + label:hover ~ label > span {
+            opacity: 0.5;
+        }
+        
+        #demo4 label>span::before {
+            content: "☆";
+        }
+        
+        label>span::after {
+            content: "★";
+            display: none
+        }
+        
+        #demo4 input[type="radio"]:checked + label>span::before,
+        #demo4 input[type="radio"]:checked ~ label > span::before,
+        #demo4 input[type="radio"] + label:hover > span::before,
+        #demo4 input[type="radio"] + label:hover ~ label > span::before {
+            display: none;
+        }
+        
+        #demo4 input[type="radio"]:checked + label>span::after,
+        #demo4 input[type="radio"]:checked ~ label > span::after,
+        #demo4 input[type="radio"] + label:hover>span::after,
+        #demo4 input[type="radio"] + label:hover ~ label > span::after {
+            display: inline-block;
+        }
+        /*第五种方式*/
+        
+        .demo5 {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            width: 115px;
+        }
+        
+        .demo5 span:hover::before,
+        .demo5 span:hover~span::before {
+            content: '★';
+            color: #abcdef;
+            position: absolute;
+        }
+        /*第六种方式*/
+        
+        .heart-off,
+        .heart-on,
+        .heart-hover {
+            text-decoration: none;
+        }
+        
+        .heart-off:before,
+        .heart-on:before,
+        .heart-hover:before {
+            content: '\2665';
+        }
+        
+        .heart-off {
+            color: rgba(150, 150, 150, .5);
+        }
+        
+        .heart-on {
+            color: rgba(255, 0, 0, .5);
+        }
+        
+        .heart-hover {
+            color: rgba(255, 0, 0, 1);
+        }
     </style>
 </head>
 
@@ -238,6 +323,43 @@
             <span class="demo3_star" id="zww4"></span>
             <span class="demo3_star" id="zww5"></span>
         </div>
+        <hr>
+        <h4>checked+transform实现</h4>
+        <div id="demo4">
+            <input type="radio" id="start5" name="star" value="5">
+            <label for="start5"><span></span></label>
+
+            <input type="radio" id="start4" name="star" value="4">
+            <label for="start4"><span></span></label>
+
+            <input type="radio" id="start3" name="star" value="3">
+            <label for="start3"><span></span></label>
+
+            <input type="radio" id="start2" name="star" value="2">
+            <label for="start2"><span></span></label>
+
+            <input type="radio" id="start1" name="star" value="1">
+            <label for="start1"><span></span></label>
+        </div>
+        <hr>
+        <h4>单纯的hover</h4>
+        <div class="demo5">
+            <span>☆</span>
+            <span>☆</span>
+            <span>☆</span>
+            <span>☆</span>
+            <span>☆</span>
+        </div>
+        <hr>
+        <h4>JS实现hover</h4>
+        <div class="heart">
+            <a href="" id="one" class="heart-off"></a>
+            <a href="" id="two" class="heart-off"></a>
+            <a href="" id="three" class="heart-off"></a>
+            <a href="" id="four" class="heart-off"></a>
+            <a href="" id="five" class="heart-off"></a>
+        </div>
+
     </div>
     <script>
         function randomColor() {
@@ -251,9 +373,59 @@
             return color;
         }
         var H = document.getElementsByTagName("h4");
-        H[0].style.color = randomColor();
-        H[1].style.color = randomColor();
-        H[2].style.color = randomColor();
+        for (j = 0; j < H.length; j++) {
+            H[j].style.color = randomColor();
+        }
+    </script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var one = $('#one'),
+                two = $('#two'),
+                three = $('#three'),
+                four = $('#four'),
+                five = $('#five');
+            one.mouseover(function() {
+                this.className = "heart-hover";
+                two.removeClass().addClass('heart-off');
+                three.removeClass().addClass('heart-off');
+                four.removeClass().addClass('heart-off');
+                five.removeClass().addClass('heart-off');
+            });
+
+            two.mouseover(function() {
+                this.className = "heart-hover";
+                one.removeClass().addClass('heart-on');
+                three.removeClass().addClass('heart-off');
+                four.removeClass().addClass('heart-off');
+                five.removeClass().addClass('heart-off');
+            });
+
+            three.mouseover(function() {
+                this.className = "heart-hover";
+                one.removeClass().addClass('heart-on');
+                two.removeClass().addClass('heart-on');
+                four.removeClass().addClass('heart-off');
+                five.removeClass().addClass('heart-off');
+            });
+
+            four.mouseover(function() {
+                this.className = "heart-hover";
+                one.removeClass().addClass('heart-on');
+                two.removeClass().addClass('heart-on');
+                three.removeClass().addClass('heart-on');
+                five.removeClass().addClass('heart-off');
+            });
+
+            five.mouseover(function() {
+                this.className = "heart-hover";
+                one.removeClass().addClass('heart-on');
+                two.removeClass().addClass('heart-on');
+                three.removeClass().addClass('heart-on');
+                four.removeClass().addClass('heart-on');
+
+            });
+        });
     </script>
 </body>
 
