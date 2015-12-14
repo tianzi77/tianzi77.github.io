@@ -1,0 +1,23 @@
+@import 'px2rem.scss';
+$designWidth: 640;
+.gun {
+    width: 100%;
+    height: px2rem(300);
+    line-height: px2rem(300);
+    background-color: #abcdef;
+    color: #ffffff;
+    font-size: px2rem(50);
+    text-align: center;
+    text-shadow: px2rem(-2) px2rem(1) 0 deeppink;
+}
+html,
+body {
+    width: 100%;
+    position: relative;
+}
+img{
+    width: px2rem(125);
+    height: px2rem(33);
+    display: block;
+    margin: px2rem(10) auto;
+}
