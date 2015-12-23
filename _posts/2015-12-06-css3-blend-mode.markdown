@@ -32,13 +32,11 @@ tags:
  
 放点代码：
 
+```html
 
-
-  	<div class="forfun">
-
-   	</div>
-   	
-   	
+  <div class="forfun">
+ 
+   	     </div>
    	
    	        * {
             padding: 0;
@@ -96,8 +94,11 @@ tags:
                 margin-left: 0px;
             }
         }
-    
-    
+
+```
+
+
+  	            
 就是这么好玩，说说background-blend-mode的工作原理
 
 `background-blend-mode属性指定了源元素应该怎样把自己的颜色同自己的背景图片和背景颜色混和起来。如果该元素下还有任何其它的层（例如一个使用蓝色背景颜色的section元素），它将不会把自己的颜色与该元素相混合。它只会把自身的颜色与CSS中为其指定的背景图像和颜色混和在一起。`
