@@ -24,12 +24,12 @@ tags:
 
 vertical-align 的默认值是 baseline，这是一个西文排版才有的概念：
 
-<img src="https://pic2.zhimg.com/f0f1e7625a10b204bc32c7203835740d_b.jpg" data-rawwidth="570" data-rawheight="175" class="origin_image zh-lightbox-thumb" width="570" data-original="https://pic2.zhimg.com/f0f1e7625a10b204bc32c7203835740d_r.jpg">
+<img src="https://pic2.zhimg.com/f0f1e7625a10b204bc32c7203835740d_b.jpg">
 
 可以看到，出现在baseline下面的是 p 啊，q 啊, g 啊这些字母下面的那个尾巴。可以看到，出现在baseline下面的是 p 啊，q 啊,  g 啊这些字母下面的那个尾巴。
 对比一下 vertical-align 的另外两个常见值，top 和 bottom:
 
-<img src="https://pic1.zhimg.com/fa1bef7a27a3c235a2e9bd8de5ba5448_b.jpg" data-rawwidth="571" data-rawheight="175" class="origin_image zh-lightbox-thumb" width="571" data-original="https://pic1.zhimg.com/fa1bef7a27a3c235a2e9bd8de5ba5448_r.jpg">
+<img src="https://pic1.zhimg.com/fa1bef7a27a3c235a2e9bd8de5ba5448_b.jpg">
 
 可以看到，baseline 和 bottom 之间有一定的距离。实际上，inline 的图片下面那一道空白正是 baseline 和 bottom 之间的这段距离。
 
