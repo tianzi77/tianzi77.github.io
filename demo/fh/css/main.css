@@ -713,4 +713,11 @@ img {
     .guest .specilaIntro{
         width: auto;
     }
+    .schedule img{
+        height: 390px;
+        width: auto;
+    }
+    .schedule .schedule-time{
+        padding: 30px 0;
+    }
 }
