@@ -1,4 +1,4 @@
-﻿/**
+/**
   * @Desc  : 携程峰会 
   * @Build : 2016/01/05 
   * @Author: TZ 
@@ -541,10 +541,12 @@ img {
 .gift {
     display: none;
 }
+
 /* media  */
 
 @media screen and (max-width:800px) {
-    body,html{
+    body,
+    html {
         width: 100%;
     }
     .header .logo {
@@ -596,8 +598,8 @@ img {
         background-size: cover;
     }
     .info .infomation p {
-        padding-left: 2.6rem;
-        font-size: 1.3rem;
+        padding-left: 2.8rem;
+        font-size: 1.4rem;
     }
     .phone-wrap {
         padding: 0 1%;
@@ -710,14 +712,38 @@ img {
     .nav .phone-box {
         display: block;
     }
-    .guest .specilaIntro{
+    .guest .specilaIntro {
         width: auto;
     }
-    .schedule img{
+    .schedule img {
         height: 390px;
         width: auto;
     }
-    .schedule .schedule-time{
+    .schedule .schedule-time {
         padding: 30px 0;
+    }
+}
+
+/* <i5  */
+
+@media screen and (max-width:320px) {
+    .header ul > li {
+        padding-left: 1%;
+    }
+    .info .infomation .first-line {
+        padding-top: 15%;
+    }
+    .info .infomation p {
+        padding-left: 2.5rem;
+        font-size: 1.2rem;
+    }
+    .guest .guestList {
+        margin: 10px 0;
+    }
+    .guest .guestImgBox > img {
+        border-width: 3px;
+    }
+    .cooperation .ad img {
+        width: 75px;
     }
 }
