@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2016年携程亚太商旅峰会</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2li.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/jquery.scrollTo.min.js"></script>
+    <script src="./js/tz.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="###"><img src="images/logo.png" alt="携程商旅logo"></a>
+        </div>
+        <div class="nav">
+            <div class="wrap">
+                <ul class="layout">
+                    <li><a href="javascript:;" data-to="#info" class="selected">峰会概况</a></li>
+                    <li><a href="javascript:;" data-to="#schedule">会议日程</a></li>
+                    <li><a href="javascript:;" data-to="#guest">演讲嘉宾</a></li>
+                    <li><a href="javascript:;" data-to="#cooperation">合作伙伴</a></li>
+                    <li><a href="javascript:;" data-to="#map">峰会地图</a></li>
+                    <li class="only-pc-nav"><a href="javascript:;" data-to="#review">上届回顾</a></li>
+                    <li class="phone-box"><a href="javascript:;" data-to="#gift">互动好礼</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="wrap">
+            <img src="./images/intro.png" height="321" width="1022" alt="会议介绍文字" class="intro">
+            <img src="./images/time.png" height="139" width="676" alt="time" class="time">
+            <img src="./images/iphone.png" alt="手机展示" class="iphone">
+        </div>
+    </div>
+    <div class="info" id="info">
+        <div class="wrap phone-wrap">
+            <div class="title-wrap">
+                <h1 class="title"></h1>
+            </div>
+            <div class="infomation">
+                <p class="first-line">2014年中国出境游首次突破1亿人次，中国跃居全球最大的旅游客源国；而在中国这个全球最大的国内旅游市场上，航空公司、高铁、机场、酒店、邮轮、租车、景区的发展依然是如火如荼。</p>
+                <br>
+                <p>携程入主艺龙，让中国及全球旅游业为之一震，在线旅游市场的格局面临重塑；中国航空公司、酒店和 OTA 企业加快海外投资布局，但国际市场的拓展依然是征程漫漫；中国旅游市场的投资和并购空前活跃，创业企业如雨后春笋般破土而出，试图挑战巨头们的领导地位。</p>
+                <br>
+                <p>在这个大变革时代，旅游企业如何把握机遇，创想未来？9月16日—17日，超过1300位全球旅游业高层将齐聚一堂，围绕“新势力 大变革”这一主题展开深度探讨交流。</p>
+            </div>
+        </div>
+    </div>
+    <div class="schedule" id="schedule">
+        <div class="wrap">
+            <div class="title-wrap">
+                <h1 class="schedule-time"></h1>
+            </div>
+            <img src="./images/order.png" height="780" width="517" alt="会议安排">
+        </div>
+    </div>
+    <div class="guest" id="guest">
+        <div class="wrap">
+            <div class="title-wrap">
+                <h1 class="guest-banner"></h1>
+            </div>
+            <ul class="guests layout">
+                <li class="guestList">
+                    <div class="guestImgBox">
+                        <img src="./images/ljz.png" height="188" width="281" alt="梁建章">
+                    </div>
+                    <dl>
+                        <dt class="guestName">梁建章</dt>
+                        <dd class="gusdtTitle">携程旅行网</dd>
+                        <dd class="gusdtTitle">董事局主席兼CEO</dd>
+                    </dl>
+                </li>
+                <li class="guestList">
+                    <div class="guestImgBox">
+                        <img src="./images/bate.png" height="171" width="256" alt="巴特·汤普金斯">
+                    </div>
+                    <dl>
+                        <dt class="guestName specilaName">巴特·汤普金斯</dt>
+                        <dd class="gusdtTitle">艾玛迪斯</dd>
+                        <dd class="gusdtTitle">中国区常务总裁</dd>
+                    </dl>
+                </li>
+                <li class="guestList">
+                    <div class="guestImgBox">
+                        <img src="./images/cgf.png" height="188" width="281" alt="崔广福">
+                    </div>
+                    <dl>
+                        <dt class="guestName">崔广福</dt>
+                        <dd class="gusdtTitle">艺龙旅行网</dd>
+                        <dd class="gusdtTitle">CEO</dd>
+                    </dl>
+                </li>
+                <li class="guestList">
+                    <div class="guestImgBox">
+                        <img src="./images/lc.png" height="188" width="281" alt="李超">
+                    </div>
+                    <dl>
+                        <dt class="guestName">李超</dt>
+                        <dd class="gusdtTitle">环球旅讯</dd>
+                        <dd class="gusdtTitle">CEO</dd>
+                    </dl>
+                </li>
+                <li class="guestList">
+                    <div class="guestImgBox">
+                        <img src="./images/bv.png" height="188" width="281" alt="Barry Volinskey">
+                    </div>
+                    <dl>
+                        <dt class="guestName specilaName">Barry Volinskey</dt>
+                        <dd class="gusdtTitle">Evature</dd>
+                        <dd class="gusdtTitle">CEO</dd>
+                    </dl>
+                </li>
+                <li class="guestList">
+                    <div class="guestImgBox">
+                        <img src="./images/wtl.png" height="188" width="281" alt="王霆立">
+                    </div>
+                    <dl>
+                        <dt class="guestName">王霆立</dt>
+                        <dd class="gusdtTitle">百度</dd>
+                        <dd class="gusdtTitle specilaIntro">大客户销售部华南区总经理</dd>
+                    </dl>
+                </li>
+                <li class="guestList">
+                    <div class="guestImgBox">
+                        <img src="./images/zxj.png" height="188" width="281" alt="张海军">
+                    </div>
+                    <dl>
+                        <dt class="guestName">张海军</dt>
+                        <dd class="gusdtTitle">酷讯旅游网</dd>
+                        <dd class="gusdtTitle">CEO</dd>
+                    </dl>
+                </li>
+                <li class="guestList">
+                    <div class="guestImgBox">
+                        <img src="./images/zly.png" height="188" width="281" alt="郑南雁">
+                    </div>
+                    <dl>
+                        <dt class="guestName">郑南雁</dt>
+                        <dd class="gusdtTitle">铂涛酒店集团</dd>
+                        <dd class="gusdtTitle">联席董事长</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cooperation" id="cooperation">
+        <div class="wrap">
+            <div class="title-wrap">
+                <h1 class="cooperation-title"></h1>
+            </div>
+            <ul>
+                <li class="partner">
+                    <span class="partner-title">主办方</span>
+                    <a href="###" class="ad">
+                        <img src="./images/hlxf.png" height="64" width="147" alt="环旅迅飞">
+                    </a>
+                </li>
+                <li class="partner">
+                    <span class="partner-title">首席合作伙伴</span>
+                    <a href="###" class="ad">
+                        <img src="./images/yqf.png" height="64" width="147" alt="一起飞">
+                    </a>
+                </li>
+                <li class="partner">
+                    <span class="partner-title">合作伙伴</span>
+                    <a href="###" class="ad">
+                        <img src="./images/phocu.png" height="64" width="147" alt="phocuswright">
+                    </a>
+                </li>
+                <li class="partner">
+                    <span class="partner-title">钻石赞助商</span>
+                    <a href="###" class="ad">
+                        <img src="./images/travelport.png" height="64" width="147" alt="travelport">
+                    </a>
+                    <a href="###" class="ad">
+                        <img src="./images/qj.png" height="64" width="130" alt="锦江国际会员俱乐部">
+                    </a>
+                    <a href="###" class="ad">
+                        <img src="./images/amadeus.png" height="57" width="154" alt="amadeus">
+                    </a>
+                </li>
+                <li class="partner">
+                    <span class="partner-title">赞助商</span>
+                    <a href="###" class="ad">
+                        <img src="./images/sabre.png" height="52" width="157" alt="sabre">
+                    </a>
+                    <a href="###" class="ad">
+                        <img src="./images/tufeng.png" height="54" width="146" alt="途风">
+                    </a>
+                    <a href="###" class="ad">
+                        <img src="./images/tj.png" height="52" width="157" alt="途家">
+                    </a>
+                    <a href="###" class="ad">
+                        <img src="./images/rental.png" height="59" width="160" alt="rentalcars">
+                    </a>
+                    <a href="###" class="ad">
+                        <img src="./images/hainan.png" height="59" width="160" alt="海南航空">
+                    </a>
+                    <div class="last-partner">
+                        <a href="###" class="ad">
+                            <img src="./images/yatuo.png" height="59" width="160" alt="亚朵酒店">
+                        </a>
+                        <a href="###" class="ad">
+                            <img src="./images/mty.png" height="59" width="160" alt="猫途鹰">
+                        </a>
+                        <a href="###" class="ad">
+                            <img src="./images/jy.png" height="59" width="160" alt="佳友酒店集团">
+                        </a>
+                        <a href="###" class="ad">
+                            <img src="./images/ly.png" height="59" width="160" alt="同城旅游">
+                        </a>
+                        <a href="###" class="ad">
+                            <img src="./images/criteo.png" height="59" width="160" alt="criteo">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="map" id="map">
+        <div class="wrap">
+            <div class="title-wrap">
+                <h1 class="map-title"></h1>
+            </div>
+            <div class="address fd-clr">
+                <div class="words-area fd-left">
+                    <div class="address-info">
+                        <dl class="wrap-info">
+                            <dt class="conf-address">会场地址：</dt>
+                            <dd class="address-detail">上海凯宾斯基大酒店 (Grand Kempinski Hotel Shanghai )</dd>
+                            <dd class="address-detail">上海 浦东新区 陆家嘴环路1288号 ，近东园路</dd>
+                        </dl>
+                    </div>
+                    <br>
+                    <p>驾车：毗邻陆家嘴金融圈，新建路隧道/延安东路隧道上陆家嘴环路</p>
+                    <br>
+                    <p>地铁：2号线陆家嘴站下，陆家嘴环路往北步行5分钟即可到达</p>
+                    <br>
+                    <p>公交：81路、977路、陆家嘴环线到陆家嘴地铁站下，步行5分钟。792路、119路、779路到达滨江大道东园路下，步行351米到达。</p>
+                </div>
+                <div class="map-area fd-right">
+                    <img src="" alt="百度地图区域">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review" id="review">
+        <div class="wrap">
+            <div class="title-wrap">
+                <h1 class="review-title" title="上届回顾"></h1>
+            </div>
+            <div class="review-area fd-clr">
+                <div class="review-left fd-left">
+                    <img src="./images/2016-title.png" height="48" width="532" alt="回顾标题">
+                    <p class="review-word">中国商旅市场正处于高速发展期，据行业权威预测： 2016年中国将超越美国成全球最大商旅市场。在机遇与挑战并存市场的环境下，作为中国差旅行业的领军羊，中国最大的差旅管理公司携程商旅于8月18日在上海浦东香格里拉大酒店举行2015年亚太商旅峰会。以“融合”为主题，峰会聚集百余位亚太商旅行业资深人士，从亚太视野分析中国商旅行业的当前状况和未来趋势。</p>
+                    <p class="review-word">携程商旅CEO方继勤认为：“在中国差旅行业发展到今天，在信息化和互联网化的大背景下，进行世界范围内多渠道的融入与合作是必然的趋势。携程商旅将始终致力于商旅行业的融入合作与健康发展。”</p>
+                </div>
+                <div class="review-video fd-right">
+                    视频区域
+                </div>
+            </div>
+            <div class="pic-area fd-clr">
+                <div class="pic-left fd-left pic-word">
+                    <img src="./images/pic1.png" height="343" width="230" alt="喜达屋亚太区副总裁主题演讲
+《品牌与忠诚度的力量》">
+                    <h1>喜达屋亚太区副总裁主题演讲
+《品牌与忠诚度的力量》</h1>
+                </div>
+                <div class="pic-center fd-left pic-word">
+                    <img src="./images/pic2.png" height="343" width="485" alt="合作伙伴、航司、酒店、公司客户高管齐聚">
+                    <h1>合作伙伴、航司、酒店、公司客户高管齐聚</h1>
+                </div>
+                <div class="pic-right fd-left pic-word">
+                    <img src="./images/pic3.png" height="343" width="455" alt="精彩观点，引发合作伙伴共鸣">
+                    <h1>精彩观点，引发合作伙伴共鸣</h1>
+                </div>
+                <div class="pic-left fd-left pic-word m10 pic-left1">
+                    <img src="./images/pic4.png" height="318" width="428" alt="大会茶歇">
+                    <h1>大会茶歇</h1>
+                </div>
+                <div class="pic-center fd-left pic-word m10 pic-center1">
+                    <img src="./images/pic5.png" height="318" width="425" alt="话题讨论">
+                    <h1>话题讨论</h1>
+                </div>
+                <div class="pic-right fd-left pic-word m10 pic-right1">
+                    <img src="./images/pic6.png" height="318" width="317" alt="携程商旅CEO方继勤致辞">
+                    <h1>携程商旅CEO方继勤致辞</h1>
+                </div>
+                <div class="pic-left fd-left pic-word m10 pic-left2">
+                    <img src="./images/pic7.png" height="319" width="232" alt="阿联酋航空销售副总裁演讲
+《Hello tomorrow 》">
+                    <h1>阿联酋航空销售副总裁演讲
+《Hello tomorrow 》</h1>
+                </div>
+                <div class="pic-center fd-left pic-word m10 pic-center2">
+                    <img src="./images/pic8.png" height="319" width="527" alt="与会人认真聆听，汲取行家建议">
+                    <h1>与会人认真聆听，汲取行家建议</h1>
+                </div>
+                <div class="pic-right fd-left pic-word m10 pic-right2">
+                    <img src="./images/pic9.png" height="319" width="411" alt="与会人接收商旅行业最前沿资讯，学以致用">
+                    <h1>与会人接收商旅行业最前沿资讯，学以致用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gift"  id="gift">
+        <div class="wrap">
+            <div class="title-wrap">
+                <h1 class="gift-title" title="现场抽奖"></h1>
+            </div>
+            <div class="chance">
+                <a href="###" class="chance-item fd-clr">现场抽奖<span class="fd-right">&gt;</span></a>
+                <a href="###" class="chance-item fd-clr">话题互动 <span class="fd-right">&gt;</span></a>
+                <a href="###" class="chance-item fd-clr">Q&A<span class="fd-right">&gt;</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap">
+            <ul class="fd-clr">
+                <li class="fd-left"><a href="#info" class="footer-nav">峰会概括</a></li>
+                <li class="fd-left"><a href="#guest" class="footer-nav1">演讲嘉宾</a></li>
+                <li class="fd-left"><a href="#cooperation" class="footer-nav2">赞助商</a></li>
+                <li class="fd-left"><img src="./images/line.png" height="47" width="1" alt="line"></li>
+                <li class="fd-left"><img src="./images/phone.png" height="23" width="23" alt="联系电话" class="phone">400-820-6666</li>
+                <li class="fd-left">400-820-6666</li>
+                <li class="fd-left"><img src="./images/wx.png" height="100" width="100" alt="携程微信"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
