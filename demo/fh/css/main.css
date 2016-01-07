@@ -710,4 +710,7 @@ img {
     .nav .phone-box {
         display: block;
     }
+    .guest .specilaIntro{
+        width: auto;
+    }
 }
