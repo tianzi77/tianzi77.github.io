@@ -8,9 +8,8 @@
 $(function () {
     //nav
     var $body = $('html,body');
-    $('.nav a').on("click", function () {
-        $(".nav a").removeClass('selected');
-        $(this).addClass('selected');
+    $('.nav li a').click(function (e) {
+        $(this).addClass("selected").parents().siblings().find("a").removeClass("selected");
         var target = $(this).data('to');
         target && $('body').scrollTo(target, {
             duration: 800
@@ -24,6 +23,17 @@ $(function () {
         } else {
             $(".nav").removeClass('nav-fixed');
         }
+
+//        var tt = $(window).height() - 36; 
+//        var num = 0;
+//        for (var n = 0; n < 6; n++) {
+//            if (top >= n * tt && top <= (n + 1) * tt) {
+//                num = n;
+//
+//            }
+//            $('.nav li a').removeClass("selected").eq(num).addClass("selected");
+//        }
+
     });
 
     $(".footer-nav").on("click", function () {
@@ -51,21 +61,21 @@ $(function () {
             'left': 0,
             'background-color': '#2f2f2f',
             'width': '100%',
-            'display':'none',
+            'display': 'none',
             'z-index': 5000 //保证这个悬浮层位于其它内容之上  
         });
     $('.tan-box').on("click", function () {
-        $('#overlay').show();
-        $('.yilongCeo').show();
-        $('body').addClass("fix-scroll");
-        document.documentElement.style.overflow='hidden';
-        document.body.style.overflow='hidden';//手机版
-    })
-    //close 
-    $('.close').on('click',function(){
+            $('#overlay').show();
+            $('.yilongCeo').show();
+//            $('body').addClass("fix-scroll");
+//            document.documentElement.style.overflow = 'hidden';
+//            document.body.style.overflow = 'hidden'; //手机版
+        })
+        //close 
+    $('.close').on('click', function () {
         $('.guest-box').hide();
         $('#overlay').hide();
-        document.documentElement.style.overflow='scroll';
-        document.body.style.overflow='scroll';//手机版
+//        document.documentElement.style.overflow = 'scroll';
+//        document.body.style.overflow = 'scroll'; //手机版
     })
 })
