@@ -601,7 +601,9 @@ img {
 .guest-box .guest-word {
     margin-top: 40px;
 }
-
+.schedule .phone-order{
+    display: none;
+}
 /* media  */
 
 @media screen and (max-width:800px) {
@@ -609,11 +611,14 @@ img {
     html {
         width: 100%;
     }
+    .title-wrap{
+        padding-top: 40px;
+    }
     .header .logo {
         display: none;
     }
     .header .nav {
-        height: 60px;
+        height: 40px;
         margin-top: 0;
         background: #32322b;
         opacity: .7;
@@ -630,6 +635,8 @@ img {
     .header ul > li {
         width: auto;
         padding-left: 3%;
+        height: 40px;
+        line-height: 40px;
     }
     .header ul a:hover {
         background: none;
@@ -776,11 +783,11 @@ img {
     .guest .specilaIntro {
         width: auto;
     }
-    .schedule img {
-/*
-        height: 390px;
-        width: auto;
-*/
+    .schedule .pc-order{
+        display: none;
+    }
+    .schedule .phone-order{
+        display: block;
     }
     .schedule .schedule-time {
         padding: 30px 0;
@@ -848,6 +855,12 @@ img {
     }
     .cooperation .ad img {
 /*        width: 75px;*/
+    }
+    .map .address-info {
+        height: 90px;
+    }
+    .map .wrap-info { 
+        padding: 1% 6%;
     }
 }
 @media screen and (min-width:768px) and (max-width:1024px){
