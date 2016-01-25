@@ -205,7 +205,7 @@ body {
     .user {
         .ad {
             color: #fff;
-            font-size: 20px;
+            @include font-dpr(12px);
             line-height: px2rem(70);
             text-align: center;
             .time {
@@ -238,12 +238,12 @@ body {
                     margin-right: px2rem(30);
                 }
                 .amount {
-                    font-size: 12px;
+                    @include font-dpr(8px);
                 }
                 .words {
                     margin: 0;
                     padding: 0;
-                    font-size: 16px;
+                    @include font-dpr(10px);
                 }
             }
         }
@@ -260,7 +260,7 @@ body {
                 height: px2rem(80);
             }
             p {
-                font-size: 14px;
+                @include font-dpr(8px);
                 text-align: justify;
                 color: #fff;
                 margin-bottom: px2rem(30);
@@ -288,7 +288,7 @@ body {
         }
         p {
             color: #fff;
-            font-size: 16px;
+            @include font-dpr(8px);
             img {
                 display: inline-block;
                 margin-right: px2rem(20);
@@ -306,11 +306,10 @@ body {
             text-align: left;
             display: flex;
             justify-content: center;
-            font-size: 16px;
+            @include font-dpr(10px);
             .wrap {
-                margin-top: 0.6rem;
                 .tit {
-                    font-size: 16px;
+                    @include font-dpr(10px);
                 }
             }
         }

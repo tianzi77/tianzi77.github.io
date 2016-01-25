@@ -158,9 +158,13 @@ body {
       height: 3.75rem; }
   .container .user .ad {
     color: #fff;
-    font-size: 20px;
+    font-size: 12px;
     line-height: 1.75rem;
     text-align: center; }
+    [data-dpr="2"] .container .user .ad {
+      font-size: 24px; }
+    [data-dpr="3"] .container .user .ad {
+      font-size: 36px; }
     .container .user .ad .time {
       color: #feee9a; }
     .container .user .ad a {
@@ -186,11 +190,19 @@ body {
         height: 2rem;
         margin-right: 0.75rem; }
       .container .user .ad .content .amount {
-        font-size: 12px; }
+        font-size: 8px; }
+        [data-dpr="2"] .container .user .ad .content .amount {
+          font-size: 16px; }
+        [data-dpr="3"] .container .user .ad .content .amount {
+          font-size: 24px; }
       .container .user .ad .content .words {
         margin: 0;
         padding: 0;
-        font-size: 16px; }
+        font-size: 10px; }
+        [data-dpr="2"] .container .user .ad .content .words {
+          font-size: 20px; }
+        [data-dpr="3"] .container .user .ad .content .words {
+          font-size: 30px; }
   .container .gift .content {
     margin: 0 0.75rem;
     background-color: #342b6a;
@@ -200,11 +212,15 @@ body {
     .container .gift .content img {
       height: 2rem; }
     .container .gift .content p {
-      font-size: 14px;
+      font-size: 8px;
       text-align: justify;
       color: #fff;
       margin-bottom: 0.75rem;
       text-indent: -.5rem; }
+      [data-dpr="2"] .container .gift .content p {
+        font-size: 16px; }
+      [data-dpr="3"] .container .gift .content p {
+        font-size: 24px; }
       .container .gift .content p .notice {
         color: #feee9a; }
       .container .gift .content p i {
@@ -221,7 +237,11 @@ body {
       color: #feee9a; }
     .container .bottom p {
       color: #fff;
-      font-size: 16px; }
+      font-size: 8px; }
+      [data-dpr="2"] .container .bottom p {
+        font-size: 16px; }
+      [data-dpr="3"] .container .bottom p {
+        font-size: 24px; }
       .container .bottom p img {
         display: inline-block;
         margin-right: 0.5rem;
@@ -241,11 +261,17 @@ body {
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center;
-      font-size: 16px; }
-      .container .bottom .special .wrap {
-        margin-top: 0.6rem; }
-        .container .bottom .special .wrap .tit {
-          font-size: 16px; }
+      font-size: 10px; }
+      [data-dpr="2"] .container .bottom .special {
+        font-size: 20px; }
+      [data-dpr="3"] .container .bottom .special {
+        font-size: 30px; }
+      .container .bottom .special .wrap .tit {
+        font-size: 10px; }
+        [data-dpr="2"] .container .bottom .special .wrap .tit {
+          font-size: 20px; }
+        [data-dpr="3"] .container .bottom .special .wrap .tit {
+          font-size: 30px; }
     .container .bottom .contact {
       margin-top: 0.75rem;
       line-height: 1.15rem; }
