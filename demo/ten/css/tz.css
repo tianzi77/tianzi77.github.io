@@ -158,13 +158,13 @@ body {
       height: 3.75rem; }
   .container .user .ad {
     color: #fff;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 1.75rem;
     text-align: center; }
     [data-dpr="2"] .container .user .ad {
-      font-size: 24px; }
-    [data-dpr="3"] .container .user .ad {
       font-size: 36px; }
+    [data-dpr="3"] .container .user .ad {
+      font-size: 54px; }
     .container .user .ad .time {
       color: #feee9a; }
     .container .user .ad a {

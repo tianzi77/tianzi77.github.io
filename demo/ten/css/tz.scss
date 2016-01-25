@@ -205,7 +205,7 @@ body {
     .user {
         .ad {
             color: #fff;
-            @include font-dpr(12px);
+            @include font-dpr(18px);
             line-height: px2rem(70);
             text-align: center;
             .time {
