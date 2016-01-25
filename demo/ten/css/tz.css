@@ -249,7 +249,7 @@ body {
     .container .bottom .contact {
       margin-top: 0.75rem;
       line-height: 1.15rem; }
-    .container .bottom a {
+    .container .bottom .reword {
       color: #df2141;
       padding: 0.125rem 2rem;
       background-color: #feee9a;
@@ -258,7 +258,7 @@ body {
       box-shadow: 0 0.25rem 0.25rem #9c172d;
       margin-top: 0.75rem;
       line-height: 1.75rem; }
-      .container .bottom a:active {
+      .container .bottom .reword:active {
         background-color: #E6D268; }
     .container .bottom .bottom-bg {
       display: block;
