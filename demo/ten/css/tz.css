@@ -127,13 +127,13 @@ a:hover {
 
 /* 用rem处理布局,用px处理字体 */
 /* 清除浮动 */
-.container .bottom p {
+.container .bottom .special {
   *zoom: 1; }
-  .container .bottom p:before, .container .bottom p:after {
+  .container .bottom .special:before, .container .bottom .special:after {
     content: "";
     display: table;
     font: 0/0 a; }
-  .container .bottom p:after {
+  .container .bottom .special:after {
     clear: both; }
 
 body {

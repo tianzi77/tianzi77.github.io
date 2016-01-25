@@ -288,7 +288,6 @@ body {
         }
         p {
             color: #fff;
-            @extend %clearfix;
             font-size: 16px;
             img {
                 display: inline-block;
@@ -301,6 +300,7 @@ body {
             }
         }
         .special {
+            @extend %clearfix;
             margin-top: px2rem(80);
             margin-bottom: px2rem(30);
             text-align: left;
