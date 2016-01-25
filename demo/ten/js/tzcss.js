@@ -19,7 +19,7 @@
         var viewportEl = document.querySelector('meta[name="viewport"]'),
             hotcssEl = document.querySelector('meta[name="hotcss"]'),
             dpr = window.devicePixelRatio || 1,
-            maxWidth = 768,
+            maxWidth = 1024,
             designWidth = 0;
 
         //允许通过自定义name为hotcss的meta头，通过initial-dpr来强制定义页面缩放

@@ -238,12 +238,12 @@ body {
                     margin-right: px2rem(30);
                 }
                 .amount {
-                    @include font-dpr(8px);
+                    @include font-dpr(18px);
                 }
                 .words {
                     margin: 0;
                     padding: 0;
-                    @include font-dpr(10px);
+                    @include font-dpr(20px);
                 }
             }
         }
@@ -260,7 +260,7 @@ body {
                 height: px2rem(80);
             }
             p {
-                @include font-dpr(8px);
+                @include font-dpr(16px);
                 text-align: justify;
                 color: #fff;
                 margin-bottom: px2rem(30);
@@ -288,7 +288,7 @@ body {
         }
         p {
             color: #fff;
-            @include font-dpr(8px);
+            @include font-dpr(14px);
             img {
                 display: inline-block;
                 margin-right: px2rem(20);
@@ -306,10 +306,10 @@ body {
             text-align: left;
             display: flex;
             justify-content: center;
-            @include font-dpr(10px);
+            @include font-dpr(20px);
             .wrap {
                 .tit {
-                    @include font-dpr(10px);
+                    @include font-dpr(14px);
                 }
             }
         }
@@ -326,6 +326,7 @@ body {
             box-shadow: 0 px2rem(10) px2rem(10) #9c172d;
             margin-top: px2rem(30);
             line-height: px2rem(70);
+            @include font-dpr(18px);
             &:active {
                 background-color: #E6D268;
             }
@@ -342,17 +343,18 @@ body {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .container .user .ad {
-        font-size: 36px !important;
+        font-size: 56px !important;
     }
     .container .user .ad .content .amount,
     .container .gift .content p,
+    .container .bottom .special .wrap .tit,
     .container .bottom p {
-        font-size: 24px !important;
-    }
-    .container .user .ad .content .words {
         font-size: 36px !important;
     }
-    .container .bottom .special .wrap {
-        margin-top: (px2rem(42)) !important;
+    .container .user .ad .content .words {
+        font-size: 42px !important;
+    }
+    .container .bottom .special {
+        font-size: 48px !important;
     }
 }
