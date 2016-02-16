@@ -2,9 +2,9 @@
 layout:     post
 title:      "css实现的中间标题两端横线效果"
 subtitle:   " \"常见的模块分类样式\""
-date:       2016-02-16 19:00:00
+date:       2016-02-16 19:20:00
 author:     "ZWW"
-header-img: "img/post-bg-os-metro"
+header-img: "img/post-bg-os-metro.jpg"
 tags:
     - 横线标题
 ---
