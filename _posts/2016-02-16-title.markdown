@@ -1,0 +1,84 @@
+---
+layout:     post
+title:      "css实现的中间标题两端横线效果"
+subtitle:   " \"常见的模块分类样式\""
+date:       2016-02-16 19:00:00
+author:     "ZWW"
+header-img: "img/post-bg-os-metro"
+tags:
+    - 横线标题
+---
+
+
+
+
+
+2016第一篇文章，就写它吧。
+
+在不少的页面效果中，特别是新闻标题或者提纲有这样的应用，那就是中间是标题内容，两端是装饰用的横杠，当然这个装饰非常的简单。
+实现此效果的方式也很多：
+
+* 1，定位
+* 2，一像素重复x轴背景图
+* 3，浮动
+
+前面的两种实现度非常简单，但是扩展性不高，让我我很不爽。
+
+所以我想到了最后的方式，也是扩展性能比较高的一种实现方案。
+首先放一个通用的结构：
+```html
+    <div id="box">
+        <span class="border"></span>
+        <span>这里是标题啦啦啦</span>
+        <span class="border"></span>
+    </div>
+    
+```
+在控制一下样式：
+
+```css
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #box {
+            width: 100%;
+            margin: 0px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #box span {
+            float: left;
+            text-align: center;
+            width: 33.3%;
+        }
+        
+        #box .border {
+            border-bottom: 1px solid black;
+            height: 12px;
+        }
+```
+
+拓展：
+
+* 1 width可以固定绝对的数值
+* 2 可以设定两边平分分元素，然后中间文字定位上去实现绝对居中展示
+* 3 两边设置相同较多的百分百，中间随着文字的多少而扩展百分比，总和平分父元素。  
+
+###最后，2016，拼上一切，成家立业。
+
+
+
+ ##关于作者
+
+```javascript
+  var ihubo = {
+    nickName  : "TZ",
+    site : "http://www.zhangweiwei.cn"
+  }
+```
+
+    
+
