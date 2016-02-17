@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" author="张威">
+    <title>个人工作常用样式汇合</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            /*            box-sizing: border-box;*/
+        }
+        
+        .p20 {
+            padding: 20px;
+        }
+        
+        body {
+            background-color: #abcdef;
+        }
+        
+        body style {
+            display: block;
+            padding: 0.6em 0.8em;
+            border: 1px dashed #ccc;
+            background-color: #f5f5f5;
+            color: #000;
+            font-family: Monaco, monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        body style:focus {
+            -moz-box-shadow: 0 0 4px green;
+            box-shadow: 0 0 4px blue;
+        }
+        
+        body #main {
+            min-width: 980px;
+            max-width: 1180px;
+            margin: 30px auto;
+            background-color: #fff;
+            color: #06c;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>工作中常用的公共样式</h1>
+        <div id="body">
+            <div id="code" class="part">
+                <h3>代码：</h3>
+                <div class="show p20">
+                    <style contenteditable>
+                        .pwd-row {
+                            overflow: hidden;
+                            *zoom: 1;
+                        }
+                        
+                        .pwd-row:after {
+                            clear: both;
+                            display: table;
+                            height: 0;
+                            content: "";
+                        }
+                        
+                        .pwd-row .pwd-col-label {
+                            float: left;
+                            width: 70px;
+                            padding-right: 10px;
+                            font-size: 14px;
+                            line-height: 26px;
+                            text-align: right;
+                        }
+                        
+                        .pwd-row .pwd-col-form {
+                            float: left;
+                            width: 200px;
+                        }
+                        
+                        .pwd-row .inner-control {
+                            width: 190px;
+                            height: 26px;
+                            padding: 0 4px;
+                            line-height: 26px\9;
+                            border: 1px solid #BBBBBB;
+                        }
+                        
+                        .pwd-row .help-block {
+                            padding: 5px;
+                            margin: 5px 0 10px;
+                            color: #333;
+                            border: 1px solid #DDCCAA;
+                            background-color: #FFFCD8;
+                        }
+                        
+                        .pwd-row .help-block i {
+                            margin-right: 3px;
+                            vertical-align: -1px;
+                            *vertical-align: 3px;
+                        }
+                        
+                        .xuico-warn-xsm {
+                            display: inline-block;
+                            vertical-align: middle;
+                            background-image: url(http://pic.c-ctrip.com/corp_niv/com/un_icon_round.png?20150206);
+                            background-repeat: no-repeat;
+                        }
+                        
+                        .xuico-warn-xsm {
+                            width: 12px;
+                            height: 12px;
+                            background-position: -224px -69px;
+                        }
+                    </style>
+                </div>
+            </div>
+            <div id="effect" class="part">
+                <h3>效果：</h3>
+                <div class="pwd-row">
+                    <div class="pwd-col-label">新密码</div>
+                    <div class="pwd-col-form">
+                        <input class="inner-control" type="password" placeholder="请输入密码">
+                        <div class="help-block">
+                            <i class="xuico-warn-xsm"></i> 密码格式有误。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="code" class="part">
+                <h3>代码：</h3>
+                <div class="show p20">
+                    <style contenteditable>
+                        .tips-box {
+                            margin: 0 auto;
+                            position: relative;
+                            zoom: 1;
+                            width: 155px;
+                            height: 33px;
+                            text-align: center;
+                            color: #666666;
+                            border: 1px solid #ddccaa;
+                            background-color: #fffcd8;
+                            font-size: 12px;
+                            line-height: 33px;
+                            border-radius: 3px;
+                        }
+                        
+                        .top-direction .tips-dedail {
+                            margin-bottom: 8px;
+                        }
+                        
+                        .triangle-border {
+                            position: absolute;
+                            width: 0;
+                            height: 0;
+                            overflow: hidden;
+                            border: 6px dashed transparent;
+                        }
+                        
+                        .top-direction .tb-border {
+                            right: -12px;
+                            top: 50%;
+                            margin-top: -6px;
+                            border-left-color: #ddccaa;
+                            border-left-style: solid;
+                        }
+                        
+                        .top-direction .tb-background {
+                            right: -11px;
+                            top: 50%;
+                            margin-top: -6px;
+                            border-left-color: #fffcd8;
+                            border-left-style: solid;
+                        }
+                    </style>
+                </div>
+            </div>
+            <div id="effect" class="part">
+                <h3>效果：</h3>
+                <div class="tips-box top-direction">
+                    <p class="tips-dedail">正在准备数据,请等待...</p>
+                    <div class="triangle-border tb-border"></div>
+                    <div class="triangle-border tb-background"></div>
+                </div>
+            </div>
+
+            <div id="code" class="part">
+                <h3>代码：</h3>
+                <div class="show p20">
+                    <style contenteditable>
+                        .xui-tooltip-pop {
+                            position: relative;
+                            display: inline-block;
+                            min-width: 200px;
+                            max-width: 480px;
+                            background-color: #FFF;
+                            border-style: solid;
+                        }
+                        
+                        .xui-tooltip-pop {
+                            padding: 8px 10px;
+                            border-color: #67A1E2;
+                            border-width: 1px;
+                        }
+                        
+                        .xui-tooltip-pop.tri-up .tri {
+                            position: absolute;
+                            left: 10px;
+                            width: 0;
+                            height: 0;
+                            border: 6px dashed transparent;
+                        }
+                        
+                        .xui-tooltip-pop.tri-up .tri-border {
+                            top: -13px;
+                            border-bottom-color: #67A1E2;
+                            border-style: solid;
+                        }
+                        
+                        .xui-tooltip-pop.tri-up .tri-background {
+                            top: -12px;
+                            border-bottom-color: #fff;
+                            border-style: solid;
+                        }
+                        
+                        .xui-tooltip-pop .valid-info {
+                            color: #ee5555;
+                            line-height: 2;
+                        }
+                        
+                        .xui-tooltip-pop .valid-info .icon-round {
+                            display: inline-block;
+                            width: 12px;
+                            height: 12px;
+                            margin-right: 5px;
+                            border-radius: 12px;
+                            background-color: #ee5555;
+                            vertical-align: -2px;
+                            *vertical-align: middle;
+                        }
+                        
+                        .xui-tooltip-pop .valid-ok {
+                            color: #333;
+                        }
+                        
+                        .xui-tooltip-pop .valid-ok .icon-round {
+                            background-color: #93CD23;
+                        }
+                    </style>
+                </div>
+            </div>
+            <div id="effect" class="part">
+                <h3>效果：</h3>
+                <div class="xui-tooltip-pop tri-up">
+                    <span class="tri tri-border"></span>
+                    <span class="tri tri-background"></span>
+                    <div class="xui-tip-content">
+                        <div class="valid-info valid-ok"><i class="icon-round"></i>6-20为字符</div>
+                        <!-- 验证通过+valid-ok -->
+                        <div class="valid-info"><i class="icon-round"></i>由数字、大小写字母、符号中两种以上组成(不得含有空格)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
