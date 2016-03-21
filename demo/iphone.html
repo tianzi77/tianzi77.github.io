@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>按钮样式</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        html {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        body {
+            line-height: 1.6;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 62.5%;
+        }
+        
+        .btn {
+            font-size: 0;
+        }
+        
+        .row {
+            margin-top: 1.17647059em;
+            background-color: #FFFFFF;
+            line-height: 1.41176471;
+            font-size: 17px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .row:before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            border-top: 1px solid #D9D9D9;
+            color: #D9D9D9;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+        
+        .row:after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px solid #D9D9D9;
+            color: #D9D9D9;
+            -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+        
+        .flex {
+            padding: 10px 15px;
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        
+        .flex-primary {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+        
+        .i-switch {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative;
+            width: 52px;
+            height: 32px;
+            border: 1px solid #DFDFDF;
+            outline: 0;
+            border-radius: 16px;
+            box-sizing: border-box;
+            background: #DFDFDF;
+        }
+        
+        .i-switch:before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #FDFDFD;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
+        }
+        
+        .i-switch:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
+        }
+        
+        .i-switch:checked {
+            border-color: #04BE02;
+            background-color: #04BE02;
+        }
+        
+        .i-switch:checked:before {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+        
+        .i-switch:checked:after {
+            -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+        }
+        
+        .time-input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            -webkit-appearance: none;
+            background-color: transparent;
+            font-size: inherit;
+            color: inherit;
+            height: 1.41176471em;
+            line-height: 1.41176471;
+        }
+        
+        .tit {
+            padding-right: .3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="test">
+        <div class="row flex">
+            <div class="tit flex-primary">
+                标题
+            </div>
+            <div class="btn">
+                <input type="checkbox" class="i-switch">
+            </div>
+        </div>
+        <div class="row flex">
+            <div class="tit flex-primary">
+                标题
+            </div>
+            <div class="btn">
+                <input type="checkbox" class="i-switch">
+            </div>
+        </div>
+        <div class="row flex">
+            <div class="tit flex-primary">
+                标题
+            </div>
+            <div class="btn">
+                <input type="checkbox" class="i-switch">
+            </div>
+        </div>
+        <div class="row flex">
+            <div class="tit flex-primary">
+                标题
+            </div>
+            <div class="btn">
+                <input type="checkbox" class="i-switch">
+            </div>
+        </div>
+        <div class="row flex">
+            <div class="tit flex-primary">
+                标题
+            </div>
+            <div class="btn">
+                <input type="checkbox" class="i-switch">
+            </div>
+        </div>
+        <div class="row flex">
+            <div class="tit">
+                <label for="" style="display:block;width:3em;">时间</label>
+            </div>
+            <div class=" flex-primary">
+                <input class="time-input" type="datetime-local" value="" placeholder="">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
