@@ -1,0 +1,162 @@
+ /*
+
+个人中心抽奖样式
+
+*/
+       
+       * {
+           margin: 0;
+           padding: 0;
+           list-style-type: none;
+       }
+       
+       a,
+       img {
+           border: 0;
+       }
+       
+       body {
+           font: 12px/180% '微软雅黑';
+       }
+       
+       .turntable-bg {
+           width: 641px;
+           height: 641px;
+           position: relative;
+           left: 300px;
+           top: -85px;
+           background: url("../images/bg.png");
+       }
+       
+       .turntable-bg .pointer {
+           width: 130px;
+           height: 96px;
+           position: absolute;
+           left: 218px;
+           top: 320px;
+           z-index: 8;
+       }
+       
+       .turntable-bg .pointer2 {
+           display: none;
+           width: 130px;
+           height: 96px;
+           position: absolute;
+           left: 218px;
+           top: 320px;
+           z-index: 8;
+       }
+       
+       .turntable-bg .rotate {
+           width: 390px;
+           height: 390px;
+           position: absolute;
+           left: 70px;
+           top: 173px;
+       }
+       
+       .close {
+           width: 38px;
+           height: 38px;
+           background: url(../images/close_cj.png);
+           display: block;
+           position: relative;
+           left: 540px;
+           top: 220px;
+           cursor: pointer;
+       }
+       
+       .chance {
+           width: 126px;
+           height: 45px;
+           background: url(../images/chance.png);
+           display: block;
+           position: relative;
+           top: 500px;
+           left: 450px;
+       }
+       
+       .weixin {
+           width: 320px;
+           height: 250px;
+           background: #fff;
+           position: relative;
+       }
+       
+       .weixin_sm {
+           width: 112px;
+           height: 112px;
+           display: block;
+           position: absolute;
+           left: 25%;
+           top: 20%;
+           background: url(../images/weixin.png) no-repeat;
+       }
+       
+       .once {
+           width: 78px;
+           height: 63px;
+           background: url(../images/once.png) no-repeat;
+           display: block;
+           position: absolute;
+           top: 80px;
+           left: 200px;
+       }
+       
+       .weixin_wd {
+           width: 200px;
+           color: #333333;
+           position: absolute;
+           left: 90px;
+           top: 170px;
+       }
+       
+       .scroll_wd {
+           position: relative;
+           top: 550px;
+           left: 180px;
+       }
+       
+       .side-tool-bar {
+           display: none;
+       }
+       
+       .ra {
+           width: 390px;
+           height: 390px;
+           overflow: hidden;
+           -webkit-border-radius: 195px;
+           -moz-border-radius: 195px;
+           -ms-border-radius: 195px;
+           -o-border-radius: 195px;
+           border-radius: 195px;
+           background: url(../images/hl.png);
+       }
+       
+       .ra>div {
+           width: 110px;
+           height: 390px;
+           position: absolute;
+           left: 140px;
+           top: 0;
+           font-size: 16px;
+           text-align: center;
+       }
+       
+       .ra>div p {
+           color: #5e0f12;
+           position: relative;
+           /*            left: 10px;*/
+           
+           top: 15px;
+       }
+       /*
+        .ra>div .huafei_10 {
+            position: absolute;
+            width: 120px;
+            left: -3px;
+            bottom: 10px;
+            overflow: hidden;
+        }
+*/
+       /*奖品以及对应图标公共样式*/
