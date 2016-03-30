@@ -1,0 +1,89 @@
+@charset 'utf-8';
+/**
+  * @Desc  : 商旅Q2营销 
+  * @Build : 2016/03/30 
+  * @Author: zww 
+  * @Update: 2016/01/18 by zww 
+  */
+/* reset */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,em,button { margin: 0; padding: 0; }
+body { font: normal 12px/1.5 'PingFang SC', 'Microsoft Yahei', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', Simsun, STXihei, Sans-serif; color: #333; background-color: #f3f3f3; -webkit-font-smoothing: antialiased; }
+img,fieldset { max-width: 100%; margin: 0; padding: 0; vertical-align: middle; border: 0; }
+input,textarea,select { font-family: 'PingFang SC', 'Microsoft Yahei', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', Simsun, STXihei, Sans-serif; font-size: 12px; }
+table { border-spacing: 0; border-collapse: collapse; }
+a { text-decoration: none; color: #06c; outline: none; }
+a:hover { text-decoration: underline; }
+h1,h2,h3,h4,h5 { font-weight: normal; }
+li { list-style: none; }
+dfn { font-family: arial; font-style: normal; }
+i,em { font-style: normal; }
+.fl { float: left; }
+.fr { float: right; }
+.clearfix { *zoom: 1; }
+.clearfix:after { display: block; clear: both; height: 0; font-size: 0; content: ''; }
+.color { color: #00d3d4; }
+.m50 { margin: 50px 0; }
+body { background-color: #fff; }
+
+/* 头部 */
+
+.container { width: 100%; }
+.wrap { position: relative; overflow: hidden; width: 1180px; margin-right: auto; margin-left: auto; }
+.header { width: 100%; }
+.header .back-home { font-size: 16px; text-align: right; }
+.header .head-bg { width: 1180px; height: 510px; background: url(../img/header.png); }
+
+/* 礼品区域 */
+
+.award { padding: 0 100px; }
+.award .tit {margin-top: 20px; text-align: center; }
+.award .left-area { float: left; padding: 30px 40px 0 0; }
+.award .right-area p { margin: 5px 0; font-size: 16px; text-align: justify; }
+.award .right-area .reg-gift { font-size: 36px; font-weight: bold; }
+.award .right-area  .words { display: inline-block; border-radius: 10px; background-color: #e3e3e3; }
+.award .right-area .ways { float: left; margin-right: 10px; padding: 0 20px; color: #fff; border-radius: 10px; background-color: #00d3d4; }
+.award .gift2 { margin: 20px 0; }
+.award .gift2 .left-area { float: right; padding: 30px 0 0 20px; }
+
+/* 注册 */
+
+.reg .tit,.reg .wx,.reg .par { text-align: center; }
+.reg .wx { margin-bottom: 50px; }
+.reg .wx p { font-size: 14px; color: #333; }
+.reg .par { font-size: 22px; color: #000; }
+.reg .par img { margin: 0 30px; vertical-align: middle; }
+
+/* 底部 */
+
+.footer { margin-top: 50px; padding: 20px 100px 0; background-color: #eee; }
+.footer .special { padding: 20px 0 0 0; }
+
+/* ==========================================================================
+   media part
+   ========================================================================== */
+
+@media screen and (max-width: 768px) { .wrap { width: 100%; }
+    .m50 { margin: 20px 0; }
+    .header .head-bg { width: 100%; height: 235px; background: url(../img/i-header.png); background-size: cover; }
+    .award { padding: 0 20px; }
+    .award .tit { margin-top: 10px; }
+    .award .tit img { height: 40px; }
+    .award .left-area { float: right; padding: 0; }
+    .award .left-area img { width: 83.5px; }
+    .award .right-area p { font-size: 14px; }
+    .award .right-area .reg-gift { font-size: 32px; }
+    .award .right-area  .words { background-color: transparent; }
+    .award .gift2 .left-area { padding: 40px 0 0 10px; }
+    .header .back-home { display: none; }
+    .pagesHead,.pagesFoot { display: none; }
+    .reg .tit img { height: 60px; }
+    .reg .par img { height: 20px; margin: 0 10px; }
+    .reg .par { font-size: 18px; }
+    .footer { margin-top: 25px; padding: 20px 20px 0; }
+    .footer img:nth-child(1) { height: 37.5px; }
+    .footer img:nth-child(2) { height: 16px; }
+    .footer .special { padding: 10px 0 0 0; } }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
+	
+}
