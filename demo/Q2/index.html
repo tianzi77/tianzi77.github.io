@@ -19,6 +19,8 @@
 				<h1 class="back-home"><a href="http://ct.ctrip.com/" target="_blank">返回商旅首页&gt;</a></h1>
 				<div class="head-bg" title="活动背景">
 				</div>
+				<canvas id="canvas" class="canvas"></canvas>
+				</div>
 			</div>
 			<div class="award">
 				<h1 class="tit"><img src="img/award.png"alt=""></h1>
@@ -67,5 +69,87 @@
     	<script src="http://www.ctrip.com/sharescript/cofooter.asp" charset="gb2312"></script>
     </div>
     <!-- 商旅尾部 E -->
+    <script type="text/javascript">
+        window.onload = function() {
+            //初始化画布
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            var W = window.innerWidth;
+            var H = window.innerHeight;
+            canvas.width = W;
+            canvas.height = H;
+
+            //划圆
+            var mp = 1000; //最多个数
+            var particles = [];
+            for (var i = 0; i < mp; i++) {
+                particles.push({
+                    x: Math.random() * W, //x-coordinate
+                    y: Math.random() * H, //y-coordinate
+                    r: Math.random() * 0.5 + 1, //radius 控制小点保障手机端
+                    d: Math.random() * mp //density
+                })
+            }
+
+            //Lets draw the flakes
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                ctx.fillStyle = "#90E0E0";
+                ctx.beginPath();
+                for (var i = 0; i < mp; i++) {
+                    var p = particles[i];
+                    ctx.moveTo(p.x, p.y);
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+                }
+                ctx.fill();
+                update();
+            }
+
+            var angle = 0;
+
+            function update() {
+                angle += 0.01;
+                for (var i = 0; i < mp; i++) {
+                    var p = particles[i];
+
+                    p.y += Math.cos(angle + p.d) + 1 + p.r / 2;
+                    p.x += Math.sin(angle) * 2;
+
+                    if (p.x > W || p.x < 0 || p.y > H) {
+                        if (i % 3 > 0) //66.67% of the flakes
+                        {
+                            particles[i] = {
+                                x: Math.random() * W,
+                                y: -10,
+                                r: p.r,
+                                d: p.d
+                            };
+                        } else {
+                            //右边进入
+                            if (Math.sin(angle) > 0) {
+
+                                particles[i] = {
+                                    x: -5,
+                                    y: Math.random() * H,
+                                    r: p.r,
+                                    d: p.d
+                                };
+                            } else {
+                                particles[i] = {
+                                    x: W + 5,
+                                    y: Math.random() * H,
+                                    r: p.r,
+                                    d: p.d
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+
+            //循坏绘制画布
+            setInterval(draw, 25);
+        }
+    </script>
 </body>
 </html>

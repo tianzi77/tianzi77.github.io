@@ -29,14 +29,15 @@ body { background-color: #fff; }
 
 .container { width: 100%; }
 .wrap { position: relative; overflow: hidden; width: 1180px; margin-right: auto; margin-left: auto; }
-.header { width: 100%; }
+.header {position: relative; width: 100%; overflow: hidden;  }
+.header .canvas { position: absolute; top: 25px; left: 0; width: inherit;height: 100%; }
 .header .back-home { font-size: 16px; text-align: right; }
 .header .head-bg { width: 1180px; height: 510px; background: url(../img/header.png); }
 
 /* 礼品区域 */
 
 .award { padding: 0 100px; }
-.award .tit {margin-top: 20px; text-align: center; }
+.award .tit { margin-top: 20px; text-align: center; }
 .award .left-area { float: left; padding: 30px 40px 0 0; }
 .award .right-area p { margin: 5px 0; font-size: 16px; text-align: justify; }
 .award .right-area .reg-gift { font-size: 36px; font-weight: bold; }
@@ -84,6 +85,8 @@ body { background-color: #fff; }
     .footer img:nth-child(2) { height: 16px; }
     .footer .special { padding: 10px 0 0 0; } }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait){
-	
-}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { .header .head-bg { height: 510px; }
+    .award .tit img { height: 60px; }
+    .reg .wx p,.reg .par,.award .right-area p { font-size: 18px; }
+    .footer img:nth-child(1) { height: 75px; }
+    .footer img:nth-child(2) { height: 32px; } }
