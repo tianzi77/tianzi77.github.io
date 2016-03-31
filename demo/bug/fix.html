@@ -26,7 +26,6 @@
             top: 0;
             width: 100%;
             background-color: red;
-            
         }
         
         footer {
@@ -40,9 +39,17 @@
         }
         
         main {
-            margin-top: 50px;
-            margin-bottom: 34px;
-            height: 2000px
+            /* main绝对定位，进行内部滚动 */
+            position: absolute;
+            top: 50px;
+            bottom: 34px;
+            /* 使之可以滚动 */
+            overflow-y: scroll;
+             -webkit-overflow-scrolling: touch;
+        }
+        
+        main .content {
+            height: 2000px;
         }
     </style>
 </head>
@@ -56,6 +63,9 @@
     <!-- 可以滚动的区域 -->
     <main>
         <!-- 内容在这里... -->
+        <div class="content">
+            <!-- 内容在这里... -->
+        </div>
     </main>
 
     <!-- fixed定位的底部 -->
