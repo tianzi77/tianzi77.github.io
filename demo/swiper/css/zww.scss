@@ -1,0 +1,190 @@
+@charset 'UTF-8';
+/**
+ * @Desc  : MICE酒店预订2.0项目 
+ * @Build : 2016/04/08
+ * @Author: ZW 
+ * @Update: 2016/04/08 by ZW 
+ */
+// @import 'px2rem.scss';
+// $designWidth: 640;
+
+
+body,
+div,
+li,
+ol,
+p,
+td,
+th,
+ul {
+    margin: 0;
+    padding: 0
+}
+li {
+    list-style: none
+}
+img {
+    border: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    touch-callout: none;
+    max-width: 100%;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+html {
+    font-family: 'Microsoft Yahei', 'Lucida Grande', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', Simsun, STXihei, Sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+:focus {
+    outline: 0;
+}
+:link,
+:visited {
+    text-decoration: none;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+.clearfix:after {
+    display: block;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    content: ''
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+.show {
+    display: block!important;
+}
+.hide {
+    display: none!important;
+}
+.visible {
+    visibility: visible;
+}
+.invisible {
+    visibility: hidden;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.dv {
+    display: inline-block;
+    vertical-align: middle;
+}
+.di {
+    display: inline-block;
+}
+.text-hide {
+    border: 0;
+    background-color: transparent;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+}
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+.btn:hover {
+    text-decoration: none;
+}
+;
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+/* 清除浮动 */
+
+$lte7:true;
+%clearfix {
+    @if $lte7 {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        font: 0/0 a;
+    }
+    &:after {
+        clear: both;
+    }
+}
+@mixin triangle($direction, $size, $borderColor) {
+    content: "";
+    height: 0;
+    width: 0;
+    @if $direction==top {
+        border-bottom: $size solid $borderColor;
+        border-left: $size dashed transparent;
+        border-right: $size dashed transparent;
+    }
+    @else if $direction==right {
+        border-left: $size solid $borderColor;
+        border-top: $size dashed transparent;
+        border-bottom: $size dashed transparent;
+    }
+    @else if $direction==bottom {
+        border-top: $size solid $borderColor;
+        border-left: $size dashed transparent;
+        border-right: $size dashed transparent;
+    }
+    @else if $direction==left {
+        border-right: $size solid $borderColor;
+        border-top: $size dashed transparent;
+        border-bottom: $size dashed transparent;
+    }
+}
+body {
+    // width: 16rem;
+    // margin: 0 auto;
+}
+.tianzi{
+    width: px2rem(50);
+    height: px2rem(50);
+    background-color: red;
+}
+.am-btn{
+    // padding: px2rem(20) px2rem(10);
+    font-size: px2rem(8);
+}
+
+.am-popover-inner{
+    font-size: 10px;
+}
