@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>radio标签玩玩</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,em,button { margin: 0; padding: 0; }
+body { font: normal 12px/1.5 'Microsoft Yahei', 'Lucida Grande', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', Simsun, STXihei, Sans-serif; color: #333; -webkit-font-smoothing: antialiased; }
+img,fieldset { margin: 0; padding: 0; border: 0; }
+input,textarea,select,button { font-family: 'Lucida Grande', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', Simsun, STXihei, Sans-serif; font-size: 12px; outline: none; }
+table { border-spacing: 0; border-collapse: collapse; }
+a { text-decoration: none; color: #06c; outline: none; }
+a:hover { text-decoration: none; }
+h1,h2,h3,h4,h5 { font-weight: normal; }
+li { list-style: none; }
+dfn { font-family: arial; font-style: normal; }
+i,em { font-style: normal; }
+button { -webkit-appearance: none; }
+.fl,.mice-hd .nav-detail .nav-lists,.mice-head .wrapper .mice-logo,.mice-head .wrapper .intro-word,.mice-wrap .times .xui-btn,.container .reg-detail,.container .reg-form .reg-info .rows,.container .reg-form .reg-info .label-tit,.phone .phone-box .reg-info .rows,.phone .phone-box .reg-info .label-tit { float: left; }
+.fr,.container .reg-form { float: right; }
+.fc { clear: both; }
+.container { position: relative; min-width: 980px; max-width: 1180px; margin: 20px auto; }
+.container .reg-form { width: 400px; margin-top: 50px; padding: 20px; font-size: 16px; color: #333; border: 1px solid #d9e9f5; }
+.container .reg-form .title { padding-bottom: 10px; font-size: 16px; border-bottom: 1px solid #d9e9f5; }
+.container .reg-form .reg-ways {margin: 20px 0; font-size: 16px; color: #333;  }
+.container .reg-ways  .c-reg { position: relative; padding-left: 16px; }
+.container .reg-ways .p-reg { margin: 0 0 0 30px; }
+.container .reg-ways  .c-reg input { position: absolute; top: 5px; left: 0; }
+.container .reg-info li { margin-bottom: 25px; overflow: hidden; }
+.container .reg-info li .xui-btn { display: inline-block; overflow: visible; font-family: 'Lucida Grande', Tahoma, Arial, 'Hiragino Sans GB', 'Microsoft Yahei', Simsun, sans-serif; line-height: 1em; cursor: pointer; text-align: center; border-width: 1px; border-style: solid; border-radius: 3px; outline: none; box-shadow: 0 1px 0 rgba(0, 0, 0, .4); *font-family: 'Microsoft Yahei', Tahoma, Arial, Simsun, sans-serif; }
+.container .reg-info li .xui-btn-xlg { height: 40px; padding: 0 90px; font-size: 18px; text-shadow: 1px 1px 0 rgba(203, 106, 17, .38); }
+.container .reg-info li .xui-btn-primary { color: #fff; border-color: #f88500; background-color: #ffb000; }
+.container .reg-info li .xui-btn-primary:hover { color: #fff; border-color: #f88500; background-color: #f79700; }
+.container .reg-info li .disable { cursor: default; border: 1px solid #ddd; background-color: #e6e6e6; box-shadow: none; text-shadow: none; }
+.container .reg-info li .disable:hover { border-color: #ddd; background-color: #e6e6e6 !important; }
+.container .reg-info li.conform { margin: 20px 0; padding-left: 90px; }
+.container .reg-info li.conform .no-info {width: 215px; margin-top: 5px; font-size: 12px; text-align: right; }
+.container .rows .input-txt { float: left; width: 215px; height: 35px; font-size: 16px; line-height: 35px; text-indent: 5px; color: #333; border: 1px solid #e8e8e8; }
+.container .rows .input-txt01 { width: 120px; }
+.container .rows .help-block { position: relative; display: block; margin: 40px 0 0 0; padding: 2px 6px 3px 5px; font-size: 12px; text-align: left; color: #999; border: 1px solid #d6c197; background: #fffcd8; *padding: 4px 6px 3px 5px; *zoom: 1; }
+.container .rows .icon { background: url(../images/icon.png) no-repeat; }
+.container .rows .i7 { display: inline-block; width: 12px; height: 12px; margin-right: 3px; vertical-align: -2px; background-position: -232px 0; *vertical-align: middle; }
+.container .rows .btn-sms { float: left; margin-left: 10px; padding: 5px 12px; font-size: 14px; vertical-align: middle; text-decoration: none; color: #333; border: 1px solid #ddd; border-radius: 3px; background-color: #fcfcfc; box-shadow: 0 1px 0 #ccc; }
+.container .rows .btn-sms1 {float: left;margin: 10px 0 0 5px;  font-size: 12px; }
+.container .label-tit { width: 80px; margin-right: 10px; line-height: 35px; text-align: right; vertical-align: middle; }
+.clearfix:after{ display: block; clear: both; height: 0; content: '\0020'; }
+.clearfix { *zoom:1;}
+.fl{ float: left}
+    </style>
+<script>
+    $(function() {
+        var $radio = $(".reg-ways input[type='radio']");
+        $radio.click(function() {
+            radioShow();
+        });
+        //登录方式选择
+        function radioShow() {
+            var $show = $("#choose-reg ul");
+            for (i = 0; i < $show.length; i++) {
+                if ($radio[i].checked) {
+                    $show[i].style.display = "block";
+                } else {
+                    $show[i].style.display = "none";
+                }
+            }
+        }
+    })
+</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="reg-form">
+            <!-- 会员登录  会员注册原型切换 -->
+            <h1 class="title"><span>会员登录</span></h1>
+            <h2 class="reg-ways clearfix"><div class="fl c-reg"><label for="">携程账号登录</label><input type="radio" class="fl" checked="checked" name="radio1"></div><div class="fl c-reg p-reg"><label for="">手机动态验证码登录</label><input type="radio" class="fl" name="radio1"></div></h2>
+            <div id="choose-reg">
+                <!-- 携程账号登录 S -->
+                <ul class="reg-info" style="">
+                    <li>
+                        <label class="label-tit" for="">登录名</label>
+                        <div class="rows">
+                            <input class="input-txt" type="text" placeholder="用户名/卡号/手机/邮箱">
+                            <div class="help-block"><i class="icon i7"></i>请填写正确的用户名</div>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="label-tit" for="">密码</label>
+                        <div class="rows">
+                            <input class="input-txt" type="text">
+                            <a class="btn-sms1" href="">忘记密码?</a>
+                            <div class="help-block"><i class="icon i7"></i>请填写正确的密码</div>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="label-tit" for="">验证码</label>
+                        <div class="rows">
+                            <input class="input-txt input-txt01" type="text">
+                            <a class="btn-sms" href="">获取验证码</a>
+                            <div class="help-block"><i class="icon i7"></i>请填写正确的验证码</div>
+                        </div>
+                    </li>
+                    <li class="conform">
+                        <button class="xui-btn xui-btn-xlg xui-btn-primary " type="button">确定</button>
+                        <div class="no-info"><a href="###">没有账号？立即免费注册</a></div>
+                        <button class="xui-btn xui-btn-xlg xui-btn-primary disable" type="button">确定</button>
+                    </li>
+                </ul>
+
+                <!-- 手机登录 S -->
+                <ul class="reg-info" style="display:none;">
+                    <li>
+                        <label class="label-tit" for="">手机号</label>
+                        <div class="rows">
+                            <input class="input-txt" placeholder="" type="text">
+                            <div class="help-block"><i class="icon i7"></i>请填写正确的手机号码</div>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="label-tit" for="">短信验证</label>
+                        <div class="rows">
+                            <input class="input-txt input-txt01" type="text">
+                            <a class="btn-sms" href="">获取验证码</a>
+                            <div class="help-block"><i class="icon i7"></i>请填写正确的验证码</div>
+                        </div>
+                    </li>
+                    <li class="conform">
+                        <button class="xui-btn xui-btn-xlg xui-btn-primary " type="button">确定</button>
+                        <button class="xui-btn xui-btn-xlg xui-btn-primary disable" type="button">确定</button>
+                    </li>
+                </ul>
+                <!-- 手机登录 E -->
+            </div>
+            <!-- 携程账号登录 E -->
+
+            <!-- 注册  S -->
+            <ul class="reg-info" style="display:none; margin-top:20px;" id="reg-info">
+                <li>
+                    <label class="label-tit" for="">登录名</label>
+                    <div class="rows">
+                        <input class="input-txt" placeholder="注册使用的邮箱地址" type="text">
+                        <div class="help-block"><i class="icon i7"></i>请填写正确的登录名</div>
+                    </div>
+                </li>
+                <li>
+                    <label class="label-tit" for="">密码</label>
+                    <div class="rows">
+                        <input class="input-txt" placeholder="6-20位数字、字母和符号" type="text">
+                        <div class="help-block"><i class="icon i7"></i>请填写正确的密码</div>
+                    </div>
+                </li>
+                <li>
+                    <label class="label-tit" for="">确认密码</label>
+                    <div class="rows">
+                        <input class="input-txt" placeholder="6-20位数字、字母和符号" type="text">
+                        <div class="help-block"><i class="icon i7"></i>请填写正确的密码</div>
+                    </div>
+                </li>
+                <li class="conform">
+                    <button class="xui-btn xui-btn-xlg xui-btn-primary " type="button">注册</button>
+                    <div class="no-info"><a href="###">已有账号？立即登录</a></div>
+                    <button class="xui-btn xui-btn-xlg xui-btn-primary disable" type="button">确定</button>
+                </li>
+            </ul>
+            <!-- 注册  E -->
+        </div>
+    </div>
+</body>
+
+</html>
