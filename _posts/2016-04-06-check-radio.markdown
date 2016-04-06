@@ -22,7 +22,7 @@ radio这个标签还是挺好玩的。
 
 * 1，name 如果要在两个radio标签之间进行切换，那么你需要注册他们设置相同的name值，name="zww";
 * 2，label可以用来包含这个radio标签。我们常说input label。其实他们的玩法真的很多种。
-* 3，js或jq显示隐藏 ``` $browsers.attr("checked",false); ```
+* 3，js或jq显示隐藏  $browsers.attr("checked",false); 
 
 
 样式啊jq啊我就不写了，也就那么回事，码农都知道，
@@ -36,8 +36,7 @@ radio这个标签还是挺好玩的。
 这里毕竟不是自己的地盘。
 
 
-
- ##关于作者
+##关于作者
 
 ```javascript
   var ihubo = {
