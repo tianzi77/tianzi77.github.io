@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "两个radio标签之间的故事"
-subtitle:   " \"标签radio切换\""
-date:       2016-04-06 19:20:00
+title:      "radio之间的故事"
+subtitle:   " \"radio标签\""
+date:       2016-02-16 19:20:00
 author:     "ZWW"
 header-img: "img/t19.jpg"
 tags:
