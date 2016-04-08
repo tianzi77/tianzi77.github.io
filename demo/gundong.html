@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test for fun</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+        }
+        
+        .outer {
+            margin: 100px auto;
+            width: 100px;
+        }
+        
+        ul li {
+            list-style: none;
+        }
+        
+        button {
+            width: 100%;
+            border: 0 none;
+            background-color: red;
+            text-align: center;
+            margin-bottom: 3px;
+        }
+        
+        li {
+            width: 100px;
+            ;
+            background-color: pink;
+            text-align: center;
+            margin-bottom: 3px;
+            height: 20px;
+        }
+        
+        .box {
+            position: relative;
+            height: 112px;
+            overflow: hidden;
+        }
+        
+        ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <button class="up">上</button>
+        <div class="box">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+            </ul>
+        </div>
+        <button class="down">下</button>
+    </div>
+    <script>
+        $(function() {
+            var number = 0;
+            $(".down").click(function() {
+                var listheight = $("ul li").length;
+                var listTop = 23 * (++number);
+                if (listheight - 5 >= number) {
+                    $("ul").animate({
+                        top: -listTop
+                    }, 150,'linear');
+                } else {
+                    number--;
+                    alert("主人，不能再向上滚动了");
+                }
+            })
+            $(".up").click(function() {
+                var oParentTop = $("ul").css("top");
+                console.log(oParentTop);
+                if (number > 0) {
+                    var listTop = 23 * (--number);
+                    $("ul").animate({
+                        top: -listTop
+                    },150,'linear');
+                } else {
+                    alert("主人，不能在向下滚动了");
+                }
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>
