@@ -120,6 +120,34 @@ body {
   width: 16rem;
   margin: 0 auto; }
 
+/* swiper */
+html, body {
+  position: relative;
+  height: 100%; }
+
+.swiper-container {
+  width: 100%;
+  height: 100%; }
+
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
 /*首页*/
 .bg {
   background: url(../images/bg.png);
@@ -127,7 +155,7 @@ body {
 
 .index .person {
   text-align: center;
-  margin-top: 0.5rem; }
+  margin-top: 1.25rem; }
   .index .person img {
     width: 10.45rem;
     height: 8.1rem; }

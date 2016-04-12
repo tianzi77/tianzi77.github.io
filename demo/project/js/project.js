@@ -22,6 +22,7 @@ jQuery(document).ready(function() {
         direction: 'vertical',
 //        effect : 'fade',
         loop: false,
+        mousewheelControl:true,
         onInit: function(swiper) {
             swiper.myactive = 0;
             swiperAnimateCache(swiper); //隐藏动画元素 
