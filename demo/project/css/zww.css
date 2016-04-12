@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/**
+ * @Desc  : 携程商旅移动端 
+ * @Build : 2016/04/08
+ * @Author: ZW 
+ * @Update: 2016/04/08 by ZW 
+ */
+body,
+div,
+li,
+ol,
+p,
+td,
+th,
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+img {
+  border: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-touch-callout: none;
+  touch-callout: none;
+  max-width: 100%; }
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+html {
+  font-family: 'Microsoft Yahei', 'Lucida Grande', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', Simsun, STXihei, Sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+:focus {
+  outline: 0; }
+
+:link,
+:visited {
+  text-decoration: none; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+  content: ""; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.show {
+  display: block !important; }
+
+.hide {
+  display: none !important; }
+
+.visible {
+  visibility: visible; }
+
+.invisible {
+  visibility: hidden; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.dv {
+  display: inline-block;
+  vertical-align: middle; }
+
+.di {
+  display: inline-block; }
+
+.text-hide {
+  border: 0;
+  background-color: transparent;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none; }
+
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+* {
+  box-sizing: border-box; }
+
+/* 清除浮动 */
+/* horizontal vertical */
+/*  normal reverse */
+/*  flex-start flex-end center baseline stretch */
+/* 伸缩盒对象子元素的空间分配 */
+/* 多列布局start */
+/* 多列布局end */
+body {
+  width: 16rem;
+  margin: 0 auto; }
+
+/*首页*/
+.bg {
+  background: url(../images/bg.png);
+  background-size: cover; }
+
+.index .person {
+  text-align: center;
+  margin-top: 0.5rem; }
+  .index .person img {
+    width: 10.45rem;
+    height: 8.1rem; }
+.index .tit {
+  color: #00b5e9;
+  line-height: 0.75rem;
+  text-align: center; }
+  .index .tit h1 {
+    font-size: 22px; }
+  .index .tit h2 {
+    font-size: 18px; }
+.index .ad {
+  text-align: center;
+  margin-top: -2.5rem; }
+  .index .ad img {
+    height: 12.5rem; }
+.index .btn {
+  text-align: center;
+  font-size: 0;
+  margin: 0.75rem 0; }
+  .index .btn a {
+    font-size: 18px;
+    color: #22255a;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    display: inline-block; }
