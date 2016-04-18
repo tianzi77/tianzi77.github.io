@@ -236,6 +236,7 @@ body {
     -webkit-align-items: center;
     align-items: center;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 /*首页*/
@@ -255,7 +256,7 @@ body {
 .bg {
     background: url(../images/bg.png);
     background-size: cover;
-    overflow-y: scroll;
+//    overflow-y: scroll;
 }
 .index {
     .person {

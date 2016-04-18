@@ -147,7 +147,8 @@ body {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  overflow-y: scroll; }
 
 /*首页*/
 .mask {
@@ -164,8 +165,7 @@ body {
 
 .bg {
   background: url(../images/bg.png);
-  background-size: cover;
-  overflow-y: scroll; }
+  background-size: cover; }
 
 .index .person {
   text-align: center;
