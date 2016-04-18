@@ -360,8 +360,8 @@ body {
     .pay-style .items ul {
       padding: 0; }
     .pay-style .items li {
-      width: 4.75rem;
-      height: 4.75rem;
+      width: 6.25rem;
+      height: 6.25rem;
       background-color: #fff;
       border: 10px solid #974700;
       float: left;
