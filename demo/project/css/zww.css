@@ -121,7 +121,8 @@ body {
   margin: 0 auto; }
 
 /* swiper */
-html, body {
+html,
+body {
   position: relative;
   height: 100%; }
 
@@ -136,8 +137,8 @@ html, body {
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
   -webkit-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
@@ -149,9 +150,22 @@ html, body {
           flex-direction: column; }
 
 /*首页*/
+.mask {
+  background-color: black;
+  opacity: .7;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%; }
+
 .bg {
   background: url(../images/bg.png);
-  background-size: cover; }
+  background-size: cover;
+  overflow-y: scroll; }
 
 .index .person {
   text-align: center;
@@ -183,3 +197,577 @@ html, body {
     border-radius: 5px;
     padding: 0.75rem 1.5rem;
     display: inline-block; }
+
+/*选择页*/
+.choose {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .choose .worker .outer {
+    display: inline-block;
+    border-radius: 50%;
+    width: 8.75rem;
+    height: 8.75rem;
+    background-color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #22255a;
+    border: 10px solid #c80975;
+    position: relative; }
+  .choose .worker .outer1 {
+    display: inline-block;
+    border-radius: 50%;
+    width: 8.75rem;
+    height: 8.75rem;
+    background-color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #22255a;
+    border: 10px solid #c80975;
+    position: relative; }
+  .choose .worker .inner {
+    width: 100px;
+    height: 52px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -26px;
+    margin-left: -50px; }
+    .choose .worker .inner .mine {
+      font-size: 16px; }
+  .choose .mananger {
+    margin-top: 2.5rem; }
+    .choose .mananger .outer1 {
+      border-color: #0063af; }
+
+/*如何开通*/
+.open {
+  padding: 1rem 0; }
+  .open .how-open img {
+    height: 3.75rem; }
+  .open .outer {
+    display: inline-block;
+    border-radius: 50%;
+    width: 8.75rem;
+    height: 8.75rem;
+    background-color: #fff;
+    font-size: 15px;
+    text-align: center;
+    color: #22255a;
+    border: 10px solid #c80975;
+    position: relative; }
+  .open .inner {
+    width: 120px;
+    height: 52px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -26px;
+    margin-left: -60px; }
+  .open .blue .outer {
+    border-color: #0063af; }
+  .open .continue {
+    text-align: center;
+    font-size: 0; }
+    .open .continue a {
+      font-size: 18px;
+      color: #22255a;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 0.75rem 1.5rem;
+      display: inline-block; }
+  .open section {
+    margin: 0.25rem 0; }
+
+/*企业三方&&pc端*/
+.three .area1 {
+  font-size: 15px;
+  padding: 1rem 0;
+  width: 90%;
+  text-indent: 2em;
+  border: 5px solid #c80975;
+  margin: 1rem 0;
+  color: #00b5e9;
+  margin-left: auto;
+  margin-right: auto; }
+.three .area2 {
+  color: #fff;
+  width: 90%;
+  padding: 1rem;
+  font-size: 15px;
+  border: 5px solid #c80975;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto; }
+.three .back {
+  text-align: center;
+  font-size: 0;
+  margin: 2.5rem 0 0 0; }
+  .three .back a {
+    font-size: 18px;
+    color: #22255a;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    display: inline-block; }
+
+/*功能特色*/
+.special {
+  padding: 1rem 0; }
+  .special .how-open img {
+    height: 3.75rem; }
+  .special .items ul {
+    padding: 1.25rem 0; }
+  .special .items li {
+    width: 6.25rem;
+    height: 6.25rem;
+    display: inline-block;
+    background-color: #fff;
+    border: 10px solid #974700;
+    float: left;
+    border-radius: 50%;
+    margin: 1rem 0.75rem;
+    font-size: 16px;
+    color: #22255a;
+    text-align: center;
+    line-height: 5.25rem; }
+    .special .items li:nth-child(2) {
+      border-color: #8400af; }
+    .special .items li:nth-child(3) {
+      border-color: #066748; }
+    .special .items li:nth-child(4) {
+      border-color: #0063af; }
+  .special .next {
+    text-align: center;
+    font-size: 0; }
+    .special .next a {
+      font-size: 18px;
+      color: #22255a;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 0.75rem 1.5rem;
+      display: inline-block; }
+
+/*申请月结预存*/
+.pay-style {
+  padding: 1rem 0; }
+  .pay-style .how-open img {
+    height: 3.75rem; }
+  .pay-style .items {
+    margin-bottom: 0.75rem;
+    margin-top: 2.875rem; }
+    .pay-style .items ul {
+      padding: 0; }
+    .pay-style .items li {
+      width: 6.25rem;
+      height: 6.25rem;
+      display: inline-block;
+      background-color: #fff;
+      border: 10px solid #974700;
+      float: left;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #c80975;
+      text-align: center;
+      line-height: 5.25rem; }
+      .pay-style .items li:nth-child(2) {
+        border-color: #0063af;
+        margin-left: 1rem; }
+  .pay-style .circle-ways {
+    width: 12.5rem;
+    height: 10rem;
+    padding: 0.75rem 1.5rem;
+    margin-top: 10px;
+    position: relative;
+    background: #00b5e9; }
+    .pay-style .circle-ways:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -2.5rem;
+      display: block;
+      border: 1.25rem solid;
+      border-color: #0095be transparent transparent #0095be; }
+    .pay-style .circle-ways:before {
+      content: "";
+      background: #00b5e9;
+      width: 10.025rem;
+      height: 2.5rem;
+      position: absolute;
+      bottom: -2.5rem;
+      left: 0; }
+    .pay-style .circle-ways dl {
+      font-size: 14px;
+      color: #22255a;
+      line-height: 24px; }
+    .pay-style .circle-ways dd {
+      margin: 0; }
+  .pay-style .next1 {
+    text-align: center;
+    font-size: 0; }
+    .pay-style .next1 a {
+      font-size: 18px;
+      color: #22255a;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 0.75rem 1.5rem;
+      display: inline-block; }
+
+/*申请月结*/
+.month .month-wd p {
+  font-size: 15px;
+  padding: 0.75rem 0.375rem;
+  width: 90%;
+  text-indent: 2em;
+  border: 5px solid #c80975;
+  margin: 1rem auto;
+  color: #00b5e9;
+  text-align: justify; }
+.month .month-pic img {
+  height: 11.625rem; }
+.month .month-step {
+  font-size: 16px; }
+  .month .month-step ul {
+    width: 80%;
+    margin: 0 auto; }
+  .month .month-step li {
+    margin: 0.5rem 0;
+    list-style: disc;
+    color: #fff; }
+.month .next2 {
+  text-align: center;
+  font-size: 0; }
+  .month .next2 a {
+    font-size: 18px;
+    color: #22255a;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    display: inline-block; }
+
+/*申请预存*/
+.save .month-wd p {
+  font-size: 15px;
+  padding: 0.75rem 0.375rem;
+  width: 90%;
+  border: 5px solid #c80975;
+  margin: 1rem auto;
+  color: #00b5e9;
+  text-align: justify; }
+.save .month-pic img {
+  height: 11.625rem; }
+.save .next3 {
+  text-align: center;
+  font-size: 0;
+  margin-top: 1.25rem; }
+  .save .next3 a {
+    font-size: 18px;
+    color: #22255a;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    display: inline-block; }
+
+/*差旅标签配置*/
+.config {
+  padding: 1rem 0; }
+  .config .config-h img {
+    height: 3.75rem; }
+  .config .config-s {
+    margin: 1rem 0; }
+    .config .config-s img {
+      height: 8.675rem; }
+  .config .items {
+    margin-bottom: 0.75rem; }
+    .config .items ul {
+      padding: 0; }
+    .config .items li {
+      width: 6.25rem;
+      height: 6.25rem;
+      display: inline-block;
+      background-color: #fff;
+      border: 10px solid #c80975;
+      float: left;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #22255a;
+      text-align: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-direction: column;
+      -moz-box-direction: column;
+      -webkit-flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      .config .items li:nth-child(2) {
+        border-color: #0063af;
+        margin-left: 1rem; }
+  .config .next4 {
+    text-align: center;
+    font-size: 0;
+    margin-top: 1.25rem; }
+    .config .next4 a {
+      font-size: 18px;
+      color: #22255a;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 0.75rem 1.5rem;
+      display: inline-block; }
+
+/*国内机票最低价格判断&&机票提前预定判断 */
+.fly-in .fly-w,
+.advance .fly-w {
+  width: 12.5rem;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  position: relative;
+  background: #00b5e9;
+  font-size: 14px;
+  color: #22255a; }
+  .fly-in .fly-w:after,
+  .advance .fly-w:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -2.475rem;
+    display: block;
+    border: 1.25rem solid;
+    border-color: #0095be transparent transparent #0095be; }
+  .fly-in .fly-w:before,
+  .advance .fly-w:before {
+    content: "";
+    background: #00b5e9;
+    width: 10.025rem;
+    height: 2.5rem;
+    position: absolute;
+    bottom: -2.475rem;
+    left: 0; }
+.fly-in .next5,
+.advance .next5 {
+  text-align: center;
+  font-size: 0;
+  margin-top: 3.5rem; }
+  .fly-in .next5 a,
+  .advance .next5 a {
+    font-size: 18px;
+    color: #22255a;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    display: inline-block; }
+
+/*员工信息管理*/
+.worker .area1 {
+  font-size: 15px;
+  padding: 1rem 0.5rem;
+  width: 90%;
+  border: 5px solid #c80975;
+  margin: 1rem auto;
+  text-align: justify;
+  color: #00b5e9; }
+.worker .area2 {
+  color: #fff;
+  width: 90%;
+  padding: 1rem;
+  font-size: 15px;
+  border: 5px solid #c80975;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto; }
+.worker .back1 {
+  text-align: center;
+  font-size: 0;
+  margin-top: 1rem; }
+  .worker .back1 a {
+    font-size: 18px;
+    color: #22255a;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    display: inline-block; }
+
+/*结算信息管理*/
+.work-info .info-h {
+  margin-top: 0.75rem; }
+  .work-info .info-h img {
+    height: 3.4rem; }
+.work-info .info-w {
+  width: 12.5rem;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  position: relative;
+  background: #00b5e9;
+  font-size: 14px;
+  color: #22255a; }
+  .work-info .info-w dt {
+    font-size: 16px;
+    color: 22255a;
+    font-style: italic; }
+  .work-info .info-w dd {
+    font-size: 14px;
+    color: #22255a;
+    margin: 0;
+    text-align: justify;
+    padding-top: 0.25rem; }
+  .work-info .info-w:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -2.475rem;
+    display: block;
+    border: 1.25rem solid;
+    border-color: #0095be transparent transparent #0095be; }
+  .work-info .info-w:before {
+    content: "";
+    background: #00b5e9;
+    width: 10.025rem;
+    height: 2.5rem;
+    position: absolute;
+    bottom: -2.475rem;
+    left: 0; }
+.work-info .next6 {
+  text-align: center;
+  font-size: 0;
+  margin-top: 4.5rem; }
+  .work-info .next6 a {
+    font-size: 18px;
+    color: #22255a;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    display: inline-block; }
+
+/*企业号进入携程商旅 */
+.corp {
+  background: url(../images/i.png);
+  background-size: contain; }
+  .corp section {
+    width: 12rem;
+    height: 7.85rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 50000;
+    margin-top: -3.925rem;
+    margin-left: -6rem;
+    text-align: center; }
+  .corp img {
+    height: 7.85rem;
+    -webkit-animation: pulse .5s linear infinite;
+            animation: pulse .5s linear infinite;
+    cursor: pointer; }
+  .corp p {
+    font-size: 16px;
+    color: #00b5e9; }
+
+.swiper-container1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; }
+
+.index .slide1 {
+  background: url(../images/index.png);
+  background-size: cover; }
+  .index .slide1 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+.index .slide2 {
+  background: url(../images/pay.png);
+  background-size: cover; }
+  .index .slide2 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+.index .slide3 {
+  background: url(../images/power-bg.png);
+  background-size: cover; }
+  .index .slide3 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+.index .slide4 {
+  background: url(../images/power1-bg.png);
+  background-size: cover; }
+  .index .slide4 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+.index .slide5 {
+  background: url(../images/fly-bg.png);
+  background-size: cover; }
+  .index .slide5 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+.index .slide6 {
+  background: url(../images/hotel-bg.png);
+  background-size: cover; }
+  .index .slide6 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+.index .slide7 {
+  background: url(../images/train-bg.png);
+  background-size: cover; }
+  .index .slide7 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+.index .slide8 {
+  background: url(../images/car-bg.png);
+  background-size: cover; }
+  .index .slide8 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+.index .slide9 {
+  background: url(../images/own-bg.png);
+  background-size: cover; }
+  .index .slide9 img {
+    height: 5.725rem;
+    margin-top: 6rem; }
+  .index .slide9 .btn1 {
+    text-align: center;
+    font-size: 0;
+    margin: 8rem 0 0 0; }
+    .index .slide9 .btn1 a {
+      font-size: 18px;
+      color: #22255a;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 0.75rem 1.5rem;
+      display: inline-block; }
+
+/*动画*/
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse; }
+
+@media screen and (orientation: landscape) {
+  .choose {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; } }
