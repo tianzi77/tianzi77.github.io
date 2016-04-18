@@ -494,7 +494,7 @@ body {
 /*申请月结预存*/
 
 .pay-style {
-    padding: px2rem(40) 0;
+    padding: px2rem(10) 0;
     .how-open {
         img {
             height: px2rem(150);
@@ -507,8 +507,8 @@ body {
             padding: 0;
         }
         li {
-            width: px2rem(250);
-            height: px2rem(250);
+            width: px2rem(200);
+            height: px2rem(200);
             background-color: #fff;
             border: 10px solid #974700;
             float: left;
@@ -589,7 +589,7 @@ body {
     }
     .month-pic {
         img {
-            height: px2rem(465);
+            height: px2rem(450);
         }
     }
     .month-step {
