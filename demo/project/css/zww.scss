@@ -417,13 +417,15 @@ body {
     .area2 {
         color: #fff;
         width: 90%;
-        padding: px2rem(40);
+        padding: px2rem(30);
         font-size: 15px;
         border: 5px solid #c80975;
         border-radius: 15px;
         margin-left: auto;
         margin-right: auto;
-        img {}
+        img {
+            border-radius: 15px;
+        }
     }
     .back {
         text-align: center;
