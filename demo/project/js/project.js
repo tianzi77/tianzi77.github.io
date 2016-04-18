@@ -121,7 +121,7 @@ jQuery(document).ready(function () {
     });
     $(".back1 a,back2 a").click(function () {
         mySwiper.slideTo(5, 1000, false);
-    })
+    });
     $(".next a").click(function () {
         mySwiper.slideTo(14, 1000, false);
         $('#overlay').show();
