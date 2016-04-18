@@ -396,7 +396,7 @@ body {
         }
     }
     section {
-        margin: px2rem(10) 0;
+        margin: px2rem(5) 0 0 0;
     }
 }
 
@@ -507,9 +507,8 @@ body {
             padding: 0;
         }
         li {
-            width: px2rem(250);
-            height: px2rem(250);
-            display: inline-block;
+            width: px2rem(190);
+            height: px2rem(190);
             background-color: #fff;
             border: 10px solid #974700;
             float: left;
@@ -517,7 +516,9 @@ body {
             font-size: 16px;
             color: #c80975;
             text-align: center;
-            line-height: px2rem(210);
+            @include disflex;
+            @include boxdirection(column);
+            justify-content: center;
             &:nth-child(2) {
                 border-color: #0063af;
                 margin-left: px2rem(40);
@@ -582,7 +583,7 @@ body {
         width: 90%;
         text-indent: 2em;
         border: 5px solid #c80975;
-        margin: px2rem(40) auto;
+        margin: px2rem(10) auto;
         color: #00b5e9;
         text-align: justify;
     }
@@ -598,7 +599,7 @@ body {
             margin: 0 auto;
         }
         li {
-            margin: px2rem(20) 0;
+            margin: px2rem(15) 0;
             list-style: disc;
             color: #fff;
         }
