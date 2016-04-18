@@ -243,7 +243,7 @@ body {
 
 /*如何开通*/
 .open {
-  padding: 1rem 0; }
+  padding: 0.25rem 0; }
   .open .how-open img {
     height: 3.75rem; }
   .open .outer {
