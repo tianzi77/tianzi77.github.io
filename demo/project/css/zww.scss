@@ -985,6 +985,34 @@ body {
     animation: pulse .5s linear infinite;
 }
 
+/*修改分页样式*/
+.swiper-pagination-bullet {
+    background: #fff !important;
+}
+.swiper-pagination-bullet-active {
+    background-color: #00b5e9 !important;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 3px !important;
+}
+.swiper-pagination {
+    background-color: #161616;
+    @include disflex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    width: auto !important;
+    left: 50% !important;
+    transform: translate(-50%, 0);
+}
+.swiper-pagination-bullet{
+    opacity: 1 !important;
+}
+
 /*动画*/
 
 @keyframes pulse {
@@ -1005,6 +1033,9 @@ body {
     -webkit-animation-name: pulse;
     animation-name: pulse;
 }
+
+/*媒介*/
+
 @media screen and (orientation: landscape) {
     .choose {
         justify-content: flex-start;
