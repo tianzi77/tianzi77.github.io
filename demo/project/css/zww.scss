@@ -9,6 +9,9 @@
 
 @import 'px2rem.scss';
 $designWidth: 640;
+* {
+    box-sizing: border-box;
+}
 body,
 div,
 li,
@@ -256,7 +259,6 @@ body {
 .bg {
     background: url(../images/bg.png);
     background-size: cover;
-//    overflow-y: scroll;
 }
 .index {
     .person {
@@ -978,6 +980,9 @@ body {
             }
         }
     }
+}
+.imove {
+    animation: pulse .5s linear infinite;
 }
 
 /*动画*/

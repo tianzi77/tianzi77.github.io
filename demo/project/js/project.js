@@ -55,8 +55,16 @@ jQuery(document).ready(function () {
         pagination: '.swiper-pagination',
         direction: 'horizontal',
         mousewheelControl: false,
-        //        autoplay: 5000,
+        autoplay: false,
         hashnav: true,
+        onInit: function (swiper) {
+            swiper.myactive = 0;
+            swiperAnimateCache(swiper); //隐藏动画元素 
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function (swiper) {
+            swiperAnimate(swiper);
+        },
     });
 
     /*根据hash值进行不同页面的来回跳转*/
