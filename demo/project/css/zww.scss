@@ -455,8 +455,9 @@ body {
         }
     }
     .items {
-        ul {
-            padding: px2rem(50) 0;
+        .items-row {
+            @include disflex;
+            justify-content: center;
         }
         li {
             width: px2rem(250);
@@ -464,7 +465,6 @@ body {
             display: inline-block;
             background-color: #fff;
             border: 10px solid #974700;
-            float: left;
             border-radius: 50%;
             margin: px2rem(40) px2rem(30);
             font-size: 16px;
@@ -584,7 +584,7 @@ body {
 .month {
     .month-wd p {
         font-size: 15px;
-        padding: px2rem(30) px2rem(15);
+        padding: px2rem(25) px2rem(15);
         width: 90%;
         text-indent: 2em;
         border: 5px solid #c80975;
@@ -604,9 +604,12 @@ body {
             margin: 0 auto;
         }
         li {
-            margin: px2rem(15) 0;
+            margin: px2rem(5) 0;
             list-style: disc;
             color: #fff;
+            &:last-child {
+                margin-bottom: px2rem(10);
+            }
         }
     }
     .next2 {
@@ -986,6 +989,7 @@ body {
 }
 
 /*修改分页样式*/
+
 .swiper-pagination-bullet {
     background: #fff !important;
 }
@@ -1009,8 +1013,11 @@ body {
     left: 50% !important;
     transform: translate(-50%, 0);
 }
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
     opacity: 1 !important;
+}
+.swiper-pagination {
+    z-index: 999999 !important;
 }
 
 /*动画*/
