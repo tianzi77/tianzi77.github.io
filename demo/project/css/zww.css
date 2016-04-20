@@ -768,7 +768,8 @@ body {
 
 /*修改分页样式*/
 .swiper-pagination-bullet {
-  background: #fff !important; }
+  background: #fff !important;
+  opacity: 1; }
 
 .swiper-pagination-bullet-active {
   background-color: #00b5e9 !important; }

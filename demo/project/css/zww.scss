@@ -992,6 +992,7 @@ body {
 
 .swiper-pagination-bullet {
     background: #fff !important;
+    opacity: 1;
 }
 .swiper-pagination-bullet-active {
     background-color: #00b5e9 !important;
@@ -1013,9 +1014,6 @@ body {
     left: 50% !important;
     transform: translate(-50%, 0);
 }
-//.swiper-pagination-bullet {
-//    opacity: 1 !important;
-//}
 .swiper-pagination {
     z-index: 999999 !important;
 }
