@@ -53,8 +53,8 @@ jQuery(document).ready(function () {
         },
         autoplay: false,
         hashnav: true,
-        observer: true, //修改swiper自己或子元素时，自动初始化swiper
-        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observer: true,
+        observeParents: true,
 
     });
     //swiper2
@@ -72,8 +72,8 @@ jQuery(document).ready(function () {
         onSlideChangeEnd: function (swiper) {
             swiperAnimate(swiper);
         },
-        observer: true, //修改swiper自己或子元素时，自动初始化swiper
-        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observer: true,
+        observeParents: true,
     });
 
     /*根据hash值进行不同页面的来回跳转*/
