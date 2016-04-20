@@ -5,7 +5,13 @@
  * @Update: 2016/04/20 by zww 
  */
 jQuery(document).ready(function () {
-
+    //loading 
+   
+    $(".fakeloader").fakeLoader({
+        timeToHide: 3000,
+        bgColor: "#262a67",
+        spinner: "spinner2"
+    });
     //固定高度
     function fixPagesHeight() {
         $('.swiper-slide').css({
