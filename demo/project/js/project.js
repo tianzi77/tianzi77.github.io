@@ -1,8 +1,8 @@
 /**
  * @Desc  : 携程商旅移动端解决方案 based on jq
- * @Build : 2016/04/10 
+ * @Build : 2016/04/20 
  * @Author: zww 
- * @Update: 2016/04/10 by zww 
+ * @Update: 2016/04/20 by zww 
  */
 jQuery(document).ready(function () {
 

@@ -1040,7 +1040,10 @@ body {
     -webkit-animation-name: pulse;
     animation-name: pulse;
 }
-
+/*加载动画*/
+.fakeloader img{
+    height: px2rem(324);
+}
 /*媒介*/
 
 @media screen and (orientation: landscape) {

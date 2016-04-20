@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="./css/zww.css">
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/fakeLoader.css">
     <script src="./js/hotcss.js" type="text/javascript"></script>
     <script src="./js/jquery.min.js" type="text/javascript"></script>
     <script src="./js/swiper.jquery.min.js" type="text/javascript"></script>
     <script src="./js/swiper.animate.min.js" type="text/javascript"></script>
     <script src="./js/project.js" type="text/javascript"></script>
+    <script src="./js/fakeLoader.min.js" type="text/javascript"></script>
 </head>
 
 <body>
     <div class="swiper-container">
+        <div class="fakeloader"></div>
         <div class="swiper-wrapper">
             <!-- 首页 -->
             <div class="swiper-slide bg swiper-no-swiping index" data-hash="首页">
@@ -376,6 +379,15 @@
 
 
 </body>
-</body>
+<script>
+    $(document).ready(function() {
+        $(".fakeloader").fakeLoader({
+            timeToHide: 2000,
+            bgColor: "#262a67",
+            spinner: "spinner2"
+        });
+        $(".fakeloader").append("<div style='text-align:center;margin-top:20%;'><img src='./images/loading.png' style='height:160px;'></div>");
+    });
+</script>
 
 </html>
