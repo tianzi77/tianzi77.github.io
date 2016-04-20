@@ -798,9 +798,6 @@ body {
       -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0); }
 
-.swiper-pagination-bullet {
-  opacity: 1 !important; }
-
 .swiper-pagination {
   z-index: 999999 !important; }
 
