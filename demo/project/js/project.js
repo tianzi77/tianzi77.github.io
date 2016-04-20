@@ -6,7 +6,6 @@
  */
 jQuery(document).ready(function () {
     //loading 
-   
     $(".fakeloader").fakeLoader({
         timeToHide: 3000,
         bgColor: "#262a67",
@@ -41,7 +40,7 @@ jQuery(document).ready(function () {
     //swiper
     var mySwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
-        effect: 'coverflow',
+        effect: 'fade',
         loop: false,
         mousewheelControl: false,
         onInit: function (swiper) {
