@@ -1,0 +1,162 @@
+@charset 'UTF-8';
+
+/**
+ * @Desc  : 携程商旅移动端 
+ * @Build : 2016/04/30
+ * @Author: ZWW 
+ * @Update: 2016/04/08 by ZWW 
+ */
+
+@import 'px2rem.scss';
+$designWidth: 640;
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+em,
+button {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none
+}
+img {
+    border: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    touch-callout: none;
+    max-width: 100%;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+html {
+    font-family: 'Microsoft Yahei', 'Lucida Grande', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', Simsun, STXihei, Sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+:focus {
+    outline: 0;
+}
+:link,
+:visited {
+    text-decoration: none;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+.clearfix:after {
+    display: block;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    content: ''
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.dv {
+    display: inline-block;
+    vertical-align: middle;
+}
+.di {
+    display: inline-block;
+}
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    width: 16rem;
+    margin: 0 auto;
+}
+
+/* 清除浮动 */
+
+$lte7:true;
+%clearfix {
+    @if $lte7 {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        font: 0/0 a;
+    }
+    &:after {
+        clear: both;
+    }
+}
+.container {
+    .wrap {
+        padding: px2rem(10) px2rem(20);
+    }
+    .first {
+        line-height: 30px;
+        .tit {
+            color: #333;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+           margin-top:px2rem(10);
+        }
+        .small {
+            font-size: 14px;
+            padding-top: px2rem(40);
+            text-align: left;
+            margin-bottom: px2rem(20);
+        }
+    }
+    .second {
+        .fina {
+            font-size: 15px;
+            margin-top:px2rem(10);
+        }
+    }
+}
