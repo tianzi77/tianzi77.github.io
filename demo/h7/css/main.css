@@ -121,12 +121,14 @@ body {
     font-size: 18px;
     text-align: center;
     font-weight: bold;
-    margin-top: 0.25rem; }
+    margin-top: 0.25rem;
+    color: #367bd5; }
   .container .first .small {
     font-size: 14px;
     padding-top: 1rem;
     text-align: left;
-    margin-bottom: 0.5rem; }
+    margin-bottom: 0.5rem;
+    color: #666; }
 .container .second .fina {
   font-size: 15px;
   margin-top: 0.25rem; }

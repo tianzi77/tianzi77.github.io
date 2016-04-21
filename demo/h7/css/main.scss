@@ -144,19 +144,21 @@ $lte7:true;
             font-size: 18px;
             text-align: center;
             font-weight: bold;
-           margin-top:px2rem(10);
+            margin-top: px2rem(10);
+            color: #367bd5;
         }
         .small {
             font-size: 14px;
             padding-top: px2rem(40);
             text-align: left;
             margin-bottom: px2rem(20);
+            color: #666;
         }
     }
     .second {
         .fina {
             font-size: 15px;
-            margin-top:px2rem(10);
+            margin-top: px2rem(10);
         }
     }
 }
