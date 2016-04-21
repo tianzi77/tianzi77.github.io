@@ -158,5 +158,9 @@ body {
   -webkit-flex-direction: colume; }
   .container .footer .logo-list li {
     flex: 1; }
+.container .list-icon {
+  padding-left: 0.5rem; }
+  .container .list-icon li {
+    list-style: disc; }
 
 /*# sourceMappingURL=main.css.map */
