@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>fullpage 移动端解决方案</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css" type="text/css">
+    <link rel="stylesheet" href="http://www.uedsc.com/wp-content/uploads/2015/02/fullpage-demo/jquery.fullPage.css" type="text/css">
+    <style>
+        .fp-controlArrow {
+            display: none !important;
+        }
+        #silentMoveTo {
+            top: 20px;
+            left: 20px;
+            position: fixed;
+            z-index: 999;
+            font-size: 2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- section上下，slide左右 -->
+    <div id="fullpage">
+        <div class="section" data-menuanchor="1">第一屏</div>
+        <div class="section">第二屏</div>
+        <div class="section">
+            <div class="slide">第三屏的第一屏</div>
+            <div class="slide">第三屏的第二屏</div>
+            <div class="slide">第三屏的第三屏</div>
+            <div class="slide">第三屏的第四屏</div>
+        </div>
+        <div class="section">第四屏</div>
+    </div>
+    <button id="silentMoveTo">Click here</button>
+    <!-- 跳转测试 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/jquery.fullPage.min.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            $('#fullpage').fullpage({
+                'verticalCentered': false,
+                'css3': true,
+                'sectionsColor': ['#254875', '#00FF00', '#254587', '#695684'],
+                'anchors': ['1', '2', '3', '4'], //data-menuanchor与之对应
+                'menu': '#menu', //菜单控制导航
+                'navigation': true, //上下分页导航
+                'navigationPosition': 'right',
+                'navigationColor': '#abcdef',
+                'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+                'scrollOverflow': true,
+                'slidesNavigation': true, //左右分页
+                'slidesNavPosition': 'bottom',
+                'loopBottom': false,
+                'loopTop': false,
+                'loopHorizontal': false,
+            });
+            $(document).on('click', '#silentMoveTo', function() {
+                $.fn.fullpage.silentMoveTo('3', 1); //对应anchors的值进行跳转
+                return false;
+            });
+        })
+    </script>
+
+</body>
+
+</html>
