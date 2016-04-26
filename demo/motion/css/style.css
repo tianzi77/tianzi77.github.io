@@ -1140,11 +1140,11 @@ em {
     left: 99px;
     top: 135px;
     z-index: 5;
-    width: 126px;
+    width: 136.5px;
     height: 136.5px;
-    background-image: url('../img/sprites_wording2.png');
-    background-position: 0 -934.5px;
-    background-size: 279px auto
+    background-image: url('../img/photo.jpg');
+/*    background-position: 0 -934.5px;*/
+    background-size: cover;
 }
 .page-16 .download {
     position: absolute;
