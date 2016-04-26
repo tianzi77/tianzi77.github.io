@@ -451,7 +451,7 @@ em {
     z-index: 10;
     width: 81px;
     height: 25px;
-    background-image: url('../img/sprites_common.png');
+    background-image: url('../img/logo.png');
     background-position: 0 -28px;
     background-size: 81px auto
 }
