@@ -270,3 +270,38 @@
 </body>
 
 </html>
+<!-- 底部高度自适应 -->
+<script>
+    $(function() {
+        footerAuto();
+    })
+
+    function footerAuto() {
+        var _wh = $(window).height();
+        var _dh = $(document).height();
+        var _bh = $(document.body).height();
+        if (_bh < _wh) {
+            $("#footer").css({
+                position: "fixed",
+                bottom: "0",
+                left: "0",
+            })
+        } else {
+            $("#footer").css({
+                position: "static",
+                bottom: "auto",
+                left: "auto",
+            })
+        }
+    }
+    <!-- 底部高度自适应方法2 -->
+    function ct() {
+        return document.compatMode == "BackCompat" ? document.body.clientHeight : document.documentElement.clientHeight;
+    }
+    var f = document.getElementById('footer');
+    (window.onresize = function() {
+        f.style.position = document.body.scrollHeight > ct() ? 'static' : 'fixed';
+        f.style.left = "0";
+        f.style.bottom = "0";
+    })();
+</script>
