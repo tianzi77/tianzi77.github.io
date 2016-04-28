@@ -1,0 +1,87 @@
+---
+layout:     post
+title:      "垂直居中终端解决方案，兼容ie6+"
+subtitle:   " \"垂直居中\""
+date:       2016-04-28 19:20:00
+author:     "ZWW"
+header-img: "img/tips-bg.jpg"
+tags:
+    - radio标签
+---
+
+
+垂直居中还是很好玩的。方法有十来种。
+各有各的好处与坏处，但是要兼容到ie67还真是个让人头痛的问题。很多现在浏览器支持的样式又不能用，给出一种自己的解决方案吧。
+
+
+
+<a href="http://www.zhangweiwei.cn/demo/article/vertical.html" target="_blank">vertical－demo</a>
+
+样式：
+```css
+    .vertical-box {
+            width: 198px;
+            height: 198px;
+            background-color: yellow;
+            border: 1px red solid;
+            text-align: center;
+        }
+        
+        .vertical-box:after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        
+        strong {
+            display: block;
+        }
+        
+        .content {
+            display: inline-block;
+            vertical-align: middle;
+            *display: inline;
+            *zoom: 1
+        }
+        
+        .ie7 {
+            width: 0;
+            font-size: 0;
+            height: 100%;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+        }
+```  
+结构
+```html
+    <div class="vertical-box">
+        <div class="content">
+            <img src="http://prototype.ui.sh.ctriptravel.com/git/Flight/online/master/offline/trade_sharing/images/add_pic.png" alt="">
+            <strong>添加图片</strong>
+        </div>
+        <i class="ie7"></i>
+    </div>
+```
+
+原理是：都显示为行框的高度由最高的行内框决定。
+
+ie7作为演员，高度指定和父元素一致。
+
+兼容性：支持inline-block的浏览器均可。
+
+对于IE6/7，可以先使用hack方式使其支持 inline-block后，使用此方法实现垂直居中。
+
+##关于作者
+
+```javascript
+  var ihubo = {
+    nickName  : "TZ",
+    site : "http://www.zhangweiwei.cn"
+  }
+```
+
+    
+

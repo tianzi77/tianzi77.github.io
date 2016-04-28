@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中解决方案（兼容ie6+）</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        .vertical-box {
+            width: 198px;
+            height: 198px;
+            background-color: yellow;
+            border: 1px red solid;
+            text-align: center;
+        }
+        
+        .vertical-box:after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        
+        strong {
+            display: block;
+        }
+        
+        .content {
+            display: inline-block;
+            vertical-align: middle;
+            *display: inline;
+            *zoom: 1
+        }
+        
+        .ie7 {
+            width: 0;
+            font-size: 0;
+            height: 100%;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="vertical-box">
+        <div class="content">
+            <img src="http://prototype.ui.sh.ctriptravel.com/git/Flight/online/master/offline/trade_sharing/images/add_pic.png" alt="">
+            <strong>添加图片</strong>
+        </div>
+        <i class="ie7"></i>
+    </div>
+
+
+
+    <script>
+        console.log("just for fun")
+    </script>
+</body>
+
+</html>
