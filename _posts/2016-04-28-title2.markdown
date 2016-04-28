@@ -1,13 +1,16 @@
 ---
 layout:     post
-title:      "垂直居中终端解决方案，兼容ie6+"
+title:      "垂直居中终端解决方案，兼容..."
 subtitle:   " \"垂直居中\""
 date:       2016-04-28 19:20:00
 author:     "ZWW"
 header-img: "img/tips-bg.jpg"
 tags:
-    - radio标签
+    - 垂直居中
 ---
+
+
+
 
 
 垂直居中还是很好玩的。方法有十来种。
