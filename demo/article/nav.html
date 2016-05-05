@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>滑块高度自适应导航</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <script type="text/javascript" src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <style>
+        /*侧边*/
+        
+        .aside {
+            position: fixed;
+            z-index: 2;
+            right: 0;
+            top: 40%;
+        }
+        
+        .aside a {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            padding: 0 5px;
+            border-radius: 1px 2px 3px 4px/4px 3px 2px 1px;
+            background-color: black;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #abcdef;
+        }
+        
+        .aside a.cur {
+            color: gold;
+            border-bottom: 3px solid pink;
+        }
+        
+        .one,
+        .two,
+        .three,
+        .four,
+        .five {
+            width: 100%;
+            height: 888px;
+            font-size: 96px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .one {
+            background-color: red;
+        }
+        
+        .two {
+            background-color: pink;
+        }
+        
+        .three {
+            background-color: yellow;
+        }
+        
+        .four {
+            background-color: aqua;
+        }
+        
+        .five {
+            background-color: bisque;
+        }
+        
+        .footer {
+            background: gold;
+            width: 100%;
+            height: 1000px;
+            text-align: center;
+            font-size: 48px;
+            color: red;
+        }
+        /*返回顶部*/
+        
+        .top {
+            position: fixed;
+            left: 50%;
+            bottom: 0;
+            width: 100px;
+            margin-left: -50px;
+            background-color: orange;
+            border-radius: 5px 10px;
+            text-align: center;
+            padding: 5px 3px;
+            display: none;
+        }
+        
+        .top a {
+            text-decoration: none;
+            color: #fff;
+            text-shadow: 1px 1px 2px #abcdef;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aside">
+        <a href="javascript:;" class="cur">一楼</a>
+        <a href="javascript:;">二楼</a>
+        <a href="javascript:;">三楼</a>
+        <a href="javascript:;">四楼</a>
+        <a href="javascript:;">五楼</a>
+    </div>
+    <div class="container">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+    </div>
+    <div class="footer">
+        我是底部，滑动没什么卵用
+    </div>
+    <div class="top">
+        <a href="javascript:;">返回顶部</a>
+    </div>
+    <script>
+        ;
+        $(function() {
+            //导航切换
+            var panelBox = [];
+            var panelNum = 0;
+            for (var i = 0; i < 5; i++) {
+                panelBox.push(parseInt($('.container').children().eq(i).offset().top));
+            };
+            console.log(panelBox);
+            $(window).scroll(function() {
+                var body_scrollTop = $(window).scrollTop();
+                for (var i = 0; i < panelBox.length; i++) {
+                    if (body_scrollTop >= panelBox[i] && body_scrollTop < panelBox[i + 1]) {
+                        $('.aside a').eq(i).addClass('cur').siblings().removeClass('cur');
+                        break;
+                    } else if (body_scrollTop >= panelBox[i]) {
+                        $('.aside a').eq(4).addClass('cur').siblings().removeClass('cur');
+                    }
+                };
+            });
+            //点击调到指定的位置
+            var navLink = Array.prototype.slice.call($('.aside a'));
+            console.log(navLink);
+            for (var i = 0; i < navLink.length; i++) {
+                $(navLink[i]).click(function() {
+                    var panelNum = navLink.indexOf(this);
+                    console.log(panelBox[panelNum]);
+                    $(document.documentElement).animate({
+                        scrollTop: panelBox[panelNum]
+                    }, 1000);
+                    $(document.body).animate({
+                        scrollTop: panelBox[panelNum]
+                    }, 1000);
+                });
+            };
+            //返回顶部
+            $(window).scroll(function() {
+                if ($(this).scrollTop() != 0) {
+                    $('.top').fadeIn();
+                } else {
+                    $('.top').fadeOut();
+                }
+            });
+            $('.top a').click(function() {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+            });
+        });
+    </script>
+</body>
+
+</html>
