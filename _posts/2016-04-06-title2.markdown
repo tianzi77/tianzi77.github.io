@@ -1,0 +1,29 @@
+---
+layout:     post
+title:      "滑动导航"
+subtitle:   " \"滑动导航\""
+date:       2016-04-05 19:20:00
+author:     "ZWW"
+header-img: "img/t19.jpeg"
+tags:
+    - 滑动导航
+---
+
+
+最近写文章老是有点问题。
+今天来个史上最短文章。
+直接上<a href="http://www.zhangweiwei.cn/demo/article/nav.html" target="_blank">demo</a>
+
+
+
+##关于作者
+
+```javascript
+  var ihubo = {
+    nickName  : "TZ",
+    site : "http://www.zhangweiwei.cn"
+  }
+```
+
+    
+
