@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>滑动导航效果</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js" type="text/javascript"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font: 14px/1.8 Microsoft Yahei, '宋体';
+        }
+        
+        .nav {
+            position: relative;
+            background: yellow;
+            overflow: hidden;
+        }
+        
+        .nav ul {
+            font-size: 0;
+            *word-spacing: -1px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        
+        .nav ul li {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: top;
+            word-spacing: normal;
+            letter-spacing: normal;
+            font-size: 14px;
+            width: 100px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav .current a,
+        .nav ul li a:hover {
+            color: red;
+        }
+        
+        .nav ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            .nav ul {
+                letter-spacing: -5px;
+            }
+        }
+        
+        .nav-line {
+            height: 2px;
+            width: 100px;
+            margin: 0;
+            padding: 0;
+            background: pink;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        
+        .change {
+            border: 0 none;
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            background-color: #abcdef;
+            display: block;
+            margin: 20px auto;
+            color: #fff;
+        }
+    </style>
+    <script>
+        $(function() {
+            var container = $('#nav'),
+                elements = $('li', container),
+                className = 'current',
+                slider = $('.nav-line', container),
+                now_index = $(elements).filter('.current').index(),
+                array_w = $(elements).map(function() {
+                    return $(this).outerWidth(true);
+                }),
+                initial_width = $('.current').width(),
+                initial_position = $('.current').position();
+            $('.nav-line').css({
+                left: initial_position.left,
+                width: initial_width
+            });
+
+            $(container).on('click', 'li', function() {
+                // 获取当前点击的元素索引
+                now_index = $(this).index();
+                // 添加class
+                $(this).addClass(className).siblings().removeClass(className);
+                // 滑块移动至当前位置
+                setSlider(now_index);
+                alert(999)
+            });
+            $(container).on('mouseenter', 'li', function() {
+                // 获取当前索引
+                var i = $(this).index();
+                // 滑块移动至当前位置
+                setSlider(i);
+            });
+            $(container).on('mouseleave', function() {
+                // 鼠标离开导航区域后, 滑块还原至最后点击的元素处
+                setSlider(now_index);
+            });
+
+            function setSlider(i) {
+                $(slider).width(array_w[i]);
+                $(slider).stop(true, true).animate({
+                    'left': getSliderDistance(i)
+                }, 'fast');
+            }
+
+            function getSliderDistance(i) {
+                var arr = array_w.slice(0, i),
+                    len = arr.length,
+                    sum = 0;
+                for (var j = 0; j < len; j++) {
+                    sum += arr[j];
+                }
+                return sum;
+            }
+            $(".change").on('click', function() {
+                $('.nav-line').css({
+                    'height': '100%',
+                    'z-index': '0'
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="nav" id="nav">
+        <ul>
+            <li><a href="javascript:void(0);">我是菜单</a></li>
+            <li><a href="javascript:void(0);">我是菜单</a></li>
+            <li><a href="javascript:void(0);">我是菜单</a></li>
+            <li class="current"><a href="javascript:void(0);">我是菜单</a></li>
+            <li><a href="javascript:void(0);">我是菜单</a></li>
+        </ul>
+        <div class="nav-line"></div>
+    </div>
+    
+    <button class="change">切换背景滑动</button>
+</body>
+
+</html>
