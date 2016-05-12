@@ -1,0 +1,139 @@
+<html class="full js" lang="zh-hant">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=760, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="CSS三角形生成器">
+	<meta name="author" content="Eky">
+	<title>CSS三角形生成器</title>
+	<style>    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}q:before,q:after{content:''}abbr,acronym{border:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html.full,html.full body{font-family:Corbel,'MS PGothic','Microsoft JhengHei',Arial,Verdana,Helvetica,sans-serif}input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif}a{color:#197882;text-decoration:none}.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.clearfix{zoom:1 \9;display:block}hr{border:1px #666 solid;width:100%;margin:20px 0}#top{width:100%;height:90%;position:relative;overflow:auto}#header{height:65px;width:100%;background:#eee;position:relative;padding:10px 0 20px}#header .title{font-size:36px;text-align:center}#header #subTitle{font-size:18px;text-align:center}#social{font-size:24px;position:absolute;right:20px;top:0;width:50px;height:200px;color:#666}#social .fb-like{position:absolute;top:0}#social .fb-like>span{position:absolute!important;top:45px;height:30px!important}#social .twitter-share-button{position:absolute!important;top:0;padding-top:0}#___plusone_0{position:absolute!important;top:27px;padding-left:5px;padding-top:5px}#footer{height:90px;width:100%;background:#eee;overflow:hidden;position:relative;clear:both}html.full #footer{bottom:0;left:0;position:absolute}#footer .title{display:block;font-size:24px;position:absolute;right:20px;top:30%;color:#666}#footer .title a{color:#666}#HTML5Logo{font-size:24px;position:absolute;left:20px;top:15%;color:#666}.infoList{padding-top:20px;width:720px;margin:0 auto}.infoList li{display:inline-block;vertical-align:top;margin-right:20px}.infoSublist{margin-left:10px}.infoSublist li{font-size:12px;display:inline-block}.infoSublist.browserList{width:350px}.infoSublist.verticalList li{display:block}
+html{display:block!important}#headerInner{width:780px;margin:0 auto;position:relative}#locales{position:absolute;right:80px;top:0}#locales li{list-style:none;line-height:12px}#locales li a{font-size:12px}:disabled{background:#ddd;color:#666}#title{font-size:24px;padding:10px 0;text-align:center}#article{width:760px;margin:0 auto}#sidebar{width:380px;padding:0 10px;height:100%;background:#eee;float:left;overflow:auto}#workArea{margin-left:400px;height:100%;width:380px}#triangleOutput{display:block;min-height:300px;min-width:380px;background:url('transparent.png') 0 0 repeat}#cssOutput{display:block;width:380px;height:150px;background:#fff;position:relative;padding-left:10px}#cssOutput h1{font-size:24px;height:24px;text-indent:4px}#css{width:370px;margin-top:10px;height:100px;border:0}#tips{margin-bottom:20px}#tips ul{margin-left:30px}#tips li,#tips code{font-size:12px;list-style:disc}#tips code{color:#592052}#tips h1{font-size:24px;text-indent:14px}#triangle{-moz-transition:.3s;-ms-transition:.3s;-o-transition:.3s;transition:.3s;border-style:solid;width:0;height:0;line-height:0;border-width:0 100px 100px 100px;border-color:transparent transparent #007bff transparent;_border-color:#000 #000 #007bff #000;_filter:progid:DXImageTransform.Microsoft.Chroma(color='#000000')}#data legend{font-size:24px}#data fieldset{padding:10px;padding-right:0}#data li{list-style:none}#fieldset-direction{position:relative}#direction1{float:left;width:120px}#direction2{float:left}#fieldset-type li{float:left;margin-right:20px}#fieldset-size label,#fieldset-size input{display:block;float:left}#fieldset-size label{width:70px}#fieldset-size ul{margin-left:20px}#fieldset-size>ul{margin-left:0}#fieldset-size li{clear:both}.js #color{position:absolute;top:-100000px;left:-100000px}#update{padding:10px;font-size:24px;margin:10px auto;display:block;width:100px;cursor:pointer}:root #direction1,:root #direction2{width:300px}:root #direction1,:root #direction1 li,:root #direction2,:root #direction2 li{position:absolute}#direction1 li:nth-child(1){top:0;left:110px}#direction1 li:nth-child(2){top:50px;left:180px}#direction1 li:nth-child(3){top:100px;left:110px}#direction1 li:nth-child(4){top:50px;left:40px}#direction2 li:nth-child(1){top:20px;left:170px}#direction2 li:nth-child(2){top:80px;left:170px}#direction2 li:nth-child(3){top:80px;right:205px}#direction2 li:nth-child(4){top:20px;right:205px}#triangleDirection{display:none;position:relative}:root #triangleDirection{display:block;clear:both;position:relative;width:70px;height:45px;margin:30px 0 50px 100px}.corners{position:absolute;top:0;left:0;width:60px;height:60px}.corners.rotate-45{width:54px;height:54px;margin:4px 0 0 4px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}.corners>label{position:absolute;width:30px;height:30px;background:#0094ff;cursor:pointer}.corners.rotate-45>label{width:27px;height:27px;background:#77f1ff}.corners>label:hover{background:#ff77f1}.corners .topRight,.corners .top{top:0;right:0}.corners .bottomRight,.corners .right{bottom:0;right:0}.corners .bottomLeft,.corners .bottom{bottom:0;left:0}.corners .topLeft,.corners .left{top:0;left:0}#centerFill{position:absolute;top:12px;left:12px;width:38px;height:38px;background:#fff}.selected-top .triangle.top,.selected-bottom .triangle.bottom,.selected-left .triangle.left,.selected-right .triangle.right,.selected-topRight .triangle.topRight,.selected-bottomRight .triangle.bottomRight,.selected-bottomLeft .triangle.bottomLeft,.selected-topLeft .triangle.topLeft{background:#ff77f1}
+    </style>
+	<script type="text/javascript" src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+	<script src="./js/css_triangle_generator.js"></script>
+</head>
+<body>
+	<header id="header">
+		<div id="headerInner">
+			<hgroup>
+				<h1 class="title">CSS三角形生成器<span style="font-size:12px;color:deeppink;">轻量版多功能，Just For Fun</span></h1>
+			</hgroup>
+		</div>
+	</header>
+	<article id="article">
+		<aside id="sidebar">
+			<form id="data">
+				<fieldset id="fieldset-direction">
+					<legend id="legend-direction">方向</legend>
+					<ul id="direction1" class="directions">
+						<li>
+							<input type="radio" name="direction" id="direction-top" value="top" checked="">
+								<label for="direction-top">上</label>
+						</li><li>
+							<input type="radio" name="direction" id="direction-right" value="right">
+								<label for="direction-right">右</label>
+						</li><li>
+							<input type="radio" name="direction" id="direction-bottom" value="bottom">
+								<label for="direction-bottom">下</label>
+						</li><li>
+							<label for="direction-left">左</label>
+								<input type="radio" name="direction" id="direction-left" value="left">
+					</li></ul>
+					<ul id="direction2" class="directions">
+						<li>
+							<input type="radio" name="direction" id="direction-topRight" value="topRight">
+								<label for="direction-topRight">右上</label>
+						</li><li>
+							<input type="radio" name="direction" id="direction-bottomRight" value="bottomRight">
+								<label for="direction-bottomRight">右下</label>
+						</li><li>
+							<label for="direction-bottomLeft">左下</label>
+								<input type="radio" name="direction" id="direction-bottomLeft" value="bottomLeft">
+						</li><li>
+							<label for="direction-topLeft">左上</label>
+								<input type="radio" name="direction" id="direction-topLeft" value="topLeft">
+					</li></ul>
+					<div role="img" id="triangleDirection" class="selected-right">
+						<div class="corners">
+							<label for="direction-topRight" class="triangle topRight"></label>
+							<label for="direction-bottomRight" class="triangle bottomRight"></label>
+							<label for="direction-bottomLeft" class="triangle bottomLeft"></label>
+							<label for="direction-topLeft" class="triangle topLeft"></label>
+						</div>
+						<div class="corners rotate-45">
+							<label for="direction-top" class="triangle top"></label>
+							<label for="direction-bottom" class="triangle bottom"></label>
+							<label for="direction-right" class="triangle right"></label>
+							<label for="direction-left" class="triangle left"></label>
+						</div>
+						<div role="img" id="centerFill"></div>
+					</div>
+				</fieldset>
+				<fieldset id="fieldset-type">
+					<legend id="legend-type">种类</legend>
+					<input type="checkbox" name="ie6" id="ie6" value="support">
+						<label for="ie6">兼容ie6（加上chroma filter）</label>
+					<ul>
+						<li id="equilateral" style="display: list-item;">
+							<input type="radio" name="type" id="type-equ" value="equ">
+								<label for="type-equ">等边</label>
+						</li><li>
+							<input type="radio" name="type" id="type-iso" value="iso" checked="">
+								<label for="type-iso">等腰</label>
+						</li><li>
+							<input type="radio" name="type" id="type-sca" value="sca">
+								<label for="type-sca">不等边</label>
+					</li></ul>
+				</fieldset>
+				<fieldset id="fieldset-size">
+					<legend id="legend-size">大小</legend>
+					<ul>
+						<li>
+							<label for="width">宽度</label>
+							<input name="width" id="width" value="200" type="number">px
+							<ul>
+								<li>
+									<label for="width-left">左</label>
+									<input name="width-left" id="width-left" value="100" type="number" disabled="">px
+								</li><li>
+									<label for="width-right">右</label>
+									<input name="width-right" id="width-right" value="100" type="number" disabled="">px
+							</li></ul>
+						</li>
+						<li>
+							<label for="height">高度</label>
+							<input name="height" id="height" value="100" type="number">px
+							<ul>
+								<li>
+									<label for="height-top">上</label>
+									<input name="height-top" id="height-top" value="50" type="number" disabled="">px
+								</li><li>
+									<label for="height-bottom">下</label>
+									<input name="height-bottom" id="height-bottom" value="50" type="number" disabled="">px
+							</li></ul>
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset>
+					<legend id="legend-color"><span style="font-family:微软雅黑,隶书;color:#007bff;">边框颜色随便替换，我默认#007bff</span></legend>
+					<input name="color" id="color" type="color" value="#007bff">
+				</fieldset>
+				<input id="update" name="update" type="submit" value="变变变">
+			</form>
+		</aside>
+		<div id="workArea">
+			<div id="triangleOutput">
+				<div id="triangle" style="border-color: transparent transparent transparent rgb(0, 123, 255); border-width: 100px 0px 100px 200px;"></div>
+			</div>
+			<div id="cssOutput">
+				<h1>CSS</h1>
+				<textarea id="css" rows="8" cols="100">width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 100px 100px 100px;
+border-color: transparent transparent #007bff transparent;</textarea>
+			</div>
+		</div>
+	</article>
+
+</body></html>
