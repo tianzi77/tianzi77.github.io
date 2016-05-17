@@ -1200,4 +1200,33 @@ body {
     -webkit-writing-mode:vertical-rl;
     -ms-writing-mode:tb-rl;
     writing-mode:vertical-rl;
+    -webkit-transition: color linear .3s;
+    transition:color linear .3s;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.fix-wd:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: yellow;
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition: -webkit-transform ease-out .3s;
+    transition: -webkit-transform ease-out .3s;
+    transition: transform ease-out .3s;
+    transition: transform ease-out .3s, -webkit-transform ease-out .3s;
+}
+.fix-wd:hover {
+    color: red;
+}
+.fix-wd:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
 }
