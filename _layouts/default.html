@@ -36,6 +36,9 @@
         var isFirstToggleMusic = true;
         function toggleMusicPanel() {
             $('#music-control').toggleClass('on');
+            if($("#music-content").style.display == "none"){
+                alert(111);
+            }
             if (isFirstToggleMusic) {
                 isFirstToggleMusic = false;
             }
