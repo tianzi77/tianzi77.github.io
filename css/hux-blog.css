@@ -1189,7 +1189,7 @@ body {
 }
 .fix-wd{
     position: fixed;
-    left: -20px;
+    left: 0;
     top: 40%;
     color: orangered;
     background-color: #0085a1;
