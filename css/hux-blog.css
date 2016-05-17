@@ -1,4 +1,4 @@
-﻿/*
+/*
     zww-blog-theme 
     @auther:zww
 */
@@ -1186,4 +1186,18 @@ body {
 }
 .actGotop:hover .back-info{
     background-color: #abcdef;
+}
+.fix-wd{
+    position: fixed;
+    left: 0;
+    top: 40%;
+    color: orangered;
+    background-color: #0085a1;
+    -webkit-writing-mode:vertical-lr;
+    -ms-writing-mode:tb-rl;
+    writing-mode:tb-rl;
+    padding: 10px;
+    -webkit-writing-mode:vertical-rl;
+    -ms-writing-mode:tb-rl;
+    writing-mode:vertical-rl;
 }
