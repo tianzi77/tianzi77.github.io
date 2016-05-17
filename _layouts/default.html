@@ -15,13 +15,9 @@
 
 <!-- Image to hack wechat -->
 
-<!-- Migrate from head to bottom, no longer block render and still work -->
-
-<!-- Tencent QQ Analysis -->
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=43623438" charset="UTF-8"></script>
 <!-- 163 music player -->
     <div id="music-panel">
-        <a id="music-control" href="javascript:;" onclick="toggleMusicPanel()"></a>
+        <a id="music-control" href="javascript:;" onclick="javascript:void(0);"></a>
         <div id="music-content">
             <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=0&amp;id=102978561&amp;auto=0&amp;height=430"></iframe>
         </div>
@@ -33,16 +29,6 @@
 
     <!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
     <script>
-        var isFirstToggleMusic = true;
-        function toggleMusicPanel() {
-            $('#music-control').toggleClass('on');
-            if($("#music-content").style.display == "none"){
-                alert(111);
-            }
-            if (isFirstToggleMusic) {
-                isFirstToggleMusic = false;
-            }
-        }
         $(function() {
             $('#music-control').on('mouseover',function(){
 				$('#music-control').addClass('on');
@@ -60,15 +46,6 @@
 				$(this).hide();
                 $('#music-control').removeClass('on');
 			 });
-            
-//            $('#music-control').mouseenter(function() {
-//                $('#music-control').addClass('on');
-//                $('#music-content').show();
-//            });
-//            $('#music-content').mouseleave(function() {
-//                $('#music-control').removeClass('on');
-//                $('#music-content').hide();
-//            });
         $(window).scroll(function() {		
 		  if($(window).scrollTop() >= 100){
 			$('.actGotop').fadeIn(300); 
