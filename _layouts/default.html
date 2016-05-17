@@ -49,16 +49,10 @@
         $(window).scroll(function() {		
 		  if($(window).scrollTop() >= 100){
 			$('.actGotop').fadeIn(300); 
-            $(".navbar-brand").animate({
-                marginLeft:'100px' },800);
-            });
 		  }else{    
 			$('.actGotop').fadeOut(300);
-              $(".navbar-brand").animate({
-                marginLeft:'-15px' },800);
-            })
 		}  
-	});
+	   });
 	   $('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});	
         })
         
