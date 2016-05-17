@@ -49,8 +49,14 @@
         $(window).scroll(function() {		
 		  if($(window).scrollTop() >= 100){
 			$('.actGotop').fadeIn(300); 
+            $(".navbar>.container-fluid .navbar-brand").animate({
+                marginLeft:'1130%' },800);
+            })
 		  }else{    
-			$('.actGotop').fadeOut(300);    
+			$('.actGotop').fadeOut(300);
+              $(".navbar>.container-fluid .navbar-brand").animate({
+                marginLeft:'-15px' },800);
+            })
 		}  
 	});
 	   $('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});	
