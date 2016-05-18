@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tab组件</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        body {
+            background: orange;
+            height: 100%;
+            font: normal normal 12px/24px "Microsoft yahei", Arial;
+            padding-bottom: 30px;
+        }
+        
+        #title {
+            width: auto;
+            margin: 3% auto 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 18px;
+        }
+        
+        h6 {
+            font-size: 12px;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        h6 a {
+            color: #09c;
+        }
+        
+        #wrapper {
+            width: 666px;
+            margin: 0 auto;
+            background: #f8f8f8;
+            border: 1px solid #a3a3a3;
+            padding: 20px 20px 50px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        
+        .box {
+            width: 210px;
+            margin: 10px auto 0;
+            background: #fff;
+            border: 1px solid #d3d3d3;
+        }
+        
+        .tab_menu {
+            list-style: none;
+            width: 210px;
+            overflow: hidden;
+        }
+        
+        .tab_menu li {
+            width: 70px;
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            background: #093;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .tab_menu li.current {
+            color: #333;
+            background: #fff;
+        }
+        
+        .tab_box {
+            padding: 20px;
+            height: 120px;
+        }
+        
+        .tab_box .hide {
+            display: none;
+        }
+        
+        h3 {
+            color: #333;
+            font-size: 14px;
+            width: 210px;
+            margin: 30px auto 0;
+        }
+        
+        body style {
+            display: block;
+            padding: 0 20px;
+            border: 1px dashed #ccc;
+            background-color: #f5f5f5;
+            color: #000;
+            font-family: Monaco, monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            width: 666px;
+            margin: auto;
+            text-align: justify;
+        }
+        
+        body style:focus {
+            -moz-box-shadow: 0 0 4px green;
+            box-shadow: 0 0 4px blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">
+        <h1>jQuery TAB组件</h1>
+        <h6>
+        <ul style="width:666px;margin:auto;text-align:left;">
+            <li style="color:red;color:deeppink;font-size:18px;">使用方法</li>
+            <li>event</li>
+            <li>触发TAB的事件类型，鼠标悬停：mouseover，鼠标点击：click，默认为mouseover。</li>
+            <li>timeout</li>
+            <li>事件延迟，单位为毫秒，默认为0。</li>
+            <li>auto</li>
+            <li>自动切换，单位为毫秒，默认为0。</li>
+            <li>callback</li>
+            <li>回调函数，触发TAB时执行，函数的参数返回的是this。</li>
+        </ul>
+        <style contenteditable="">
+            html结构：
+            tab>a tab-info>tab-content
+            简单需求实现：
+            $(function(){
+			    var $content = $('.tab-info .tab-content');
+			     $(".tab-nav a").on('click',function(){
+				    var $index = $(this).index();
+				    $(this).siblings().removeClass('current');
+				    $(this).addClass('current');
+				    $content.hide();
+				    $content.eq($index).show();
+				    return false;
+			    })
+		    })
+        </style>
+        </h6>
+    </div>
+    <div id="wrapper">
+        <h3>默认状态</h3>
+        <div class="box demo1">
+            <ul class="tab_menu">
+                <li class="current">新闻</li>
+                <li>图片</li>
+                <li>军事</li>
+            </ul>
+            <div class="tab_box">
+                <div>新闻</div>
+                <div class="hide">图片</div>
+                <div class="hide">军事</div>
+            </div>
+        </div>
+        <h3>鼠标点击</h3>
+        <div class="box demo2">
+            <ul class="tab_menu">
+                <li class="current">新闻</li>
+                <li>图片</li>
+                <li>军事</li>
+            </ul>
+            <div class="tab_box">
+                <div>新闻</div>
+                <div class="hide">图片</div>
+                <div class="hide">军事</div>
+            </div>
+        </div>
+        <h3>事件延迟 300毫秒</h3>
+        <div class="box demo3">
+            <ul class="tab_menu">
+                <li class="current">新闻</li>
+                <li>图片</li>
+                <li>军事</li>
+            </ul>
+            <div class="tab_box">
+                <div>新闻</div>
+                <div class="hide">图片</div>
+                <div class="hide">军事</div>
+            </div>
+        </div>
+        <h3>自动轮换 3秒间隔</h3>
+        <div class="box demo4">
+            <ul class="tab_menu">
+                <li class="current">新闻</li>
+                <li>图片</li>
+                <li>军事</li>
+            </ul>
+            <div class="tab_box">
+                <div>新闻</div>
+                <div class="hide">图片</div>
+                <div class="hide">军事</div>
+            </div>
+        </div>
+        <h3>回调函数</h3>
+        <div class="box demo5">
+            <ul class="tab_menu">
+                <li class="current">新闻</li>
+                <li>图片</li>
+                <li>军事</li>
+            </ul>
+            <div class="tab_box">
+                <div>新闻</div>
+                <div class="hide">图片</div>
+                <div class="hide">军事</div>
+            </div>
+        </div>
+    </div>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script src="./jquery.tabs.min.js"></script>
+    <script>
+        $(function() {
+            $('.demo1').Tabs();
+            $('.demo2').Tabs({
+                event: 'click'
+            });
+            $('.demo3').Tabs({
+                timeout: 300
+            });
+            $('.demo4').Tabs({
+                auto: 3000
+            });
+            $('.demo5').Tabs({
+                event: 'click',
+                callback: tabcallback
+            });
+
+            function tabcallback() {
+                alert("我是回调函数 :)");
+            }
+        });
+    </script>
+</body>
+
+</html>
