@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标出现浮层插件</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        body {
+            background-image:-webkit-linear-gradient(0deg, #abcdef, pink);
+        }
+        
+        .tooltips {
+            border: 1px solid #06c;
+            padding: 10px;
+            max-width: 300px;
+            color: #333;
+            font: 12px/1.5 'Microsoft YaHei';
+            background-color: #fff;
+        }
+        
+        .demo {
+            width: 777px;
+            margin: 100px auto;
+        }
+        
+        .test-demo {
+            color: mediumvioletred;
+            display: inline-block;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center;font-size:20px;">浮层小组件。code by <a href="http://www.zhangweiwei.cn" style="font-size:small;">zww</a></h1>
+    <div class="demo">
+        <a href="###" class="test-demo">鼠标放上去试试</a>
+        <a href="###" class="test-demo">鼠标放上去试试</a>
+        <a href="###" class="test-demo">鼠标放上去试试</a>
+        <a href="###" class="test-demo">鼠标放上去试试</a>
+    </div>
+    <div class="tooltips" style="display:none;">
+        我只是一个小小的测试浮层0
+    </div>
+    <div class="tooltips" style="display:none;">
+        我只是一个小小的测试浮层1
+    </div>
+    <div class="tooltips" style="display:none;">
+        我只是一个小小的测试浮层2
+    </div>
+    <div class="tooltips" style="display:none;">
+        我只是一个小小的测试浮层3
+    </div>
+    <ul style="text-align:center;">
+        <li>使用方法</li>
+        <li>TZ_hover.init($("鼠标hover的元素"), index指浮层的索引);</li>
+    </ul>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+
+            var TZ_hover = {
+                init: function showTooltip(el, index) {
+                    var sl = $(el).offset().left,
+                        st = $(el).offset().top,
+                        $tooltip = $(".tooltips").eq(index).css({
+                            'left': sl + 'px',
+                            'top': (st + 18) + 'px',
+                            'position': 'absolute',
+                            'zIndex': '999'
+                        });
+                    $(el).on("mouseover", function() {
+                        $tooltip.show();
+                    });
+                    $(el).on("mouseleave", function() {
+                        $tooltip.hide();
+                    });
+                    $(".tooltips").eq(index).on("mouseover", function() {
+                        $(this).show();
+                    });
+                    $(".tooltips").eq(index).on("mouseleave", function() {
+                        $(this).hide();
+                    });
+                    return false;
+                }
+            }
+            TZ_hover.init($(".test-demo").eq(0), 0);
+            TZ_hover.init($(".test-demo").eq(1), 1);
+            TZ_hover.init($(".test-demo").eq(2), 2);
+            TZ_hover.init($(".test-demo").eq(3), 3);
+        })
+    </script>
+</body>
+
+</html>
