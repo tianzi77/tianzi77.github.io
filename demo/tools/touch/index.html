@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>touch 组件 combine by zww</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        #main {
+            max-width: 1180px;
+            width: 980px;
+            margin: 0 auto;
+        }
+        
+        .top_title {
+            color: #abedef;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .top_title>a {
+            transition: transform linear .4s;
+            display: inline-block;
+        }
+        
+        .top_title>a:hover {
+            transform: scale(1.4) translateY(70px);
+            color: pink;
+        }
+        
+        .box-163css {
+            border: 1px dashed #cecece;
+        }
+        
+        .page {
+            width: 100%;
+            display: flex;
+        }
+        
+        .page li {
+            width: 25%;
+            flex: 1;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        
+        .page li>a {
+            display: inline-block;
+            width: 100%;
+            height: inherit;
+        }
+        
+        #slider {
+            border-top: 1px solid #cecece;
+        }
+        
+        .page a.active {
+            color: #f00;
+            background-color: aqua;
+        }
+        
+        #slider1 li {
+            color: #fff;
+            font-size: 48px;
+            text-align: center;
+        }
+        
+        #slider1 li:nth-child(1) {
+            background-color: red;
+        }
+        
+        #slider1 li:nth-child(2) {
+            background-color: deeppink;
+        }
+        
+        #slider1 li:nth-child(3) {
+            background-color: skyblue;
+        }
+        
+        #slider1 li:last-child {
+            background-color: dodgerblue;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="header">
+
+    </div>
+    <div id="main">
+        <h2 class="top_title"><a href="http://www.zhangweiwei.cn">移动端TAB触屏切换效果</a><b style="font-weight:normal;font-size:12px;margin-left:10px"><a href="http://www.superslide2.com/TouchSlide/" target="_blank">more demo</a></b></h2>
+
+        <div class="box-163css">
+            <ul id="pagenavi" class="page">
+                <li><a href="" class="active">tab1</a></li>
+                <li><a href="">tab2</a></li>
+                <li><a href="">tab3</a></li>
+                <li><a href="">tab4</a></li>
+            </ul>
+            <div id="slider" class="swipe">
+                <ul class="box01_list">
+                    <li class="li_list">
+                        简简单单的写两句啦啦啦
+                    </li>
+                    <li class="li_list">
+                        简简单单的写两句啦啦啦
+                    </li>
+                    <li class="li_list">
+                        简简单单的写两句啦啦啦
+                    </li>
+                    <li class="li_list">
+                        简简单单的写两句啦啦啦
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="slider1" class="swipe" style="width:100%;height:500px;line-height:500px;">
+            <ul class="box01_list">
+                <li class="li_list">
+                    不循环滑动1
+                </li>
+                <li class="li_list">
+                    不循环滑动2
+                </li>
+                <li class="li_list">
+                    不循环滑动3
+                </li>
+                <li class="li_list">
+                    不循环滑动4
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/zepto_min.js"></script>
+    <script type="text/javascript" src="js/touchslider.js"></script>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script type="text/javascript">
+        <!--带tab切换-->
+        var page = 'pagenavi',
+            mslide = 'slider',
+            lslide = 'slider1'
+        as = document.getElementById(page).getElementsByTagName('a');
+
+
+        var tt = new TouchSlider({
+            id: mslide,
+            'auto': '-1',
+            fx: 'ease-out',
+            direction: 'leftLoop', //left left循环
+            speed: 600,
+            timeout: 5000,
+            'before': function(index) {
+                var as = document.getElementById(page).getElementsByTagName('a');
+                as[this.p].className = '';
+                as[index].className = 'active';
+                this.p = index;
+            }
+        });
+        tt.p = 0;
+
+        for (var i = 0; i < as.length; i++) {
+            (function() {
+                var j = i;
+                as[j].tt = tt;
+                as[j].onclick = function() {
+                    this.tt.slide(j);
+                    return false;
+                }
+            })();
+        }
+        <!--不带tab切换-->
+        var mm = new TouchSlider({
+            id: lslide,
+            'auto': '-1',
+            fx: 'ease-out',
+            direction: 'left', //left left循环
+            effect: "leftLoop",
+            speed: 600,
+            timeout: 5000
+        });
+        <!--不带tab切换+循环-->
+    </script>
+
+    <div id="footer">
+
+    </div>
+
+</body>
+
+</html>
