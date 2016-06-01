@@ -21,7 +21,7 @@ tags:
 <br>
 ####iphone开关怎么玩？
 
-做项目的时候看到一个需求，移动端iphone开关的样式，瞬间懵逼，还怎么愉快的玩耍，幸好腾讯的同学给我提供的一种思路，他说他们刚好写了这个组件。然后我就这么玩了一下，觉得这东西真有意思。下面是样式
+做项目的时候看到一个设计图，移动端iphone开关的样式，瞬间懵逼，还怎么愉快的玩耍，凌乱中灵机一线找到解决办法，中国人的特长就是把冒牌货搞得像真的一样，哈哈哈。然后我就这么玩了一下，觉得这东西真有意思。下面是样式 <a href="http://www.zhangweiwei.cn/demo/iphone.html" target="_blank" style="margin-left:20px;">demo</a>
 
 ```css
 .i-switch {
@@ -90,7 +90,11 @@ tags:
     <input type="checkbox" class="i-switch i-switch-red">
 ```
 
-注：是不是见到到爆，哈哈，不瞎扯了。
+最后：是不是简单到爆，哈哈，不瞎扯了。
+男人，希望自己做个真正顶天立地的男子汉，全场狂奔，全场逼抢去实现自己想要的价值。
+Aupa Atleti！
+![demo](/img/post-img/mj1.jpg)
+![demo](/img/post-img/mj2.jpg)
 
 
 demo地址：http://www.zhangweiwei.cn/demo/iphone.html 
