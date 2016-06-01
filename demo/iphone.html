@@ -140,22 +140,27 @@
             -webkit-transform: translateX(20px);
             transform: translateX(20px);
         }
+        
         .i-switch-red:checked {
             border-color: red;
             background-color: red;
         }
+        
         .i-switch-blue:checked {
             border-color: blue;
             background-color: blue;
         }
+        
         .i-switch-green:checked {
             border-color: greenyellow;
             background-color: greenyellow;
         }
+        
         .i-switch-yellow:checked {
             border-color: orange;
             background-color: orange;
         }
+        
         .time-input {
             width: 100%;
             border: 0;
@@ -171,6 +176,128 @@
         .tit {
             padding-right: .3rem;
         }
+        /*另外几种实现方法*/
+        
+        .demo-extra {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .switch {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            border: solid 1px #ccc;
+            background-color: #ccc;
+            height: 25px;
+            width: 60px;
+        }
+        
+        .switch-btn {
+            position: absolute;
+            top: 0;
+            left: -35px;
+            height: 25px;
+            width: 25px;
+            background-color: #fff;
+            border-left: solid 35px #69f;
+        }
+        
+        .active.switch {
+            border-color: #69f;
+        }
+        
+        .active > .switch-btn {
+            left: 0;
+        }
+        
+        input {
+            height: 0;
+            width: 0;
+            margin: 0;
+        }
+        
+        input:checked ~ label {
+            border-color: #69f;
+        }
+        
+        input:checked ~ label .switch-btn {
+            left: 0;
+        }
+        
+        .switch {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            border: solid 1px #ccc;
+            background-color: #ccc;
+            height: 25px;
+            width: 60px;
+        }
+        
+        .switch-btn {
+            transition: all 0.4s;
+            top: 0;
+            left: -35px;
+            height: 25px;
+            width: 25px;
+            background-color: #fff;
+            border-left: solid 35px #69f;
+        }
+        
+        .i-switch1 {
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #ccc;
+            position: relative;
+        }
+        
+        .i-btn {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            left: 0;
+            background-color: #fff;
+        }
+        
+        .cur {
+            background-color: deeppink;
+        }
+        
+        .cur>.i-btn {
+            left: 19px;
+        }
+        
+        .i-app {
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #ccc;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .a-btn {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            left: 0;
+            background-color: #fff;
+            transition: all 0.4s;
+        }
+        
+        input:checked ~ label {
+            background-color: blue;
+        }
+        
+        input:checked ~ label .a-btn {
+            left: 19px;
+        }
+
     </style>
 </head>
 
@@ -225,6 +352,39 @@
             </div>
         </div>
     </section>
+    <hr>
+    <section class="demo-extra">
+        <h1>js实现</h1>
+        <div class="switch">
+            <div class="switch-btn"></div>
+        </div>
+        <h1>css</h1>
+        <input id="switch-btn" type="checkbox" name="switch">
+        <label for="switch-btn" class="switch">
+            <div class="switch-btn"></div>
+        </label>
+        <h1>iphone 样式js</h1>
+        <div class="i-switch1 cur">
+            <div class="i-btn"></div>
+        </div>
+        <h1>iphone 样式css</h1>
+        <input id="switch-btn1" type="checkbox" name="switch">
+        <label for="switch-btn1" class="i-app">
+            <div class="a-btn"></div>
+        </label>
+    </section>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script>
+        $(function() {
+            $('.switch').bind('click', function() {
+                $(this).toggleClass('active');
+            });
+            $('.i-switch1').bind('click', function() {
+                $(this).toggleClass('cur');
+            });
+        })
+
+    </script>
 </body>
 
 </html>
