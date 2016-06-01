@@ -1,17 +1,100 @@
 ---
 layout:     post
-title:      "返回顶部、滑动导航大集合"
-subtitle:   " \"导航跟随页面滑动到相应的区域\""
+title:      "[欧冠之后]iphone开关的一种实现方式"
+subtitle:   " \"移动开发常见的开关方式\""
 date:       2016-05-05 16:55:00
 author:     "ZWW"
-header-img: "img/post-sample-image.jpg"
+header-img: "img/mj.jpg"
 tags:
-    - 返回顶部
+    - button
 ---
 
-最近写文章老是有点问题。
-今天来个史上最短文章。
-直接上<a href="http://www.zhangweiwei.cn/demo/article/nav.html" target="_blank">demo</a>
+> **“欧冠之后第一遍文章，哈哈. ”**
+
+
+
+
+`欧冠结束了，我真希望是马竞夺冠，他们干掉了拜仁巴萨，他们理应配得上欧洲之巅。可是这就是足球，这就是生活。哪里来如果呢？喜欢马竞，因为他代表了我们普通人的一种信仰，我可能没钱，没地位，技术没你好，但是我们敢于全场狂奔，我们用自己拼命努力来达到自己想要的成就。看完比赛久久不能释怀，写写文章略表敬佩。`
+
+
+
+<br>
+####iphone开关怎么玩？
+
+做项目的时候看到一个需求，移动端iphone开关的样式，瞬间懵逼，还怎么愉快的玩耍，幸好腾讯的同学给我提供的一种思路，他说他们刚好写了这个组件。然后我就这么玩了一下，觉得这东西真有意思。下面是样式
+
+```css
+.i-switch {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative;
+            width: 52px;
+            height: 32px;
+            border: 1px solid #DFDFDF;
+            outline: 0;
+            border-radius: 16px;
+            box-sizing: border-box;
+            background: #DFDFDF;
+        }
+        
+        .i-switch:before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #FDFDFD;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
+        }
+        
+        .i-switch:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
+        }
+        
+        .i-switch:checked {
+            border-color: #04BE02;
+            background-color: #04BE02;
+        }
+        
+        .i-switch:checked:before {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+        
+        .i-switch:checked:after {
+            -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+        }
+```
+...结构是这么玩...
+
+```html
+    <input type="checkbox" class="i-switch i-switch-red">
+```
+
+注：是不是见到到爆，哈哈，不瞎扯了。
+
+
+demo地址：http://www.zhangweiwei.cn/demo/iphone.html 
+
 
 
 
