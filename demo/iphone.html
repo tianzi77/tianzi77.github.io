@@ -3,15 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>按钮样式</title>
+    <title>iphone开关按钮样式</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
     <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-        
         html {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
@@ -145,7 +140,22 @@
             -webkit-transform: translateX(20px);
             transform: translateX(20px);
         }
-        
+        .i-switch-red:checked {
+            border-color: red;
+            background-color: red;
+        }
+        .i-switch-blue:checked {
+            border-color: blue;
+            background-color: blue;
+        }
+        .i-switch-green:checked {
+            border-color: greenyellow;
+            background-color: greenyellow;
+        }
+        .i-switch-yellow:checked {
+            border-color: orange;
+            background-color: orange;
+        }
         .time-input {
             width: 100%;
             border: 0;
@@ -179,7 +189,7 @@
                 标题
             </div>
             <div class="btn">
-                <input type="checkbox" class="i-switch">
+                <input type="checkbox" class="i-switch i-switch-green">
             </div>
         </div>
         <div class="row flex">
@@ -187,7 +197,7 @@
                 标题
             </div>
             <div class="btn">
-                <input type="checkbox" class="i-switch">
+                <input type="checkbox" class="i-switch i-switch-yellow">
             </div>
         </div>
         <div class="row flex">
@@ -195,7 +205,7 @@
                 标题
             </div>
             <div class="btn">
-                <input type="checkbox" class="i-switch">
+                <input type="checkbox" class="i-switch i-switch-blue">
             </div>
         </div>
         <div class="row flex">
@@ -203,7 +213,7 @@
                 标题
             </div>
             <div class="btn">
-                <input type="checkbox" class="i-switch">
+                <input type="checkbox" class="i-switch i-switch-red">
             </div>
         </div>
         <div class="row flex">
