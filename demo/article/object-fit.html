@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>object fit</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
+    <style>
+        /* button style based ctrip auther by zww */
+        
+        .xui-btn-primary {
+            color: #FFFFFF;
+            border-color: #F88500;
+            background-color: #FFB000;
+        }
+        
+        .xui-btn-primary:hover {
+            color: #FFFFFF;
+            border-color: #F88500;
+            background-color: #F79700;
+        }
+        
+        .xui-btn-sm {
+            height: 24px;
+            font-size: 12px;
+            padding: 0 20px;
+        }
+        
+        .xui-btn {
+            display: inline-block;
+            text-align: center;
+            line-height: 1em;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 3px;
+            font-family: "Lucida Grande", Tahoma, Arial, "Hiragino Sans GB", "Microsoft Yahei", Simsun, sans-serif;
+            *font-family: "Microsoft Yahei", Tahoma, Arial, Simsun, sans-serif;
+            cursor: pointer;
+            outline: none;
+            overflow: visible;
+            -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+        }
+        
+        .object-demo {
+            max-width: 360px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .object-demo h1 {
+            color: crimson;
+            font: 16px/24px bold;
+            margin-bottom: 20px;
+        }
+        
+        .btn-area {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .btn-area button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .no {
+            object-fit: none;
+        }
+        
+        .fill {
+            object-fit: fill;
+        }
+        
+        .contain {
+            object-fit: contain;
+        }
+        
+        .cover {
+            object-fit: cover;
+        }
+        
+        .scale-down {
+            object-fit: scale-down;
+        }
+        
+        .first {
+            width: 260px;
+            height: 200px;
+            background: deeppink;
+        }
+        
+        .ani {
+            animation: ltr 5s alternate infinite;
+        }
+        
+        @-webkit-keyframes ltr {
+            0% {
+                object-position: 0% 0%;
+            }
+            25% {
+                object-position: 20% 0%;
+            }
+            100% {
+                object-position: 100% 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="object-demo">
+        <h1> object-fit && object-position</h1>
+        <img class="first no" src="http://www.zhangweiwei.cn/img/logo.png">
+        <div class="btn-area">
+            <button class="xui-btn xui-btn-primary xui-btn-sm" id="btn1">no</button>
+            <button class="xui-btn xui-btn-primary xui-btn-sm" id="btn2">fill</button>
+            <button class="xui-btn xui-btn-primary xui-btn-sm" id="btn3">contain</button>
+            <button class="xui-btn xui-btn-primary xui-btn-sm" id="btn4">cover</button>
+            <button class="xui-btn xui-btn-primary xui-btn-sm" id="btn5">scale-down</button>
+            <button class="xui-btn xui-btn-primary xui-btn-sm" id="btn6">左上角</button>
+            <button class="xui-btn xui-btn-primary xui-btn-sm" id="btn7">右下角</button>
+            <button class="xui-btn xui-btn-primary xui-btn-sm" id="btn8">动画</button>
+        </div>
+    </section>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script>
+        $(function() {
+            function obj_demo(id, obj) {
+                var xid = "#" + id;
+                var btn = $(xid);
+                console.log(btn, xid)
+                btn.click(function() {
+                    $(".first").removeClass("no fill contain cover scale-down ani").addClass(obj);
+                })
+            }
+            obj_demo("btn1", "no");
+            obj_demo("btn2", "fill");
+            obj_demo("btn3", "contain");
+            obj_demo("btn4", "cover");
+            obj_demo("btn5", "scale-down");
+
+            $("#btn6").click(function() {
+                $(".first").css("object-position", "0% 0%");
+            });
+            $("#btn7").click(function() {
+                $(".first").css("object-position", "100% 100%");
+            });
+            $("#btn8").click(function() {
+                $(".first").addClass("ani");
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>
