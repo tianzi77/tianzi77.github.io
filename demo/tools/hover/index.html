@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
     <style>
         body {
-            background-image:-webkit-linear-gradient(0deg, #abcdef, pink);
+            background-image: -webkit-linear-gradient(0deg, #abcdef, pink);
         }
         
         .tooltips {
@@ -29,6 +29,39 @@
             display: inline-block;
             margin: 0 50px;
         }
+        /* ani style */
+        
+        .ani-a {
+            position: relative;
+            margin: auto auto 50px auto;
+            width: 100px;
+            height: auto;
+            display: block;
+        }
+        
+        .ani-b {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #abcdef;
+            position: absolute;
+            left: 0;
+            top: 70px;
+            opacity: 0;
+            transition: all linear .3s;
+            pointer-events: none;
+            color: #333;
+            border: solid 1px #06c;
+        }
+        
+        .ani-a:hover .ani-b {
+            top: 20px;
+            opacity: 1;
+        }
+
     </style>
 </head>
 
@@ -40,6 +73,14 @@
         <a href="###" class="test-demo">鼠标放上去试试</a>
         <a href="###" class="test-demo">鼠标放上去试试</a>
     </div>
+
+    <!-- 添加动画效果 S -->
+    <a href="###" class="ani-a">
+        <span class="ani-b">请系好安全带</span> 带动画的提示
+    </a>
+    <!-- 添加动画效果 E -->
+
+    <!-- tips box -->
     <div class="tooltips" style="display:none;">
         我只是一个小小的测试浮层0
     </div>
@@ -90,6 +131,7 @@
             TZ_hover.init($(".test-demo").eq(2), 2);
             TZ_hover.init($(".test-demo").eq(3), 3);
         })
+
     </script>
 </body>
 
