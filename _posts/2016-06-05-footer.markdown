@@ -4,7 +4,7 @@ title:      "当网站内容不足一屏时footer如何紧贴底部"
 subtitle:   " \"网页底部固定的几种方式\""
 date:       2016-06-05 16:55:00
 author:     "ZWW"
-header-img: "img/tips-bg.jpg"
+header-img: "img/post-bg-rwd.jpg"
 tags:
     - footer固定
 ---
