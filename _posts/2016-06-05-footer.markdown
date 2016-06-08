@@ -1,0 +1,125 @@
+---
+layout:     post
+title:      "当网站内容不足一屏时footer如何紧贴底部"
+subtitle:   " \"网页底部固定的几种方式\""
+date:       2016-06-05 16:55:00
+author:     "ZWW"
+header-img: "img/tips-bg.jpg"
+tags:
+    - footer固定
+---
+
+> **“很多时候，产品经理说我觉得这个网站不好看，不管内容的多少我都要他的底部在最下面，就是当网站内容不足一屏时footer紧贴底部，然后内容超过一屏是自然也是footer位于最下面。那么问题来了？这到底应该怎么玩”**
+
+
+
+
+`js计算，我首先想到的就是判断网页的高度，也是最常用的，但是每次进入页面还是进行一次计算，估计性能也好不到哪里去，要是应用在移动端，配置低一点的安卓机器反应可想而知`
+
+
+
+<br>
+####1，判断高度
+
+```js
+$(function() {
+        footerAuto();
+    })
+
+    function footerAuto() {
+        var _wh = $(window).height();
+        var _dh = $(document).height();
+        var _bh = $(document.body).height();
+        if (_bh < _wh) {
+            $("#footer").css({
+                position: "fixed",
+                bottom: "0",
+                left: "0",
+            })
+        } else {
+            $("#footer").css({
+                position: "static",
+                bottom: "auto",
+                left: "auto",
+            })
+        }
+    }
+```
+...2，判断滚动条...
+
+```js
+    function ct() {
+        return document.compatMode == "BackCompat" ? document.body.clientHeight : document.documentElement.clientHeight;
+    }
+    var f = document.getElementById('footer');
+    (window.onresize = function() {
+        f.style.position = document.body.scrollHeight > ct() ? 'static' : 'fixed';
+        f.style.left = "0";
+        f.style.bottom = "0";
+    })();
+```
+
+那就酱紫？我觉得太复杂了，作为一个css玩家难道不可以不用js吗？
+好像可以，不过也有优缺点
+
+`CSS方法`
+
+```css
+    html {
+            height: 100%;
+        }
+        
+        body {
+            min-height: 100%;
+            box-sizing: border-box;
+            padding-bottom: 120px;
+            position: relative;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            font-size: 24px;
+            background-color: deeppink;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+```
+
+按道理说ie8+以上都是支持box-sizing的，但是测试demo的时候ie8下面有问题，然后发现在ie8中设置了min-height之后对box-sizing: border-box是有破坏作用的，他就不起作用了，固兼容性的话应该是ie9以上的浏览器都没有什么问题，移动端的话就更不用说了。
+
+就酱紫吧。
+```css
+    html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    display: flex; /* 设置flex */
+    flex-direction: column; /* 方向为垂直方向 */
+}
+.container{
+    flex: 1; /* 内容占满所有剩余空间 */
+}
+```
+
+```html
+
+但这样结构规定比较死，必须是header+container+footer，这个方法来自@结一
+
+
+
+
+demo地址：http://www.zhangweiwei.cn/demo/iphone.html 
+
+
+
+
+
+
+ 
+
+
