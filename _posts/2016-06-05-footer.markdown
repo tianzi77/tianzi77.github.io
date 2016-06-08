@@ -92,28 +92,53 @@ $(function() {
 按道理说ie8+以上都是支持box-sizing的，但是测试demo的时候ie8下面有问题，然后发现在ie8中设置了min-height之后对box-sizing: border-box是有破坏作用的，他就不起作用了，固兼容性的话应该是ie9以上的浏览器都没有什么问题，移动端的话就更不用说了。
 
 就酱紫吧。
-```css
-    html{
-    height: 100%;
-}
-body{
-    min-height: 100%;
-    display: flex; /* 设置flex */
-    flex-direction: column; /* 方向为垂直方向 */
-}
-.container{
-    flex: 1; /* 内容占满所有剩余空间 */
-}
-```
 
+```js
+    function ct() {
+        return document.compatMode == "BackCompat" ? document.body.clientHeight : document.documentElement.clientHeight;
+    }
+    var f = document.getElementById('footer');
+    (window.onresize = function() {
+        f.style.position = document.body.scrollHeight > ct() ? 'static' : 'fixed';
+        f.style.left = "0";
+        f.style.bottom = "0";
+    })();
+```
+```css
+
+    html {
+            height: 100%;
+        }
+        
+        body {
+            min-height: 100%;
+            display: flex;
+            /* 设置flex */
+            flex-direction: column;
+            /* 方向为垂直方向 */
+        }
+        
+        .container {
+            flex: 1;
+            /* 内容占满所有剩余空间 */
+        }
+```
+html
 ```html
 
-但这样结构规定比较死，必须是header+container+footer，这个方法来自@结一
+    <body>
+        <div class="header"></div>
+        <div class="container"></div>
+        <div class="footer"></div>
+    </body>
+```
+
+但这样结构规定比较死，必须是header+container+footer，这个方法来自@结一。
 
 
 
 
-demo地址：http://www.zhangweiwei.cn/demo/iphone.html 
+<a href="http://www.zhangweiwei.cn/demo/article/footer.html " target="_blank">在线demo</a>
 
 
 
