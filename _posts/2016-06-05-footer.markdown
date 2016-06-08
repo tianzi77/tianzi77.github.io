@@ -91,19 +91,10 @@ $(function() {
 
 按道理说ie8+以上都是支持box-sizing的，但是测试demo的时候ie8下面有问题，然后发现在ie8中设置了min-height之后对box-sizing: border-box是有破坏作用的，他就不起作用了，固兼容性的话应该是ie9以上的浏览器都没有什么问题，移动端的话就更不用说了。
 
-就酱紫吧。
+就酱紫吧。移动端或者高级的浏览器，这么玩也是略叼。
 
-```js
-    function ct() {
-        return document.compatMode == "BackCompat" ? document.body.clientHeight : document.documentElement.clientHeight;
-    }
-    var f = document.getElementById('footer');
-    (window.onresize = function() {
-        f.style.position = document.body.scrollHeight > ct() ? 'static' : 'fixed';
-        f.style.left = "0";
-        f.style.bottom = "0";
-    })();
-```
+样式：
+
 ```css
 
     html {
@@ -123,7 +114,8 @@ $(function() {
             /* 内容占满所有剩余空间 */
         }
 ```
-html
+html：
+
 ```html
 
     <body>
@@ -135,6 +127,7 @@ html
 
 但这样结构规定比较死，必须是header+container+footer，这个方法来自@结一。
 
+题外话：越穷的人越喜欢赌，结果就是越赌越穷，越是暴发户越是喜欢赌，最后钱都会落到庄家的口袋里。赌博和吸毒，令不少人债台高筑，最终走上穷途末路，不赌，你就是赢。
 
 
 
