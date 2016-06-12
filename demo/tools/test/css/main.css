@@ -1,0 +1,311 @@
+/**
+  * @Desc  : 商旅亚太峰会 
+  * @Build : 2016/01/05 
+  * @Author: TZ 
+  * @Update: 2016/02/23 by zw 
+  */
+
+html { overflow-y: scroll; font-size: 62.5%; color: #000; background: #fff; }
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,form,th,td { margin: 0; padding: 0; }
+body,button,input,select,textarea { font: 12px/1.5 'PingFang SC', 'Microsoft YaHei', Tahoma, Arial, '\5b8b\4f53', sans-serif; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: 400; }
+address,cite,dfn,em,var { font-style: normal; }
+code,kbd,pre,samp,tt { font-family: 'Courier New', Courier, monospace; }
+small { font-size: 12px; }
+ul,ol { list-style: none; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+abbr[title],acronym[title] { cursor: help; border-bottom: 1px dotted; }
+q:before,q:after { content: ''; }
+:focus { outline: 0; }
+legend { color: #000; }
+fieldset,img { max-width: 100%; border: none; }
+button,input,select,textarea { font-size: 100%; }
+table { border-spacing: 0; border-collapse: collapse; }
+hr { height: 1px; border: none; *color: #fff; }
+img { vertical-align: middle; -ms-interpolation-mode: bicubic; }
+.fd-left { float: left; }
+.fd-right { float: right; }
+.fd-clear { clear: both; }
+.fd-clr { *zoom: 1; }
+.fd-clr:after { display: block; clear: both; height: 0; content: '\0020'; }
+.fd-hide { display: none; }
+.fd-show { display: block; }
+.fd-locate { position: relative; }
+.fd-cny { font-family: Helvetica, Arial; }
+.fd-gray { color: #666; }
+.fd-bold { font-weight: 700; }
+#header,#content,#footer,.layout { *zoom: 1; }
+#header:after,#content:after,#footer:after,.layout:after { display: block; clear: both; height: 0; content: '\0020'; }
+.title-wrap { padding-top: 60px; }
+
+.header,.main,.schedule,.guest,.cooperation,.map,.review,.footer { min-width: 1190px; }
+
+/* header style */
+
+.header .logo { padding-top: .5%; }
+.header .logo a { display: inline-block; width: 166px; height: 43px; background: url(//pic.c-ctrip.com/corp_niv/logo_corpbiz.png?20160129) 50% 50% no-repeat; }
+.wrap { position: relative; width: 1190px; margin-right: auto; margin-left: auto; }
+.header .nav { margin-top: .2%; background-color: #050915; }
+.header ul a { display: inline-block; width: 100%; height: 100%; font-size: 1.8rem; text-align: center; text-decoration: none; color: #bbb; }
+.header ul > li { float: left; width: 150px; height: 62px; margin-right: 10px; padding: 9px 0; line-height: 62px; }
+.header ul .selected { color: #fff; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/nav.png) no-repeat top center; }
+.header ul a:hover { -webkit-transition: color linear .2s; transition: color linear .2s; color: #fff; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/nav.png) no-repeat top center; }
+
+/* main style */
+
+.main { height: 540px; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/banner.png) no-repeat top center; background-size: cover; }
+.main img { position: absolute; }
+.main .wrap { height: 540px; }
+.main .intro { top: 15%; left: 1%; }
+.main .iphone { display: none; }
+
+/* info style */
+
+.info .title { width: 187px; height: 75px; margin: 0 auto; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/intro-title.png) no-repeat; }
+.info .info-wrap { padding-bottom: 50px; }
+.info .infomation { width: 1141px; height: 384px; margin-top: 20px; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/intr-bg.png); }
+.info .infomation p { width: 86%; padding-left: 70px; font-size: 1.6rem; font-weight: normal; line-height: 1.4; text-align: justify; color: #fff; }
+.info .infomation .first-line { padding-top: 30px; }
+
+/* schedule style */
+
+.schedule { background-color: #ededed; }
+.schedule .wrap { padding-bottom: 50px; text-align: center; }
+.schedule .schedule-time { width: 279px; height: 74px; margin: 0 auto; padding: 50px 0; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/Schedule.png) no-repeat; }
+
+/* guest style */
+
+.guest { padding-bottom: 100px; }
+.guest .guest-banner { width: 332px; height: 78px; margin: 15px auto; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/Guest.png) no-repeat; }
+.guest .guestImgBox { margin-bottom: 10px; cursor: pointer; }
+.guest .guestImgBox > img { width: 150px; height: 150px; border: 6px solid #d4e2f4; border-radius: 50%; }
+.guest .guestList { float: left; width: 160px; margin: 20px 65px; text-align: center; }
+.guest .guestName { display: inline-block; width: 120px; font-size: 18px; color: #fff; border-radius: 20px; background-color: #00509d; }
+.guest .specilaName { width: 190px; }
+.guest .specilaIntro { width: auto; white-space: nowrap; }
+.guest .gusdtTitle { font-size: 18px; color: #999; }
+
+/* cooperation style */
+
+.cooperation { margin-top: 30px; padding: 0 0 30px; background-color: #ededed; }
+.cooperation .cooperation-title { width: 261px; height: 79px; margin: 0 auto; padding: 10px 0; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/Partner.png) no-repeat; }
+.cooperation .partner { position: relative; overflow: hidden; margin: 30px 0; font-size: 18px; color: #333; }
+.cooperation .partner-title { position: absolute; top: 0; left: 0; display: inline-block; width: 120px; padding-top: 25px; }
+.cooperation .ad { display: inline-block; float: left; margin: 0 75px 15px 0; vertical-align: middle; border: 1px solid #d4d4d4; background-color: #fff; }
+.cooperation .ad img { width: 157px; height: 52px; width/*\**/: auto\9;*width:157px; }
+.cooperation .last-partner { overflow: hidden; padding: 20px 0 0 124px; }
+
+/* map style */
+
+.map .map-title { width: 185px; height: 80px; margin: 15px auto 30px auto; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/Map.png); }
+.map .address { padding: 50px 0 80px; }
+.map .address-info { width: 556px; height: 166px; color: #fff; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/address-bg.png); }
+.map .wrap-info { padding: 20px 20px 20px 42px; }
+.map .conf-address { font-size: 30px; }
+.map .address-detail { font-size: 18px; }
+.map .words-area { width: 50%; }
+.map .map-area { width: 50%; }
+.map .words-area p { font-size: 16px; color: #333; }
+
+/* review style */
+
+.review { padding: 0 0 30px; background-color: #ededed; }
+.review .review-title { width: 254px; height: 74px; margin: 0 auto; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/Review.png); }
+.review .review-area { margin: 30px 0; }
+.review .review-left { width: 50%; }
+.review .review-word { margin: 20px 0; font-size: 16px; text-align: justify; color: #333; }
+.review .review-video { width: 48%; height: 340px; border: 5px solid #f89a14; }
+.review .pic-left,.review .pic-center,.pic-right { position: relative; }
+.review .pic-left,.review .pic-center { margin-right: 10px; }
+.review .fd-left { -webkit-transition: opacity .2s linear; transition: opacity .2s linear; opacity: .85; }
+.review .fd-left:hover { opacity: 1; }
+.review .m10 { margin-top: 10px; }
+.review .pic-word h1 { position: absolute; bottom: 0; left: 0; height: 48px; padding: 0 10px; font-size: 16px; text-align: justify; opacity: .8; color: #fff; background-color: #020202; }
+.review .pic-left h1 { width: 210px; }
+.review .pic-left1 h1 { width: 465px; line-height: 48px; }
+.review .pic-left2 h1 { width: 210px; }
+.review .pic-center h1 { width: 465px; line-height: 48px; }
+.review .pic-center1 h1 { width: 435px; }
+.review .pic-center2 h1 { width: 465px; }
+.review .pic-right h1 { width: 435px; line-height: 48px; }
+.review .pic-right1 h1 { width: 210px; }
+.review .pic-right2 h1 { width: 435px; }
+.review .review-more { margin-top: 50px; text-align: center; }
+.review .review-more a { position: relative; display: inline-block; width: 300px; height: 80px; font-size: 30px; line-height: 80px; text-decoration: none; color: #fff; border-radius: 5px; background-color: #00509d; }
+.review .review-more a:after { position: absolute; top: 0; left: 0; display: block; width: 0; height: 100%; content: ''; -webkit-transition: width .55s; transition: width .55s; opacity: .25; border-radius: 5px; background: #fff; }
+.review .review-more a:hover { color: #fff; }
+.review .review-more a:hover::after { width: 100%; }
+
+/* foot style */
+
+.footer { height: 180px; font-size: 18px; line-height: 180px; color: #fff; background-color: #2d2d2d; }
+.footer .fd-clr li { margin: 0 40px; vertical-align: middle; }
+.footer .fd-clr li a { text-decoration: none; color: #fff; }
+.footer .fd-clr li img { display: inline-block; vertical-align: middle; }
+.footer .fd-clr .fd-tel { height: 46px; margin-top: 60px; line-height: 30px; }
+.footer .fd-clr .fd-wx { margin-top: 30px; line-height: 1.5; text-align: center; }
+.footer .fd-clr .phone { margin-right: 5px; }
+.header .nav-fixed { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; margin-top: 0; padding: 0; background: rgba(0, 0, 0, .45); }
+.nav .phone-box { display: none; }
+.gift { display: none; }
+
+/* 弹窗  */
+
+.guest-box { position: fixed; z-index: 9999; top: 50%; left: 50%; width: 700px; margin-top: -321.5px; margin-left: -380px; padding: 40px 30px 40px 30px; border-radius: 3px; background-color: #fff; }
+.guest-box img { width: 120px; height: 120px; border: 4px solid #dbe8fb; border-radius: 50%; width/*\**/: auto\9;*width:auto;  }
+.guest-box .guest-title { margin: 19px 0 0 20px; }
+.guest-box .guest-name { margin-right: 5px; font-size: 30px; color: #111; }
+.guest-box .guest-pri { font-size: 18px; color: #999; }
+.guest-box .guset-match { font-size: 18px; color: #00509d; }
+.guest-box .close a { position: absolute; top: 15px; right: 20px; display: inline-block; width: 29px; height: 29px; text-decoration: none; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/x.png); }
+.guest-box .guest-intro { margin-top: 20px; padding: 30px 0; font-size: 18px; text-align: justify; color: #999; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; }
+.guest-box .guest-word { margin-top: 40px; }
+.schedule .phone-order { display: none; }
+
+/* media  */
+
+/* ipad landscape */
+@media screen and (max-width: 1024px) { .header,.main,.schedule,.guest,.cooperation,.map,.review,.footer { min-width: 1024px; }
+    .wrap { width: 1024px; }
+    .header ul .selected { background: none; }
+    .header ul > li { width: 130px; padding-left: 0; }
+    .header ul a:hover { background: none; }
+    .main .intro { top: 15%; left: 2%; width: 95%; }
+    .main .time { top: 38.5%; left: 35%; }
+    .main { background: url(//pic.c-ctrip.com/corp_niv/meeting/images/banner.png) no-repeat top center; }
+    .info .infomation { width: 100%; background-repeat: no-repeat; background-size: contain; }
+    .guest .guestList { margin: 20px 48px; }
+    .cooperation ul { padding: 0 10px; }
+    /*.nav .only-pc-nav { display: none; }
+    .nav .phone-box { display: block; }*/
+    .map .address-info { width: 100%; background-repeat: no-repeat; background-size: contain; }
+    .map .wrap-info { padding-top: 6px; }
+    .map .address { padding: 0 10px 20px 10px; }
+    /*.review { display: none; }*/
+    .review .pic-center { width: 380px; }
+    .review .pic-center h1 { width: 360px; }
+    .review .ie8_3,.review .ie8_4,.review .ie8_9 { width: 390px; }
+    .review .ie8_3 h1,.review .ie8_4 h1,.review .ie8_9 h1 { width: 370px; }
+    .nav .ifeng { display: none; }
+    /*.gift { display: block; }
+    .gift { display: block; background: #ededed; }*/
+    .gift .gift-title { width: 190px; height: 75px; margin: 0 auto; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/Gift.png) no-repeat; }
+    .gift .chance { margin: 15px 0 50px 0; }
+    .gift .chance-item { display: block; width: 90%; margin: 20px auto; padding: 10px; font-size: 15px; text-decoration: none; color: #fff; border-radius: 5px; }
+    .gift .chance-item:nth-child(1) { background-color: #00509d; }
+    .gift .chance-item:nth-child(1):active { background-color: #238ef6; }
+    .gift .chance-item:nth-child(2) { background-color: #f89a14; }
+    .gift .chance-item:nth-child(2):active { background-color: #f7b960; }
+    .gift .chance-item:nth-child(3) { background-color: #de5959; }
+    .gift .chance-item:nth-child(3):active { background-color: #fa7a7a; }
+    .footer .fd-clr li { margin: 0 25px; }
+    .info .infomation .first-line { padding-top: 15px; }
+    .info .infomation p { width: 80%; font-size: 1.4rem; }
+    .guest { padding-bottom: 0; } }
+
+/* ipad portrait */
+@media screen and (max-width: 768px) { html,body,.wrap { overflow-x: hidden; width: 100%; }
+    .header,.main,.schedule,.guest,.cooperation,.map,.review,.footer { min-width: 100%; }
+    .title-wrap { padding-top: 40px; }
+    .header .logo { display: none; }
+    .header .nav { height: 40px; margin-top: 0; opacity: .7; background: #32322b; }
+    .header ul .selected { background: none; }
+    .header ul { padding-top: 0; }
+    .header ul a { font-size: 16px; }
+    .header ul > li { width: auto; height: 40px; padding: 0 0 0 1%; line-height: 40px; }
+    .header ul a:hover { background: none; }
+    .header ul .selected { color: #fff; background: none; }
+    .main .intro { display: none; }
+    .main .time { display: none; }
+    .main .iphone { position: static; display: block; height: 540px; margin: 0 auto; }
+    .main { background: url(//pic.c-ctrip.com/corp_niv/meeting/images/phone-bg.png); background-size: cover; }
+    .info-wrap { padding: 0 5px; }
+    .info .infomation { width: 100%; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/phone-title.png) no-repeat; background-size: cover; }
+    .info .infomation p { padding-left: 7rem; font-size: 2.1rem; }
+    .phone-wrap { padding: 0 1%; }
+    .guest .guestList { margin: 10px; }
+    .info .infomation .first-line { padding-top: 9%; }
+    .cooperation .partner { margin: 0 10px 10px; padding: 50px 0 0; }
+    .cooperation .ad { margin-top: 5px; margin-right: 5px; }
+    .words-area { float: none; }
+    .map-area { float: none; }
+    .map .words-area,.map .map-area { width: 95%; margin: 0 auto; margin-bottom: 15px; }
+    .map .address-detail { font-size: 16px; }
+    .map .conf-address { font-size: 18px; }
+    .map .wrap-info { padding: 5% 6%; }
+    .info .infomation { height: 810px; }
+    .map { margin-top: 0; }
+    .map .address-info { width: 100%; background-repeat: no-repeat; background-size: contain; }
+    .review { display: none; }
+    .footer { display: none; }
+    .gift { display: block; background: #ededed; }
+    .gift .gift-title { width: 190px; height: 75px; margin: 0 auto; background: url(//pic.c-ctrip.com/corp_niv/meeting/images/Gift.png) no-repeat; }
+    .gift .chance { margin: 15px 0 50px 0; }
+    .gift .chance-item { display: block; width: 90%; margin: 20px auto; padding: 10px; font-size: 15px; text-decoration: none; color: #fff; border-radius: 5px; }
+    .gift .chance-item:nth-child(1) { background-color: #00509d; }
+    .gift .chance-item:nth-child(1):active { background-color: #238ef6; }
+    .gift .chance-item:nth-child(2) { background-color: #f89a14; }
+    .gift .chance-item:nth-child(2):active { background-color: #f7b960; }
+    .gift .chance-item:nth-child(3) { background-color: #de5959; }
+    .gift .chance-item:nth-child(3):active { background-color: #fa7a7a; }
+    .nav .only-pc-nav { display: none; }
+    .nav .phone-box { display: none; }
+    .guest .specilaIntro { width: auto; }
+    .schedule .pc-order { display: none; }
+    .schedule .phone-order { display: inline-block; }
+    .schedule .schedule-time { padding: 30px 0; }
+    .guest-box { box-sizing: border-box; width: 300px; margin-top: 0; margin-left: 0; padding: 30px 5px 0 5px; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+    .guest-box .guest-name { font-size: 15px; }
+    .guest-box .guest-pri { font-size: 10px; }
+    .guest-box .guset-match { font-size: 9px; }
+    .guest-box .guest-intro { font-size: 12px; }
+    .guest-box .guest-word { margin-top: 10px; }
+    .guest-box img { width: 50px; height: 50px; border-width: 2px; }
+    .guest-box .close a { top: 15px; right: 15px; -webkit-transform: scale(.7,.7); transform: scale(.7,.7); }
+    .guest-box .guest-title { margin: 8px 0 0 5px; }
+    .guest-box .guest-intro { border-bottom: none; } }
+
+/* i6 plus  */
+@media screen and (max-width:414px) { .header ul a { font-size: 12px; }
+    .main .wrap { height: 400px; padding-top: 55px; }
+    .main .iphone { height: 400px; }
+    .info .infomation { height: 520px; background-size: 100% 100%; }
+    .info .infomation .first-line { padding-top: 14%; }
+    .info .infomation p { padding-left: 2.9rem; font-size: 12px; }
+    .schedule .wrap { box-sizing: border-box; padding: 0 10px 50px; }
+    .guest .guestList { width: 50%; margin: 10px 0; }
+    .map .address-info { height: 118px; }
+    .map .conf-address { font-size: 16px; }
+    .map .address-detail { font-size: 12px; }
+    .map .wrap-info { padding: 3% 6%; }
+    .map .words-area p { font-size: 14px; } }
+
+/* <i5  */
+@media screen and (max-width:320px) { html,body { min-width: 320px; }
+    .header ul > li { margin: 0; padding-right: 3%; }
+    .info .infomation { height: 550px; }
+    .info .infomation .first-line { padding-top: 10%; }
+    .info .infomation p { padding-left: 2.5rem; font-size: 1.2rem; }
+    .guest .guestList { margin: 10px 0; }
+    .guest .guestImgBox > img { width: 100px; height: 100px; border-width: 2px; }
+    .guest .guestName,.guest .gusdtTitle { font-size: 14px; }
+    .guest .specilaName { width: 150px; }
+    .cooperation .partner { padding: 30px 0 0; }
+    .cooperation .partner .partner-title { padding-top: 0; }
+    .cooperation .partner img { width: 120px; height: 48px; }
+    .map .address-info { height: 90px; }
+    .map .wrap-info { padding: 0 6%; }
+    .guest .guest-banner {-webkit-transform: scale(.8); transform: scale(.8); } }
+
+
+/* for ie8  */
+.ie8_1 { width: 230px; height: 343px; }
+.ie8_2 { width: 485px; height: 343px; }
+.ie8_3 { width: 455px; height: 343px; }
+.ie8_4 { width: 485px; height: 318px; }
+.ie8_5 { width: 455px; height: 318px; }
+.ie8_6 { width: 230px; height: 318px; }
+.ie8_7 { width: 230px; height: 319px; }
+.ie8_8 { width: 485px; height: 319px; }
+.ie8_9 { width: 455px; height: 319px; }
