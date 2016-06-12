@@ -108,6 +108,7 @@
             -moz-box-shadow: 0 0 4px green;
             box-shadow: 0 0 4px blue;
         }
+
     </style>
 </head>
 
@@ -129,7 +130,7 @@
         <style contenteditable="">
             html结构：
             tab>a tab-info>tab-content
-            简单需求实现：
+            简单需求实现1：
             $(function(){
 			    var $content = $('.tab-info .tab-content');
 			     $(".tab-nav a").on('click',function(){
@@ -140,7 +141,21 @@
 				    $content.eq($index).show();
 				    return false;
 			    })
-		    })
+		    });
+            简单需求2：
+            var elAs = $('#tab a'),
+            elImgs = $('#panel img');
+
+                // 选项卡点击行为
+                elAs.each(function(index) {
+                    $(this).data('order', index).click(function() {
+                        var target = elImgs.eq($(this).data('order'));
+                    // 选项卡UI
+                    $(this).addClass('active').siblings('a').removeClass('active');
+                    // 面板显隐
+                    target.addClass('active').siblings('img').removeClass('active');
+            });
+        });
         </style>
         </h6>
     </div>
@@ -234,6 +249,7 @@
                 alert("我是回调函数 :)");
             }
         });
+
     </script>
 </body>
 
