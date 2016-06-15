@@ -1207,13 +1207,16 @@ body {
 
 .tools {
     width: 100%;
+    height: 200px;
     background-color: #051223;
     opacity: 0.9;
     filter: alpha(opacity=90);
     position: fixed;
-    left: 0;
+    left: -100%;
     bottom: 0;
     z-index: 5;
+    -webkit-transition: all linear .3s;
+    transition: all linear .3s;
 }
 .tools .tools_box {
     position: relative;
@@ -1312,11 +1315,19 @@ body {
 .show-tips {
     position: fixed;
     width: 100%;
-    left: -100%;
-    bottom: 50px;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: all linear .3s;
+    transition: all linear .3s;
 }
 .show-tips .t-img{
     width: 220px;
     height: 148px;
     background-image: url(../img/left-nav.png);
+}
+.soccer-hide{
+    left: -100%;
+}
+.tools-show{
+    left: 0%;
 }
