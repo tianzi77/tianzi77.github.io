@@ -33,8 +33,9 @@
                     scrollTop: '0px'
                 }, 800);
             });
-            $(".t-img").on("click",function(){
+            $(".t-img").click(function(){
                 $(this).addClass("soccer-hide");
                 $(this).siblings("tools").addClass("tools-show");
+                console.log(9)
             })
         })
