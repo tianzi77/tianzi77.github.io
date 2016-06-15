@@ -335,6 +335,7 @@ pre,
         position: fixed;
         top: 0;
         background-color: rgba(255, 255, 255, 0.9);
+        background-color:#fff\9;
         border-bottom: 1px solid #f2f2f2;
         -webkit-transition: -webkit-transform 0.3s;
         transition: -webkit-transform 0.3s;
@@ -1196,4 +1197,7 @@ body {
 }
 .person-fix p {
     width: 210px;
+}
+.col-lg-8 {
+    *width:54% !important;
 }
