@@ -1232,6 +1232,11 @@ body {
         width: 980px;
     }
 }
+@media (max-width: 768px) {
+    .show-tips{
+        display: none;
+    }
+}
 
 /* Bounce To Bottom */
 
