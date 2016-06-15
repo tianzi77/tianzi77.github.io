@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        body {
+            margin: auto;
+            max-width: 980px;
+            background-color: azure;
+        }
+        
+        .box {
+            width: 400px;
+            padding: 15px;
+            background-color: #f0f3f9;
+        }
+        
+        .container {
+            height: 0;
+            position: relative;
+            overflow: hidden;
+            -webkit-transition: height 0.6s;
+            -moz-transition: height 0.6s;
+            -o-transition: height 0.6s;
+            transition: height 0.6s;
+            width: 340px;
+        }
+        
+        .container .wrap {
+            border: 20px solid #333;
+        }
+        
+        :root .container .wrap {
+            /* 正统slide效果 */
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .down-circle {
+            width: 0;
+            height: 0;
+            vertical-align: middle;
+            display: inline-block;
+            border-top: 5px solid #06c;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            margin-left: 2px;
+        }
+        
+        .up-circle {
+            width: 0;
+            height: 0;
+            vertical-align: middle;
+            display: inline-block;
+            border-bottom: 5px solid #06c;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            margin-left: 2px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <b style="font-size:22px;color:red;">处理一个简单的展开收起带动画的小插件，兼容ie6+ <br>使用方法：slideToggleTrans(document.getElementById("要展开的容器"));
+    </b>
+    <p>想看美女图片？<a href="javascript:" id="button" data-rel="more">展开<i class="down-circle"></i></a></p>
+    <div id="more" class="container">
+        <div class="wrap">
+            <img src="http://www.zhangweiwei.cn/img/logo.png" height="300" />
+            <p>我是展开内容我是展开内容啦啦啦</p>
+            <p>我是展开内容我是展开内容啦啦啦</p>
+            <p>我是展开内容我是展开内容啦啦啦</p>
+            <p>我是展开内容我是展开内容啦啦啦</p>
+            <p>我是展开内容我是展开内容啦啦啦</p>
+        </div>
+    </div>
+</body>
+<script>
+    var slideToggleTrans = function(element, display) { //  display表示默认更多展开元素是显示状态还是隐藏
+        if (typeof window.screenX === "number") {
+            // 现代浏览器
+            element.addEventListener("click", function() {
+                display = !display;
+                var rel = this.getAttribute("data-rel"),
+                    btn = document.getElementById("button"),
+                    eleMore = document.querySelector("#" + rel);
+
+
+                eleMore && (eleMore.style.height = display ? (function() {
+                    var height = 0;
+                    Array.prototype.slice.call(eleMore.childNodes).forEach(function(child) {
+                        if (child.nodeType === 1) {
+                            var oStyle = window.getComputedStyle(child);
+                            height = child.clientHeight + (parseInt(oStyle.borderTopWidth) || 0) + (parseInt(oStyle.borderBottomWidth) || 0);
+                        }
+                    });
+                    return height;
+                })() + "px" : "0px");
+                changeText();
+            });
+        } else {
+            // IE6-IE8浏览器
+            element.attachEvent("onclick", function() {
+                display = !display;
+                var rel = element.getAttribute("data-rel"),
+                    eleMore = document.getElementById(rel);
+                eleMore && (eleMore.style.height = display ? "auto" : "0px");
+                changeText();
+                return false;
+            });
+        }
+        // 判断文本 兼容所有浏览器
+        function changeText() {
+            var rel = element.getAttribute("data-rel"),
+                eleMore = document.getElementById(rel);
+            if (eleMore.style.height != "0px") {
+                element.innerHTML = "收起<i class='up-circle'></i>"
+            } else {
+                element.innerHTML = "展开<i class='down-circle'></i>"
+            }
+        }
+    };
+
+    // 应用渐进使用transition交互的slideToggle效果
+    slideToggleTrans(document.getElementById("button"));
+
+</script>
+
+</html>
