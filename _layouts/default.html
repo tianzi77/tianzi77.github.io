@@ -4,18 +4,15 @@
 {% include head.html %}
 
 <!-- hack iOS CSS :active style -->
+
 <body ontouchstart="">
 
-    {% include nav.html %}
-
-    {{ content }}
-
-    {% include footer.html %}
+    {% include nav.html %} {{ content }} {% include footer.html %}
 
 
-<!-- Image to hack wechat -->
+    <!-- Image to hack wechat -->
 
-<!-- 163 music player -->
+    <!-- 163 music player -->
     <div id="music-panel">
         <a id="music-control" href="javascript:;" onclick="javascript:void(0);"></a>
         <div id="music-content">
@@ -30,32 +27,42 @@
     <!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
     <script>
         $(function() {
-            $('#music-control').on('mouseover',function(){
-				$('#music-control').addClass('on');
-                $('#music-content').show();
-			 });
-		  $('#music-control').on('mouseleave',function(){
-				$('#music-control').removeClass('on');
-                $('#music-content').hide();
-			 });
-		  $('#music-content').on('mouseover',function(){
-				$(this).show();
+            $('#music-control').on('mouseover', function() {
                 $('#music-control').addClass('on');
-			 });
-		  $('#music-content').on('mouseleave',function(){
-				$(this).hide();
+                $('#music-content').show();
+            });
+            $('#music-control').on('mouseleave', function() {
                 $('#music-control').removeClass('on');
-			 });
-        $(window).scroll(function() {		
-		  if($(window).scrollTop() >= 100){
-			$('.actGotop').fadeIn(300); 
-		  }else{    
-			$('.actGotop').fadeOut(300);
-		}  
-	   });
-	   $('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});	
+                $('#music-content').hide();
+            });
+            $('#music-content').on('mouseover', function() {
+                $(this).show();
+                $('#music-control').addClass('on');
+            });
+            $('#music-content').on('mouseleave', function() {
+                $(this).hide();
+                $('#music-control').removeClass('on');
+            });
+            $(window).scroll(function() {
+                if ($(window).scrollTop() >= 100) {
+                    $('.actGotop').fadeIn(300);
+                } else {
+                    $('.actGotop').fadeOut(300);
+                }
+                var p_top = $(".visible-md").offset().top;
+                if ($(window).scrollTop() > p_top) {
+                    $(".visible-md").addClass("person-fix");
+                } else {
+                    $(".visible-md").removeClass("person-fix");
+                }
+            });
+            $('.actGotop').click(function() {
+                $('html,body').animate({
+                    scrollTop: '0px'
+                }, 800);
+            });
         })
-        
+
     </script>
 </body>
 

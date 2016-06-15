@@ -1165,25 +1165,33 @@ body {
     right: 10px;
     display: none;
 }
-.actGotop  .plane{
-    background:url(../img/top.gif) no-repeat;
+.actGotop .plane {
+    background: url(../img/top.gif) no-repeat;
     width: 54px;
     height: 30px;
-    zoom:1;
+    zoom: 1;
 }
-.actGotop .back-info{
+.actGotop .back-info {
     border-radius: 3px;
     background-color: #b4b4b4;
-    width:5em;
-    text-align:center;
+    width: 5em;
+    text-align: center;
     height: 16px;
     line-height: 16px;
     color: #fff;
     font-size: 12px;
     -webkit-transition: all linear .5s;
     transition: all linear .5s;
-    
 }
-.actGotop:hover .back-info{
+.actGotop:hover .back-info {
     background-color: #abcdef;
+}
+.person-fix {
+    position: fixed;
+    top: 40px;
+    z-index: 2;
+    background-color: #fff;
+}
+c ba .person-fix p {
+    width: 210px;
 }
