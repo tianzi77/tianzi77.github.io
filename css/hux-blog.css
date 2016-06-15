@@ -1309,3 +1309,13 @@ body {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
 }
+.show-tips {
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+}
+.show-tips .t-img{
+    width: 220px;
+    height: 148px;
+    background-image: url(../img/left-nav.png);
+}
