@@ -38,4 +38,8 @@
                 $(this).parents(".show-tips").addClass("soccer-hide");
                 $(this).siblings(".tools").addClass("tools-show");
             });
+            $(".t-close").on("click",function(){
+                $(this).parents(".tools").removeClass("tools-show");
+                $(this).parents(".show-tips").removeClass("soccer-hide");
+            })
         })
