@@ -40,6 +40,6 @@
             });
             $(".t-close").on("click",function(){
                 $(this).parents(".tools").removeClass("tools-show");
-                $(this).parents(".show-tips").removeClass("soccer-hide");
+                $(this).parents(".show-tips").addClass("ani-delay").removeClass("soccer-hide");
             })
         })

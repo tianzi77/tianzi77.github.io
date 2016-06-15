@@ -1337,3 +1337,7 @@ body {
 .tools-show {
     left: 0%;
 }
+.ani-delay{
+    -webkit-transition-delay: 0.9s;
+    transition-delay: 0.9s;
+}
