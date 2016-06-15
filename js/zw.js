@@ -33,6 +33,7 @@
                     scrollTop: '0px'
                 }, 800);
             });
+            //足球展开交互
             $(".t-img").on("click",function(){
                 $(this).parents(".show-tips").addClass("soccer-hide");
                 $(this).siblings(".tools").addClass("tools-show");
