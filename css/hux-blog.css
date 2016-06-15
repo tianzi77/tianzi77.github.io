@@ -1317,8 +1317,10 @@ body {
     width: 100%;
     left: 0;
     bottom: 0;
-    -webkit-transition: all linear .3s;
-    transition: all linear .3s;
+    -webkit-transition: all linear .6s;
+    transition: all linear .6s;
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s;
 }
 .show-tips .t-img{
     width: 220px;
