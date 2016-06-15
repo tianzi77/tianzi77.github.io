@@ -1215,16 +1215,18 @@ body {
     bottom: 0;
     z-index: 5;
 }
+.tools .tools_box {
+    position: relative;
+    margin: auto;
+}
 @media (min-width: 1200px) {
     .tools .tools_box {
         width: 1170px;
-        margin: auto;
     }
 }
 @media (min-width: 1024px) {
     .tools .tools_box {
         width: 980px;
-        margin: auto;
     }
 }
 
@@ -1282,18 +1284,18 @@ body {
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
 [class^="hvr-"] {
-  display: inline-block;
-  vertical-align: middle;
-  margin: .4em;
-  padding: 1em;
-  cursor: pointer;
-  background: #e1e1e1;
-  text-decoration: none;
-  color: #666;
-  /* Prevent highlight colour when element is tapped */
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+    display: inline-block;
+    vertical-align: middle;
+    margin: .4em;
+    padding: 1em;
+    cursor: pointer;
+    background: #e1e1e1;
+    text-decoration: none;
+    color: #666;
+    /* Prevent highlight colour when element is tapped */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.t-close{
+.t-close {
     position: absolute;
     right: 0;
     border: 0;
