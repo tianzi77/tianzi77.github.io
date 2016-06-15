@@ -1293,3 +1293,8 @@ body {
   /* Prevent highlight colour when element is tapped */
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+.t-close{
+    position: absolute;
+    right: 0;
+    border: 0;
+}
