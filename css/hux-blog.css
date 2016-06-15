@@ -1192,6 +1192,7 @@ body {
 .person-fix {
     position: fixed;
     top: 40px;
+    *top:32px;
     z-index: 2;
     background-color: #fff;
 }
