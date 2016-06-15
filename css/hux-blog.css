@@ -1298,5 +1298,14 @@ body {
 .t-close {
     position: absolute;
     right: 0;
-    border: 0;
+    top: 0;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.t-close:hover{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
