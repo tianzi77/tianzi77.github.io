@@ -1324,6 +1324,7 @@ body {
     width: 220px;
     height: 148px;
     background-image: url(../img/left-nav.png);
+    cursor: pointer;
 }
 .soccer-hide{
     left: -100%;
