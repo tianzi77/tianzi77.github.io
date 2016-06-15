@@ -1310,8 +1310,9 @@ body {
     transform: rotate(360deg);
 }
 .show-tips {
-    position: absolute;
-    left: 10px;
+    position: fixed;
+    width: 100%;
+    left: -100%;
     bottom: 50px;
 }
 .show-tips .t-img{
