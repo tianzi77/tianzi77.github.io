@@ -1215,8 +1215,8 @@ body {
     left: -100%;
     bottom: 0;
     z-index: 5;
-    -webkit-transition: all linear .3s;
-    transition: all linear .3s;
+    -webkit-transition: all linear .6s .3s;
+    transition: all linear .6s .3s;
 }
 .tools .tools_box {
     position: relative;
@@ -1322,9 +1322,8 @@ body {
     width: 100%;
     left: 0;
     bottom: 0;
-    -webkit-transition: all linear .6s .3s;
-    transition: all linear .6s .3s;
-
+    -webkit-transition: all linear .3s;
+    transition: all linear .3s;
 }
 .show-tips .t-img{
     width: 220px;
