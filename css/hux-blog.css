@@ -1316,6 +1316,8 @@ body {
 .t-close:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+    -webkit-transform-origin: center;
+    transform-origin: center;
 }
 .show-tips {
     position: fixed;
