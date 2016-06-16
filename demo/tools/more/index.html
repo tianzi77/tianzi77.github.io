@@ -60,7 +60,10 @@
             border-right: 5px solid transparent;
             margin-left: 2px;
         }
-
+        
+        #more2 {
+            display: none;
+        }
     </style>
 </head>
 
@@ -70,6 +73,18 @@
     <p>想看美女图片？<a href="javascript:" id="button" data-rel="more">展开<i class="down-circle"></i></a></p>
     <div id="more" class="container">
         <div class="wrap">
+            <img src="http://www.zhangweiwei.cn/img/logo.png" height="300" />
+            <p>我是展开内容我是展开内容啦啦啦</p>
+            <p>我是展开内容我是展开内容啦啦啦</p>
+            <p>我是展开内容我是展开内容啦啦啦</p>
+            <p>我是展开内容我是展开内容啦啦啦</p>
+            <p>我是展开内容我是展开内容啦啦啦</p>
+        </div>
+    </div>
+    <hr>
+    <p>仿展开方法2。使用：give_more($("点击元素"),$("收起元素"));：<a href="javascript:" id="btn2">展开<i class="down-circle"></i></a></p>
+    <div id="more2" class="">
+        <div class="">
             <img src="http://www.zhangweiwei.cn/img/logo.png" height="300" />
             <p>我是展开内容我是展开内容啦啦啦</p>
             <p>我是展开内容我是展开内容啦啦啦</p>
@@ -125,9 +140,34 @@
         }
     };
 
-    // 应用渐进使用transition交互的slideToggle效果
+    // 应用渐进使用transition交互的slideToggle效果 方法1调用这个方法
     slideToggleTrans(document.getElementById("button"));
+</script>
+<script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+<script>
+    $(function() {
+        //方法2 伪展开收起
+        function give_more(click_con, show_con) {
+            var bool_timeline = true;
+            click_con.on("click", function() {
+                if (show_con.is(":visible") && bool_timeline) {
+                    bool_timeline = false;
+                    show_con.slideUp(function() {
+                        bool_timeline = true;
+                    });
+                    $(this).html('展开<i class="down-circle"></i>');
+                } else if (bool_timeline) {
+                    bool_timeline = false;
+                    show_con.slideDown(function() {
+                        bool_timeline = true;
+                    });
+                    $(this).html('收起<i class="up-circle"></i>');
+                }
+            })
+        }
+        give_more($("#btn2"),$("#more2"));
 
+    })
 </script>
 
 </html>
