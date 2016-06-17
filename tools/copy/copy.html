@@ -11,12 +11,27 @@
     text:
     <input type="text" name="text" value="copy ok!" id="text" />
     <input type="submit" name="btn_copy" value="复制" id="btn_submit" />
+    <span id="demo">hahahhahhahha</span>
+    <input type="submit" name="btn_copy" value="复制" id="btn_submit" />
     <script type="text/javascript">
         var clip = new ZeroClipboard.Client();
         clip.setHandCursor(true);
         var text = document.getElementById('text').value;
         clip.setText(text);
         clip.glue("btn_submit");
+        clip.addEventListener("complete", function() {
+            alert("复制成功！");
+        });
+        
+        //复制span
+        var clip1 = new ZeroClipboard.Client();
+        clip1.setHandCursor(true);
+        var text1 = document.getElementById('demo').value;
+        clip1.setText(text1);
+        clip1.glue("btn_submit");
+        clip1.addEventListener("complete", function() {
+            alert("复制成功！");
+        });
     </script>
 </body>
 
