@@ -1325,6 +1325,8 @@ body {
     bottom: 0;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    width: 220px;
+    overflow: visible;
 }
 .show-tips .t-img {
     width: 220px;
