@@ -26,7 +26,7 @@
         //复制span
         var clip1 = new ZeroClipboard.Client();
         clip1.setHandCursor(true);
-        var text1 = document.getElementById('demo').value;
+        var text1 = document.getElementById('demo').innerHTML;
         clip1.setText(text1);
         clip1.glue("btn_submit1");
         clip1.addEventListener("complete", function() {
