@@ -21,6 +21,7 @@
         clip.glue("btn_submit");
         clip.addEventListener("complete", function() {
             alert("复制成功！");
+            clip.destroy();
         });
         
         //复制span
@@ -31,6 +32,7 @@
         clip1.glue("btn_submit1");
         clip1.addEventListener("complete", function() {
             alert("复制成功！");
+            clip.destroy();
         });
     </script>
 </body>
