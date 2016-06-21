@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>评价的另一种实现方式</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        .star-box {
+            overflow: visible;
+            margin: 100px auto;
+        }
+        
+        .star0,
+        .star1,
+        .star2,
+        .star3,
+        .star4,
+        .star5 {
+            width: 115px;
+            height: 18px;
+            background: url(http://img.soufun.com/rent/image/rent/NewHeadJsCss/images/starPJ.gif) no-repeat;
+        }
+        
+        .star0 {
+            background-position: 0 -125px;
+        }
+        
+        .star1 {
+            background-position: 0 0;
+        }
+        
+        .star2 {
+            background-position: 0 -25px;
+        }
+        
+        .star3 {
+            background-position: 0 -50px;
+        }
+        
+        .star4 {
+            background-position: 0 -75px;
+        }
+        
+        .star5 {
+            background-position: 0 -100px;
+        }
+        
+        .star-box .i-box {
+            width: 23px;
+            height: 18px;
+            float: left;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .i-box .tips {
+            position: absolute;
+            left: -6px;
+            top: 27px;
+            display: none;
+            border: 1px solid #06c;
+            width: 150px;
+            padding: 5px 10px;
+            background-color: #fffdee;
+        }
+        
+        .i-box .tips .tri {
+            position: absolute;
+            left: 10px;
+            width: 0;
+            height: 0;
+            border: 6px dashed transparent;
+        }
+        
+        .i-box .tips .tri-border {
+            top: -13px;
+            border-bottom-color: #06c;
+            border-style: solid;
+        }
+        
+        .i-box .tips .tri-background {
+            top: -12px;
+            border-bottom-color: #fffdee;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="star-box clearfix star0">
+        <div class="i-box">
+            <div class="tips">
+                <span class="tri tri-border"></span>
+                <span class="tri tri-background"></span> 服务很好，有待改善。1分
+            </div>
+        </div>
+        <div class="i-box">
+            <div class="tips">
+                <span class="tri tri-border"></span>
+                <span class="tri tri-background"></span> 服务很好，有待改善。2分
+            </div>
+        </div>
+        <div class="i-box">
+            <div class="tips">
+                <span class="tri tri-border"></span>
+                <span class="tri tri-background"></span> 服务很好，有待改善。3分
+            </div>
+        </div>
+        <div class="i-box">
+            <div class="tips">
+                <span class="tri tri-border"></span>
+                <span class="tri tri-background"></span> 服务很好，有待改善。4分
+            </div>
+        </div>
+        <div class="i-box">
+            <div class="tips">
+                <span class="tri tri-border"></span>
+                <span class="tri tri-background"></span> 服务很好，有待改善。5分
+            </div>
+        </div>
+    </div>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script>
+        $(function() {
+            var mark1 = $(".i-box").get(0),
+                mark2 = $(".i-box").get(1),
+                mark3 = $(".i-box").get(2),
+                mark4 = $(".i-box").get(3),
+                mark5 = $(".i-box").get(4);
+            //鼠标事件
+            mark1.addEventListener("mouseenter",function(){
+                $(this).children(".tips").show();
+                $(this).parents(".star-box").removeClass().addClass("star-box clearfix star1");
+            });
+            mark1.addEventListener("mouseout",function(e){
+                $(this).children(".tips").hide();
+            });
+            mark2.addEventListener("mouseenter",function(){
+                $(this).children(".tips").show();
+                $(this).parents(".star-box").removeClass().addClass("star-box clearfix star2");
+            });
+            mark2.addEventListener("mouseout",function(){
+                $(this).children(".tips").hide();
+            });
+            mark3.addEventListener("mouseenter",function(){
+                $(this).children(".tips").show();
+                $(this).parents(".star-box").removeClass().addClass("star-box clearfix star3");
+            });
+            mark3.addEventListener("mouseout",function(){
+                $(this).children(".tips").hide();
+            });
+            mark4.addEventListener("mouseenter",function(){
+                $(this).children(".tips").show();
+                $(this).parents(".star-box").removeClass().addClass("star-box clearfix star4");
+            });
+            mark4.addEventListener("mouseout",function(){
+                $(this).children(".tips").hide();
+            });
+            mark5.addEventListener("mouseenter",function(){
+                $(this).children(".tips").show();
+                $(this).parents(".star-box").removeClass().addClass("star-box clearfix star5");
+            });
+            mark5.addEventListener("mouseout",function(){
+                $(this).children(".tips").hide();
+            });
+            //点击事件
+            mark1.addEventListener("click",function(){
+                $(this).parents(".star-box").addClass("star1").unbind('mouseout');
+            });
+             mark2.addEventListener("click",function(){
+                $(this).parents(".star-box").addClass("star2").unbind('mouseout');
+            });
+             mark3.addEventListener("click",function(){
+                $(this).parents(".star-box").addClass("star3").unbind('mouseout');
+            });
+             mark4.addEventListener("click",function(){
+                $(this).parents(".star-box").addClass("star4").unbind('mouseout');
+            });
+             mark5.addEventListener("click",function(){
+                $(this).parents(".star-box").addClass("star5").unbind('mouseout');
+            });
+            $(".star-box").on("mouseout",function(){
+                $(this).removeClass().addClass("star-box clearfix star0");
+            })
+        })
+    </script>
+</body>
+
+</html>
