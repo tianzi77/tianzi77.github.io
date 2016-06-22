@@ -967,7 +967,8 @@ body {
 
 #music-panel {
     position: relative;
-    z-index: 100000;
+    z-index: 999;
+    display: none;
 }
 #music-control.on {
     -webkit-transform: rotate(180deg);
@@ -1005,6 +1006,12 @@ body {
     bottom: -53px;
     right: 50px;
     display: none
+}
+
+@media (min-width: 980px) {
+    #music-panel {
+    display: block;
+}
 }
 
 /* zww blog hover animation */
