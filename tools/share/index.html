@@ -343,6 +343,20 @@
     <script type="text/javascript" src="ZeroClipboard.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+    <script>
+        window.onload = function() {
+            //复制链接
+            var clip1 = new ZeroClipboard.Client();
+            clip1.setHandCursor(true);
+            var text1 = document.getElementById('link').innerHTML;
+            clip1.setText(text1);
+            clip1.glue("btn_submit");
+            clip1.addEventListener("complete", function() {
+                alert("复制成功");
+                clip.destroy();
+            });
+        }
+    </script>
 </body>
 
 </html>
