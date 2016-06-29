@@ -25,7 +25,8 @@
             width: 99%\9;
             height: auto;
             transition: height 0.6s;
-            z-index: -5;
+            z-index: 98;
+            display: none;
         }
     </style>
 </head>
@@ -340,14 +341,14 @@
             <button>注 册</button>
         </div>
     </div>
-    <script type="text/javascript" src="ZeroClipboard.js"></script>
+    <script type="text/javascript" src="./js/ZeroClipboard.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
     <script>
         window.onload = function() {
             //复制链接
             var clip1 = new ZeroClipboard.Client();
-            clip1.setHandCursor(true);
+            clip1.setHandCursor(false);
             var text1 = document.getElementById('link').innerHTML;
             clip1.setText(text1);
             clip1.glue("btn_submit");

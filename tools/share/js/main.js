@@ -61,7 +61,7 @@ $(".login>.close").on("click", function () {
 
 //pc已登录状态
 $("#logined-btn").on("click", function () {
-    $(".share-ways").css("z-index", 1000);
+    $(".share-ways").show();
     //遮罩层
     var docHeight = $(document).height();
     $('body').append('<div id="overlay"></div>');
@@ -74,13 +74,13 @@ $("#logined-btn").on("click", function () {
             'left': 0,
             'background-color': 'rgba(9,9,9,0.63)',
             'width': '100%',
-            'z-index': 999 //保证这个悬浮层位于其它内容之上  
+            'z-index': 97 //保证这个悬浮层位于其它内容之上  
         });
 });
 
 // pc关闭已登录
 $(".x-close").on("click", function () {
-    $(".share-ways").css("z-index", -5);
+    $(".share-ways").hide();
     $("#overlay").remove();
 });
 
