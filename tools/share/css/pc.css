@@ -829,6 +829,9 @@ em {
 
 /* media query for pad*/
 @media screen and (max-width: 800px) {
+  #ZeroClipboardMovie_1 {
+    display: none; }
+
   #flower {
     display: none; }
 
@@ -945,7 +948,7 @@ em {
   .phone-share {
     display: block;
     position: fixed;
-    right: 15px;
+    right: 25px;
     top: 10px;
     z-index: -1; }
     .phone-share img {
@@ -958,10 +961,10 @@ em {
     display: none; }
 
   #x-login-btn {
-    display: block; }
+    display: inline-block; }
 
   #i-logined-btn {
-    display: block; }
+    display: inline-block; }
 
   .i-first,
   .i-second {
@@ -998,19 +1001,19 @@ em {
         height: 38px; }
     .f-friend .left .left-hd, .f-friend .right .left-hd {
       font-size: 18px;
-      height: 70px;
-      line-height: 70px; }
+      height: 60px;
+      line-height: 60px; }
       .f-friend .left .left-hd .hd-bg, .f-friend .right .left-hd .hd-bg {
         background-size: 70%;
         background-repeat: no-repeat; }
       .f-friend .left .left-hd .icon, .f-friend .right .left-hd .icon {
         left: -8px;
         top: 24px;
-        height: 35px;
-        line-height: 35px;
+        height: 30px;
+        line-height: 30px;
         font-size: 18px; }
         .f-friend .left .left-hd .icon i, .f-friend .right .left-hd .icon i {
-          top: 35px;
+          top: 30px;
           border-width: 0 8px 8px 0; }
     .f-friend .left .intro dt img, .f-friend .right .intro dt img {
       height: 20px; }
@@ -1090,14 +1093,14 @@ em {
   .f-friend .right .left-hd .icon {
     left: -8px;
     top: 24px;
-    height: 35px;
-    line-height: 35px;
+    height: 30px;
+    line-height: 30px;
     font-size: 18px; }
     .icon i, .f-friend .left .left-hd .icon i, .f-friend .right .left-hd .icon i,
     .f-friend .left .left-hd .icon i,
     .f-friend .right .left-hd .icon i,
     .f-friend .right .left-hd .icon i {
-      top: 35px;
+      top: 30px;
       border-width: 0 8px 8px 0; }
 
   .f-own .own-content {
@@ -1107,8 +1110,8 @@ em {
     bottom: 5%; }
 
   .rules .left-hd, .share-ways .left-hd {
-    height: 70px;
-    line-height: 70px;
+    height: 60px;
+    line-height: 60px;
     font-size: 18px; }
 
   .rules .rules-content, .share-ways .rules-content,
