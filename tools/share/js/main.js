@@ -246,14 +246,3 @@ $("#x-login-btn").on("click",function(){
     step();
 
 }).call(this);
-
-//复制链接
-var clip1 = new ZeroClipboard.Client();
-clip1.setHandCursor(true);
-var text1 = document.getElementById('link').innerHTML;
-clip1.setText(text1);
-clip1.glue("btn_submit");
-clip1.addEventListener("complete", function () {
-    console.log("复制成功！");
-    clip.destroy();
-});
