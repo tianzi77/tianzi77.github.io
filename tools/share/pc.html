@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>分享有礼</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/pc.css">
+    <style>
+        .login {
+            position: absolute;
+            left: 50%;
+            margin-left: -190px;
+            z-index: 99;
+            top: 20%;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .share-ways {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: calc(100% - 10px);
+            width: 99%\9;
+            height: auto;
+            transition: height 0.6s;
+            z-index: 1001;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 商旅简头 S -->
+    <div class="corp-hd ">
+        <div class="corp-hd-wrap wrapper clearfix">
+            <a href="###" class="hd-logo"><img src="http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png" alt="携程商旅"></a>
+            <div class="hd-aside">
+                <div class="toolkit-item">
+                    <span class="nav-item-tel"><i class="icon-telphone"></i>400-820-6699</span>
+                </div>
+                <div id="navApp" class="nav-app">
+                    <a href="javascript:;" class="nav-app-pic"><i></i></a>
+                    <span class="phone-scan"></span>
+                    <div class="app-dropbox">
+                        <div class="app-inbox">
+                            <a href="javascript:;" class="nav-app-close">×</a>
+                            <div class="nav-app-title">扫描二维码下载</div>
+                            <div class="nav-app-code"></div>
+                            <a href="###" target="_blank" class="nav-app-link">携程企业商旅手机版<i></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 商旅简头 E -->
+    <div class="header">
+        <div class="wrapper">
+            <img src="./images/left.png" alt="" class="first zoomInLeft">
+            <img src="./images/right.png" alt="" class="second zoomInRight">
+            <img src="./images/i-left.png" alt="" class="i-first zoomInLeft">
+            <img src="./images/i-right.png" alt="" class="i-second zoomInRight">
+            <div class="share-p">
+                <img src="./images/p-share.png" alt="">
+                <div class="share-m">
+                    2,142,352
+                </div>
+            </div>
+            <canvas id="flower"></canvas>
+        </div>
+    </div>
+    <!-- 第一波 S -->
+    <div class="f-friend">
+        <div class="wrapper clearfix">
+            <div class="title">
+                <img src="./images/t.png" alt="">
+            </div>
+            <div class="left fl">
+                <div class="left-content">
+                    <div class="left-hd">
+                        有一种快乐叫做分享
+                        <i class="hd-bg"></i>
+                        <div class="icon">自己<i></i></div>
+                    </div>
+                    <ul class="prize-items">
+                        <li class="clearfix">
+                            <div class="fl intro">
+                                <dl>
+                                    <dt><img src="./images/tit1.png" alt=""></dt>
+                                    <dd>一张通往童话酒店的礼券</dd>
+                                    <dd class="very">-分享即赠酒店代金券35元 </dd>
+                                </dl>
+                            </div>
+                            <div class="fr intro-pic"><img src="./images/hotel.png" alt=""></div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl intro">
+                                <dl>
+                                    <dt><img src="./images/tit2.png" alt=""></dt>
+                                    <dd>拿旅游储备金，说走就走</dd>
+                                    <dd class="very">-推荐客户消费达标即赠600元 </dd>
+                                    <dd class="very">携程礼品卡； </dd>
+                                    <dd class="very">多推多得，上不封顶 </dd>
+                                </dl>
+                            </div>
+                            <div class="fr intro-pic"><img src="./images/prize.png" alt=""></div>
+                        </li>
+                        <!-- 登录状态原型展示。开发自行切换逻辑 -->
+                        <li class="btn-area">
+                           <!-- pc端未登陆.no-logined 已登录 .pc-login-btn 移动端未登陆#x-login-btn 已登录#i-logined-btn-->
+                            <a href="###" id="login-btn" class="no-logined">
+                                <button class="hvr-sweep-to-right">立即分享(未登陆) &nbsp;&nbsp;<i></i></button>
+                            </a>
+                            <a href="###" id="x-login-btn">
+                                <button class="hvr-sweep-to-right">立即分享(未登陆) &nbsp;&nbsp;<i></i></button>
+                            </a>
+                            <a href="###" id="logined-btn" class="pc-login-btn">
+                                <button class="hvr-sweep-to-right">(已登录) &nbsp;&nbsp;<i></i></button>
+                            </a>
+                            <a href="###" id="i-logined-btn">
+                                <button class="hvr-sweep-to-right">(已登录) &nbsp;&nbsp;<i></i></button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right fr">
+                <div class="left-content">
+                    <div class="left-hd">
+                        被分享快乐叫做收获
+                        <i class="hd-bg"></i>
+                        <div class="icon">朋友<i></i></div>
+                    </div>
+                    <ul class="prize-items">
+                        <li class="clearfix">
+                            <div class="fl intro">
+                                <dl>
+                                    <dt><img src="./images/tit3.png" alt=""></dt>
+                                    <dd>一张通往童话酒店的礼券</dd>
+                                    <dd class="very">-注册即赠浩泽蓝牙净水探头 </dd>
+                                </dl>
+                            </div>
+                            <div class="fr intro-pic"><img src="./images/security.png" alt=""></div>
+                        </li>
+                        <li class="btn-area s-area">
+                            <a href="###">
+                                <button class="hvr-sweep-to-right">去注册 &nbsp;<i></i></button>
+                            </a>
+                        </li>
+                        <li class="clearfix x-line">
+                            <div class="fl intro">
+                                <dl>
+                                    <dt><img src="./images/tit4.png" alt=""></dt>
+                                    <dd>拿旅游储备金，说走就走</dd>
+                                    <dd class="very">-满200即赠188元法国红酒 </dd>
+                                </dl>
+                            </div>
+                            <div class="fr intro-pic"><img src="./images/beer.png" alt=""></div>
+                        </li>
+                        <li class="btn-area">
+                            <a href="###">
+                                <button class="hvr-sweep-to-right">去预定 &nbsp;<i></i></button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 登录框 S-->
+            <div class="login">
+                <span class="close">&times;</span>
+                <div class="login-hd">
+                    英雄！请留下您的大名再分享
+                </div>
+                <div class="login-content">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="卡号/邮箱/手机号" class="input-x">
+                        </li>
+                        <li>
+                            <input type="password" placeholder="密码" class="input-x">
+                        </li>
+                        <li class="word"><a href="###" class="forget">忘记密码?</a></li>
+                        <li class="">
+                            <input type="button" value="登录" class="btn">
+                        </li>
+                        <li class="last">
+                            <input type="button" value="注册" class="btn btn1">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 登录框 E-->
+
+            <!-- 已登录分享方法 S -->
+            <div class="share-ways">
+                <div class="left-hd">
+                    分享方式
+                    <i class="hd-bg"></i>
+                </div>
+                <div class="rules-content">
+                    <dl>
+                        <dt>
+                            <p class="tips"><span class="num">1</span>复制您的专属链接：</p>
+                            <p id="link">http://pages.ctrip.com/crptravel/promote/other/ct10/index.html#ctm_ref=ad_3013_75087</p>
+                            <p><button class="copy-btn" id="btn_submit">复制链接</button></p>
+                        </dt>
+                        <dd>
+                            <p class="tips"><span class="num">2</span>用手机微信直接扫码分享更方便<i class="sprit icon1"></i></p>
+                            <p><i class="icon3 sprit"></i></p>
+                        </dd>
+                        <dd>
+                            <p class="tips"><span class="num">3</span>分享到社区：<i class="sprit icon2"></i></p>
+                            <div class="share-btn">
+                                <!-- baidu share S -->
+                                <div class="bdsharebuttonbox">
+                                    <a href="#" class="bds_more" data-cmd="more"></a>
+                                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                                </div>
+                                <script>
+                                    window._bd_share_config = {
+                                        "common": {
+                                            "bdSnsKey": {},
+                                            "bdText": "",
+                                            "bdMini": "2",
+                                            "bdMiniList": false,
+                                            "bdPic": "",
+                                            "bdStyle": "0",
+                                            "bdSize": "32"
+                                        },
+                                        "share": {}
+                                    };
+                                    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+                                </script>
+                                <!-- baidu share E -->
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <span class="x-close">×</span>
+            </div>
+            <!-- 已登录分享方法 E -->
+        </div>
+    </div>
+    <!-- 第一波 S -->
+
+    <!-- 第二波 S -->
+    <div class="f-own">
+        <div class="wrapper">
+            <div class="title">
+                <img src="./images/t2.png" alt="">
+            </div>
+            <div class="own-content">
+                <i class="hd-bg"></i>
+                <div class="icon">自己+朋友<i></i></div>
+                <div class="own-words">
+                    <dl>
+                        <dt><span>刘备</span> : 蜀奖何在！</dt>
+                        <dd><span>关羽</span> : 嘛事儿？</dd>
+                        <dd><span>张飞</span> : 嘎哈呢？</dd>
+                        <dd><span>刘备</span> : 跟哥组队赢Apple Watch</dd>
+                    </dl>
+                </div>
+                <i class="floor"></i>
+            </div>
+        </div>
+    </div>
+    <!-- 第二波 E -->
+
+    <!-- 规则 S -->
+    <div class="rules">
+        <div class="wrapper">
+            <div class="left-hd">
+                活动规则
+                <i class="hd-bg"></i>
+            </div>
+            <div class="rules-content">
+                <p>活动时间：即日起-2016年12月31日</p>
+                <p>活动规则：</p>
+                <ul>
+                    <li>1、分享礼：酒店代金券有效期为发券日至2017年12月31号；</li>
+                    <li>2、推荐礼：成功推荐的任一家注册用户在活动期间内累计消费满10,000元即可获得携程礼品卡100元，满60,000元即可获得携程礼品卡600元；每推荐一家客户达标得600元，多推多得，上不封顶。每3个月统计数据，如2016年7月-10月31日的活动结果将在9月初进行统计并发奖，礼品卡将直接冲入推荐者携程商旅账户中；</li>
+                    <li>3、注册礼和首单消费礼将每月统计发奖名单，如2016年6月的中奖名单将在2016年7月统计发奖，以此类推；</li>
+                    <li>4、携程礼品卡（任我行）可支付机票、火车票（自取票）、汽车票、船票、预付酒店、自由行套餐（机+酒、景+酒）、旅游、团购、预付门票、高端美食等产品订单。（注：部分门票产品、银行专享类旅游产品等、特殊产品暂不支持本类礼品卡支付）；</li>
+                    <li>5、桃园结义：活动期间内，你推荐的所有新注册企业客户在携程商旅企业自助平台消费总和达最高，自己+消费量最高的朋友可以各赢取Apple Watch一台;</li>
+                    <li>6、通过不法手段恶意套取返利的行为不符合活动要求，将被视作无效订单，不计入奖励范围;</li>
+                    <li>7、活动最终解释权归携程商旅所有。</li>
+                </ul>
+                <div class="small-rules">该活动苹果不是赞助商并且苹果也不会以任何形式参与其中</div>
+            </div>
+        </div>
+    </div>
+    <!-- 规则 E -->
+
+    <!-- footer -->
+    <div class="corp-ft">
+        <p>
+            <a target="_blank" href="###" title="关于我们" rel="nofollow">关于我们</a>&nbsp;|&nbsp;
+            <a target="_blank" href="###" title="案例介绍" rel="nofollow">案例介绍</a>&nbsp;|&nbsp;
+            <a target="_blank" href="###" title="企业差旅平台" rel="nofollow">企业差旅平台</a>&nbsp;|&nbsp;
+            <a target="_blank" href="###" title="会议旅游" rel="nofollow">会议旅游</a>&nbsp;|&nbsp;
+            <a target="_blank" href="###" title="活动信息" rel="nofollow">活动信息</a>&nbsp;|&nbsp;
+            <a target="_blank" href="###" title="商旅动态" rel="nofollow">商旅动态</a>&nbsp;|&nbsp;
+            <a target="_blank" href="###" title="企业合作" rel="nofollow">企业合作</a>&nbsp;|&nbsp;
+            <a target="_blank" href="###" title="开发者中心" rel="nofollow">开发者中心</a>
+        </p>
+        <p>
+            <a rel="nofollow" href="http://pages.ctrip.com/public/copyright.htm">Copyright©</a> 1999-2016, <a href="http://www.ctrip.com/"> ctrip.com</a>. All rights reserved.
+            <a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">ICP证：沪B2-20050130</a>
+        </p>
+        <div class="honour-wrap">
+            <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=163178864X" title="网信编码：163178864X" class="honour1" target="_blank" rel="nofollow">信用评级</a>
+            <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110428175405415" title="工商亮照标识" class="honour2" target="_blank" rel="nofollow">上海工商</a>
+            <a href="http://search.cxwz.org/cert/l/CX20111018000615000623" title="诚信认证示范企业" class="honour3" target="_blank" rel="nofollow">诚信网站</a>
+            <a href="http://www.zx110.org/" class="honour4" target="_blank" rel="nofollow" title="征信网">网络社会征信网</a>
+            <a href="http://www.shjbzx.cn/" class="honour5" target="_blank" rel="nofollow" title="上海市互联网违法与违规信息举报中心">信息举报中心</a>
+            <a href="https://ss.knet.cn/verifyseal.dll?sn=e12061531010025926306977" class="honour6" target="_blank" rel="nofollow" title="可信网站">可信网站</a>
+            <a href="http://www.12377.cn/" class="honour8" title="违法和不良信息举报中心" target="_blank" rel="nofollow">违法和不良信息举报中心</a>
+        </div>
+    </div>
+    <!-- 返回顶部 -->
+    <div class="fixed-sidebar" style="">
+        <a class="stool tool-gotop" href="javascript:void(0);" style="" title="返回顶部"><i class="icon-gotop"></i></a>
+    </div>
+    <!-- 手机已登录分享 -->
+    <div class="phone-share">
+        <img src="./images/phone-share.png" alt="">
+    </div>
+    <!-- 手机未登陆  -->
+    <div class="no-phone-login">
+        <div class="i-title">英雄！请留下您的大名再分享</div>
+        <div class="phone-btn">
+            <button>登 录</button>
+            <button>注 册</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/ZeroClipboard.js"></script>
+</body>
+
+</html>
