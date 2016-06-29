@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" author="zww">
     <title>分享有礼</title>
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/pc.css">
@@ -32,6 +32,8 @@
 </head>
 
 <body>
+    <!-- 微信分享缩略图 -->
+    <img src="./images/i-header.png" alt="" style="width:0px;height:0px;overflow:hidden;position:absolute;left:9999px;">
     <!-- 商旅简头 S -->
     <div class="corp-hd ">
         <div class="corp-hd-wrap wrapper clearfix">
@@ -109,7 +111,7 @@
                         </li>
                         <!-- 登录状态原型展示。开发自行切换逻辑 -->
                         <li class="btn-area">
-                           <!-- pc端未登陆.no-logined 已登录 .pc-login-btn 移动端未登陆#x-login-btn 已登录#i-logined-btn-->
+                            <!-- pc端未登陆.no-logined 已登录 .pc-login-btn 移动端未登陆#x-login-btn 已登录#i-logined-btn-->
                             <a href="###" id="login-btn" class="no-logined">
                                 <button class="hvr-sweep-to-right">立即分享(未登陆) &nbsp;&nbsp;<i></i></button>
                             </a>
@@ -339,9 +341,9 @@
             <button>注 册</button>
         </div>
     </div>
+    <script type="text/javascript" src="./js/ZeroClipboard.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
-    <script type="text/javascript" src="./js/ZeroClipboard.js"></script>
 </body>
 
 </html>
