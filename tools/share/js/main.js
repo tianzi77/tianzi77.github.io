@@ -61,7 +61,7 @@ $(".login>.close").on("click", function () {
 
 //pc已登录状态
 $("#logined-btn").on("click", function () {
-    $(".share-ways").show();
+    $(".share-ways").css("z-index",98);
     //遮罩层
     var docHeight = $(document).height();
     $('body').append('<div id="overlay"></div>');
@@ -80,7 +80,7 @@ $("#logined-btn").on("click", function () {
 
 // pc关闭已登录
 $(".x-close").on("click", function () {
-    $(".share-ways").hide();
+    $(".share-ways").css("z-index",-5);
     $("#overlay").remove();
 });
 
