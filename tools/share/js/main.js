@@ -61,7 +61,7 @@ $(".login>.close").on("click", function () {
 
 //pc已登录状态
 $("#logined-btn").on("click", function () {
-    $(".share-ways").show();
+    $(".share-ways").css("z-index", 1000);
     //遮罩层
     var docHeight = $(document).height();
     $('body').append('<div id="overlay"></div>');
@@ -80,12 +80,12 @@ $("#logined-btn").on("click", function () {
 
 // pc关闭已登录
 $(".x-close").on("click", function () {
-    $(".share-ways").hide();
+    $(".share-ways").css("z-index", -5);
     $("#overlay").remove();
 });
 
 //手机已登录
-$("#i-logined-btn").on("click",function(){
+$("#i-logined-btn").on("click", function () {
     var docHeight = $(document).height();
     $('body').append('<div id="overlay"></div>');
     $('#overlay')
@@ -99,15 +99,15 @@ $("#i-logined-btn").on("click",function(){
             'width': '100%',
             'z-index': 999 //保证这个悬浮层位于其它内容之上  
         });
-    $(".phone-share").css("z-index",1000);
-    $("#overlay").on("click",function(){
+    $(".phone-share").css("z-index", 1000);
+    $("#overlay").on("click", function () {
         $(this).remove();
-        $(".phone-share").css("z-index",-1);
+        $(".phone-share").css("z-index", -1);
     });
 });
 
 //手机未登陆
-$("#x-login-btn").on("click",function(){
+$("#x-login-btn").on("click", function () {
     var docHeight = $(document).height();
     $('body').append('<div id="overlay"></div>');
     $('#overlay')
@@ -121,10 +121,10 @@ $("#x-login-btn").on("click",function(){
             'width': '100%',
             'z-index': 999 //保证这个悬浮层位于其它内容之上  
         });
-    $(".no-phone-login").css("z-index",1000);
-    $("#overlay").on("click",function(){
+    $(".no-phone-login").css("z-index", 1000);
+    $("#overlay").on("click", function () {
         $(this).remove();
-        $(".no-phone-login").css("z-index",-1);
+        $(".no-phone-login").css("z-index", -1);
     });
 });
 
@@ -246,3 +246,14 @@ $("#x-login-btn").on("click",function(){
     step();
 
 }).call(this);
+
+//复制链接
+var clip1 = new ZeroClipboard.Client();
+clip1.setHandCursor(true);
+var text1 = document.getElementById('link').innerHTML;
+clip1.setText(text1);
+clip1.glue("btn_submit");
+clip1.addEventListener("complete", function () {
+    alert("复制成功");
+    clip.destroy();
+});
