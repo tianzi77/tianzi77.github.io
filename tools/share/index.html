@@ -110,18 +110,12 @@
                         </li>
                         <!-- 登录状态原型展示。开发自行切换逻辑 -->
                         <li class="btn-area">
-                            <!-- pc端未登陆.no-logined 已登录 .pc-login-btn 移动端未登陆#x-login-btn 已登录#i-logined-btn-->
+                            <!-- pc端login-btn 移动端x-login-btn-->
                             <a href="###" id="login-btn" class="no-logined">
-                                <button class="hvr-sweep-to-right">立即分享(未登陆) &nbsp;&nbsp;<i></i></button>
+                                <button class="">立即分享&nbsp;&nbsp;<i></i></button>
                             </a>
                             <a href="###" id="x-login-btn">
-                                <button class="hvr-sweep-to-right">立即分享(未登陆) &nbsp;&nbsp;<i></i></button>
-                            </a>
-                            <a href="###" id="logined-btn" class="pc-login-btn">
-                                <button class="hvr-sweep-to-right">(已登录) &nbsp;&nbsp;<i></i></button>
-                            </a>
-                            <a href="###" id="i-logined-btn">
-                                <button class="hvr-sweep-to-right">(已登录) &nbsp;&nbsp;<i></i></button>
+                                <button class="">立即分享&nbsp;&nbsp;<i></i></button>
                             </a>
                         </li>
                     </ul>
@@ -284,7 +278,7 @@
                 <p>活动时间：即日起-2016年12月31日</p>
                 <p>活动规则：</p>
                 <ul>
-                    <li>1、分享礼：酒店代金券有效期为发券日至2017年12月31号；</li>
+                    <li>1、分享礼：酒店代金券有效期为发券日至2017年7月19号，使用详情参照酒店代金券规则；</li>
                     <li>2、推荐礼：成功推荐的任一家注册用户在活动期间内累计消费满10,000元即可获得携程礼品卡100元，满60,000元即可获得携程礼品卡600元；每推荐一家客户达标得600元，多推多得，上不封顶。每3个月统计数据，如2016年7月-10月31日的活动结果将在9月初进行统计并发奖，礼品卡将直接冲入推荐者携程商旅账户中；</li>
                     <li>3、注册礼和首单消费礼将每月统计发奖名单，如2016年6月的中奖名单将在2016年7月统计发奖，以此类推；</li>
                     <li>4、携程礼品卡（任我行）可支付机票、火车票（自取票）、汽车票、船票、预付酒店、自由行套餐（机+酒、景+酒）、旅游、团购、预付门票、高端美食等产品订单。（注：部分门票产品、银行专享类旅游产品等、特殊产品暂不支持本类礼品卡支付）；</li>
@@ -357,6 +351,109 @@
             });
         }
     </script>
+    <!-- 原型交互展示脚本 S -->
+    <script>
+        $(function() {
+            //第一次点击pc未登陆，第二次点击pc已登录
+            var flag = true;
+            $("#login-btn").on("click", function() {
+                if (flag) {
+                    $(".login").show();
+                    //遮罩层
+                    var docHeight = $(document).height();
+                    $('body').append('<div id="overlay"></div>');
+                    $('#overlay')
+                        .height(docHeight)
+                        .css({
+                            'opacity': .9, //透明度  
+                            'position': 'absolute',
+                            'top': 0,
+                            'left': 0,
+                            'background-color': 'rgba(9,9,9,0.63)',
+                            'width': '100%',
+                            'z-index': 999 //保证这个悬浮层位于其它内容之上  
+                        });
+                    //关闭
+                    $(".login>.close").on("click", function() {
+                        $(".login").hide();
+                        $("#overlay").remove();
+                    });
+                    flag = false;
+                } else {
+                    $(".share-ways").css("z-index", 98);
+                    //遮罩层
+                    var docHeight = $(document).height();
+                    $('body').append('<div id="overlay"></div>');
+                    $('#overlay')
+                        .height(docHeight)
+                        .css({
+                            'opacity': .9, //透明度  
+                            'position': 'absolute',
+                            'top': 0,
+                            'left': 0,
+                            'background-color': 'rgba(9,9,9,0.63)',
+                            'width': '100%',
+                            'z-index': 97 //保证这个悬浮层位于其它内容之上  
+                        });
+                    //关闭
+                    $(".x-close").on("click", function() {
+                        $(".share-ways").css("z-index", -5);
+                        $("#overlay").remove();
+                    });
+                    flag = true;
+
+                }
+                return flag;
+            });
+            //第一次点击h5未登陆，第二次点击h5已登录
+            var iflag = true;
+            $("#x-login-btn").on("click", function() {
+                if (iflag) {
+                    var docHeight = $(document).height();
+                    $('body').append('<div id="overlay"></div>');
+                    $('#overlay')
+                        .height(docHeight)
+                        .css({
+                            'opacity': .9, //透明度  
+                            'position': 'absolute',
+                            'top': 0,
+                            'left': 0,
+                            'background-color': 'rgba(9,9,9,0.9)',
+                            'width': '100%',
+                            'z-index': 999 //保证这个悬浮层位于其它内容之上  
+                        });
+                    $(".no-phone-login").css("z-index", 1000);
+                    $("#overlay").on("click", function() {
+                        $(this).remove();
+                        $(".no-phone-login").css("z-index", -1);
+                    });
+                    iflag = false;
+                } else {
+                    var docHeight = $(document).height();
+                    $('body').append('<div id="overlay"></div>');
+                    $('#overlay')
+                        .height(docHeight)
+                        .css({
+                            'opacity': .9, //透明度  
+                            'position': 'absolute',
+                            'top': 0,
+                            'left': 0,
+                            'background-color': 'rgba(9,9,9,0.9)',
+                            'width': '100%',
+                            'z-index': 999 //保证这个悬浮层位于其它内容之上  
+                        });
+                    $(".phone-share").css("z-index", 1000);
+                    $("#overlay").on("click", function() {
+                        $(this).remove();
+                        $(".phone-share").css("z-index", -1);
+                    });
+                    iflag = true;
+                    return flag;
+                }
+            })
+        })
+    </script>
+    <!-- 原型交互展示脚本 E -->
 </body>
 
 </html>

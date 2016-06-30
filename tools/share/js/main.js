@@ -1,133 +1,3 @@
-//二维码切换
-var $navApp = $(".nav-app"),
-    $appDropbox = $(".app-dropbox"),
-    $close = $(".nav-app-close");
-$navApp.hover(function () {
-    $appDropbox.slideDown('400');
-    $(this).addClass('nav-app-hover');
-}, function () {
-    $appDropbox.slideUp('400');
-    $(this).removeClass('nav-app-hover');
-});
-
-$close.on("click", function () {
-    if ($appDropbox.slideDown()) {
-        $appDropbox.slideUp();
-    } else {
-        return;
-    }
-});
-
-//返回顶部
-$(window).scroll(function () {
-    var p_top = 100;
-    if ($(window).scrollTop() >= p_top) {
-        $('.fixed-sidebar').fadeIn(300);
-    } else {
-        $('.fixed-sidebar').fadeOut(300);
-    }
-});
-$('.fixed-sidebar').click(function () {
-    $('html,body').animate({
-        scrollTop: '0px'
-    }, 800);
-});
-
-//pc未登录状态
-$("#login-btn").on("click", function () {
-    $(".login").show();
-    //遮罩层
-    var docHeight = $(document).height();
-    $('body').append('<div id="overlay"></div>');
-    $('#overlay')
-        .height(docHeight)
-        .css({
-            'opacity': .9, //透明度  
-            'position': 'absolute',
-            'top': 0,
-            'left': 0,
-            'background-color': 'rgba(9,9,9,0.63)',
-            'width': '100%',
-            'z-index': 999 //保证这个悬浮层位于其它内容之上  
-        });
-});
-
-
-//关闭iframe
-$(".login>.close").on("click", function () {
-    $(".login").hide();
-    $("#overlay").remove();
-});
-
-//pc已登录状态
-$("#logined-btn").on("click", function () {
-    $(".share-ways").css("z-index",98);
-    //遮罩层
-    var docHeight = $(document).height();
-    $('body').append('<div id="overlay"></div>');
-    $('#overlay')
-        .height(docHeight)
-        .css({
-            'opacity': .9, //透明度  
-            'position': 'absolute',
-            'top': 0,
-            'left': 0,
-            'background-color': 'rgba(9,9,9,0.63)',
-            'width': '100%',
-            'z-index': 97 //保证这个悬浮层位于其它内容之上  
-        });
-});
-
-// pc关闭已登录
-$(".x-close").on("click", function () {
-    $(".share-ways").css("z-index",-5);
-    $("#overlay").remove();
-});
-
-//手机已登录
-$("#i-logined-btn").on("click", function () {
-    var docHeight = $(document).height();
-    $('body').append('<div id="overlay"></div>');
-    $('#overlay')
-        .height(docHeight)
-        .css({
-            'opacity': .9, //透明度  
-            'position': 'absolute',
-            'top': 0,
-            'left': 0,
-            'background-color': 'rgba(9,9,9,0.9)',
-            'width': '100%',
-            'z-index': 999 //保证这个悬浮层位于其它内容之上  
-        });
-    $(".phone-share").css("z-index", 1000);
-    $("#overlay").on("click", function () {
-        $(this).remove();
-        $(".phone-share").css("z-index", -1);
-    });
-});
-
-//手机未登陆
-$("#x-login-btn").on("click", function () {
-    var docHeight = $(document).height();
-    $('body').append('<div id="overlay"></div>');
-    $('#overlay')
-        .height(docHeight)
-        .css({
-            'opacity': .9, //透明度  
-            'position': 'absolute',
-            'top': 0,
-            'left': 0,
-            'background-color': 'rgba(9,9,9,0.9)',
-            'width': '100%',
-            'z-index': 999 //保证这个悬浮层位于其它内容之上  
-        });
-    $(".no-phone-login").css("z-index", 1000);
-    $("#overlay").on("click", function () {
-        $(this).remove();
-        $(".no-phone-login").css("z-index", -1);
-    });
-});
-
 // canvas 
 (function () {
     var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
@@ -176,7 +46,7 @@ $("#x-login-btn").on("click", function () {
 
     window.requestAnimationFrame = (function () {
         return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
-            return window.setTimeout(callback, 1000 / 60);
+            return window.setTimeout(callback, 1000 / 600);
         };
     })();
 
@@ -246,3 +116,38 @@ $("#x-login-btn").on("click", function () {
     step();
 
 }).call(this);
+
+//二维码切换
+var $navApp = $(".nav-app"),
+    $appDropbox = $(".app-dropbox"),
+    $close = $(".nav-app-close");
+$navApp.hover(function () {
+    $appDropbox.slideDown('400');
+    $(this).addClass('nav-app-hover');
+}, function () {
+    $appDropbox.slideUp('400');
+    $(this).removeClass('nav-app-hover');
+});
+
+$close.on("click", function () {
+    if ($appDropbox.slideDown()) {
+        $appDropbox.slideUp();
+    } else {
+        return;
+    }
+});
+
+//返回顶部
+$(window).scroll(function () {
+    var p_top = 100;
+    if ($(window).scrollTop() >= p_top) {
+        $('.fixed-sidebar').fadeIn(300);
+    } else {
+        $('.fixed-sidebar').fadeOut(300);
+    }
+});
+$('.fixed-sidebar').click(function () {
+    $('html,body').animate({
+        scrollTop: '0px'
+    }, 800);
+});
