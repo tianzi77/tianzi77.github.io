@@ -12,20 +12,9 @@
 
     context = canvas.getContext("2d");
 
-    window.w = 0;
+    window.w = canvas.width = 1180;
 
-    window.h = 0;
-
-    resizeWindow = function () {
-        window.w = canvas.width = window.innerWidth;
-        return window.h = canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', resizeWindow, false);
-
-    window.onload = function () {
-        return setTimeout(resizeWindow, 0);
-    };
+    window.h = canvas.height = 447;
 
     range = function (a, b) {
         return (b - a) * Math.random() + a;
