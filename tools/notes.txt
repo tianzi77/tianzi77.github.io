@@ -3,3 +3,11 @@
 //php循环code
 
 <?php }?>
+
+<?php if (isset($_REQUEST['agreement']) && $_REQUEST['agreement'] == 1) {$agreement = 1;} else if (isset($_REQUEST['agreement']) && $_REQUEST['agreement'] == 2) {$agreement = 2;} else {$agreement = 0;} /* 定义php变量 */ ?>
+
+<?php if ($agreement == 2) { ?>
+
+//调用变量	
+
+<?php } ?>
