@@ -6,21 +6,21 @@
     <title>鼠标hover显示大图</title>
     <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
     <style>
-        .demo {
+        .demo1,.demo {
             border: 1p solid red;
             margin: 100px auto 0;
             width: 410px;
             overflow: hidden;
         }
         
-        .demo img {
+        .demo1 img,.demo img {
             width: 95px;
             height: 95px;
             float: left;
             margin-right: 10px;
         }
         
-        .demo img:last-child {
+        .demo1 img:last-child,.demo img:last-child {
             margin-right: 0;
         }
         
@@ -32,13 +32,19 @@
             padding: 4px;
             background-color: #fff;
         }
-
     </style>
 </head>
 
 <body>
     <h1 style="text-align:center;margin-top:80px;font-weight:normal;color:#06c;">封装了一个hover出大图的函数，使用方法：hoverImg('类名')</h1>
     <div class="demo clearfix">
+        <img src="http://www.zhangweiwei.cn/img/logo.png" alt="">
+        <img src="http://www.zhangweiwei.cn/img/logo.png" alt="">
+        <img src="http://www.zhangweiwei.cn/img/logo.png" alt="">
+        <img src="http://www.zhangweiwei.cn/img/logo.png" alt="">
+    </div>
+    <h1 style="text-align:center;margin-top:80px;font-weight:normal;color:#06c;">图片跟随移动：$(".demo1 img").imgShow();</h1>
+    <div class="demo1 clearfix">
         <img src="http://www.zhangweiwei.cn/img/logo.png" alt="">
         <img src="http://www.zhangweiwei.cn/img/logo.png" alt="">
         <img src="http://www.zhangweiwei.cn/img/logo.png" alt="">
@@ -64,8 +70,25 @@
                 })
             }
             hoverImg('.demo');
-        })
 
+            //跟随move
+            jQuery.fn.imgShow = function() {
+                $(this).on({
+                    mouseover: function(e) {
+                        $("<img id='imgshow' src='" + this.src + "' />").appendTo("body");
+                        $("#imgshow").css("top", e.pageY + 10 + "px").css("left", e.pageX + 10 + "px").fadeIn("fast");
+                    },
+                    mousemove: function(e) {
+                        $("#imgshow").css("top", e.pageY + 10 + "px").css("left", e.pageX + 10 + "px");
+
+                    },
+                    mouseout: function() {
+                        $("#imgshow").remove();
+                    }
+                });
+            }
+            $(".demo1 img").imgShow();
+        })
     </script>
 </body>
 
