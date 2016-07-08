@@ -357,16 +357,19 @@ pre,
         color: #0085a1;
     }
     /*导航样式修改start*/
-    .navbar-custom.is-fixed .nav li a{
+    .navbar-custom.is-fixed .nav li a span{
         -webkit-transform: perspective(1000px) rotate3d(0,1,0,0deg);
 	    transform: perspective(1000px) rotate3d(0,1,0,0deg);
-	    -webkit-transition: -webkit-transform 0.5s, color 0.5s;
+	    -webkit-transition: -webkit-transform 0.5s;
     }
     .navbar-custom.is-fixed .nav li a:hover {
         text-shadow: 1px 0 20px #0085a1;
-        -webkit-transform: perspective(1000px) rotate3d(0, 1, 0, 360deg);
-        transform: perspective(1000px) rotate3d(0, 1, 0, 360deg);
     }
+    .navbar-custom.is-fixed .nav li a:hover span{
+    -webkit-transform: perspective(1000px) rotate3d(0, 1, 0, 360deg);
+        transform: perspective(1000px) rotate3d(0, 1, 0, 360deg);
+        }
+    
     .navbar-custom.is-fixed .nav li a:hover:before {
         background: #0085a1;
         left: 0;
