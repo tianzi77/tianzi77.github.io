@@ -359,6 +359,8 @@ pre,
     /*导航样式修改start*/
     .navbar-custom.is-fixed .nav li a:hover {
         text-shadow: 1px 0 20px #0085a1;
+        -webkit-transform: perspective(1000px) rotate3d(0, 1, 0, 360deg);
+        transform: perspective(1000px) rotate3d(0, 1, 0, 360deg);
     }
     .navbar-custom.is-fixed .nav li a:hover:before {
         background: #0085a1;
@@ -374,7 +376,7 @@ pre,
         height: 4px;
         background: none;
         position: absolute;
-        top: 40px;
+        bottom: 0;
         left: 50%;
         width: 50%;
         -webkit-transition: 0.5s;
@@ -387,7 +389,7 @@ pre,
         height: 4px;
         background: none;
         position: absolute;
-        top: 40px;
+        bottom: 0;
         right: 50%;
         width: 50%;
         -webkit-transition: 0.5s;
@@ -1007,11 +1009,10 @@ body {
     right: 50px;
     display: none
 }
-
 @media (min-width: 980px) {
     #music-panel {
-    display: block;
-}
+        display: block;
+    }
 }
 
 /* zww blog hover animation */
@@ -1347,7 +1348,21 @@ body {
 .tools-show {
     left: 0%;
 }
-.ani-delay{
+.ani-delay {
     -webkit-transition-delay: 0.9s;
     transition-delay: 0.9s;
+}
+@media only screen and (min-width: 980px) {
+    .container-fluid {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        /* 主轴对齐 */
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
 }
