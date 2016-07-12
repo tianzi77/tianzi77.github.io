@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nav</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        .nav {
+            position: relative;
+            z-index: 1;
+            width: 230px;
+            margin: 111px auto;
+            background-color: #abcdef;
+            box-sizing: border-box;
+        }
+        
+        .nav .nav-content {}
+        
+        .nav .nav-content .nav-items {
+            border-bottom: 1px dashed #ddd;
+            padding: 10px 0;
+            margin: 0 10px;
+        }
+        
+        .nav .nav-content .item-first {
+            border-top: 0 none !important;
+            margin-top: 0 !important;
+        }
+        
+        .nav .nav-content .nav-items.current {
+            border: 1px solid #fff;
+            border-left: 0 none;
+            margin: 0;
+            padding: 10px;
+            border-right: 1px solid #abcdef;
+            position: relative;
+            z-index: 3;
+            margin: -1px 0 0;
+        }
+        
+        .nav-items a {
+            display: block;
+            overflow: hidden;
+        }
+        
+        .nav .nav-content .nav-items.current a {
+            transform: translateX(10px);
+            transition: all linear .3s;
+        }
+        
+        .nav-items .text {
+            float: left;
+            font-size: 16px;
+            color: #525252;
+        }
+        
+        .nav-items .arrow {
+            font-size: 16px;
+            float: right;
+            color: deeppink;
+        }
+        
+        .sm-nav {
+            *zoom: 1;
+            overflow: hidden;
+        }
+        
+        .sm-nav:after {
+            display: table;
+            content: "";
+        }
+        
+        .sm-nav a {
+            float: left;
+            font-size: 14px;
+            color: #fff;
+            margin-right: 20px;
+        }
+        
+        .show-nav {
+            position: absolute;
+            left: 229px;
+            top: 0;
+            width: 400px;
+            z-index: 2;
+            background-color: #abcdef;
+            height: 100%;
+            border-left: 1px solid #fff;
+        }
+        /* 滑动导航样式 */
+        
+        .slide-nav {
+            position: relative;
+            z-index: 3;
+            margin: 111px auto;
+            overflow: hidden;
+            width: 400px;
+        }
+        
+        .slide-nav a {
+            display: block;
+            float: left;
+            width: 100px;
+            font-size: 16px;
+            color: #abcdef;
+            text-align: center;
+            height: 44px;
+            line-height: 44px;
+        }
+        
+        .nav-arrow {
+            position: absolute;
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: #abcdef;
+            left: 0;
+            bottom: 0;
+            transition: left linear .3s;
+        }
+        
+        .slide-nav a:nth-child(1):hover .nav-arrow {
+            left: 0;
+        }
+        
+        .slide-nav a:nth-child(2):hover~.nav-arrow {
+            left: 100px;
+        }
+        
+        .slide-nav a:nth-child(3):hover~.nav-arrow {
+            left: 200px;
+        }
+        
+        .slide-nav a:nth-child(4):hover~.nav-arrow {
+            left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="nav-content">
+            <li class="nav-items item-first">
+                <a href="###">
+                    <span class="text">导航一</span>
+                    <span class="arrow">&gt;</span>
+                </a>
+                <div class="sm-nav">
+                    <a href="">栏目1</a>
+                    <a href="">栏目2</a>
+                    <a href="">栏目3</a>
+                </div>
+            </li>
+            <li class="nav-items">
+                <a href="###">
+                    <span class="text">导航二</span>
+                    <span class="arrow">&gt;</span>
+                </a>
+                <div class="sm-nav">
+                    <a href="">栏目1</a>
+                    <a href="">栏目2</a>
+                    <a href="">栏目3</a>
+                </div>
+            </li>
+            <li class="nav-items">
+                <a href="###">
+                    <span class="text">导航三</span>
+                    <span class="arrow">&gt;</span>
+                </a>
+                <div class="sm-nav">
+                    <a href="">栏目1</a>
+                    <a href="">栏目2</a>
+                    <a href="">栏目3</a>
+                </div>
+            </li>
+        </ul>
+        <div class="show-nav" style="display:none;">
+            <div class="nav-content" style="display:none;">导航一详情</div>
+            <div class="nav-content" style="display:none;">导航二详情</div>
+            <div class="nav-content" style="display:none;">导航三详情</div>
+        </div>
+    </div>
+    <!-- css3滑动导航 -->
+    <div class="slide-nav">
+        <a href="">导航1</a>
+        <a href="">导航2</a>
+        <a href="">导航3</a>
+        <a href="">导航4</a>
+        <span class="nav-arrow"></span>
+    </div>
+    <script type="text/javascript" src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script>
+        $(function() {
+            var cateMouseOver = function(elm) {
+                var _i = -1;
+                $(elm).find('.nav-content .nav-items').mouseover(function() {
+                    _i = $(this).index();
+                    $(this).addClass('current').siblings().removeClass('current');
+                    $(elm).find('.show-nav').show()
+                        .find('.nav-content').eq(_i).show().siblings().hide();
+                });
+            }
+            $(".nav").hover(function() {
+                var _that = this;
+                cateMouseOver(_that);
+            }, function() {
+                $(this).find('.show-nav').hide().end()
+                    .find('.nav-items').removeClass('current');
+            });
+        });
+    </script>
+</body>
+
+</html>
