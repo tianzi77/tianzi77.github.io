@@ -1,11 +1,11 @@
 # Site settings
 title: ZWW Blog
-SEOTitle: 张威的博客 | zhangweiwei Blog
+SEOTitle: 张威博客|页面重构爱好者|csser|记录一个UI工程师的成长之路
 shareTitle: "@张威的博客 | zhangweiwei Blog"
 header-img: img/home-bg.jpg
 email: 512932926@qq.com
-description: "关于前端与设计、页面仔 | 张魏魏 | 这里是张威个人博客，与你一起发现更大的世界。"
-keyword: "张威,张魏魏, 张威的博客, zww Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品,"
+description: "张威个人博客，关于页面重构与前端开发,分享工作中的css技巧,如何快速学前端开发?尽在张威页面重构网"
+keyword: "css技巧,张魏魏,张威,UI开发,UED,前端开发,UX/UI工程师,网页布局,页面仔"
 baseurl: ""
 url: "http://tianzi77.github.io"
 
