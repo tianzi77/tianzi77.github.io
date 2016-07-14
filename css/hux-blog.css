@@ -1213,7 +1213,7 @@ body {
     position: fixed;
     top: 40px;
     *top: 32px;
-    z-index: 2;
+    z-index: auto;
     background-color: #fff;
 }
 .person-fix p {
