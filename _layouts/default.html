@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <script type="text/javascript" src="http://www.zhangweiwei.cn/tools/yy/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.zhangweiwei.cn/tools/yy/js/speakker-big.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            projekktor('.projekktor');
+        });
+    </script>
 {% include head.html %}
 
 <!-- hack iOS CSS :active style -->
@@ -12,12 +19,13 @@
 
     <!-- Image to hack wechat -->
 
-    <!-- 163 music player -->
-    <div id="music-panel">
-        <div id="music-content">
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="100%" src="http://www.zhangweiwei.cn/tools/yy/player"></iframe>
-        </div>
+    <!-- zww music player -->
+    <div class="inside">
+            <audio class="projekktor speakker dark">
+                <source src="http://www.zhangweiwei.cn/tools/yy/js/playlist.js" type="application/json" />
+            </audio>
     </div>
+    <script type="text/javascript" src="http://www.zhangweiwei.cn/tools/yy/noise.js"></script>
     <div class="actGotop">
         <div class="plane"></div>
         <div class="back-info">返回顶部</div>
