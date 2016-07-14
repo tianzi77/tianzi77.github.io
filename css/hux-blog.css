@@ -1184,7 +1184,7 @@ body {
 .actGotop {
     position: fixed;
     _position: absolute;
-    bottom: 77px;
+    bottom: 0;
     right: 10px;
     display: none;
 }
