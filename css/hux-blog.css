@@ -1010,8 +1010,19 @@ body {
     right: 50px;
     display: none
 }
+.myMusic {
+    width: 790px;
+    height: 285px;
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    margin-left: -395px;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+}
 @media (min-width: 980px) {
-    #music-panel {
+    .myMusic {
         display: block;
     }
 }
@@ -1221,7 +1232,7 @@ body {
     filter: alpha(opacity=90);
     position: fixed;
     left: -100%;
-    bottom: 0;
+    top: 61px;
     z-index: 5;
     -webkit-transition: all .6s ease-in-out .3s;
     transition: all .6s ease-in-out .3s;
@@ -1331,7 +1342,7 @@ body {
     position: fixed;
     width: 100%;
     left: 0;
-    bottom: 0;
+    top: 61px;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     width: 220px;
