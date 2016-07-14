@@ -6,7 +6,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	},
@@ -16,7 +16,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha2",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	},
@@ -26,7 +26,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha2",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	},
@@ -36,7 +36,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha2",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	}, {
@@ -45,7 +45,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha2",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	}, {
@@ -54,7 +54,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha2",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	}, {
@@ -63,7 +63,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha2",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	}, {
@@ -72,7 +72,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha2",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	}, {
@@ -81,7 +81,7 @@
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "haha2",
+                "title": "歌曲测试",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	}
