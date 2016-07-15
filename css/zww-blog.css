@@ -303,6 +303,8 @@ pre,
         border-radius: 50%;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
+        -ms-behavior: url(/css/backgroundsize.min.htc);
+        behavior: url(/css/backgroundsize.min.htc);
     }
     .navbar-custom .navbar-brand:hover,
     .navbar-custom .navbar-brand:focus {
