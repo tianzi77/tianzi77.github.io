@@ -339,6 +339,7 @@ pre,
     .navbar-custom.is-fixed {
         /* when the user scrolls down, we hide the header right above the viewport */
         position: fixed;
+        z-index: 12;
         top: 0;
         background-color: rgba(255, 255, 255, 0.9);
         background-color: #fff\9;
@@ -1387,7 +1388,4 @@ body {
         -webkit-justify-content: center;
         justify-content: center;
     }
-}
-.speakker{
-    margin-left: 999px !important;
 }
