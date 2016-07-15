@@ -1389,3 +1389,8 @@ body {
         justify-content: center;
     }
 }
+/* music style added 20160715*/
+.skCover{
+    overflow: visible;
+    left: 12px;
+}
