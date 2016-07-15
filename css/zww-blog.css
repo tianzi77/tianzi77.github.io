@@ -306,6 +306,9 @@ pre,
         -ms-behavior: url(/css/backgroundsize.min.htc);
         behavior: url(/css/backgroundsize.min.htc);
     }
+    .background-size-polyfill img{
+        *width:61px !important; /*处理ie7背景cover*/
+    }
     .navbar-custom .navbar-brand:hover,
     .navbar-custom .navbar-brand:focus {
         color: rgba(255, 255, 255, 0.8);
