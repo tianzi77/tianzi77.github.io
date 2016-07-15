@@ -305,6 +305,7 @@ pre,
         -moz-border-radius: 50%;
         -ms-behavior: url(/css/backgroundsize.min.htc);
         behavior: url(/css/backgroundsize.min.htc);
+        margin-right: 15px;
     }
     .background-size-polyfill img{
         *width:61px !important; /*处理ie7背景cover*/
