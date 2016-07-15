@@ -12,31 +12,31 @@
 	},
         {
             "0": {
-                "src": "http://mp3.haoduoge.com/s/2016-07-08/1467980593.mp3",
+                "src": "http://qzone.haoduoge.com/music2/2015-06-05/1433498639.mp3",
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "歌曲测试",
-                "poster": "http://www.zhangweiwei.cn/img/logo.png"
+                "title": "演员--薛之谦",
+                "poster": "http://www.zhangweiwei.cn/tools/yy/img/yy.jpg"
             }
 	},
         {
             "0": {
-                "src": "http://mp3.haoduoge.com/s/2016-07-08/1467980593.mp3",
+                "src": "http://i.dj92cc.com/down/dx1/AXLYT0BXEX/51530/989203035/1468575663-d53e9920798e1ab37a6b6437fc4b033b.mp3",
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "歌曲测试",
-                "poster": "http://www.zhangweiwei.cn/img/logo.png"
+                "title": "海阔天空PK光辉岁月经典中的经典--Dj陈总",
+                "poster": "http://www.zhangweiwei.cn/tools/yy/img/beyond.jpg"
             }
 	},
          {
             "0": {
-                "src": "http://mp3.haoduoge.com/s/2016-07-08/1467980593.mp3",
+                "src": "http://qqmusic.koukoucha.com/www.koukoucha.com.mp3?key=3D48823F1B74FC45173266F49718BFFF7ABCB38235338A34%26sdtfrom=0%26uin=512932926%26filepath=512932926_843775836",
                 "type": "audio/mp3"
             },
             "config": {
-                "title": "歌曲测试",
+                "title": "九五之尊--霸气之歌",
                 "poster": "http://www.zhangweiwei.cn/img/logo.png"
             }
 	}, {
