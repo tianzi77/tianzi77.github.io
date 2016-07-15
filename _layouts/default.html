@@ -14,8 +14,19 @@
 
     <!-- zww music player -->
     <div class="myMusic">
-        <iframe src="http://www.zhangweiwei.cn/tools/yy/player" frameborder="0" scrolling="no" width="790" height="285">             </iframe>
+        <div class="inside">
+            <audio class="projekktor speakker dark">
+                <source src="http://www.zhangweiwei.cn/tools/yy/js/playlist.js" type="application/json" />
+            </audio>
+        </div>
     </div>
+    <script type="text/javascript" src="http://www.zhangweiwei.cn/tools/yy/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.zhangweiwei.cn/js/speakker-big.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            projekktor('.projekktor');
+        });
+    </script>
     <script type="text/javascript" src="http://www.zhangweiwei.cn/tools/yy/js/noise.js"></script>
     <div class="actGotop">
         <div class="plane"></div>
