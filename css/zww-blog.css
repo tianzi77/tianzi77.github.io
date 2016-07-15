@@ -1348,6 +1348,7 @@ body {
 }
 .show-tips {
     position: fixed;
+    z-index: 3;
     width: 100%;
     left: 0;
     top: 61px;
