@@ -19,12 +19,22 @@
                 }, 800);
             });
             //足球展开交互
-            $(".t-img").on("click",function(){
+//            
+//            $(".t-img").on("click",function(){
+//                $(this).parents(".show-tips").removeClass("ani-delay").addClass("soccer-hide");
+//                $(this).siblings(".tools").addClass("tools-show");
+//            });
+//            $(".t-close").on("click",function(){
+//                $(this).parents(".tools").removeClass("tools-show");
+//                $(this).parents(".show-tips").addClass("ani-delay").removeClass("soccer-hide");
+//            })
+            //防止jq冲突
+            $(".t-img").live("click",function(){
                 $(this).parents(".show-tips").removeClass("ani-delay").addClass("soccer-hide");
                 $(this).siblings(".tools").addClass("tools-show");
             });
-            $(".t-close").on("click",function(){
+            $(".t-close").live("click",function(){
                 $(this).parents(".tools").removeClass("tools-show");
                 $(this).parents(".show-tips").addClass("ani-delay").removeClass("soccer-hide");
-            })
+            });
         })
