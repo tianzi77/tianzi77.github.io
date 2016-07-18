@@ -112,6 +112,14 @@
 
 <!-- Custom Theme JavaScript  -->
 <script src="{{ "/js/zw.js " | prepend: site.baseurl }}"></script>
+<script src="/js/jquery.lazyload.js"></script>
+<script>
+    $(function(){
+        $("img").lazyload({ 
+            effect : "fadeIn" 
+        }); 
+    })
+</script>
 
 
 <!-- async load function -->

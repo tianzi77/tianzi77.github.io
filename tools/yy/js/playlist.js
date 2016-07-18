@@ -29,16 +29,6 @@
                 "title": "海阔天空PK光辉岁月经典中的经典--Dj陈总",
                 "poster": "http://www.zhangweiwei.cn/tools/yy/img/beyond.jpg"
             }
-	},
-         {
-            "0": {
-                "src": "http://www.zhangweiwei.cn/tools/yy/list/95.mp3",
-                "type": "audio/mp3"
-            },
-            "config": {
-                "title": "九五之尊--霸气之歌",
-                "poster": "http://www.zhangweiwei.cn/img/logo.png"
-            }
 	}, {
             "0": {
                 "src": "http://mp3.haoduoge.com/s/2016-07-08/1467980593.mp3",
