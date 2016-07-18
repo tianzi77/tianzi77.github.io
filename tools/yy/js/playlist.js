@@ -32,7 +32,7 @@
 	},
          {
             "0": {
-                "src": "http://qqmusic.koukoucha.com/www.koukoucha.com.mp3?key=3D48823F1B74FC45173266F49718BFFF7ABCB38235338A34%26sdtfrom=0%26uin=512932926%26filepath=512932926_843775836",
+                "src": "http://www.zhangweiwei.cn/tools/yy/list/95.mp3",
                 "type": "audio/mp3"
             },
             "config": {
