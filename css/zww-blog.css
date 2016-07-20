@@ -1387,3 +1387,45 @@ body {
     overflow: visible;
     left: 12px;
 }
+
+/* 控制音乐按钮 */
+
+.u-checkbox {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    height: 30px;
+    width: 80px;
+    color: #999;
+    line-height: 30px;
+    background-color: #DFE4EA;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 90px;
+}
+.u-checkbox b {
+    display: inline-block;
+    height: 28px;
+    width: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    border: 1px solid #eeeeee;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.u-checkbox span {
+    display: inline-block;
+    width: 54px;
+    font-size: 12px;
+    text-align: center;
+    padding-left: 24px;
+}
+.u-checkbox.on {
+    color: #fff;
+    background-color: #04BE02;
+}
+.u-checkbox.on b {
+    left: 56px;
+}
