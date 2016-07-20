@@ -1398,10 +1398,10 @@ body {
     width: 80px;
     color: #999;
     line-height: 30px;
-    background-color: #DFE4EA;
+    background-color: #DFE4EA !important;
     border-radius: 15px;
     cursor: pointer;
-    margin: 90px;
+    left: 355px;
 }
 .u-checkbox b {
     display: inline-block;
@@ -1421,6 +1421,9 @@ body {
     font-size: 12px;
     text-align: center;
     padding-left: 24px;
+    box-sizing: content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
 }
 .u-checkbox.on {
     color: #fff;
