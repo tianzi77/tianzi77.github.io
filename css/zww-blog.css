@@ -419,6 +419,7 @@ pre,
     background-size: cover;
     -o-background-size: cover;
     margin-bottom: 0px;
+    background-image: url(../img/index-bg.jpg);
     /*  height: 650px;*/
     /* 0 on mobile, modify by Hux */
 }
@@ -1264,6 +1265,9 @@ body {
 @media (max-width: 768px) {
     .show-tips {
         display: none;
+    }
+    .intro-header{
+        background-image: url(../img/home-bg.jpg);
     }
 }
 
