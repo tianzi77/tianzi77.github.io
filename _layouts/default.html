@@ -33,10 +33,14 @@
                 $(this).toggleClass("on");
                 if ($(this).hasClass("on")) {
                     $(this).children("span").text("收起音乐").css("padding-left", "0");
-                    $(".speakker").fadeIn();
+                    if($(".skBiglayer").show()){
+                        $(".speakker").animate({bottom:"-281px"});
+                    }else {
+                        $(".speakker").animate({bottom:0});
+                    }
                 } else {
                     $(this).children("span").text("打开音乐").css("padding-left", "24px");
-                    $(".speakker").fadeOut();
+                    $(".speakker").animate({bottom:"-63px"});
                 }
             })
         })
