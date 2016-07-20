@@ -1122,7 +1122,15 @@ body {
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 */
-
+        .link {
+            outline: none;
+            text-decoration: none;
+            position: relative;
+            font-size: 8em;
+            line-height: 1;
+            color: #9e9ba4;
+            display: inline-block;
+        }
         .link--yaku {
             color: #D3D3D3;
             font-family: 'Microsoft YaHei';
