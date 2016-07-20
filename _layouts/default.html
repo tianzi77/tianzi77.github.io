@@ -27,6 +27,18 @@
             projekktor('.projekktor');
         });
     </script>
+    <script>
+        $(function(){
+            $(".u-checkbox").click(function () {
+                $(this).toggleClass("on");
+                if ($(this).hasClass("on")) {
+                    $(this).children("span").text("收起音乐").css("padding-left", "0");
+                } else {
+                    $(this).children("span").text("打开音乐").css("padding-left", "24px");;
+                }
+            })
+        })
+    </script>
     <script type="text/javascript" src="http://www.zhangweiwei.cn/tools/yy/js/noise.js"></script>
     <div class="actGotop">
         <div class="plane"></div>

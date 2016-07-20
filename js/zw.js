@@ -29,14 +29,5 @@
                 $(this).parents(".show-tips").addClass("ani-delay").removeClass("soccer-hide");
             });
 
-            //音乐交互
-            $(".u-checkbox").click(function () {
-                $(this).toggleClass("on");
-                if ($(this).hasClass("on")) {
-                    $(this).children("span").text("收起音乐").css("padding-left", "0");
-                } else {
-                    $(this).children("span").text("打开音乐").css("padding-left", "24px");;
-                }
-            })
 
         })
