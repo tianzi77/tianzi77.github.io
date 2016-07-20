@@ -33,8 +33,10 @@
                 $(this).toggleClass("on");
                 if ($(this).hasClass("on")) {
                     $(this).children("span").text("收起音乐").css("padding-left", "0");
+                    $(".speakker").animate({bottom:"-63px"});
                 } else {
-                    $(this).children("span").text("打开音乐").css("padding-left", "24px");;
+                    $(this).children("span").text("打开音乐").css("padding-left", "24px");
+                    $(".speakker").animate({bottom:0});
                 }
             })
         })
