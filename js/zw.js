@@ -1,5 +1,5 @@
         $(function () {
-     
+
             $(window).scroll(function () {
                 if ($(window).scrollTop() >= 100) {
                     $('.actGotop').fadeIn(300);
@@ -19,13 +19,24 @@
                 }, 800);
             });
             //足球展开交互
-            
-            $(".t-img").on("click",function(){
+
+            $(".t-img").on("click", function () {
                 $(this).parents(".show-tips").removeClass("ani-delay").addClass("soccer-hide");
                 $(this).siblings(".tools").addClass("tools-show");
             });
-            $(".t-close").on("click",function(){
+            $(".t-close").on("click", function () {
                 $(this).parents(".tools").removeClass("tools-show");
                 $(this).parents(".show-tips").addClass("ani-delay").removeClass("soccer-hide");
+            });
+
+            //音乐交互
+            $(".u-checkbox").click(function () {
+                $(this).toggleClass("on");
+                if ($(this).hasClass("on")) {
+                    $(this).children("span").text("收起音乐").css("padding-left", "0");
+                } else {
+                    $(this).children("span").text("打开音乐").css("padding-left", "24px");;
+                }
             })
+
         })
