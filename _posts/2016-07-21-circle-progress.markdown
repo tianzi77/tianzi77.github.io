@@ -211,7 +211,7 @@ dom还是老样子
 
 ```
 最后，这次的demo
-[demo地址](tianzi77.github.io/demo/article/progress.html)
+[demo地址](http://tianzi77.github.io/demo/article/progress.html)
 
 
 
