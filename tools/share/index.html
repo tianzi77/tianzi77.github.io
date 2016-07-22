@@ -57,7 +57,7 @@
         </div>
     </div>
     <!-- 商旅简头 E -->
-    <div class="header">
+    <div class="header" id="header">
         <div class="wrapper">
             <img src="./images/left.png" alt="" class="first zoomInLeft">
             <img src="./images/right.png" alt="" class="second zoomInRight">
@@ -101,7 +101,7 @@
                                 <dl>
                                     <dt><img src="./images/tit2.png" alt=""></dt>
                                     <dd>拿旅游储备金，说走就走</dd>
-                                    <dd class="very">-推荐客户消费达标即赠600元 </dd>
+                                    <dd class="very">-推荐客户消费达标即赠500元 </dd>
                                     <dd class="very">携程礼品卡； </dd>
                                     <dd class="very">多推多得，上不封顶 </dd>
                                 </dl>
@@ -148,7 +148,7 @@
                             <div class="fl intro">
                                 <dl>
                                     <dt><img src="./images/tit4.png" alt=""></dt>
-                                    <dd>拿旅游储备金，说走就走</dd>
+                                    <dd>首次下单送红酒品风月</dd>
                                     <dd class="very">-满200即赠188元法国红酒 </dd>
                                 </dl>
                             </div>
@@ -172,11 +172,19 @@
                     <ul>
                         <li>
                             <input type="text" placeholder="卡号/邮箱/手机号" class="input-x">
+                            <div class="help-block"><i class=""></i>请填写正确的用户名</div>
                         </li>
                         <li>
                             <input type="password" placeholder="密码" class="input-x">
+                            <div class="help-block"><i class=""></i>请填写正确的密码</div>
                         </li>
                         <li class="word"><a href="###" class="forget">忘记密码?</a></li>
+                        <li class="find-code">
+                            <input class="input-x code-text" type="text" value="验证码">
+                            <img id="imgCode" class="v-img" alt="看不清?" style="cursor: pointer;height:28px;*vertical-align:-2px;" src="https://www.corporatetravel.ctrip.com/crptravel/checkcode.aspx?b=6&amp;t=1505">
+                            看不清，<a href="javascript:;">换一张</a>
+                            <div class="help-block"><i class=""></i>请填写正确的验证码</div>
+                        </li>
                         <li class="">
                             <input type="button" value="登录" class="btn">
                         </li>
@@ -186,6 +194,24 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- loading S -->
+            <div class="i-loading">
+                <img src="images/loading.gif"alt="">
+            </div>
+            <!-- loading E -->
+            
+            <!-- 错误提示 S -->
+            <div class="xui-tooltip-pop" style="width: 200px;">     
+                <div class="xui-tip-content">
+                    <!-- 失败xuico-error-md 成功copy-success -->
+                    <i class="xuico-error-md copy-success"></i>
+                    加载分享信息失败,请重试！
+                </div>
+                <a href="javascript:;" class="xui-modal-close">×</a>
+            </div>
+            <!-- 错误提示 E -->
+
             <!-- 登录框 E-->
 
             <!-- 已登录分享方法 S -->
@@ -208,31 +234,9 @@
                         <dd>
                             <p class="tips"><span class="num">3</span>分享到社区：<i class="sprit icon2"></i></p>
                             <div class="share-btn">
-                                <!-- baidu share S -->
-                                <div class="bdsharebuttonbox">
-                                    <a href="#" class="bds_more" data-cmd="more"></a>
-                                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                                    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
-                                    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
-                                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-                                </div>
-                                <script>
-                                    window._bd_share_config = {
-                                        "common": {
-                                            "bdSnsKey": {},
-                                            "bdText": "",
-                                            "bdMini": "2",
-                                            "bdMiniList": false,
-                                            "bdPic": "",
-                                            "bdStyle": "0",
-                                            "bdSize": "32"
-                                        },
-                                        "share": {}
-                                    };
-                                    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
-                                </script>
-                                <!-- baidu share E -->
+                                <a href="###" class="share-comm qq">分享到QQ</a>
+                                <a href="###" class="share-comm kj">分享到空间</a>
+                                <a href="###" class="share-comm wb">分享到微博</a>
                             </div>
                         </dd>
                     </dl>
@@ -255,7 +259,7 @@
                 <div class="icon">自己+朋友<i></i></div>
                 <div class="own-words">
                     <dl>
-                        <dt><span>刘备</span> : 蜀奖何在！</dt>
+                        <dt><span>刘备</span> : 蜀将何在！</dt>
                         <dd><span>关羽</span> : 嘛事儿？</dd>
                         <dd><span>张飞</span> : 嘎哈呢？</dd>
                         <dd><span>刘备</span> : 跟哥组队赢Apple Watch</dd>
@@ -278,11 +282,11 @@
                 <p>活动时间：即日起-2016年12月31日</p>
                 <p>活动规则：</p>
                 <ul>
-                    <li>1、分享礼：酒店代金券有效期为发券日至2017年7月19号，使用详情参照酒店代金券规则；</li>
-                    <li>2、推荐礼：成功推荐的任一家注册用户在活动期间内累计消费满10,000元即可获得携程礼品卡100元，满60,000元即可获得携程礼品卡600元；每推荐一家客户达标得600元，多推多得，上不封顶。每3个月统计数据，如2016年7月-10月31日的活动结果将在9月初进行统计并发奖，礼品卡将直接冲入推荐者携程商旅账户中；</li>
+                    <li>1、分享礼：酒店代金券有效期为发券日至2017年7月28号，使用详情参照酒店代金券规则；</li>
+                    <li>2、推荐礼：成功推荐的任一家注册用户在活动期间内累计消费满10,000元即可获得携程礼品卡100元，满50,000元即可获得携程礼品卡500元；每推荐一家客户达标即得500元，多推多得，上不封顶（可累计）。如活动期间内若消费满60,000元，累计可领取礼品卡600元；</li>
                     <li>3、注册礼和首单消费礼将每月统计发奖名单，如2016年6月的中奖名单将在2016年7月统计发奖，以此类推；</li>
-                    <li>4、携程礼品卡（任我行）可支付机票、火车票（自取票）、汽车票、船票、预付酒店、自由行套餐（机+酒、景+酒）、旅游、团购、预付门票、高端美食等产品订单。（注：部分门票产品、银行专享类旅游产品等、特殊产品暂不支持本类礼品卡支付）；</li>
-                    <li>5、桃园结义：活动期间内，你推荐的所有新注册企业客户在携程商旅企业自助平台消费总和达最高，自己+消费量最高的朋友可以各赢取Apple Watch一台;</li>
+                    <li>4、桃园结义：活动期间内，若某一推荐人所推荐的所有新注册企业用户在携程商旅企业自助平台消费总量达最高，该推荐人即可获Apple iwatch一台；新注册企业用户中消费量最高的企业注册人也可获Apple iwatch一台;</li>
+                    <li>5、携程礼品卡（任我行）可支付机票、火车票（自取票）、汽车票、船票、预付酒店、自由行套餐（机+酒、景+酒）、旅游、团购、预付门票、高端美食等产品订单。（注：部分门票产品、银行专享类旅游产品等、特殊产品暂不支持本类礼品卡支付）；</li>
                     <li>6、通过不法手段恶意套取返利的行为不符合活动要求，将被视作无效订单，不计入奖励范围;</li>
                     <li>7、活动最终解释权归携程商旅所有。</li>
                 </ul>

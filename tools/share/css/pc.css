@@ -3,7 +3,7 @@
   * @Desc  : 商旅推荐有礼营销活动
   * @Build : 2016/06/27 
   * @Author: zww 
-  * @Update: 2016/06/27 by zww 
+  * @Update: 2016/07/07 by zww 
   */
 /* reset */
 html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,em,button { margin: 0; padding: 0; }
@@ -37,8 +37,8 @@ i,em { font-style: normal; }
 .login .word { margin-top: -10px; text-align: right; }
 .login .word .forget { color: #666; }
 /* header */
-.wrapper { position: relative; max-width: 1180px; margin: auto; }
-.common-bg,.nav-item-tel .icon-telphone,.nav-app .nav-app-pic,.nav-app .nav-app-pic i,.app-inbox .nav-app-code,.app-inbox .nav-app-link i { background-image: url(../images/un_nav_app_160615.png); background-repeat: no-repeat; }
+.wrapper { position: relative; width: 1180px; margin: auto; }
+.common-bg,.nav-item-tel .icon-telphone,.nav-app .nav-app-pic,.nav-app .nav-app-pic i,.app-inbox .nav-app-code,.app-inbox .nav-app-link i { background-image: url(//pic.c-ctrip.com/corp_niv/login/un_nav_app_160615.png?20160615); background-repeat: no-repeat; }
 .corp-hd { min-width: 980px; background-color: #00498e; }
 .corp-hd .corp-hd-wrap { overflow: visible; height: 74px; }
 .corp-hd .hd-logo { display: inline-block; float: left; margin-right: 80px; padding-top: 15px; }
@@ -71,7 +71,7 @@ i,em { font-style: normal; }
 .icon i,.f-friend .left .left-hd .icon i,.f-friend .right .left-hd .icon i { position: absolute; top: 45px; left: 0; width: 0; height: 0; border-width: 0 10px 10px 0; border-style: solid; border-color: transparent #b41421 transparent transparent; }
 .hd-bg,.f-friend .left .left-hd .hd-bg,.f-friend .right .left-hd .hd-bg,.f-own .own-content .hd-bg,.rules .left-hd .hd-bg,.share-ways .left-hd .hd-bg { position: absolute; top: 10px; left: 10px; display: inline-block; width: 146px; height: 23px; background-image: url(../images/t-bg.png); }
 /* 第一波 */
-.f-friend { padding: 30px 0; background-color: #615cc9; }
+.f-friend { margin-top: -1px; padding: 30px 0; background-color: #615cc9; }
 .f-friend .x-line { background-image: url(../images/line.png); background-repeat: no-repeat; background-position: 50% 4%; }
 .f-friend .btn-area { padding: 0 0 60px 90px; }
 .f-friend .btn-area.s-area { padding-bottom: 2px; }
@@ -108,7 +108,12 @@ i,em { font-style: normal; }
 .share-ways .num { display: inline-block; width: 30px; height: 30px; margin-right: 10px; font-size: 18px; line-height: 30px; text-align: center; vertical-align: middle; border: 2px solid #fff; border-radius: 50%; }
 .share-ways .copy-btn { padding: 8px 70px; font-size: 24px; font-weight: bold; cursor: pointer; color: #fff; border: 0 none; border-radius: 25px; outline: 0; background-color: #0195ff; }
 .share-ways .copy-btn:hover { background-color: #239cf3; }
-.share-ways .share-btn { padding-bottom: 35px; padding-left: 40%; }
+.share-ways .share-btn { padding-bottom: 35px; }
+.share-ways .share-btn .share-comm {display: inline-block;  background-image: url(../images/share.png); background-repeat: no-repeat; }
+.share-ways .share-btn .qq { width: 56px; height: 56px; margin-right: 20px; text-indent: -9999px; background-position: 0 0; }
+.share-ways .share-btn .kj { width: 56px; height: 56px; margin-right: 20px; text-indent: -9999px; background-position: 0 -56px; }
+.share-ways .share-btn .wb { width: 56px; height: 56px; text-indent: -9999px; background-position: 0 -112px; }
+.share-ways .share-btn .qq:hover,.share-ways .share-btn .kj:hover,.share-ways .share-btn .wb:hover { opacity: .8; filter: Alpha(opacity=80); }
 .share-ways dt p { margin-bottom: 20px; }
 .share-ways dd p { margin-bottom: 20px; }
 .share-ways .tips { font-size: 24px; }
@@ -159,8 +164,21 @@ i,em { font-style: normal; }
 #x-login-btn { display: none; }
 .phone-share { display: none; }
 .no-phone-login { display: none; }
+.i-loading { position: absolute; z-index: 1000; top: 50%; left: 50%; margin-top: -7.5px; margin-left: -32.5px; }
+.xui-tooltip-pop { position: absolute; z-index: 1000; top: 50%; left: 50%; margin-left: -100px; padding: 8px 10px; border-width: 1px; border-color: #67a1e2; }
+.xui-tooltip-pop { position: absolute; display: inline-block; min-width: 200px; max-width: 480px; border-style: solid; background-color: #fff; }
+.xuico-error-md { width: 24px; height: 24px; background-position: -168px -207px; }
+.xuico-error-md { display: inline-block; vertical-align: middle; background-image: url(http://pic.c-ctrip.com/corp_niv/com/un_icon_round.png?20150206); background-repeat: no-repeat; }
+.xui-modal-close { position: absolute; top: 3px; top: 2px; right: 5px; right: 0; width: 20px; height: 20px; font-size: 20px; font-weight: 100; line-height: 20px; }
+.xui-modal-close:hover { text-decoration: none; color: #06c; }
+.help-block { position: relative; display: block; margin: 5px 0 0 0; padding: 2px 6px 3px 5px; font-size: 12px; text-align: left; color: #999; border: 1px solid #d6c197; background: #fffcd8; *padding: 4px 6px 3px 5px; *zoom: 1; }
+.help-block i { display: inline-block; width: 12px; height: 12px; margin-right: 3px; vertical-align: -2px; background-image: url(http://pic.c-ctrip.com/corp_niv/com/un_icon_round.png?20150206); background-repeat: no-repeat; background-position: -224px -69px; }
+.copy-success { background-position: -168px -138px; }
+.find-code .code-text { width: 130px!important; }
 /* media query for pad*/
 @media screen and (max-width: 980px) { #ZeroClipboardMovie_1 { display: none; }
+    .i-loading { top: 30%; }
+    .xui-tooltip-pop { top: 30%; }
     #flower { display: none; }
     .corp-hd,.corp-ft { display: none; }
     .header { min-width: auto; min-width: 0; height: 290px; }
@@ -168,7 +186,7 @@ i,em { font-style: normal; }
     .header .second { top: 35%; right: 4%; transform: scale(.7); }
     .header .share-p { padding-top: 230px; }
     .header .share-p .share-m { width: 200px; height: 40px; line-height: 40px; }
-    .wrapper { padding: 0 10px; }
+    .wrapper { width: auto; padding: 0 10px; }
     .f-friend .left,.f-friend .right,.f-friend .right { width: 100%; }
     .f-friend .left .left-content,.f-friend .right .left-content,.f-friend .right .left-content { margin-right: 0; }
     .share-ways dt p { overflow: hidden; }
@@ -176,7 +194,7 @@ i,em { font-style: normal; }
     .f-own .floor { top: 0; right: 0; left: auto; }
     .f-own .own-content { height: 510px; background-position: 95% 90%; }
     .f-own .own-words { position: absolute; bottom: 25%; left: 0; }
-    .f-own .own-words dl { padding-left: 20px; }
+    .f-own .own-words dl {width: auto;  padding-left: 20px; }
     .share-ways { left: 10px !important; width: calc(100% - 20px) !important; }
     .fixed-sidebar { margin-left: 300px; } }
 /* media query for phone*/
@@ -202,13 +220,13 @@ i,em { font-style: normal; }
     .f-friend .title { margin-bottom: 10px; }
     .f-friend .title img { height: 38px; }
     .f-friend .left .left-hd,.f-friend .right .left-hd { height: 60px; font-size: 18px; line-height: 60px; }
-    .f-friend .left .left-hd .hd-bg,.f-friend .right .left-hd .hd-bg { background-repeat: no-repeat; background-size: 70%; }
-    .f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon { top: 24px; left: -8px; height: 30px; font-size: 18px; line-height: 30px; }
+    .f-friend .left .left-hd .hd-bg,.f-friend .right .left-hd .hd-bg,.f-own .own-content .hd-bg {top: 5px; left: 5px;  background-repeat: no-repeat; background-size: 70%; }
+    .f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon { top: 16px; left: -8px; height: 30px; font-size: 18px; line-height: 30px; }
     .f-friend .left .left-hd .icon i,.f-friend .right .left-hd .icon i { top: 30px; border-width: 0 8px 8px 0; }
     .f-friend .left .intro dt img,.f-friend .right .intro dt img { height: 20px; }
     .f-friend .left .intro-pic img,.f-friend .right .intro-pic img { height: 125px; }
     .f-friend .prize-items { height: auto; }
-    .f-friend .prize-items .intro { width: 49%; font-size: 16px; }
+    .f-friend .prize-items .intro { width: 47%; font-size: 16px; }
     .f-friend .prize-items .intro .very { font-size: 14px; }
     .f-friend .prize-items .intro { padding: 22px 15px; }
     .f-friend .prize-items .intro-pic { padding: 20px 25px 20px 0; }
@@ -218,9 +236,9 @@ i,em { font-style: normal; }
     .f-own .title img { height: 35px; }
     .f-own .floor { width: 250px; height: 160px; background-repeat: no-repeat; background-size: cover; }
     .f-own .own-words { font-size: 12px; }
-    .f-own .own-content { background-size: 40%; }
+    .f-own .own-content { background-size: 160px 170px; }
     .hd-bg,.f-friend .left .left-hd .hd-bg,.f-friend .right .left-hd .hd-bg,.f-own .own-content .hd-bg,.rules .left-hd .hd-bg,.share-ways .left-hd .hd-bg,.f-friend .left .left-hd .hd-bg,.f-friend .right .left-hd .hd-bg,.f-friend .right .left-hd .hd-bg,.f-own .own-content .f-friend .left .left-hd .hd-bg,.f-friend .left .left-hd .f-own .own-content .hd-bg,.f-own .own-content .f-friend .right .left-hd .hd-bg,.f-friend .right .left-hd .f-own .own-content .hd-bg,.f-own .own-content .hd-bg,.rules .f-friend .left .left-hd .hd-bg,.f-friend .left .rules .left-hd .hd-bg,.share-ways .f-friend .left .left-hd .hd-bg,.f-friend .left .share-ways .left-hd .hd-bg,.rules .f-friend .right .left-hd .hd-bg,.f-friend .right .rules .left-hd .hd-bg,.share-ways .f-friend .right .left-hd .hd-bg,.f-friend .right .share-ways .left-hd .hd-bg,.rules .left-hd .hd-bg,.share-ways .left-hd .hd-bg,.share-ways .f-friend .left .left-hd .hd-bg,.f-friend .left .share-ways .left-hd .hd-bg,.share-ways .f-friend .right .left-hd .hd-bg,.f-friend .right .share-ways .left-hd .hd-bg,.share-ways .left-hd .hd-bg { background-repeat: no-repeat; background-size: 70%; }
-    .icon,.f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon,.f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon,.f-friend .right .left-hd .icon { top: 24px; left: -8px; height: 30px; font-size: 18px; line-height: 30px; }
+    .icon,.f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon,.f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon,.f-friend .right .left-hd .icon { top: 16px; left: -8px; height: 30px; font-size: 18px; line-height: 30px; }
     .icon i,.f-friend .left .left-hd .icon i,.f-friend .right .left-hd .icon i,.f-friend .left .left-hd .icon i,.f-friend .right .left-hd .icon i,.f-friend .right .left-hd .icon i { top: 30px; border-width: 0 8px 8px 0; }
     .f-own .own-content { height: 350px; }
     .f-own .own-words { bottom: 5%; }
@@ -228,7 +246,7 @@ i,em { font-style: normal; }
     .rules .rules-content,.share-ways .rules-content,.share-ways .rules-content { padding: 20px 20px 0 20px; font-size: 12px; }
     .rules .rules-content .small-rules,.share-ways .rules-content .small-rules,.share-ways .rules-content .small-rules { padding-top: 25px; font-size: 12px; }
     .share-ways .tips { font-size: 12px; }
-    .fixed-sidebar { margin-left: 150px; transform: scale(.5); }
+    .fixed-sidebar { margin-left: 150px; transform: scale(.7); }
     .right .left-content { margin-left: 0; } }
 @media screen and (max-width: 544px) { .fixed-sidebar { margin-left: 135px; }
     .header { height: 195px; }
@@ -241,7 +259,7 @@ i,em { font-style: normal; }
     .f-friend .title img { height: 30px; }
     .f-own .title img { height: 30px; }
     .f-own .floor { width: 204px; height: 120px; }
-    .f-own .own-content { background-size: 35%; }
+    .f-own .own-content { background-size: 130px 135px; }
     .f-own .own-words { bottom: 2%; }
     .f-own .own-content { height: 300px; } }
 @media screen and (max-width: 355px) { .header { height: 160px; }
@@ -251,5 +269,10 @@ i,em { font-style: normal; }
     .header .i-second { right: 3%; }
     .f-friend .left .intro-pic img,.f-friend .right .intro-pic img,.f-friend .right .intro-pic img,.f-friend .right .intro-pic img { height: 85px; }
     .f-friend .prize-items .intro { font-size: 12px; }
-    .f-friend .prize-items .intro { width: 50%; }
-    .fixed-sidebar { margin-left: 110px; } }
+    .fixed-sidebar { margin-left: 110px; }
+    .f-own .own-content {height: 250px;  background-size: 100px 105px; }
+    .f-own .own-words { bottom: -5%; }
+    .f-own .floor { width: 165px; height: 100px; }
+    .icon,.f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon { padding: 0 10px; }
+    .icon,.f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon,.f-friend .left .left-hd .icon,.f-friend .right .left-hd .icon,.f-friend .right .left-hd .icon { top: 16px; }
+    .f-friend .left .left-hd .hd-bg,.f-friend .right .left-hd .hd-bg,.f-own .own-content .hd-bg { top: 5px; left: 5px; } }
