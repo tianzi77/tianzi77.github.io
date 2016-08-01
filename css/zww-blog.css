@@ -1,4 +1,4 @@
-﻿/*
+/*
     zww-blog-theme 
     @auther:zww
 */
@@ -1368,7 +1368,13 @@ body {
     -webkit-transition-delay: 0.9s;
     transition-delay: 0.9s;
 }
+.tv,.album {
+        display: none;
+    }
 @media only screen and (min-width: 980px) {
+    .tv,.album {
+        display: block;
+    }
     .container-fluid {
         display: -webkit-box;
         display: -webkit-flex;
