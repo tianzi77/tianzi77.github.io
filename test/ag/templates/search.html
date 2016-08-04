@@ -1,0 +1,30 @@
+<div class="row clearfix" style="padding-top:20px;">
+    <div class="col-md-12">
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="qSearch" id="qSearch" ng-change="result()" placeholder="请输入关键字进行搜索">
+            <span class="input-group-addon" ng-click="result()">搜索</span>
+        </div>
+        <p class="search-list">
+            <a href="" class="label label-primary" ng-click="qt('酒店')">酒店</a>
+            <a href="" class="label label-primary" ng-click="qt('机票')">机票</a>
+            <a href="" class="label label-primary" ng-click="qt('火车票')">火车票</a>
+            <a href="" class="label label-primary" ng-click="qt('用车')">用车</a>
+            <a href="" class="label label-primary" ng-click="qt('我携')">我携</a>
+            <a href="" class="label label-primary" ng-click="qt('行程')">行程</a>
+            <a href="" class="label label-primary" ng-click="qt('自助平台')">自助平台</a>
+            <a href="" class="label label-primary" ng-click="qt('在线管理报告')">在线管理报告</a>
+            <a href="" class="label label-primary" ng-click="qt('其他BU')">其他BU</a>
+        </p>
+    </div>
+</div>
+
+<div class="row new-row">
+    <div class="col-md-12" style="border:1px solid #f7f7f7;border-top-left-radius:5px;border-top-right-radius:5px;border-bottom:0 none;background:#eee;">
+        <h4>{{title}}</h4>
+    </div>
+    <div class="col-md-12 item" ng-repeat="item in n100 track by $index">
+        <div class="item-info">
+            <span class="text-muted">{{item.date}}</span> <a href="/git/Corp/test/{{item.title}}" target="_blank">{{item.title}}</a>
+        </div>
+    </div>
+</div>

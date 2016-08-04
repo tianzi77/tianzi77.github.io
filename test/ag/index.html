@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lofi">
+
+<head>
+    <meta charset="UTF-8" author="weiwzhang@Ctrip.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Axure展示</title>
+    <meta name="description" content="原型展示，Axure">
+    <meta name="keywords" content="携程商旅ued原型">
+    <link rel="stylesheet" href="./style/bootstrap.css">
+    <link rel="stylesheet" href="./style/lofi.css">
+</head>
+
+<body>
+    <div class="alert alert-info loading" role="alert" ng-hide="axureData" style="">正在拼命加载……</div>
+    <ng-include src=" 'templates/header.html' " class="animate-hide" ng-show="axureData"></ng-include>
+    <div class="container">
+        <main ng-view></main>
+    </div>
+    <ng-include src=" 'templates/footer.html' " class="container"></ng-include>
+    <script src="./scripts/lib/angular.min.js"></script>
+    <script src="./scripts/lib/angular-route.min.js"></script>
+    <script src="./scripts/lib/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="./scripts/lib/jquery-1.11.2.min.js"></script>
+    <script src="./scripts/lib/lodash.min.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>
