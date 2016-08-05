@@ -1,0 +1,136 @@
+---
+layout:     post
+title:      "接上一篇文章，写个js加载器。"
+subtitle:   " \"js加载器\""
+date:       2016-08-05 15:55:00
+author:     "ZWW"
+header-img: "img/home-bg.jpg"
+tags:
+    - 加载器
+---
+
+> **让加载变得更有趣，不妨封装写个通用的加载器，可以加载样式，图片，脚本等文件。**
+
+开发移动端的时候。通常打开一个h5页面都会出现正在加载，这个类似于pc端发送ajax请求的过程。但是有很多不同。
+对于图片的处理通常有懒加载。脚本也可以按需加载，现在很多框架都可以实现。原理就是路由然后按需加载页面需要的js和css。
+那难道写一个h5还要搞这么麻烦？
+
+为了让加载更有趣，我们就写个加载器呗。让所有的图片、样式、脚本都加载完了再进入网页，这样页面没有丝毫的卡顿。
+
+``` js
+
+    var PreLoad = function(a, b) {
+                    var c = b || {};
+                    this.source = a, this.count = 0, this.total = a.length, this.onload = c.onload, this.prefix = c.prefix || "", this.init()
+                };
+                PreLoad.prototype.init = function() {
+                    var a = this;
+                    a.source.forEach(function(b) {
+                        var c = b.replace(/[#\?].*$/, '').substr(b.lastIndexOf(".") + 1).toLowerCase(),
+                            d = a.prefix + b;
+                        switch (c) {
+                            case "js":
+                                a.script.call(a, d);
+                                break;
+                            case "css":
+                                a.stylesheet.call(a, d);
+                                break;
+                            case "svg":
+                            case "jpg":
+                            case "gif":
+                            case "png":
+                            case "jpeg":
+                                a.image.call(a, d)
+                        }
+                    })
+                }, PreLoad.prototype.getProgress = function() {
+                    return Math.round(this.count / this.total * 100)
+                }, PreLoad.prototype.image = function(a) {
+                    var b = document.createElement("img");
+                    this.load(b, a), b.src = a
+                }, PreLoad.prototype.stylesheet = function(a) {
+                    var b = document.createElement("link");
+                    this.load(b, a), b.rel = "stylesheet", b.type = "text/css", b.href = a, document.head.appendChild(b)
+                }, PreLoad.prototype.script = function(a) {
+                    var b = document.createElement("script");
+                    this.load(b, a), b.type = "text/javascript", b.src = a, document.head.appendChild(b)
+                }, PreLoad.prototype.load = function(a, b) {
+                    var c = this;
+                    a.onload = a.onerror = a.onabort = function(a) {
+                        c.onload && c.onload({
+                            count: ++c.count,
+                            total: c.total,
+                            item: b,
+                            type: a.type
+                        })
+                    }
+                };
+```
+
+<p  style="color:red;">定义PreLoad这个函数，处理加载文件。并处理加载进度</p>
+
+然后我们把需要加载的资源全部放在一个数据里面。
+``` 
+
+                var resource_list = [
+                    'http://www.zhangweiwei.cn/demo/reset.css',
+                    'http://www.zhangweiwei.cn/tools/music/js/imagesloaded.pkgd.min.js',
+                    'http://www.zhangweiwei.cn/tools/music/js/masonry.pkgd.min.js',
+                    'http://www.zhangweiwei.cn/tools/music/js/classie.js',
+                    'http://www.zhangweiwei.cn/tools/music/js/dynamics.min.js',
+                    'http://www.zhangweiwei.cn/tools/music/js/abbey-load.js',
+                    'http://www.zhangweiwei.cn/tools/music/js/main.js',
+                    'http://www.zhangweiwei.cn/demo/jquery.js'
+                    
+
+                ];
+
+``` 
+
+构造一个新的加载器，进行项目的需求处理。
+
+``` 
+
+                new PreLoad(resource_list, {
+                    onload: function(load) {
+                    //加载百分比，PreLoad里面已经给出
+                        var count = load.count,
+                            total = load.total,
+                            percent = Math.ceil(100 * count / total);
+
+                        //DOM变化
+                        document.querySelector('#progress-bar').style.width = percent + '%';
+                        document.querySelector('#haha').innerHTML = percent;
+
+                        //LOAD COMPLETE，加载完成后展示dom或者其他处理
+                        if (count == total) {
+                            console.log(1);
+                        }
+                    }
+                });
+    
+``` 
+
+我们完全可以把除loading以外的dom封装成一个js
+``` 
+    <script id="tmpl" type="text/template">//这里放dom</script>
+  
+ ``` 
+ 
+ 等加载完成后再把这段html喷进去。
+ 
+ 老司机别忘了让加载器自运行
+ ``` 
+ 
+    (function() {
+    // PreLoad
+    }();
+    
+``` 
+
+
+
+
+ 
+
+
