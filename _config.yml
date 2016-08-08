@@ -62,5 +62,9 @@ friends: [
     },{
         title: "csdn",
         href: "http://blog.csdn.net/u011263845"
+    },
+    {
+        title: "完美",
+        href: "http://www.zxycc.cc/"
     }
 ]
