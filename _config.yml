@@ -66,5 +66,9 @@ friends: [
     {
         title: "完美",
         href: "http://www.zxycc.cc/"
+    },
+    {
+        title: "CSS森林",
+        href: "http://blog.cssforest.org/"
     }
 ]
