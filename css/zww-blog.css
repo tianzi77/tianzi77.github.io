@@ -359,6 +359,7 @@ pre,
     }
     .navbar-custom.is-fixed .nav li a {
         color: #404040;
+	-webkit-transition: text-shadow .3s;
 	transition:text-shadow .3s;
     }
     .navbar-custom.is-fixed .nav li a:hover,
@@ -1069,7 +1070,9 @@ body {
     -webkit-transform: translate3d(-101%, 0, 0);
     transform: translate3d(-101%, 0, 0);
     -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
     box-sizing: border-box;
 }
 .link--yaku:hover::before {
@@ -1082,7 +1085,10 @@ body {
     -webkit-transform: perspective(1000px) rotate3d(0, 1, 0, 0deg);
     transform: perspective(1000px) rotate3d(0, 1, 0, 0deg);
     -webkit-transition: -webkit-transform 0.5s, color 0.5s;
+    -webkit-transition: color 0.5s, -webkit-transform 0.5s;
+    transition: color 0.5s, -webkit-transform 0.5s;
     transition: transform 0.5s, color 0.5s;
+    transition: transform 0.5s, color 0.5s, -webkit-transform 0.5s;
 }
 .link--yaku:hover span {
     color: #1e1a1b;
@@ -1368,11 +1374,11 @@ body {
     -webkit-transition-delay: 0.9s;
     transition-delay: 0.9s;
 }
-.tv,.album {
+.nav>li.tv,.nav>li.album {
         display: none;
     }
 @media only screen and (min-width: 980px) {
-    .tv,.album {
+    .nav>li.tv,.nav>li.album {
         display: block;
     }
     .container-fluid {
