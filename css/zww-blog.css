@@ -359,8 +359,8 @@ pre,
     }
     .navbar-custom.is-fixed .nav li a {
         color: #404040;
-	-webkit-transition: text-shadow .3s;
-	transition:text-shadow .3s;
+        -webkit-transition: text-shadow .3s;
+        transition: text-shadow .3s;
     }
     .navbar-custom.is-fixed .nav li a:hover,
     .navbar-custom.is-fixed .nav li a:focus {
@@ -1049,8 +1049,8 @@ body {
     cursor: pointer;
 }
 .link--yaku {
-    color: rgb( 255, 255, 255 );
-    text-shadow: 0 0 5px rgb( 0, 0, 0 );
+    color: rgb( 255, 255, 255);
+    text-shadow: 0 0 5px rgb( 0, 0, 0);
     font-family: 'Microsoft YaHei';
     font-weight: 400;
     text-transform: uppercase;
@@ -1122,6 +1122,8 @@ body {
     overflow: hidden;
     width: 200px;
     height: 150px;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
 }
 .zww-about {
     width: 200px;
@@ -1374,11 +1376,13 @@ body {
     -webkit-transition-delay: 0.9s;
     transition-delay: 0.9s;
 }
-.nav>li.tv,.nav>li.album {
-        display: none;
-    }
+.nav>li.tv,
+.nav>li.album {
+    display: none;
+}
 @media only screen and (min-width: 980px) {
-    .nav>li.tv,.nav>li.album {
+    .nav>li.tv,
+    .nav>li.album {
         display: block;
     }
     .container-fluid {
@@ -1412,7 +1416,7 @@ body {
     width: 80px;
     color: #fff;
     line-height: 30px;
-    background-color: black ;
+    background-color: black;
     border-radius: 15px;
     cursor: pointer;
     left: 355px;
@@ -1436,8 +1440,8 @@ body {
     text-align: center;
     padding-left: 24px;
     box-sizing: content-box;
-    -moz-box-sizing:content-box;
-    -webkit-box-sizing:content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
 }
 .u-checkbox.on {
     color: #fff;
