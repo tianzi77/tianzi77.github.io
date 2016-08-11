@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        .nav {
+            width: 100%;
+            height: 72px;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #abcdef;
+        }
+        
+        .nav a {
+            line-height: 72px;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .avtive {
+            background-color: palevioletred;
+            color: #fff;
+        }
+        
+        #one,
+        #two,
+        #three,
+        #four {
+            width: 100%;
+            height: 900px;
+        }
+        
+        #one {
+            background-color: aliceblue;
+            margin-top: 72px;
+        }
+        
+        #two {
+            background-color: antiquewhite;
+        }
+        
+        #three {
+            background-color: hotpink;
+        }
+        
+        #four {
+            background-color: black;
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#one" class="avtive" data-to="#one">栏目一</a>
+        <a href="#two" data-to="#two">栏目二</a>
+        <a href="#three" data-to="#three">栏目三</a>
+        <a href="#four" data-to="#four">栏目四</a>
+    </div>
+    <div id="one">
+        1
+    </div>
+    <div id="two">
+        2
+    </div>
+    <div id="three">
+        3
+    </div>
+    <div id="four">
+        4
+    </div>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script>
+        $(function() {
+            var $one = $('#one'),
+                $two = $('#two'),
+                $three = $('#three'),
+                $four = $("#four");
+            var $nav = $(".nav");
+            var lastTag = 'one';
+            $(window).scroll(function() {
+                var scrollTop = $(window).scrollTop() + 0;
+                var tag = 'one';
+                if (scrollTop >= $two.offset().top) {
+                    tag = 'two';
+                }
+                if (scrollTop >= $three.offset().top) {
+                    tag = 'three';
+
+                }
+                if (scrollTop >= $four.offset().top) {
+                    tag = 'four';
+
+                }
+                if (lastTag !== tag) {
+                    lastTag = tag;
+                    $nav.find('a.avtive').removeClass('avtive');
+                    $nav.find('[href="#' + tag + '"]').addClass('avtive');
+                }
+            });
+            //滚动效果
+
+        });
+    </script>
+</body>
+
+</html>
