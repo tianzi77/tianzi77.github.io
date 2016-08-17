@@ -1356,9 +1356,8 @@ body {
     position: fixed;
     z-index: 3;
     width: 100%;
-    right: 50%;
-    margin-right: 465px;
-    top: 30px;
+    left: 0;
+    top: 61px;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     width: 220px;
