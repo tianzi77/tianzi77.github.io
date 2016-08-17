@@ -106,11 +106,15 @@
 
 <!-- search add by zww 20160720 -->
 <style>
+    .search-close{position: fixed; top: 68px; right: 50%;margin-right:-625px;cursor:pointer;}
     .search-close img{
         transition: all .2s;
     }
     .search-close img:hover{
         transform: rotate(360deg);
+    }
+    @media screen and (max-width: 767px){
+        .search-close{ right: 16px; top: 16px; margin-right: 0; }
     }
 </style>
 <div class="search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
@@ -119,7 +123,7 @@
            placeholder="输入文章标题 日期 标签"
            >
 
-    <div style="position: fixed; top: 68px; right: 50%;margin-right:-625px;cursor:pointer;" class="search-close">
+    <div style="" class="search-close">
         <img src="/search/img/cb-close.png"  id="close-btn"/>
     </div>
 </div>
