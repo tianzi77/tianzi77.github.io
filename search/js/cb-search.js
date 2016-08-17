@@ -54,7 +54,7 @@
         });
 
         $("#search-btn").click(function(){
-            $(".search-tool").animate({top:0;},300)
+            $(".search-tool").animate({top:'0px';})
         });
 
         $.getJSON("/search/cb-search.json").done(function (data) {
