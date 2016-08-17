@@ -57,3 +57,15 @@
                 opacity: 1.0;
             }
         }
+    .search-close{position: absolute; top: 14%; right: 50%;margin-right:-625px;cursor:pointer;}
+    .search-close img{
+        -webkit-transition: all .2s;
+        transition: all .2s;
+    }
+    .search-close img:hover{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    @media screen and (max-width: 767px){
+        .search-close{ right: 16px; top: 16px; margin-right: 0; }
+    }
