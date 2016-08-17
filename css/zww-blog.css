@@ -584,8 +584,8 @@ pre,
 }
 .post-content-preview {
     font-size: 13px;
-    font-style: italic;
-    color: #a3a3a3;
+    font-style: normal;
+    color: #666;
 }
 .post-content-preview:hover {
     color: #0085a1;
