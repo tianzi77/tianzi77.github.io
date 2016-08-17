@@ -61,47 +61,22 @@ layout: default
                 col-sm-10 col-sm-offset-1
                 sidebar-container
             ">
-                <!-- Featured Tags -->
-                <section >
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                               <!-- Featured Tags -->
+                {% if site.featured-tags %}
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        <a href="/tags/#css" title="css" rel="2">
-                                    css
+        				{% for tag in site.tags %}
+                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                				<a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                    {{ tag[0] }}
                                 </a>
-                        <a href="/tags/#background" title="background" rel="2">
-                                    background
-                                </a>
-                        <a href="/tags/#三角" title="sanjiao" rel="2">
-                                    三角
-                                </a>
-                        <a href="/tags/#数组" title="shuzu" rel="2">
-                                    数组
-                                </a>
-                        <a href="/tags/#幻灯片" title="huandengpian" rel="2">
-                                    幻灯片
-                                </a>
-                        <a href="/tags/#css中的框" title="css" rel="2">
-                                    css中的框
-                                </a>
-                        <a href="/tags/#css动画" title="shuzu" rel="2">
-                                    css动画
-                                </a>
-                        <a href="/tags/#瀑布流" title="shuzu" rel="2">
-                                    瀑布流
-                                </a>
-                        <a href="/tags/#nav导航" title="shuzu" rel="2">
-                                    nav导航
-                                </a>
-                        <a href="/tags/#强制换行" title="shuzu" rel="2">
-                                    强制换行
-                                </a>
-                        <a href="/tags/#css动画" title="shuzu" rel="2">
-                                    css动画
-                                </a>
-                        
+                            {% endif %}
+        				{% endfor %}
         			</div>
                 </section>
+                {% endif %}
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
                     <hr><h5><a href="/about/">ABOUT ME</a></h5>
