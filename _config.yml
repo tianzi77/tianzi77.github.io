@@ -57,6 +57,10 @@ sidebar-avatar: /img/avatar-hux.jpg     # use absolute URL.
 # Friends
 friends: [
     {
+        title: "比赛直播",
+        href: "http://tv-online.in/"
+    },
+    {
         title: "腾讯博客",
         href: "http://512932926.qzone.qq.com/"
     },{
