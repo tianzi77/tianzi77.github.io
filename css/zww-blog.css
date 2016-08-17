@@ -1453,3 +1453,11 @@ body {
 .u-checkbox.on b {
     left: 56px;
 }
+/* 404 error */
+.page-fullscreen .intro-header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
