@@ -1461,8 +1461,10 @@ body {
 .u-checkbox.on b {
     left: 56px;
 }
+
 /* 404 error */
-.page-fullscreen .intro-header{
+
+.page-fullscreen .intro-header {
     position: fixed;
     left: 0;
     top: 0;
@@ -1470,48 +1472,57 @@ body {
     height: 100%;
 }
 .page-fullscreen #tag-heading {
-  position: fixed;
-  left: 0;
-  top: 0;
-  padding-bottom: 150px;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  display: -webkit-flex;
-  -webkit-align-items: center;
-  -webkit-justify-content: center;
-  -webkit-flex-direction: column;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-bottom: 150px;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 .page-fullscreen footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding-bottom: 20px;
-  opacity: 0.6;
-  color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 20px;
+    opacity: 0.6;
+    color: #fff;
 }
 .page-fullscreen footer .copyright {
-  color: #fff;
+    color: #fff;
 }
 .page-fullscreen footer .copyright a {
-  color: #fff;
+    color: #fff;
 }
 .page-fullscreen footer .copyright a:hover {
-  color: #ddd;
+    color: #ddd;
+}
+
+/*首页新布局*/
+
+@media (min-width: 800px) {
+    .new-page {
+        width: 75%;
+        margin-left: 0;
+    }
 }
