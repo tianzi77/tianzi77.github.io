@@ -48,13 +48,15 @@
         });
 
         $("#close-btn").click(function () {
-            $(".search-tool").css("display", "none");
+            $(".search-tool").animate({top:'-100%'});
             show = false;
             time1 = 0;
         });
 
         $("#search-btn").click(function(){
-            $(".search-tool").animate({top:'0px'})
+            $(".search-tool").animate({top:'0px'});
+            show = true;
+            time1 = 0;
         });
 
         $.getJSON("/search/cb-search.json").done(function (data) {
