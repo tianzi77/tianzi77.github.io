@@ -54,11 +54,7 @@
         });
 
         $("#search-btn").click(function(){
-            $(".search-tool").css("display", "block");
-            show = true;
-            $("#search-content").val("");
-            $("#search-content").focus();
-            time1 = 0;
+            $(".search-tool").animate({top:0;},300)
         });
 
         $.getJSON("/search/cb-search.json").done(function (data) {
