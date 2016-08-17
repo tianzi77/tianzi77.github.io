@@ -105,13 +105,21 @@
 </div>
 
 <!-- search add by zww 20160720 -->
+<style>
+    .search-close img{
+        transition: all .2s;
+    }
+    .search-close img:hover{
+        transform: rotate(360deg);
+    }
+</style>
 <div class="search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
       opacity: 0.9;filter:alpha(opacity=90); background-color: #051223; z-index: 777; display: none;">
     <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" 
            placeholder="输入文章标题 日期 标签"
            >
 
-    <div style="position: fixed; top: 16px; right: 16px;cursor:pointer;">
+    <div style="position: fixed; top: 68px; right: 50%;margin-right:-625px;cursor:pointer;" class="search-close">
         <img src="/search/img/cb-close.png"  id="close-btn"/>
     </div>
 </div>
