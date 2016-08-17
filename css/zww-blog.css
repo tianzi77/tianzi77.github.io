@@ -344,7 +344,7 @@ pre,
     .navbar-custom.is-fixed {
         /* when the user scrolls down, we hide the header right above the viewport */
         position: fixed;
-        z-index: 12;
+        z-index: 1;
         top: -61px;
         background-color: rgba(255, 255, 255, 0.9);
         background-color: #fff\9;
@@ -1356,8 +1356,8 @@ body {
     position: fixed;
     z-index: 3;
     width: 100%;
-    left: 0;
-    top: 61px;
+    left: 50px;
+    bottom: 30px;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     width: 220px;
