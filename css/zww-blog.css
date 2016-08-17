@@ -53,6 +53,7 @@
 }
 .sidebar-container .short-about p {
     margin: 20px 0;
+    color: #666;
 }
 .sidebar-container .short-about .list-inline > li {
     padding-left: 0px;
