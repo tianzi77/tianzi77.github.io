@@ -58,4 +58,13 @@
                     });
             }
 
+            //css动画抖动
+            var windowH = $(window).height(),
+                bodyH = $("body").height();
+            if (bodyH <= windowH) {
+                $("body").addClass("overflow");
+            } else {
+                $("body").removeClass("overflow");
+            }
+
         })

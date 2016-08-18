@@ -1355,8 +1355,9 @@ body {
     transition: all .3s;
 }
 .t-close:hover {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+    color: #06c;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
     -webkit-transform-origin: center;
     transform-origin: center;
 }
@@ -1525,4 +1526,7 @@ body {
         width: 75%;
         margin-left: 0;
     }
+}
+.overflow {
+    overflow: hidden;
 }
