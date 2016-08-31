@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        .div5 {
+            width: 100%;
+            height: 831px;
+            background: #ffffff;
+        }
+        
+        .content-box {
+            width: 992px;
+            height: 831px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .content-box h1 {
+            font-size: 48px;
+            color: #565656;
+            position: absolute;
+            left: 92px;
+            top: 140px;
+        }
+        
+        .content-box .slide-text {
+            position: absolute;
+            left: 92px;
+            top: 280px;
+            width: 565px;
+        }
+        
+        .content-box .slide-text li {
+            width: 565px;
+            height: 93px;
+            float: left;
+        }
+        
+        .content-box .slide-text li h3 {
+            width: 565px;
+            font-size: 28px;
+            color: #565656;
+            margin-bottom: 8px;
+            font-weight: normal;
+        }
+        
+        .content-box .slide-text li i {
+            width: 565px;
+            font-size: 16px;
+            color: #929292;
+        }
+        
+        .meng {
+            position: absolute;
+            left: -3px;
+            top: 0;
+        }
+        
+        .slide-box {
+            position: absolute;
+            right: 0px;
+            top: 86px;
+            width: 293px;
+            height: 603px;
+        }
+        
+        .slide-box ul {
+            position: relative;
+            width: 280px;
+            height: 512px;
+            background: #ffffff;
+            margin-left: 2px;
+            margin-top: 43px;
+        }
+        
+        .slide-box ul li {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .slide-box ul li img {
+            margin-left: 9px;
+            margin-top: -16px;
+            width: 272px;
+            height: 511px;
+        }
+        
+        .slide-box ul li img {
+            margin-left: 9px;
+            margin-top: 25px;
+            width: 267px;
+            height: 464px;
+        }
+        
+        .slide-box ul li .img1 {
+            margin-left: 9px;
+            margin-top: -16px;
+            position: absolute;
+            width: 0px;
+            height: 0px;
+        }
+        
+        div .slide-text .curv h3 {
+            color: #008cee;
+        }
+        
+        div .slide-text .curv i {
+            color: #008cee;
+        }
+        
+        .cur1 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div5" data-mod="true">
+        <a name="a1"></a>
+        <div class="content-box">
+            <h1>幻灯介绍文字</h1>
+            <ul class="slide-text">
+                <li class="curv">
+                    <h3>携程</h3><i>携程。 </i></li>
+                <li class="">
+                    <h3>携程</h3><i>携程。</i></li>
+                <li class="">
+                    <h3>携程</h3><i>demo测试。 </i></li>
+            </ul>
+            <div class="slide-box">
+                <ul class="ul1" style="">
+                    <li class="" style="" class="cur1"><img src="http://pic.c-ctrip.com/corp_niv/me/appscreen_1.jpg?20160825"><img src="http://img.alicdn.com/tps/i2/TB1J06jJpXXXXaRXFXX1ElnIXXX-64-64.png" width="32" height="32" class="img1" style="left: 81px; top: 251px; height: 0px; width: 0px; display: none;"></li>
+                    <li style="display:none;"><img src="http://www.zhangweiwei.cn/img/index-bg.jpg"></li>
+                </ul>
+                <ul style="display: none;" class="">
+
+                    <li style="" class="cur1"><img src="http://pic.c-ctrip.com/corp_niv/me/appscreen_2.jpg?20160825"></li>
+                </ul>
+                <ul style="display:none;">
+                    <li style="" class="cur1"><img src="http://pic.c-ctrip.com/corp_niv/me/appscreen_3.jpg?20160825"></li>
+                </ul>
+                <img src="http://img.alicdn.com/tps/i3/TB15NwMJpXXXXcgXFXX8F7.1FXX-293-603.png" class="meng">
+            </div>
+        </div>
+    </div>
+
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script>
+        $(function() {
+
+            //* =================================================
+            //封装公用phone slide传入必须为最外层容器类名字
+            // author:weiwzhang@Ctrip.com
+            // =================================================*//
+            var timer;
+
+            function changeIndex(clickBox) {
+                //不需要点击
+                if (clickBox == "div3") {
+                    return;
+
+                } else {
+                    $('.' + clickBox + ' div .slide-text li').click(function() {
+                        clearInterval(timer);
+                        var a = $(this).index();
+                        $(this).addClass('curv').siblings('li').removeClass('curv');
+                        $('.' + clickBox + ' div div ul').eq(a).show().siblings('ul').hide();
+                        slidePhone(clickBox);
+                    })
+                }
+            }
+
+            function slidePhone(clickBoxs1) {
+
+                var indexs = $('.' + clickBoxs1).children("div").children("ul").children(".curv").index();
+
+                $('.' + clickBoxs1).children("div").children("ul").eq(indexs).show().siblings('ul').hide();
+                //容器传参
+                var as = $('.' + clickBoxs1).attr('class');
+                function fun(div, indexs) {
+                    var index2 = $('.' + div + ' div div ul').eq(indexs).children('.cur1').index();
+                    var index1 = $('.' + div + ' div div ul').eq(indexs).children('li').length;
+                    var changeSlide = function change() {
+
+
+                        if (index2 < index1) {
+
+                            index2 = index2 + 1;
+                            if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
+                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
+                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
+                                    left: '-=20px',
+                                    top: '-=20px',
+                                    height: '40px',
+                                    width: '40px'
+                                }, 700, function() {
+                                    $(this).hide()
+                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                });
+                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
+                                    left: '+=20px',
+                                    top: '+=20px',
+                                    height: '0px',
+                                    width: '0px'
+                                });
+                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+                            } else {
+                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+                            }
+                        } else {
+                            index2 = 0;
+                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+
+                        }
+                    }
+                    timer = setInterval(changeSlide, 2000);
+                }
+
+                fun(as, indexs);
+            }
+
+            //demo test
+            $(".div5").mouseleave(function() {
+                clearInterval(timer);
+
+            })
+            $(".div5").mouseenter(function() {
+                slidePhone('div5');
+            });
+            changeIndex('div5');
+        })
+    </script>
+
+</body>
+
+</html>
