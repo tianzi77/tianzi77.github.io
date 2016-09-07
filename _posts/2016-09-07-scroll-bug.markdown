@@ -75,6 +75,7 @@ tags:
             box-sizing: border-box;
             /* 让元素宽度包含 padding, 否则元素会被滚动条遮挡 */
         }
+        
 至于hover上去为什么不抖动，应该是实体节点没有插入的原因！
         
 参考：
