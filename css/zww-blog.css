@@ -1543,6 +1543,7 @@ body {
     min-width: 100%;
     max-width: 100%;
     z-index: -100;
+    display: none;
 }
 /*首页新布局*/
 
@@ -1552,7 +1553,7 @@ body {
         margin-left: 0;
     }
     .vv-video{
-        display: none;
+        display: block;
     }
 }
 .overflow {
