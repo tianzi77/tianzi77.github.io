@@ -1031,7 +1031,7 @@ div .slide-text .curv i {
     .header {
         background: url(../images/i-banner.png);
         height: 130px;
-        min-width: auto;
+        min-width: 100%;
         background-size: cover;
         padding-top: 0;
     }
