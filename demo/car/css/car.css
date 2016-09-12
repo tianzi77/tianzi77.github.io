@@ -1,0 +1,264 @@
+body,
+div,
+li,
+ol,
+p,
+td,
+th,
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+img {
+  border: 0;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  touch-callout: none; }
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+html {
+  font-family: sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+:focus {
+  outline: 0; }
+
+:link,
+:visited {
+  text-decoration: none; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+  content: ""; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.show {
+  display: block !important; }
+
+.hide {
+  display: none !important; }
+
+.visible {
+  visibility: visible; }
+
+.invisible {
+  visibility: hidden; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.dv {
+  display: inline-block;
+  vertical-align: middle; }
+
+.di {
+  display: inline-block; }
+
+.text-hide {
+  border: 0;
+  background-color: transparent;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none; }
+
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent; }
+
+.btn:hover {
+  text-decoration: none; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.main {
+  width: 100%;
+  min-height: 100%;
+  background-image: url(../images/car.png);
+  background-size: 16rem 4.575rem;
+  background-repeat: repeat; }
+
+.title {
+  text-align: center;
+  padding: 0.75rem 0; }
+
+.title img {
+  width: 14.6rem;
+  height: 5.725rem; }
+
+.car-one {
+  text-align: center;
+  margin-top: 0.625rem; }
+  .car-one img {
+    width: 10.7rem;
+    height: 12.1rem; }
+
+.car-two {
+  text-align: center;
+  margin-top: 0.625rem; }
+  .car-two img {
+    width: 11.75rem;
+    height: 12.525rem; }
+
+.car-three {
+  text-align: center;
+  margin-top: 0.625rem; }
+  .car-three img {
+    width: 11.825rem;
+    height: 12.25rem; }
+
+.car-four {
+  text-align: center;
+  margin-top: 0.625rem; }
+  .car-four img {
+    width: 11.175rem;
+    height: 12.2rem; }
+
+.car-five {
+  text-align: center;
+  margin-top: 0.625rem; }
+  .car-five img {
+    width: 11.525rem;
+    height: 12.575rem; }
+
+.car-six {
+  text-align: center;
+  margin-top: 0.625rem; }
+  .car-six img {
+    width: 10.375rem;
+    height: 10.325rem; }
+
+.car-seven {
+  text-align: center;
+  margin-top: 0.625rem; }
+  .car-seven img {
+    width: 7.55rem;
+    height: 7rem; }
+
+.gift .gift-tit {
+  text-align: center; }
+  .gift .gift-tit img {
+    width: 14.075rem;
+    height: 1.075rem; }
+.gift .list-items {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -moz-box-align: end;
+  -webkit-box-align: end;
+  box-align: end;
+  box-pack: center;
+  -ms-flex-pack: center;
+  -ms-flex-align: end;
+  justify-content: center;
+  align-items: flex-end;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -webkit-box-direction: normal;
+  -moz-box-lines: multiple;
+  -webkit-box-lines: multiple;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; }
+  .gift .list-items .items {
+    margin-right: 0.75rem; }
+    .gift .list-items .items:nth-child(1) img {
+      width: 4.15rem;
+      height: 3.875rem; }
+    .gift .list-items .items:nth-child(2) img {
+      width: 3.3rem;
+      height: 3.6rem; }
+    .gift .list-items .items:nth-child(3) {
+      margin-right: 0; }
+      .gift .list-items .items:nth-child(3) img {
+        width: 3.8rem;
+        height: 3.3rem; }
+
+.footer {
+  padding-bottom: 3.125rem;
+  margin-top: 0.875rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -moz-box-align: end;
+  -webkit-box-align: end;
+  box-align: end;
+  box-pack: center;
+  -ms-flex-pack: center;
+  -ms-flex-align: end;
+  justify-content: center;
+  align-items: flex-end;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -webkit-box-direction: normal;
+  -moz-box-lines: multiple;
+  -webkit-box-lines: multiple;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .footer img:first-child {
+    width: 10.2rem;
+    height: 1.6rem;
+    margin-right: 0.25rem; }
+  .footer img:last-child {
+    width: 2.55rem;
+    height: 2.55rem; }
