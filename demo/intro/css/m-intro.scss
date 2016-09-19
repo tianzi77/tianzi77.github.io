@@ -1,0 +1,256 @@
+@import 'px2rem.scss';
+$designWidth: 640;
+@mixin font-dpr($font-size) {
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+.corp-hd,
+.corp-ft {
+    display: none;
+}
+.sheader {
+    display: block;
+}
+.sheader {
+    padding: px2rem(20);
+    background-color: #00417D;
+}
+.sheader .logo {
+    display: inline-block;
+    width: px2rem(168);
+    height: px2rem(44);
+    background: url(//pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png?20160805) 0 0 no-repeat;
+    background-size: px2rem(168) px2rem(44);
+}
+body {
+    background-color: #fff;
+    margin: 0 auto;
+    overflow-x: hidden;
+    font: normal 14px/1.5 "Microsoft Yahei", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #999;
+    -webkit-overflow-scrolling: touch;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    box-sizing: border-box;
+}
+.header {
+    background: url(../images/i-banner.png);
+    height: px2rem(255);
+    min-width: 100%;
+    background-size: cover;
+    padding-top: 0;
+}
+.fixed-nav {
+    display: none;
+}
+.wrapper {
+    width: 100%;
+}
+.title {
+    font-size: px2rem(48);
+    padding-top: px2rem(55);
+}
+.x-title {
+    font-size: px2rem(24);
+    margin-top: px2rem(10);
+}
+.s-title {
+    font-size: px2rem(18);
+    margin: px2rem(35) 0 0 0 !important;
+}
+.div-banner .text-box h1 {
+    font-size: px2rem(36);
+}
+.div-banner .slide-text li {
+    display: none;
+}
+.div-banner .i-slide-text {
+    display: block;
+}
+.div-banner .i-slide-text {
+    font-size: px2rem(24);
+    margin-top: px2rem(15);
+    color: #666;
+}
+.div-banner .text-box {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+.div-banner .wrapper {
+    background-image: url(../images/i-screen.png);
+    background-size: px2rem(604) px2rem(588);
+    background-position: center px2rem(150);
+    padding: px2rem(25) 0;
+}
+.div-banner {
+    height: px2rem(760);
+}
+.i-div-apply {
+    display: block;
+    background-image: url(../images/bg.png);
+    background-repeat: repeat;
+    padding: px2rem(45) px2rem(20) 0;
+}
+.div-apply {
+    display: none;
+}
+.i-content img {
+    width: px2rem(300);
+    height: px2rem(505);
+    float: left;
+}
+.i-pic-txt {
+    float: right;
+    width: 50%;
+    color: #fff;
+    font-size: px2rem(24);
+    padding-top: 24%;
+}
+.i-content {
+    margin-top: px2rem(60);
+}
+.i-pic-txt li {
+    //    list-style-image: url(../images/s-icon1.png);
+    //    list-style-position: inside;
+    margin-bottom: px2rem(30);
+    position: relative;
+    padding-left: px2rem(12);
+}
+.i-pic-txt li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: px2rem(14);
+    width: px2rem(8);
+    height: px2rem(8);
+    background-image: url(../images/s-icon1.png);
+    background-size: px2rem(8) px2rem(8);
+    background-position: left 45%;
+}
+.i-pic-txt li:last-child {
+    margin-bottom: 0;
+}
+.i-title {
+    text-align: center;
+    color: #fff;
+}
+.i-title h1 {
+    font-size: px2rem(36);
+}
+.i-title h2 {
+        font-size: px2rem(20);
+}
+.div-trip {
+    display: none;
+}
+.i-div-trip {
+    background: #fff;
+}
+.i-div-trip .i-title h1 {
+    color: #1daceb;
+}
+.i-div-trip .i-title h2 {
+    color: #666666;
+}
+.i-div-trip .i-pic-txt {
+    color: #999999;
+    float: left;
+    padding-top: 20%;
+}
+.i-div-trip .i-pic-txt li {
+    position: relative;
+}
+.i-div-trip .i-pic-txt li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: px2rem(14);
+    width: px2rem(8);
+    height: px2rem(8);
+    background-image: url(../images/s-icon.png);
+    background-size: px2rem(8) px2rem(8);
+    background-position: left 45%;
+}
+.i-div-trip .i-content img {
+    float: right;
+}
+.div-bu,
+.div-rep,
+.download {
+    display: none;
+}
+.i-down {
+    display: block;
+    text-align: center;
+    background-color: #eaeff3;
+    padding: px2rem(30) 0;
+}
+.i-down a {
+    color: #fff;
+    background-color: #0195ff;
+    font-size: px2rem(28);
+    border-radius: px2rem(80);
+    display: block;
+    margin: auto;
+    width: px2rem(380);
+    height: px2rem(80);
+    line-height: px2rem(80);
+}
+.i-down a:nth-of-type(1):before {
+    content: "";
+    width: px2rem(39);
+    height: px2rem(45);
+    background-image: url(../images/i-phone.png);
+    display: inline-block;
+    background-size: px2rem(39) px2rem(45);
+    margin-right: px2rem(15);
+    vertical-align: sub;
+}
+.i-down a:nth-of-type(2) {
+    margin-top: 20px;
+}
+.i-down a:nth-of-type(2):before {
+    content: "";
+    width: px2rem(42);
+    height: px2rem(51);
+    background-image: url(../images/i-androd.png);
+    display: inline-block;
+    background-size: px2rem(42) px2rem(51);
+    margin-right: px2rem(15);
+    vertical-align: sub;
+}
+.i-down p {
+    font-size: px2rem(36);
+    color: #666;
+}
+.i-down p:nth-child(2) {
+    font-size: px2rem(24);
+    margin: 20px 0;
+}
+.corpright {
+    display: block;
+    padding: px2rem(15) 0;
+    @include font-dpr(5px);
+    color: #fff;
+    line-height: 2;
+    text-align: center;
+    background-color: #545A64;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 350px) {
+    .i-title h2{
+        font-size: px2rem(14);
+    }
+}
