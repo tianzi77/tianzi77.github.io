@@ -13,6 +13,10 @@
             document.write('<link rel="stylesheet" href="./css/m-intro.css">');
             document.write('<script type="text/javascript" src="./js/hotcss.js"><\/script>');
         }
+        if (navigator.userAgent.indexOf('UCBrowser') > -1 && screen.width < 600) {
+            document.write('<link rel="stylesheet" href="./css/m-intro.css">');
+            document.write('<script type="text/javascript" src="./js/hotcss.js"><\/script>');
+        }
     </script>
 </head>
 
