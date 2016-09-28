@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/hotcss.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+
+            var intro = {
+                //初始化所有方法
+                init: function() {
+                    var webWidth = 300;
+                    if (window.screen.availWidth > webWidth) {
+                        this.slide();
+
+                        //                        this.fixNav();
+                    } else {
+                        console.log("手持设备不支持幻灯");
+                    };
+                    if ($(window).width() < 1030) {
+                        this.fClick();
+                    } else {
+                        return;
+                    };
+                },
+                //幻灯片
+                slide: function() {
+                    $(".demo").click(function() {
+                        clearInterval(timer);
+                        $(".slide-text").addClass("slide-nav");
+                    })
+
+                    var timer;
+
+                    function changeIndex(clickBox) {
+                        //不需要点击
+                        if (clickBox == "div-banner") {
+                            return;
+
+                        } else {
+                            $('.' + clickBox + ' div .slide-text li').click(function() {
+
+                                clearInterval(timer);
+                                var a = $(this).index();
+                                $(this).addClass('curv').siblings('li').removeClass('curv');
+                                $('.' + clickBox + ' div div ul').eq(a).show().siblings('ul').hide();
+                                $('.' + clickBox + ' div div ul').eq(a).children('li').eq(0).addClass('cur1').show().siblings().removeClass("cur1").hide();
+                                slidePhone(clickBox);
+                                $(".slide-text").removeClass("slide-nav");
+                            })
+                        }
+                    }
+
+                    function slidePhone(clickBoxs1) {
+
+                        var indexs = $('.' + clickBoxs1).children("div").children("ul").children(".curv").index();
+
+                        $('.' + clickBoxs1).children("div").children("ul").eq(indexs).show().siblings('ul').hide();
+                        //容器传参
+                        var as = $('.' + clickBoxs1).attr('class');
+                        //                                                console.log(as)
+
+                        function fun(div, indexs) {
+                            var index2 = $('.' + div + ' div div ul').eq(indexs).children('.cur1').index();
+                            var index1 = $('.' + div + ' div div ul').eq(indexs).children('li').length;
+                            var changeSlide = function change() {
+
+                                if (index2 < index1) {
+
+                                    index2 = index2 + 1;
+                                    if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
+                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
+                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
+                                            left: '-=20px',
+                                            top: '-=20px',
+                                            height: '40px',
+                                            width: '40px'
+                                        }, 700, function() {
+                                            $(this).hide()
+                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                        });
+                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
+                                            left: '+=20px',
+                                            top: '+=20px',
+                                            height: '0px',
+                                            width: '0px'
+                                        });
+                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+                                    } else {
+                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+                                    }
+                                } else {
+                                    index2 = 0;
+                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+
+                                }
+                            }
+                            timer = setInterval(changeSlide, 2000);
+                        }
+
+                        fun(as, indexs);
+                    }
+
+                    //行程幻灯
+                    $(".div-trip").mouseleave(function() {
+                        clearInterval(timer);
+
+                    });
+                    $(".div-trip").mouseenter(function() {
+                        slidePhone('div-trip');
+                    });
+                    changeIndex('div-trip');
+                    //出差申请幻灯
+                    $(".div-apply").mouseleave(function() {
+                        clearInterval(timer);
+
+                    });
+                    $(".div-apply").mouseenter(function() {
+                        slidePhone('div-apply');
+                    });
+                    changeIndex('div-apply');
+                    //补单
+                    $(".div-bu").mouseleave(function() {
+                        clearInterval(timer);
+
+                    });
+                    $(".div-bu").mouseenter(function() {
+                        slidePhone('div-bu');
+                    });
+                    changeIndex('div-bu');
+                    //报销
+                    $(".div-rep").mouseleave(function() {
+                        clearInterval(timer);
+
+                    });
+                    $(".div-rep").mouseenter(function() {
+                        slidePhone('div-rep');
+                    });
+                    changeIndex('div-rep');
+                },
+                //fastclick
+                fClick: function() {
+                    FastClick.attach(document.body);
+                },
+            }
+            intro.init();
+        })
+    </script>
+</head>
+
+<body>
+    <div class="div-apply" id="div-apply">
+        <div class="content-box">
+            <h2>全流程演示    <span class="demo">选择演示功能</span></h2>
+            <ul class="slide-text">
+                <li class="curv">
+                    <h3>介绍1</h3></li>
+                <li class="">
+                    <h3>介绍2</h3></li>
+            </ul>
+            <div class="slide-box">
+                <ul class="ul1" style="">
+                    <li class="cur1"><img src="./images/slide11.png"><img src="//pic.c-ctrip.com/corp_niv/intro/click.png" width="32" height="32" class="img1" style="left: 120px; top: 130px; height: 0px; width: 0px; display: none;"></li>
+                    <li style="display:none;"><img src="./images/slide12.png"><img src="//pic.c-ctrip.com/corp_niv/intro/click.png" width="32" height="32" class="img1" style="left: 120px; top: 200px; height: 0px; width: 0px; display: none;"></li>
+                    <li style="display:none;"><img src="./images/slide13.png"><img src="//pic.c-ctrip.com/corp_niv/intro/click.png" width="32" height="32" class="img1" style="left: 50px; top: 185px; height: 0px; width: 0px; display: none;"></li>
+                    <li style="display:none;"><img src="./images/slide14.png"><img src="//pic.c-ctrip.com/corp_niv/intro/click.png" width="32" height="32" class="img1" style="left: 50px; top: 185px; height: 0px; width: 0px; display: none;"></li>
+                    <li style="display:none;"><img src="./images/slide15.png"><img src="//pic.c-ctrip.com/corp_niv/intro/click.png" width="32" height="32" class="img1" style="left: 50px; top: 185px; height: 0px; width: 0px; display: none;"></li>
+                    <li style="display:none;"><img src="./images/slide16.png"></li>
+                </ul>
+                <ul style="display: none;" class="">
+                    <li class="cur1"><img src="//pic.c-ctrip.com/corp_niv/intro/apply3.png"><img src="//pic.c-ctrip.com/corp_niv/intro/click.png" width="32" height="32" class="img1" style="left: 120px; top: 440px; height: 0px; width: 0px; display: none;"></li>
+                    <li style="display:none;"><img src="//pic.c-ctrip.com/corp_niv/intro/apply6.png"><img src="//pic.c-ctrip.com/corp_niv/intro/click.png" width="32" height="32" class="img1" style="left: 130px; top: 290px; height: 0px; width: 0px; display: none;"></li>
+                    <li style="display:none;"><img src="//pic.c-ctrip.com/corp_niv/intro/apply7.png"></li>
+                </ul>
+                <img src="./images/phone.png" class="meng">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
