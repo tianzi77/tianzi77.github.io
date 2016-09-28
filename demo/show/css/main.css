@@ -126,7 +126,9 @@ body {
   height: 100%; }
 
 .content-box {
-  position: relative; }
+  position: relative;
+  width: 100%;
+  height: 100%; }
 
 .content-box h2 {
   font-size: 0.9rem; }
@@ -145,7 +147,8 @@ body {
 
 .slide-box {
   position: relative;
-  width: 100%;
+  left: 50%;
+  margin-left: -6.425rem;
   height: 25.6rem; }
 
 .slide-box ul {
@@ -176,6 +179,10 @@ body {
 
 div .slide-text .curv h3 {
   color: #1daceb !important; }
+
+.slide-text li {
+  margin: 0.5rem;
+  padding-left: 0.25rem; }
 
 .slide-nav {
   left: 0; }
