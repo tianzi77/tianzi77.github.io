@@ -19,11 +19,10 @@
                 },
                 //幻灯片
                 slide: function () {
-                    $(".demo").click(function () {
+                    $(".demo").on("click", function () {
                         clearInterval(timer);
                         $(".slide-text").removeClass("slide-nav");
-                    })
-
+                    });
                     var timer;
 
                     function changeIndex(clickBox) {
@@ -32,7 +31,7 @@
                             return;
 
                         } else {
-                            $('.' + clickBox + ' div .slide-text li').click(function () {
+                            $('.' + clickBox + ' div .slide-text li').on("click", function () {
 
                                 clearInterval(timer);
                                 var a = $(this).index();
@@ -41,7 +40,7 @@
                                 $('.' + clickBox + ' div div ul').eq(a).children('li').eq(0).addClass('cur1').show().siblings().removeClass("cur1").hide();
                                 slidePhone(clickBox);
                                 $(".slide-text").addClass("slide-nav");
-                            })
+                            });
                         }
                     }
 
