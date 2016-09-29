@@ -148,7 +148,7 @@ body {
     z-index: 99;
 }
 .slide-box {
-    position: relative;
+    position: absolute;
     left: 50%;
     margin-left: -(px2rem(257));
     height: px2rem(1024);
