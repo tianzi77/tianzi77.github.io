@@ -19,9 +19,10 @@
                 },
                 //幻灯片
                 slide: function () {
-                    $(".demo").on("click", function () {
+                    $(".demo").on("click", function (e) {
                         clearInterval(timer);
                         $(".slide-text").removeClass("slide-nav");
+                        e.preventDefault();
                     });
                     var timer;
 

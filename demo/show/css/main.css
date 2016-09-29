@@ -132,14 +132,15 @@ body {
   left: 0%;
   width: 100%;
   height: 100%;
-  background-color: #ab2fd6;
+  background-color: #051223;
   z-index: 99; }
 
 .slide-box {
   position: absolute;
   left: 50%;
   margin-left: -6.4375rem;
-  height: 25.6rem; }
+  height: 25.6rem;
+  width: 12.625rem; }
 
 .slide-box ul {
   position: absolute;
