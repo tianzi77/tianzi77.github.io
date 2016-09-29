@@ -9,156 +9,154 @@
     <script src="js/fastclick.js"></script>
     <script src="js/hotcss.js" type="text/javascript"></script>
     <script>
-        $(document).ready(function() {
-
-            var intro = {
-                //初始化所有方法
-                init: function() {
-                    var webWidth = 300;
-                    if (window.screen.availWidth > webWidth) {
-                        this.slide();
-
-                        //                        this.fixNav();
-                    } else {
-                        console.log("手持设备不支持幻灯");
-                    };
-                    if ($(window).width() < 1030) {
-                        this.fClick();
-                    } else {
-                        return;
-                    };
-                },
-                //幻灯片
-                slide: function() {
-                    $(".demo").click(function() {
-                        clearInterval(timer);
-                        $(".slide-text").addClass("slide-nav");
+        (function() {
+            var PreLoad = function(a, b) {
+                var c = b || {};
+                this.source = a, this.count = 0, this.total = a.length, this.onload = c.onload, this.prefix = c.prefix || "", this.init()
+            };
+            PreLoad.prototype.init = function() {
+                var a = this;
+                a.source.forEach(function(b) {
+                    var c = b.replace(/[#\?].*$/, '').substr(b.lastIndexOf(".") + 1).toLowerCase(),
+                        d = a.prefix + b;
+                    switch (c) {
+                        case "js":
+                            a.script.call(a, d);
+                            break;
+                        case "css":
+                            a.stylesheet.call(a, d);
+                            break;
+                        case "svg":
+                        case "jpg":
+                        case "gif":
+                        case "png":
+                        case "jpeg":
+                            a.image.call(a, d)
+                    }
+                })
+            }, PreLoad.prototype.getProgress = function() {
+                return Math.round(this.count / this.total * 100)
+            }, PreLoad.prototype.image = function(a) {
+                var b = document.createElement("img");
+                this.load(b, a), b.src = a
+            }, PreLoad.prototype.stylesheet = function(a) {
+                var b = document.createElement("link");
+                this.load(b, a), b.rel = "stylesheet", b.type = "text/css", b.href = a, document.head.appendChild(b)
+            }, PreLoad.prototype.script = function(a) {
+                var b = document.createElement("script");
+                this.load(b, a), b.type = "text/javascript", b.src = a, document.head.appendChild(b)
+            }, PreLoad.prototype.load = function(a, b) {
+                var c = this;
+                a.onload = a.onerror = a.onabort = function(a) {
+                    c.onload && c.onload({
+                        count: ++c.count,
+                        total: c.total,
+                        item: b,
+                        type: a.type
                     })
+                }
+            };
+            var resource_list = [
+                './js/jquery.js',
+                './js/slide.js',
+                'http://www.zhangweiwei.cn/demo/show/images/click.png',
+                'http://www.zhangweiwei.cn/demo/show/images/phone.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide11.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide12.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide13.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide14.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide15.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide16.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide16.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide21.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide22.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide23.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide30.png',
+                'http://www.zhangweiwei.cn/demo/show/images/slide31.png',
 
-                    var timer;
+            ];
+            new PreLoad(resource_list, {
+                onload: function(load) {
+                    //加载百分比，PreLoad里面已经给出
+                    var count = load.count,
+                        total = load.total,
+                        percent = Math.ceil(100 * count / total);
 
-                    function changeIndex(clickBox) {
-                        //不需要点击
-                        if (clickBox == "div-banner") {
-                            return;
+                    //DOM变化
+                    document.querySelector('#progress-bar').style.width = percent + '%';
+                    //                document.querySelector('.bar').innerHTML = percent;
 
-                        } else {
-                            $('.' + clickBox + ' div .slide-text li').click(function() {
+                    //LOAD COMPLETE，加载完成后展示dom或者其他处理
+                    if (count == total) {
+                        var el = document.querySelector('#loading')
+                        $(el).one('webkitAnimationEnd animationEnd', function() {
+                            this.parentNode.removeChild(this)
+                        })
+                        $('#pages').html($('#tmpl').html())
+                        $('#tmpl').remove()
+                            //							$('#music-icon').addClass('music-icon')
+                        $(el).addClass('complete')
 
-                                clearInterval(timer);
-                                var a = $(this).index();
-                                $(this).addClass('curv').siblings('li').removeClass('curv');
-                                $('.' + clickBox + ' div div ul').eq(a).show().siblings('ul').hide();
-                                $('.' + clickBox + ' div div ul').eq(a).children('li').eq(0).addClass('cur1').show().siblings().removeClass("cur1").hide();
-                                slidePhone(clickBox);
-                                $(".slide-text").removeClass("slide-nav");
-                            })
-                        }
+                        window.pageInit && window.pageInit()
                     }
-
-                    function slidePhone(clickBoxs1) {
-
-                        var indexs = $('.' + clickBoxs1).children("div").children("ul").children(".curv").index();
-
-                        $('.' + clickBoxs1).children("div").children("ul").eq(indexs).show().siblings('ul').hide();
-                        //容器传参
-                        var as = $('.' + clickBoxs1).attr('class');
-                        //                                                console.log(as)
-
-                        function fun(div, indexs) {
-                            var index2 = $('.' + div + ' div div ul').eq(indexs).children('.cur1').index();
-                            var index1 = $('.' + div + ' div div ul').eq(indexs).children('li').length;
-                            var changeSlide = function change() {
-
-                                if (index2 < index1) {
-
-                                    index2 = index2 + 1;
-                                    if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
-                                            left: '-=20px',
-                                            top: '-=20px',
-                                            height: '40px',
-                                            width: '40px'
-                                        }, 700, function() {
-                                            $(this).hide()
-                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
-                                        });
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
-                                            left: '+=20px',
-                                            top: '+=20px',
-                                            height: '0px',
-                                            width: '0px'
-                                        });
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
-                                    } else {
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
-                                    }
-                                } else {
-                                    //                                    index2 = 0;
-                                    //                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
-                                    //                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
-                                    clearInterval(timer);
-
-                                }
-                            }
-                            timer = setInterval(changeSlide, 2000);
-                        }
-
-                        fun(as, indexs);
-                    }
-
-                    //行程幻灯
-                    changeIndex('div-apply');
-                    //出差申请幻灯
-                },
-                //fastclick
-                fClick: function() {
-                    FastClick.attach(document.body);
-                },
-            }
-            intro.init();
-        })
+                }
+            });
+        })()
     </script>
 </head>
 
 <body>
-    <div class="div-apply" id="div-apply">
-        <div class="content-box">
-            <h2>全流程演示    <span class="demo">选择演示功能</span></h2>
-            <ul class="slide-text">
-                <li class="curv">
-                    <h3>演示1</h3></li>
-                <li class="">
-                    <h3>演示2</h3></li>
-                <li class="">
-                    <h3>演示3</h3></li>
-            </ul>
-            <div class="slide-box">
-                <ul class="ul1" style="">
-                    <li class="cur1"><img src="./images/slide11.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 100px; height: 0px; width: 0px; display: none;"></li>
-                    <li style="display:none;"><img src="./images/slide12.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 200px; height: 0px; width: 0px; display: none;"></li>
-                    <li style="display:none;"><img src="./images/slide13.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 50px; top: 85px; height: 0px; width: 0px; display: none;"></li>
-                    <li style="display:none;"><img src="./images/slide14.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 50px; top: 85px; height: 0px; width: 0px; display: none;"></li>
-                    <li style="display:none;"><img src="./images/slide15.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 50px; top: 85px; height: 0px; width: 0px; display: none;"></li>
-                    <li style="display:none;"><img src="./images/slide16.png"></li>
-                </ul>
-                <ul style="display: none;" class="">
-                    <li class="cur1"><img src="./images/slide21.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 440px; height: 0px; width: 0px; display: none;"></li>
-                    <li class="cur1"><img src="./images/slide22.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 440px; height: 0px; width: 0px; display: none;"></li>
-                    <li style="display:none;"><img src="./images/slide23.png"></li>
-                </ul>
-                <ul style="display: none;" class="">
-                    <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 440px; height: 0px; width: 0px; display: none;"></li>
-                    <li style="display:none;"><img src="./images/slide31.png"></li>
-                </ul>
-                <img src="./images/phone.png" class="meng">
+    <div class="container">
+        <div class="loading" id="loading">
+				<img src="http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png">
+				<div class="progress">
+					<div class="bar">
+						<div class="inner" id="progress-bar"></div>
+					</div>
+				</div>
+				<div class="loading-text" data-rp="4"></div>
+<!--				<div class="loading-jdc" data-rp="4"></div>-->
+			</div>
+        <div class="pages" id="pages"></div>
+        <script id="tmpl" type="text/template">
+            <div class="div-apply" id="div-apply">
+                <div class="content-box">
+                    <h2>全流程演示    <span class="demo">选择演示功能</span></h2>
+                    <ul class="slide-text">
+                        <li class="curv">
+                            <h3>演示1</h3></li>
+                        <li class="">
+                            <h3>演示2</h3></li>
+                        <li class="">
+                            <h3>演示3</h3></li>
+                    </ul>
+                    <div class="slide-box">
+                        <ul class="ul1" style="">
+                            <li class="cur1"><img src="./images/slide11.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 100px; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide12.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 200px; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide13.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 50px; top: 85px; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide14.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 50px; top: 85px; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide15.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 50px; top: 85px; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide16.png"></li>
+                        </ul>
+                        <ul style="display: none;" class="">
+                            <li class="cur1"><img src="./images/slide21.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 440px; height: 0px; width: 0px; display: none;"></li>
+                            <li class="cur1"><img src="./images/slide22.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 440px; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide23.png"></li>
+                        </ul>
+                        <ul style="display: none;" class="">
+                            <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 120px; top: 440px; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide31.png"></li>
+                        </ul>
+                        <img src="./images/phone.png" class="meng">
+                    </div>
+                </div>
             </div>
-        </div>
+        </script>
     </div>
+    <script>
 
-
+    </script>
 </body>
 
 </html>

@@ -34,11 +34,6 @@ button {
   margin: 0;
   padding: 0; }
 
-body {
-  font: normal 12px/1.5 'Microsoft Yahei', 'Lucida Grande', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', Simsun, STXihei, Sans-serif;
-  color: #333;
-  -webkit-font-smoothing: antialiased; }
-
 img,
 fieldset {
   margin: 0;
@@ -104,7 +99,7 @@ body {
   background-color: #fff;
   margin: 0 auto;
   overflow-x: hidden;
-  font: normal 14px/1.5 "Microsoft Yahei", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+  font-family: "Microsoft Yahei", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
   -webkit-user-select: none;
   -ms-user-select: none;
   word-wrap: break-word;
@@ -138,11 +133,10 @@ body {
   transition: all ease .3s;
   position: fixed;
   top: 0;
-  left: -100%;
+  left: 0%;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  opacity: .9;
+  background-color: #ab2fd6;
   z-index: 99; }
 
 .slide-box {
@@ -185,7 +179,7 @@ div .slide-text .curv h3 {
   padding-left: 0.25rem; }
 
 .slide-nav {
-  left: 0; }
+  left: -100%; }
 
 .slide-box ul li .img1 {
   margin-left: 9px;
@@ -193,3 +187,100 @@ div .slide-text .curv h3 {
   position: absolute;
   width: 0px;
   height: 0px; }
+
+/* loading */
+@-webkit-keyframes loading-ani {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+@keyframes loading-ani {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+/* line 6, ../sass/loading.scss */
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 100;
+  background-color: #383231; }
+
+/* line 11, ../sass/loading.scss */
+.loading img {
+  position: absolute;
+  width: 4.2rem;
+  height: 1.1rem;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.55rem;
+  margin-left: -2.1rem; }
+
+/* line 20, ../sass/loading.scss */
+.loading .progress {
+  position: absolute;
+  width: 340px;
+  height: 22px;
+  top: 50%;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: -170px;
+  border: 4px solid #eeefef;
+  border-radius: 6px; }
+
+/* line 31, ../sass/loading.scss */
+.loading .progress .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 100%; }
+
+/* line 38, ../sass/loading.scss */
+.loading .progress .bar .inner {
+  width: 0%;
+  height: 100%;
+  background-color: #eeefef; }
+
+/* line 45, ../sass/loading.scss */
+.loading .loading-text {
+  top: 50%;
+  left: 50%;
+  margin-top: 90px;
+  margin-left: -58px;
+  position: absolute;
+  width: 115px;
+  height: 14px;
+  background: url("http://wqs.jd.com/promote/CH77/2015/paper/images/loading-text.png") no-repeat;
+  background-size: 100%; }
+
+/* line 52, ../sass/loading.scss */
+.loading .loading-jdc {
+  top: 50%;
+  left: 50%;
+  margin-top: 140px;
+  margin-left: -122px;
+  position: absolute;
+  width: 244px;
+  height: 30px;
+  background: url("http://wqs.jd.com/promote/CH77/2015/paper/images/loading-jdc.png") no-repeat;
+  background-size: 100%; }
+
+/* line 60, ../sass/loading.scss */
+.complete {
+  -webkit-animation: loading-ani 0.5s both;
+  animation: loading-ani 0.5s both; }
