@@ -65,20 +65,24 @@
                                     if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
-                                            left: '-=20px',
-                                            top: '-=20px',
+//                                            left: '-=20px',
+//                                            top: '-=20px',
                                             height: '40px',
                                             width: '40px'
                                         }, 700, function () {
-                                            $(this).hide()
-                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+//                                            $(this).hide()
+                                            $(this).on("click",function(){
+                                                $(this).hide();
+                                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                            })
+//                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
                                         });
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
-                                            left: '+=20px',
-                                            top: '+=20px',
-                                            height: '0px',
-                                            width: '0px'
-                                        });
+//                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
+//                                            left: '+=20px',
+//                                            top: '+=20px',
+//                                            height: '0px',
+//                                            width: '0px'
+//                                        });
                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
                                     } else {
                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);

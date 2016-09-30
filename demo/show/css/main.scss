@@ -126,7 +126,7 @@ body {
     font-size: px2rem(36);
 }
 .slide-text {
-    font-size: px2rem(24);
+    font-size: px2rem(56);
     -webkit-transition: all ease-in-out .2s;
     transition: all ease-in-out .2s;
     position: fixed;
@@ -137,6 +137,8 @@ body {
     background-color: rgb(5, 18, 35);
     //    opacity: .9;
     z-index: 99;
+    text-align: center;
+    
 }
 .slide-box {
     position: absolute;
