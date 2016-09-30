@@ -58,31 +58,41 @@
                             var index2 = $('.' + div + ' div div ul').eq(indexs).children('.cur1').index();
                             var index1 = $('.' + div + ' div div ul').eq(indexs).children('li').length;
                             var changeSlide = function change() {
-
+                                clearInterval(timer)
                                 if (index2 < index1) {
-
                                     index2 = index2 + 1;
                                     if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
-//                                            left: '-=20px',
-//                                            top: '-=20px',
-                                            height: '40px',
-                                            width: '40px'
-                                        }, 700, function () {
-//                                            $(this).hide()
-                                            $(this).on("click",function(){
-                                                $(this).hide();
-                                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').css({
+                                                'width': '40px',
+                                                'height': '40px'
+                                            }).addClass("show-tips").show("fast", function () {
+                                                $(this).on("click", function () {
+                                                    $(this).removeClass("show-tips").hide();
+                                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                                    changeSlide();
+                                                })
                                             })
-//                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
-                                        });
-//                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
-//                                            left: '+=20px',
-//                                            top: '+=20px',
-//                                            height: '0px',
-//                                            width: '0px'
-//                                        });
+                                            //animate({
+                                            //                                            left: '-=20px',
+                                            //                                            top: '-=20px',
+                                            //                                            height: '40px',
+                                            //                                            width: '40px'
+                                            //                                        }, 700, function () {
+                                            //                                            $(this).hide()
+                                            //                                            clearInterval(timer);
+                                            //                                            $(this).on("click",function(){
+                                            //                                                $(this).hide();
+                                            //                                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                            //                                            })
+                                            //                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                            //                                        });
+                                            //                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').animate({
+                                            //                                            left: '+=20px',
+                                            //                                            top: '+=20px',
+                                            //                                            height: '0px',
+                                            //                                            width: '0px'
+                                            //                                        });
                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
                                     } else {
                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
@@ -96,7 +106,7 @@
 
                                 }
                             }
-                            timer = setInterval(changeSlide, 2000);
+                            timer = setInterval(changeSlide, 1000);
                         }
 
                         fun(as, indexs);
