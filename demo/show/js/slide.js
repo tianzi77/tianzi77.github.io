@@ -20,6 +20,7 @@
                 //幻灯片
                 slide: function () {
                     $(".demo").on("click", function (e) {
+                        $(".click-tips").hide();
                         clearInterval(timer);
                         $(".slide-text").removeClass("slide-nav");
                         e.preventDefault();
@@ -33,7 +34,6 @@
 
                         } else {
                             $('.' + clickBox + ' div .slide-text li').on("click", function () {
-
                                 clearInterval(timer);
                                 var a = $(this).index();
                                 $(this).addClass('curv').siblings('li').removeClass('curv');
@@ -72,7 +72,10 @@
                                                     $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn('0').siblings().fadeOut('0');
                                                     changeSlide();
                                                 })
-                                            })
+                                            });
+                                        $('.' + div + ' div div ul').eq(indexs).children('li').children('.click-tips').hide();
+                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.click-tips').delay(500).show('fast');
+                                        
                                             //animate({
                                             //                                            left: '-=20px',
                                             //                                            top: '-=20px',
