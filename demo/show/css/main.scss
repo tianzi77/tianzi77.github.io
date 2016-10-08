@@ -183,11 +183,13 @@ div .slide-text .curv h3 {
     left: -100%;
 }
 .slide-box ul li .img1 {
-    margin-left: 9px;
-    margin-top: -16px;
+//    margin-left: 9px;
+//    margin-top: -16px;
     position: absolute;
     width: 0px;
     height: 0px;
+    width: px2rem(40) !important;
+    height: px2rem(40) !important;
 }
 
 /* loading */
@@ -349,3 +351,25 @@ div .slide-text .curv h3 {
     -webkit-animation: loading-ani 0.5s both;
     animation: loading-ani 0.5s both;
 }
+.click-tips{
+    position: absolute;
+    display: none;
+    background-color: #06c;
+    color: #fff;
+    font-size: px2rem(24);
+    border-radius: px2rem(20);
+    padding: px2rem(10);
+}
+/*  左边减8 上边加6*/
+.click-tips:before{
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 px2rem(10) px2rem(16) px2rem(10);
+border-color: transparent transparent #06c transparent;
+    position: absolute;
+    left: 50%;
+    margin-left: -(px2rem(10/2));
+    content: "";
+    top: -(px2rem(16));
+    }

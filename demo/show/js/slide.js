@@ -62,11 +62,11 @@
                                 if (index2 < index1) {
                                     index2 = index2 + 1;
                                     if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
+//                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').css({
                                                 'width': '40px',
                                                 'height': '40px'
-                                            }).addClass("show-tips").show("fast", function () {
+                                            }).addClass("show-tips").delay(1000).show("fast", function () {
                                                 $(this).on("click", function () {
                                                     $(this).removeClass("show-tips").hide();
                                                     $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
