@@ -69,7 +69,7 @@
                                             }).addClass("show-tips").delay(1000).show("fast", function () {
                                                 $(this).on("click", function () {
                                                     $(this).removeClass("show-tips").hide();
-                                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn('0').siblings().fadeOut('0');
                                                     changeSlide();
                                                 })
                                             })
@@ -106,7 +106,8 @@
 
                                 }
                             }
-                            timer = setInterval(changeSlide, 1000);
+//                            timer = setInterval(changeSlide, 1000);
+                            changeSlide();
                         }
 
                         fun(as, indexs);
