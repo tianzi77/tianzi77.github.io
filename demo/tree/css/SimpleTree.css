@@ -1,0 +1,115 @@
+@charset "utf-8";
+.st_tree {
+    padding: 10px;
+    width: 200px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(224, 243, 6, 0.3);
+    position: relative;
+    z-index: 2;
+    float: left;
+    margin-right: -100%;
+}
+.ribbon-wrapper-green {
+    width: 85px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+.ribbon-green {
+    font: bold 15px Sans-Serif;
+    color: #333;
+    text-align: center;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    background-color: #BFDC7A;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+    background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
+    color: #6a6340;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+.ribbon-green:before,
+.ribbon-green:after {
+    content: "";
+    border-top: 3px solid #6e8900;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position: absolute;
+    bottom: -3px;
+}
+.ribbon-green:before {
+    left: 0;
+}
+.ribbon-green:after {
+    right: 0;
+}
+​
+/* 超链接 */
+
+.st_tree a {
+    text-decoration: none;
+}
+
+/* 鼠标经过的超链接 */
+
+.st_tree a:hover {
+    color: #f33;
+    text-decoration: underline;
+}
+
+/* 菜单 */
+
+.st_tree ul {
+    padding: 0 18px;
+    margin: 0;
+}
+
+/* 菜单项 */
+
+.st_tree ul li {
+    font-size: 13px;
+    color: #222;
+    line-height: 18px;
+    cursor: pointer;
+    list-style: none;
+    background: url(../imgs/st_node.gif);
+    background-repeat: no-repeat;
+    padding: 0 0 3px 20px;
+}
+
+/* 子菜单 */
+
+.st_tree ul li ul {}
+
+/* 子菜单项 */
+
+.st_tree ul li ul li {}
+
+/* 子菜单的父节点 */
+
+.st_tree .folder {
+    list-style-image: url(../imgs/st_icon.png);
+    background: url(../imgs/st_folder.gif);
+    background-repeat: no-repeat;
+    padding: 0 0 0 20px;
+}
+
+/* 展开的父节点 */
+
+.st_tree .open {
+    list-style-image: url(../imgs/st_icon_open.png);
+    background: url(../imgs/st_folder_open.gif);
+    background-repeat: no-repeat;
+    padding: 0 0 0 20px;
+}
