@@ -357,8 +357,10 @@ div .slide-text .curv h3 {
     background-color: #06c;
     color: #fff;
     font-size: px2rem(24);
-    border-radius: px2rem(20);
-    padding: px2rem(10);
+    border-radius: px2rem(15);
+    padding: 0 px2rem(10);
+    height: 1.25rem;
+    line-height: 1.25rem;
 }
 /*  左边减8 上边加6*/
 .click-tips:before{
@@ -373,3 +375,15 @@ border-color: transparent transparent #06c transparent;
     content: "";
     top: -(px2rem(16));
     }
+.type-left,.type-right{
+    border-radius: px2rem(10);
+}
+.type-left:before{
+    margin-left: 0;
+    left: px2rem(10);
+}
+.type-right:before{
+    margin-left: 0;
+    right: px2rem(10);
+    left: auto;
+}
