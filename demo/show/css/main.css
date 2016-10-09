@@ -139,10 +139,13 @@ body {
 
 .slide-box {
   position: absolute;
-  left: 50%;
-  margin-left: -6.4375rem;
   height: 25.6rem;
-  width: 12.625rem; }
+  width: 12.875rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto; }
 
 .slide-box ul {
   position: absolute;

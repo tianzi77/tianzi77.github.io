@@ -141,10 +141,15 @@ body {
 }
 .slide-box {
     position: absolute;
-    left: 50%;
-    margin-left: -(px2rem(515/2));
+//    left: 50%;
+//    margin-left: -(px2rem(515/2));
     height: px2rem(1024);
-    width: px2rem(505);
+    width: px2rem(515);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 .slide-box ul {
     position: absolute;
