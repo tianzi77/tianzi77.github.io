@@ -1,9 +1,8 @@
-//        $(document).ready(function () {
-Zepto(function($){ 
+        $(document).ready(function () {
+
             var intro = {
                 //初始化所有方法
                 init: function () {
-//                    alert(999)
                     var webWidth = 300;
                     if (window.screen.availWidth > webWidth) {
                         this.slide();
@@ -13,14 +12,14 @@ Zepto(function($){
                         console.log("手持设备不支持幻灯");
                     };
                     if ($(window).width() < 1030) {
-//                        this.fClick();
+                        this.fClick();
                     } else {
                         return;
                     };
                 },
                 //幻灯片
                 slide: function () {
-                    $(".demo").on("tap", function (e) {
+                    $(".demo").on("click", function (e) {
                         $(".click-tips").hide();
                         clearInterval(timer);
                         $(".slide-text").removeClass("slide-nav");
@@ -34,7 +33,7 @@ Zepto(function($){
                             return;
 
                         } else {
-                            $('.' + clickBox + ' div .slide-text li').on("tap", function () {
+                            $('.' + clickBox + ' div .slide-text li').on("click", function () {
                                 clearInterval(timer);
                                 var a = $(this).index();
                                 $(this).addClass('curv').siblings('li').removeClass('curv');
@@ -59,12 +58,12 @@ Zepto(function($){
                             var index2 = $('.' + div + ' div div ul').eq(indexs).children('.cur1').index();
                             var index1 = $('.' + div + ' div div ul').eq(indexs).children('li').length;
                             var changeSlide = function change() {
-                                clearInterval(timer)
-                                if (index2 < index1) {
-                                    index2 = index2 + 1;
-                                    if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
-//                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').css({
+                                    clearInterval(timer)
+                                    if (index2 < index1) {
+                                        index2 = index2 + 1;
+                                        if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
+                                            //                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').show();
+                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').css({
                                                 'width': '40px',
                                                 'height': '40px'
                                             }).addClass("show-tips").delay(1000).show("fast", function () {
@@ -74,9 +73,9 @@ Zepto(function($){
                                                     changeSlide();
                                                 })
                                             });
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').children('.click-tips').hide();
-                                         $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.click-tips').delay(500).show('fast');
-                                        
+                                            $('.' + div + ' div div ul').eq(indexs).children('li').children('.click-tips').hide();
+                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.click-tips').delay(500).show('fast');
+
                                             //animate({
                                             //                                            left: '-=20px',
                                             //                                            top: '-=20px',
@@ -97,20 +96,20 @@ Zepto(function($){
                                             //                                            height: '0px',
                                             //                                            width: '0px'
                                             //                                        });
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+                                        } else {
+                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                            $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+                                        }
                                     } else {
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
-                                        $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
-                                    }
-                                } else {
-                                    //                                    index2 = 0;
-                                    //                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
-                                    //                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
-                                    clearInterval(timer);
+                                        //                                    index2 = 0;
+                                        //                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).fadeIn(1000).siblings().fadeOut(1000);
+                                        //                                    $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
+                                        clearInterval(timer);
 
+                                    }
                                 }
-                            }
-//                            timer = setInterval(changeSlide, 1000);
+                                //                            timer = setInterval(changeSlide, 1000);
                             changeSlide();
                         }
 
@@ -122,10 +121,9 @@ Zepto(function($){
                     //出差申请幻灯
                 },
                 //fastclick
-//                fClick: function () {
-//                    FastClick.attach(document.body);
-//                },
+                fClick: function () {
+                    FastClick.attach(document.body);
+                },
             }
             intro.init();
-    }) 
-//        })
+        })
