@@ -5,11 +5,12 @@ Zepto(function ($) {
             var webWidth = 300;
             if (window.screen.availWidth > webWidth) {
                 this.slide();
+                this.fClick();
             }
         },
         //幻灯片
         slide: function () {
-            $(".demo").on("tap", function (e) {
+            $(".demo").on("click", function (e) {
                 $(".click-tips").hide();
                 clearInterval(timer);
                 $(".slide-text").removeClass("slide-nav");
@@ -23,7 +24,7 @@ Zepto(function ($) {
                     return;
 
                 } else {
-                    $('.' + clickBox + ' div .slide-text li').on("tap", function () {
+                    $('.' + clickBox + ' div .slide-text li').on("click", function () {
                         clearInterval(timer);
                         var a = $(this).index();
                         $(this).addClass('curv').siblings('li').removeClass('curv');
@@ -55,7 +56,7 @@ Zepto(function ($) {
                                     'width': '40px',
                                     'height': '40px'
                                 }).addClass("show-tips").show();
-                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').on("tap", function () {
+                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').on("click", function () {
                                     $(this).removeClass("show-tips").hide();
                                     $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).show().siblings().hide();
                                     changeSlide();
@@ -83,6 +84,9 @@ Zepto(function ($) {
             //行程幻灯
             changeIndex('div-apply');
             //出差申请幻灯
+        },
+        fClick: function () {
+            FastClick.attach(document.body);
         },
     }
     intro.init();
