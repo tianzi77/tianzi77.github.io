@@ -138,6 +138,23 @@ body {
     //    opacity: .9;
     z-index: 99;
     text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -webkit-flex-direction:column;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 .slide-box {
     position: absolute;
@@ -181,8 +198,14 @@ div .slide-text .curv h3 {
     color: #1daceb !important;
 }
 .slide-text li {
-    margin: px2rem(20);
-    padding-left: px2rem(10);
+    margin: px2rem(10) 0;
+//    padding-left: px2rem(10);
+    &:first-child{
+        margin-top: 0;
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
 }
 .slide-nav {
     left: -100%;
