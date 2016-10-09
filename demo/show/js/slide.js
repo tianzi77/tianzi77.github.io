@@ -1,8 +1,9 @@
-        $(document).ready(function () {
-
+//        $(document).ready(function () {
+Zepto(function($){ 
             var intro = {
                 //初始化所有方法
                 init: function () {
+//                    alert(999)
                     var webWidth = 300;
                     if (window.screen.availWidth > webWidth) {
                         this.slide();
@@ -12,14 +13,14 @@
                         console.log("手持设备不支持幻灯");
                     };
                     if ($(window).width() < 1030) {
-                        this.fClick();
+//                        this.fClick();
                     } else {
                         return;
                     };
                 },
                 //幻灯片
                 slide: function () {
-                    $(".demo").on("click", function (e) {
+                    $(".demo").on("tap", function (e) {
                         $(".click-tips").hide();
                         clearInterval(timer);
                         $(".slide-text").removeClass("slide-nav");
@@ -33,7 +34,7 @@
                             return;
 
                         } else {
-                            $('.' + clickBox + ' div .slide-text li').on("click", function () {
+                            $('.' + clickBox + ' div .slide-text li').on("tap", function () {
                                 clearInterval(timer);
                                 var a = $(this).index();
                                 $(this).addClass('curv').siblings('li').removeClass('curv');
@@ -121,9 +122,10 @@
                     //出差申请幻灯
                 },
                 //fastclick
-                fClick: function () {
-                    FastClick.attach(document.body);
-                },
+//                fClick: function () {
+//                    FastClick.attach(document.body);
+//                },
             }
             intro.init();
-        })
+    }) 
+//        })
