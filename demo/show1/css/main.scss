@@ -1,0 +1,394 @@
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+em,
+button {
+    margin: 0;
+    padding: 0;
+}
+img,
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+input,
+textarea,
+select,
+button {
+    font-family: 'Microsoft Yahei', 'Lucida Grande', Tahoma, Arial, Helvetica, 'Hiragino Sans GB', Simsun, STXihei, Sans-serif;
+    font-size: 12px;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+a {
+    text-decoration: none;
+    color: #06c;
+    outline: none;
+}
+a:hover {
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: normal;
+}
+li {
+    list-style: none;
+}
+dfn {
+    font-family: arial;
+    font-style: normal;
+}
+i,
+em {
+    font-style: normal;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clear {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:after {
+    display: block;
+    clear: both;
+    height: 0;
+    content: '\0020';
+}
+@import 'px2rem.scss';
+$designWidth: 640;
+body {
+    background-color: #fff;
+    margin: 0 auto;
+    overflow-x: hidden;
+    font-family: "Microsoft Yahei", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #999;
+    -webkit-overflow-scrolling: touch;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    box-sizing: border-box;
+}
+.div-apply {
+    width: 100%;
+    height: px2rem(1136);
+}
+.content-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.content-box h2 {
+    font-size: px2rem(36);
+}
+.slide-text {
+    font-size: px2rem(56);
+    -webkit-transition: all ease-in-out .2s;
+    transition: all ease-in-out .2s;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(5, 18, 35);
+    //    opacity: .9;
+    z-index: 99;
+    text-align: center;
+}
+.slide-box {
+    position: absolute;
+//    left: 50%;
+//    margin-left: -(px2rem(515/2));
+    height: px2rem(1024);
+    width: px2rem(515);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.slide-box ul {
+    position: absolute;
+    z-index: 2;
+    width: px2rem(422);
+    height: px2rem(1024);
+    background: transparent;
+    margin-left: px2rem(48);
+    margin-top: px2rem(150);
+}
+.slide-box ul li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /*    z-index: 7;*/
+}
+.slide-box ul li img {
+    width: 100%;
+}
+.meng {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: px2rem(515);
+    height: px2rem(1024);
+}
+div .slide-text .curv h3 {
+    color: #1daceb !important;
+}
+.slide-text li {
+    margin: px2rem(20);
+    padding-left: px2rem(10);
+}
+.slide-nav {
+    left: -100%;
+}
+.slide-box ul li .img1 {
+//    margin-left: 9px;
+//    margin-top: -16px;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    width: px2rem(40) !important;
+    height: px2rem(40) !important;
+}
+
+/* loading */
+
+@-webkit-keyframes loading-ani {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+@keyframes loading-ani {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+@-webkit-keyframes loading-img {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes loading-img {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+.show-tips {
+    animation: loading-img 0.5s .2s infinite;
+    -webkit-animation: loading-img 0.5s .2s infinite;
+}
+
+/* line 6, ../sass/loading.scss */
+
+.loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+    background-color: #383231;
+}
+
+/* line 11, ../sass/loading.scss */
+
+.loading img {
+    position: absolute;
+    width: px2rem(168);
+    height: px2rem(44);
+    top: 50%;
+    left: 50%;
+    margin-top: -(px2rem(44/2));
+    margin-left: -(px2rem(168/2));
+}
+
+/* line 20, ../sass/loading.scss */
+
+.loading .progress {
+    position: absolute;
+    width: 340px;
+    height: 22px;
+    top: 50%;
+    left: 50%;
+    margin-top: 50px;
+    margin-left: -170px;
+    border: 4px solid #eeefef;
+    border-radius: 6px;
+}
+
+/* line 31, ../sass/loading.scss */
+
+.loading .progress .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 340px;
+    height: 100%;
+}
+
+/* line 38, ../sass/loading.scss */
+
+.loading .progress .bar .inner {
+    width: 0%;
+    height: 100%;
+    background-color: #eeefef;
+}
+
+/* line 45, ../sass/loading.scss */
+
+.loading .loading-text {
+    top: 50%;
+    left: 50%;
+    margin-top: 90px;
+    margin-left: -58px;
+    position: absolute;
+    width: 115px;
+    height: 14px;
+    background: url('http://wqs.jd.com/promote/CH77/2015/paper/images/loading-text.png') no-repeat;
+    background-size: 100%;
+}
+
+/* line 52, ../sass/loading.scss */
+
+//
+//.loading .loading-jdc {
+//    top: 50%;
+//    left: 50%;
+//    margin-top: 140px;
+//    margin-left: -122px;
+//    position: absolute;
+//    width: 244px;
+//    height: 30px;
+//    background: url('http://wqs.jd.com/promote/CH77/2015/paper/images/loading-jdc.png') no-repeat;
+//    background-size: 100%;
+//}
+
+/* line 60, ../sass/loading.scss */
+
+.complete {
+    -webkit-animation: loading-ani 0.5s both;
+    animation: loading-ani 0.5s both;
+}
+.click-tips{
+    position: absolute;
+    display: none;
+    background-color: #06c;
+    color: #fff;
+    font-size: px2rem(24);
+    border-radius: px2rem(15);
+    padding: 0 px2rem(10);
+    height: 1.25rem;
+    line-height: 1.25rem;
+}
+/*  左边减8 上边加6*/
+.click-tips:before{
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 px2rem(10) px2rem(16) px2rem(10);
+border-color: transparent transparent #06c transparent;
+    position: absolute;
+    left: 50%;
+    margin-left: -(px2rem(10/2));
+    content: "";
+    top: -(px2rem(16));
+    }
+.type-left,.type-right{
+    border-radius: px2rem(10);
+}
+.type-left:before{
+    margin-left: 0;
+    left: px2rem(10);
+}
+.type-right:before{
+    margin-left: 0;
+    right: px2rem(10);
+    left: auto;
+}
