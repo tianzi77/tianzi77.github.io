@@ -207,8 +207,8 @@ div .slide-text .curv h3 {
   position: absolute;
   width: 0px;
   height: 0px;
-  width: 1rem !important;
-  height: 1rem !important; }
+  width: 1.5rem !important;
+  height: 1.5rem !important; }
 
 /* loading */
 @-webkit-keyframes loading-ani {
