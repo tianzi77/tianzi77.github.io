@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>携程商旅功能演示demo</title>
+</head>
+
+<body class="">
+    <div class="container body-bg">
+        <div class="loading" id="loading">
+            <img src="http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png">
+            <div class="progress">
+                <div class="bar">
+                    <div class="inner" id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="loading-text" data-rp="4"></div>
+            <!--				<div class="loading-jdc" data-rp="4"></div>-->
+        </div>
+        <div class="pages" id="pages"></div>
+        <!-- 渲染DOM S -->
+        <script id="tmpl" type="text/template">
+            <div class="div-apply" id="div-apply">
+                <div class="content-box">
+                    <h2>全流程演示    <a class="demo" href="jacascript:void(0)">选择演示功能</a></h2>
+                    <div class="c-start">
+                        <img src="./images/logo.png" alt="" class="c-logo">
+                        <a class="c-ready">立刻体验</a>
+                    </div>
+                        <ul class="slide-text">
+                            <li class="curv">
+                                <h3>演示1</h3></li>
+                            <li class="">
+                                <h3>演示2</h3></li>
+                            <li class="">
+                                <h3>演示3</h3></li>
+                        </ul>
+                    <div class="slide-box">
+                        <ul class="ul1" style="">
+                            <li class="cur1"><img src="./images/slide11.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.5rem; top: 3.2rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips" style="top:4.8rem;left:2.8rem;">点击创建报销</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide12.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.2rem; top: 11.9rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips" style="top:13.5rem;left:5.5rem">点击导入费用</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide13.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 6.5rem; top: 7.2rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips" style="top:8.8rem;left:5.4rem">点击补单</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide14.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 0.5rem; top: 2.5rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-left" style="top:4.0rem;left:0.5rem">选择订单</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide15.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 9rem; top: 0.8rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right" style="top:2.4rem;left:7rem;">点击导入</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide16.png"></li>
+                        </ul>
+                        <ul style="display: none;" class="">
+                            <li class="cur1"><img src="./images/slide21.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.8rem; top: 6.8rem; height: 0px; width: 0px; display: none;"></li>
+                            <li class="cur1"><img src="./images/slide22.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.8rem; top: 10rem; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide23.png"></li>
+                        </ul>
+                        <ul style="display: none;" class="">
+                            <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5rem; top: 9rem; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide31.png"></li>
+                        </ul>
+                        <img src="./images/phone.png" class="meng">
+                    </div>
+                </div>
+            </div>
+        </script>
+        <!-- 渲染DOM E -->
+        <script>
+            (function() {
+                var PreLoad = function(a, b) {
+                    var c = b || {};
+                    this.source = a, this.count = 0, this.total = a.length, this.onload = c.onload, this.prefix = c.prefix || "", this.init()
+                };
+                PreLoad.prototype.init = function() {
+                    var a = this;
+                    a.source.forEach(function(b) {
+                        var c = b.replace(/[#\?].*$/, '').substr(b.lastIndexOf(".") + 1).toLowerCase(),
+                            d = a.prefix + b;
+                        switch (c) {
+                            case "js":
+                                a.script.call(a, d);
+                                break;
+                            case "css":
+                                a.stylesheet.call(a, d);
+                                break;
+                            case "svg":
+                            case "jpg":
+                            case "gif":
+                            case "png":
+                            case "jpeg":
+                                a.image.call(a, d)
+                        }
+                    })
+                }, PreLoad.prototype.getProgress = function() {
+                    return Math.round(this.count / this.total * 100)
+                }, PreLoad.prototype.image = function(a) {
+                    var b = document.createElement("img");
+                    this.load(b, a), b.src = a
+                }, PreLoad.prototype.stylesheet = function(a) {
+                    var b = document.createElement("link");
+                    this.load(b, a), b.rel = "stylesheet", b.type = "text/css", b.href = a, document.head.appendChild(b)
+                }, PreLoad.prototype.script = function(a) {
+                    var b = document.createElement("script");
+                    this.load(b, a), b.type = "text/javascript", b.src = a, document.head.appendChild(b)
+                }, PreLoad.prototype.load = function(a, b) {
+                    var c = this;
+                    a.onload = a.onerror = a.onabort = function(a) {
+                        c.onload && c.onload({
+                            count: ++c.count,
+                            total: c.total,
+                            item: b,
+                            type: a.type
+                        })
+                    }
+                };
+                var resource_list = [
+                    'css/main.css',
+                    'js/hotcss.js',
+                    'js/fastclick.js',
+                    'js/zepto.js',
+                    'js/slide.js',
+                    'http://www.zhangweiwei.cn/demo/show/images/click.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/phone.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide11.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide12.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide13.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide14.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide15.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide16.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide16.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide21.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide22.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide23.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide30.png',
+                    'http://www.zhangweiwei.cn/demo/show/images/slide31.png',
+
+                ];
+                new PreLoad(resource_list, {
+                    onload: function(load) {
+                        //加载百分比，PreLoad里面已经给出
+                        var count = load.count,
+                            total = load.total,
+                            percent = Math.ceil(100 * count / total);
+
+                        //DOM变化
+                        document.querySelector('#progress-bar').style.width = percent + '%';
+                        //                document.querySelector('.bar').innerHTML = percent;
+
+                        //LOAD COMPLETE，加载完成后展示dom或者其他处理
+                        if (count == total) {
+                            var el = document.querySelector('#loading')
+                            $(el).one('webkitAnimationEnd animationEnd', function() {
+                                this.parentNode.removeChild(this)
+                            })
+                            $('#pages').html($('#tmpl').html())
+                            $('#tmpl').remove()
+                            $(".c-ready").on("click", function() {
+                                $(this).parents(".c-start").hide("fast").siblings(".slide-text").show("fast");
+                            })
+                            $(el).addClass('complete')
+                            window.pageInit && window.pageInit()
+                        }
+                    }
+                });
+            })()
+        </script>
+    </div>
+</body>
+
+</html>
