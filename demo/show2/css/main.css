@@ -133,8 +133,6 @@ body {
 .slide-text {
   display: none;
   font-size: 0.9rem;
-  -webkit-transition: all ease-in-out .15s;
-  transition: all ease-in-out .15s;
   background-color: #fff;
   border-radius: 0.25rem;
   z-index: 100;
