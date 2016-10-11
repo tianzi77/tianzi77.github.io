@@ -227,8 +227,8 @@ div .slide-text h3 {
   position: absolute;
   width: 0px;
   height: 0px;
-  width: 1.5rem !important;
-  height: 1.5rem !important; }
+  width: 1.75rem !important;
+  height: 1.75rem !important; }
 
 /* loading */
 @-webkit-keyframes loading-ani {
