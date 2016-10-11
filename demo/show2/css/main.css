@@ -162,7 +162,7 @@ body {
   position: absolute;
   z-index: 2;
   width: 10.55rem;
-  height: 25.6rem;
+  height: 21.8rem;
   background: transparent;
   margin-left: 1.2rem;
   margin-top: 3.75rem; }
@@ -424,3 +424,7 @@ div .slide-text h3 {
   background-image: url(../images/body.png);
   background-size: cover;
   background-position: top center; }
+
+.demo {
+  position: absolute;
+  left: 0; }

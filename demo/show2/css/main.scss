@@ -184,7 +184,7 @@ body {
     position: absolute;
     z-index: 2;
     width: px2rem(422);
-    height: px2rem(1024);
+    height: 21.8rem;
     background: transparent;
     margin-left: px2rem(48);
     margin-top: px2rem(150);
@@ -248,8 +248,8 @@ div .slide-text h3 {
     padding: px2rem(30) 0;
 }
 .slide-nav {
-//    left: -100%;
-    transform: translate3d(-200%,0,0);
+    //    left: -100%;
+    transform: translate3d(-200%, 0, 0);
 }
 .slide-box ul li .img1 {
     //    margin-left: 9px;
@@ -501,4 +501,8 @@ div .slide-text h3 {
     background-image: url(../images/body.png);
     background-size: cover;
     background-position: top center;
+}
+.demo {
+    position: absolute;
+    left: 0;
 }

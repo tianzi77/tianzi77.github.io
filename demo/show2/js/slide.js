@@ -33,6 +33,7 @@ Zepto(function ($) {
                         $(".content-box h2").show();
                         $(".slide-box ul li img").show();
                         $(".meng").show();
+                        $(".title").text($(this).text());
                         clearInterval(timer);
                         var a = $(this).index();
                         $(this).addClass('curv').siblings('li').removeClass('curv');
