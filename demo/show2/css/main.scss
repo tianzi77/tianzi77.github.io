@@ -173,11 +173,15 @@ body {
     position: absolute;
     //    left: 50%;
     //    margin-left: -(px2rem(515/2));
-    height: px2rem(896);
-    width: px2rem(444);
-    left: 50%;
-    top: px2rem(60);
-    transform: translateX(-50%);
+    //    height: px2rem(896);
+    //    width: px2rem(444);
+    //    left: 50%;
+    //    top: px2rem(60);
+    //    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
 }
 .slide-box ul {
     position: absolute;
@@ -185,8 +189,8 @@ body {
     width: px2rem(379);
     height: px2rem(671);
     background: transparent;
-    margin-left: px2rem(32);
-    margin-top: px2rem(114);
+    top: px2rem(176);
+    left: px2rem(130);
 }
 .slide-box ul li {
     position: absolute;
@@ -204,8 +208,9 @@ body {
 .meng {
     display: none;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: px2rem(60);
+    transform: translateX(-50%);
     width: px2rem(444);
     height: px2rem(896);
 }
@@ -260,7 +265,7 @@ div .slide-text h3 {
     height: 0px;
     width: px2rem(70) !important;
     height: px2rem(70) !important;
-//    display: none !important;
+    //    display: none !important;
 }
 
 /* loading */
@@ -470,8 +475,8 @@ div .slide-text h3 {
         top: auto;
     }
 }
-.type-down{
-    &:before{
+.type-down {
+    &:before {
         border-width: px2rem(16) px2rem(10) 0 px2rem(10);
         border-color: #3468af transparent transparent transparent;
         bottom: -0.35rem;
@@ -527,4 +532,23 @@ div .slide-text h3 {
     left: px2rem(10);
     top: px2rem(8);
     font-size: px2rem(24);
+    z-index: 9999;
+}
+.fix-text {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: yellow;
+    height: 60px;
+    display: none;
+}
+.tip-text {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    background-color: yellow;
+    z-index: 777;
 }

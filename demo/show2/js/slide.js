@@ -1,5 +1,5 @@
-
-;Zepto(function ($) {
+;
+Zepto(function ($) {
     var intro = {
         //初始化所有方法
         init: function () {
@@ -16,6 +16,7 @@
                 $(".container").addClass("body-bg");
                 $(".content-box h2").hide();
                 $(".slide-box ul li img").hide();
+//                $(".tip-text").hide();
                 $(".meng").hide();
                 clearInterval(timer);
                 $(".slide-text").removeClass("slide-nav");
@@ -62,6 +63,7 @@
                         if (index2 < index1) {
                             index2 = index2 + 1;
                             if ($('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('img').length > 1) {
+
                                 $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').addClass("fadeIn animated");
                                 $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').on("click", function () {
                                     $(this).removeClass("show-tips").hide();
@@ -77,6 +79,7 @@
                                 $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).addClass('cur1').siblings().removeClass("cur1");
                             }
                         } else {
+
                             return;
 
                         }
