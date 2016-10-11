@@ -248,7 +248,8 @@ div .slide-text h3 {
     padding: px2rem(30) 0;
 }
 .slide-nav {
-    left: -100%;
+//    left: -100%;
+    transform: translate3d(-200%,0,0);
 }
 .slide-box ul li .img1 {
     //    margin-left: 9px;

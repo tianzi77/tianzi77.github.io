@@ -222,7 +222,7 @@ div .slide-text h3 {
   padding: 0.75rem 0; }
 
 .slide-nav {
-  left: -100%; }
+  transform: translate3d(-200%, 0, 0); }
 
 .slide-box ul li .img1 {
   position: absolute;
