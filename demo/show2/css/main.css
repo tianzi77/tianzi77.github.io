@@ -151,11 +151,9 @@ body {
   position: absolute;
   height: 22.4rem;
   width: 11.1rem;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto; }
+  left: 50%;
+  top: 1.5rem;
+  transform: translateX(-50%); }
 
 .slide-box ul {
   position: absolute;
