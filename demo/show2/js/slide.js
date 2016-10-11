@@ -1,4 +1,5 @@
-Zepto(function ($) {
+
+;Zepto(function ($) {
     var intro = {
         //初始化所有方法
         init: function () {

@@ -97,7 +97,7 @@ em {
   content: '\0020'; }
 
 body {
-  background-color: #fff;
+  background-color: #c9c9c9;
   margin: 0 auto;
   overflow-x: hidden;
   font-family: "Microsoft Yahei", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
@@ -125,7 +125,8 @@ body {
   font-size: 0.9rem;
   display: none;
   text-align: center;
-  background-color: #3468af; }
+  background-color: #3468af;
+  padding: 0.05rem 0; }
 
 .content-box h2 a {
   color: #fff; }
@@ -148,8 +149,8 @@ body {
 
 .slide-box {
   position: absolute;
-  height: 25.6rem;
-  width: 12.875rem;
+  height: 22.4rem;
+  width: 11.1rem;
   left: 0;
   right: 0;
   top: 0;
@@ -159,18 +160,20 @@ body {
 .slide-box ul {
   position: absolute;
   z-index: 2;
-  width: 10.55rem;
-  height: 21.8rem;
+  width: 9.475rem;
+  height: 16.775rem;
   background: transparent;
-  margin-left: 1.2rem;
-  margin-top: 3.75rem; }
+  margin-left: 0.8rem;
+  margin-top: 2.85rem; }
 
 .slide-box ul li {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  /*    z-index: 7;*/ }
+  height: 100%;
+  border: 2px solid #969696;
+  box-sizing: border-box; }
 
 .slide-box ul li img {
   width: 100%;
@@ -181,8 +184,8 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 12.875rem;
-  height: 25.6rem; }
+  width: 11.1rem;
+  height: 22.4rem; }
 
 div .slide-text .curv h3 {
   background-color: #3468af;
@@ -336,7 +339,7 @@ div .slide-text h3 {
   position: absolute;
   width: 115px;
   height: 14px;
-  background: url("http://wqs.jd.com/promote/CH77/2015/paper/images/loading-text.png") no-repeat;
+  background: url("../images/loading-text.png") no-repeat;
   background-size: 100%; }
 
 /* line 52, ../sass/loading.scss */
@@ -348,13 +351,13 @@ div .slide-text h3 {
 .click-tips {
   position: absolute;
   display: none;
-  background-color: #06c;
+  background-color: #3468af;
   color: #fff;
-  font-size: 0.6rem;
-  border-radius: 0.375rem;
+  font-size: 0.45rem;
+  border-radius: 0.25rem;
   padding: 0 0.25rem;
-  height: 1.25rem;
-  line-height: 1.25rem; }
+  height: 1.0rem;
+  line-height: 1.0rem; }
 
 /*  左边减8 上边加6*/
 .click-tips:before {
@@ -362,12 +365,12 @@ div .slide-text h3 {
   height: 0;
   border-style: solid;
   border-width: 0 0.25rem 0.4rem 0.25rem;
-  border-color: transparent transparent #06c transparent;
+  border-color: transparent transparent #3468af transparent;
   position: absolute;
   left: 50%;
-  margin-left: -0.125rem;
+  margin-left: -0.2rem;
   content: "";
-  top: -0.4rem; }
+  top: -0.35rem; }
 
 .type-left,
 .type-right {
@@ -381,6 +384,20 @@ div .slide-text h3 {
   margin-left: 0;
   right: 0.25rem;
   left: auto; }
+
+.type-left-down:before {
+  border-width: 0.4rem 0.25rem 0 0.25rem;
+  border-color: #3468af transparent transparent transparent;
+  bottom: -0.35rem;
+  left: 18%;
+  top: auto; }
+
+.type-down:before {
+  border-width: 0.4rem 0.25rem 0 0.25rem;
+  border-color: #3468af transparent transparent transparent;
+  bottom: -0.35rem;
+  top: auto;
+  margin-left: -0.2rem; }
 
 .c-start {
   width: 100%;
@@ -425,4 +442,6 @@ div .slide-text h3 {
 
 .demo {
   position: absolute;
-  left: 0; }
+  left: 0.25rem;
+  top: 0.2rem;
+  font-size: 0.6rem; }

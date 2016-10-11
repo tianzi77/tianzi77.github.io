@@ -98,7 +98,7 @@ em {
 @import 'px2rem.scss';
 $designWidth: 640;
 body {
-    background-color: #fff;
+    background-color: #c9c9c9;
     margin: 0 auto;
     overflow-x: hidden;
     font-family: "Microsoft Yahei", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
@@ -127,6 +127,7 @@ body {
     display: none;
     text-align: center;
     background-color: #3468af;
+    padding: px2rem(2) 0;
 }
 .content-box h2 a {
     color: #fff;
@@ -172,8 +173,8 @@ body {
     position: absolute;
     //    left: 50%;
     //    margin-left: -(px2rem(515/2));
-    height: px2rem(1024);
-    width: px2rem(515);
+    height: px2rem(896);
+    width: px2rem(444);
     left: 0;
     right: 0;
     top: 0;
@@ -183,18 +184,20 @@ body {
 .slide-box ul {
     position: absolute;
     z-index: 2;
-    width: px2rem(422);
-    height: 21.8rem;
+    width: px2rem(379);
+    height: px2rem(671);
     background: transparent;
-    margin-left: px2rem(48);
-    margin-top: px2rem(150);
+    margin-left: px2rem(32);
+    margin-top: px2rem(114);
 }
 .slide-box ul li {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
-    /*    z-index: 7;*/
+    height: 100%;
+    border: 2px solid #969696;
+    box-sizing: border-box;
 }
 .slide-box ul li img {
     width: 100%;
@@ -205,8 +208,8 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    width: px2rem(515);
-    height: px2rem(1024);
+    width: px2rem(444);
+    height: px2rem(896);
 }
 div .slide-text .curv h3 {
     background-color: #3468af;
@@ -395,7 +398,7 @@ div .slide-text h3 {
     position: absolute;
     width: 115px;
     height: 14px;
-    background: url('http://wqs.jd.com/promote/CH77/2015/paper/images/loading-text.png') no-repeat;
+    background: url('../images/loading-text.png') no-repeat;
     background-size: 100%;
 }
 
@@ -423,13 +426,13 @@ div .slide-text h3 {
 .click-tips {
     position: absolute;
     display: none;
-    background-color: #06c;
+    background-color: #3468af;
     color: #fff;
-    font-size: px2rem(24);
-    border-radius: px2rem(15);
+    font-size: px2rem(18);
+    border-radius: px2rem(10);
     padding: 0 px2rem(10);
-    height: 1.25rem;
-    line-height: 1.25rem;
+    height: 1.0rem;
+    line-height: 1.0rem;
 }
 
 /*  左边减8 上边加6*/
@@ -439,12 +442,12 @@ div .slide-text h3 {
     height: 0;
     border-style: solid;
     border-width: 0 px2rem(10) px2rem(16) px2rem(10);
-    border-color: transparent transparent #06c transparent;
+    border-color: transparent transparent #3468af transparent;
     position: absolute;
     left: 50%;
-    margin-left: -(px2rem(10/2));
+    margin-left: -(px2rem(16/2));
     content: "";
-    top: -(px2rem(16));
+    top: -0.35rem;
 }
 .type-left,
 .type-right {
@@ -458,6 +461,24 @@ div .slide-text h3 {
     margin-left: 0;
     right: px2rem(10);
     left: auto;
+}
+.type-left-down {
+    &:before {
+        border-width: px2rem(16) px2rem(10) 0 px2rem(10);
+        border-color: #3468af transparent transparent transparent;
+        bottom: -0.35rem;
+        left: 18%;
+        top: auto;
+    }
+}
+.type-down{
+    &:before{
+        border-width: px2rem(16) px2rem(10) 0 px2rem(10);
+        border-color: #3468af transparent transparent transparent;
+        bottom: -0.35rem;
+        top: auto;
+        margin-left: -0.2rem;
+    }
 }
 .c-start {
     width: 100%;
@@ -504,5 +525,7 @@ div .slide-text h3 {
 }
 .demo {
     position: absolute;
-    left: 0;
+    left: px2rem(10);
+    top: px2rem(8);
+    font-size: px2rem(24);
 }
