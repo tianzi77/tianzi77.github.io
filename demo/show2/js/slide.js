@@ -13,10 +13,9 @@ Zepto(function ($) {
         slide: function () {
             $(".demo").on("click", function (e) {
                 $(".click-tips").hide();
-                $(".container").addClass("body-bg");
                 $(".content-box h2").hide();
                 $(".slide-box ul li img").hide();
-//                $(".tip-text").hide();
+                //                $(".tip-text").hide();
                 $(".meng").hide();
                 clearInterval(timer);
                 $(".slide-text").removeClass("slide-nav");
@@ -31,7 +30,6 @@ Zepto(function ($) {
 
                 } else {
                     $('.' + clickBox + ' div .slide-text li').on("click", function () {
-                        $(".container").removeClass("body-bg");
                         $(".content-box h2").show();
                         $(".slide-box ul li img").show();
                         $(".meng").show();
@@ -69,6 +67,8 @@ Zepto(function ($) {
                                     $(this).removeClass("show-tips").hide();
                                     $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).show().siblings().hide();
                                     changeSlide();
+                                    //右下角文字提示
+                                    $(".tip-text").show();
                                 })
 
                                 $('.' + div + ' div div ul').eq(indexs).children('li').children('.click-tips').hide();

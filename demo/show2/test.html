@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>携程商旅功能演示demo</title>
-    <!--    <script src="js/zepto.js"></script>-->
+    <script src="js/zepto.js"></script>
+    <script src="js/fastclick.js"></script>
 </head>
 
 <body class="">
-    <div class="container body-bg">
+    <div class="container">
         <div class="loading" id="loading">
             <img src="http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png">
             <div class="progress">
@@ -33,11 +34,13 @@
                         <li class="curv">
                             <h3>差旅申请</h3></li>
                         <li class="">
-                            <h3>审 批</h3></li>
-                        <li class="">
                             <h3>预 订</h3></li>
                         <li class="">
-                            <h3>报 销</h3></li>
+                            <h3>补 单</h3></li>
+                        <li class="">
+                            <h3>费用报销</h3></li>
+                        <li class="">
+                            <h3>审 批</h3></li>
 
                     </ul>
                     <div class="slide-box">
@@ -47,15 +50,21 @@
                             </li>
                             <li style="display:none;"><img src="./images/slide111.png"><img src="./images/click.png" width="32" height="32" class="img1 " style="left: 4.0rem; top: 2.2rem; height: 0px; width: 0px; display: none;animation-duration: .8s; animation-delay: 1s; animation-iteration-count: infinite;">
                                 <div class="click-tips zoomIn animated" style="top:4.5rem;left:2.6rem">点击创建新申请单</div>
-                                 <div class="tip-text"><div class="up-text fadeInUp animated">测试测试测试</div></div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">测试测试测试</div>
+                                </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide12.png"><img src="./images/click.png" width="32" height="32" class="img1 " style="left: 4.0rem; top: 14.9rem; height: 0px; width: 0px; display: none;animation-duration: .8s; animation-delay: 1s; animation-iteration-count: infinite;">
                                 <div class="click-tips type-down" style="top:13.2rem;left:3.4rem">点击下一步</div>
-                                  <div class="tip-text"><div class="up-text fadeInUp animated">测试测试测试</div></div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">测试测试测试</div>
+                                </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide13.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 6.5rem; top: 7.2rem; height: 0px; width: 0px; display: none;animation-duration: 1s; animation-delay: 1s; animation-iteration-count: infinite;">
                                 <div class="click-tips" style="top:8.8rem;left:5.4rem">点击补单</div>
-                                <div class="tip-text"><div class="up-text fadeInUp animated">测试测试测试</div></div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">测试测试测试</div>
+                                </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide14.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 0.5rem; top: 2.5rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips type-left" style="top:4.0rem;left:0.5rem">选择订单</div>
@@ -69,6 +78,10 @@
                             <li class="cur1"><img src="./images/slide21.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.8rem; top: 6.8rem; height: 0px; width: 0px; display: none;"></li>
                             <li class="cur1"><img src="./images/slide22.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.8rem; top: 10rem; height: 0px; width: 0px; display: none;"></li>
                             <li style="display:none;"><img src="./images/slide23.png"></li>
+                        </ul>
+                        <ul style="display: none;" class="">
+                            <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5rem; top: 9rem; height: 0px; width: 0px; display: none;"></li>
+                            <li style="display:none;"><img src="./images/slide31.png"></li>
                         </ul>
                         <ul style="display: none;" class="">
                             <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5rem; top: 9rem; height: 0px; width: 0px; display: none;"></li>

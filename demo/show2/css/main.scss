@@ -97,7 +97,7 @@ em {
 }
 @import 'px2rem.scss';
 $designWidth: 640;
-body {
+.container {
     background-color: #c9c9c9;
     margin: 0 auto;
     overflow-x: hidden;
@@ -112,10 +112,17 @@ body {
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: none;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.pages {
+    width: 100%;
+    height: 100%;
 }
 .div-apply {
     width: 100%;
-    height: px2rem(1136);
+    height: 100%;
 }
 .content-box {
     position: relative;
@@ -127,7 +134,10 @@ body {
     display: none;
     text-align: center;
     background-color: #3468af;
-    padding: px2rem(2) 0;
+    padding: px2rem(8) 0;
+    position: absolute;
+    width: 100%;
+    z-index: 77;
 }
 .content-box h2 a {
     color: #fff;
@@ -135,8 +145,8 @@ body {
 .slide-text {
     display: none;
     font-size: px2rem(36);
-    //    -webkit-transition: all ease-in-out .15s;
-    //    transition: all ease-in-out .15s;
+    -webkit-transition: all ease-in-out .15s;
+    transition: all ease-in-out .15s;
     background-color: #fff;
     border-radius: px2rem(10);
     z-index: 100;
@@ -148,7 +158,8 @@ body {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 90%;
-    padding: px2rem(130) 0;
+    height: auto;
+    padding: 4rem 0 1rem 0;
     //    display: none;
     //    text-align: center;
     //    display: -webkit-box;
@@ -181,7 +192,8 @@ body {
     width: 100%;
     height: 100%;
     left: 0;
-    top: 0;
+    top: -(px2rem(50));
+    
 }
 .slide-box ul {
     position: absolute;
@@ -230,11 +242,41 @@ div .slide-text .curv h3 {
     color: #333333;
     &:first-child {
         margin-top: 0;
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: px2rem(77);
+            height: px2rem(114);
+            background-image: url(../images/car.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 50%;
+            top: -120%;
+            transform: translateX(-50%);
+        }
     }
-    &:last-child {
+    &:last-child,
+    &:nth-child(4) {
         margin-bottom: 0;
         &::after {
             border: 0 none;
+        }
+    }
+    &:last-child {
+        margin-top: 4rem;
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: px2rem(89);
+            height: px2rem(114);
+            background-image: url(../images/boss.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 50%;
+            top: -120%;
+            transform: translateX(-50%);
         }
     }
     &::after {
@@ -432,11 +474,11 @@ div .slide-text h3 {
     display: none;
     background-color: #3468af;
     color: #fff;
-    font-size: px2rem(18);
+    font-size: px2rem(24);
     border-radius: px2rem(10);
-    padding: 0 px2rem(10);
-    height: 1.0rem;
-    line-height: 1.0rem;
+    padding: 0 px2rem(15);
+    height: 1.25rem;
+    line-height: 1.25rem;
 }
 
 /*  左边减8 上边加6*/
@@ -516,21 +558,10 @@ div .slide-text h3 {
         bottom: px2rem(75);
     }
 }
-.body-bg {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    background-image: url(../images/body.png);
-    background-size: cover;
-    background-position: top center;
-}
 .demo {
     position: absolute;
-    left: px2rem(10);
-    top: px2rem(8);
+    left: 0.4rem;
+    top: 0.4rem;
     font-size: px2rem(24);
     z-index: 9999;
 }
@@ -551,4 +582,7 @@ div .slide-text h3 {
     height: 100px;
     background-color: yellow;
     z-index: 777;
+}
+.tip-text{
+    display: none;
 }
