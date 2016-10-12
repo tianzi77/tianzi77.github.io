@@ -15,8 +15,9 @@ Zepto(function ($) {
                 $(".click-tips").hide();
                 $(".content-box h2").hide();
                 $(".slide-box ul li img").hide();
-                //                $(".tip-text").hide();
+                $(".tip-text").hide();
                 $(".meng").hide();
+                $('.slide-box').hide();
                 clearInterval(timer);
                 $(".slide-text").removeClass("slide-nav");
                 e.preventDefault();
@@ -34,6 +35,7 @@ Zepto(function ($) {
                         $(".slide-box ul li img").show();
                         $(".meng").show();
                         $(".title").text($(this).text());
+                        $('.slide-box').show();
                         clearInterval(timer);
                         var a = $(this).index();
                         $(this).addClass('curv').siblings('li').removeClass('curv');
