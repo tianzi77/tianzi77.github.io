@@ -265,8 +265,8 @@ div .slide-text h3 {
 
 .slide-box ul li .img1 {
   position: absolute;
-  width: 1.75rem;
-  height: 1.75rem; }
+  width: 1.5rem !important;
+  height: 1.5rem !important; }
 
 /* loading */
 @-webkit-keyframes loading-ani {
@@ -292,9 +292,6 @@ div .slide-text h3 {
     opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1); }
-  50% {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8); }
   100% {
     opacity: 1;
     -webkit-transform: scale(1.1);
@@ -304,9 +301,6 @@ div .slide-text h3 {
     opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1); }
-  50% {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8); }
   100% {
     opacity: 1;
     -webkit-transform: scale(1.1);
@@ -484,9 +478,14 @@ div .slide-text h3 {
   width: 100%;
   left: 0;
   bottom: 0;
-  height: 100px;
-  background-color: yellow;
-  z-index: 777; }
+  height: auto;
+  background-color: #fff;
+  z-index: 777;
+  font-size: 0.65rem;
+  padding: 0.25rem 0;
+  color: #666; }
+  .tip-text .up-text {
+    padding: 0 2em; }
 
 .tip-text {
   display: none; }
