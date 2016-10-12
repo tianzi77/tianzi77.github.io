@@ -265,8 +265,7 @@ div .slide-text h3 {
 
 .slide-box ul li .img1 {
   position: absolute;
-  width: 0px;
-  height: 0px;
+  display: none;
   width: 1.75rem !important;
   height: 1.75rem !important; }
 
