@@ -182,21 +182,19 @@ $designWidth: 640;
 }
 .slide-box {
     position: relative;
-//        left: 50%;
-//        margin-left: -(px2rem(515/2));
-        height: px2rem(896);
-        width: px2rem(444);
+    //        left: 50%;
+    //        margin-left: -(px2rem(515/2));
+    height: px2rem(896);
+    width: px2rem(444);
     margin: auto;
     display: none;
-//        left: 50%;
-//        top: px2rem(60);
-//        transform: translateX(-50%);
-
-//    width: 100%;
-//    height: 100%;
-//    left: 0;
+    //        left: 50%;
+    //        top: px2rem(60);
+    //        transform: translateX(-50%);
+    //    width: 100%;
+    //    height: 100%;
+    //    left: 0;
     top: -0.9rem;
-    
 }
 .slide-box ul {
     position: absolute;
@@ -306,9 +304,8 @@ div .slide-text h3 {
     //    margin-left: 9px;
     //    margin-top: -16px;
     position: absolute;
-    width: px2rem(70) !important;
-    height: px2rem(70) !important;
-        display: none 
+    width: px2rem(70);
+    height: px2rem(70);
 }
 
 /* loading */
@@ -339,41 +336,39 @@ div .slide-text h3 {
 }
 @-webkit-keyframes loading-img {
     0% {
-        opacity: 1;
+        opacity: 0;
         -webkit-transform: scale(1);
         transform: scale(1);
     }
     50% {
-        opacity: 0.8;
-        -webkit-transform: scale(1.3);
-        transform: scale(1.3);
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
     }
     100% {
         opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
     }
 }
 @keyframes loading-img {
     0% {
-        opacity: 1;
+        opacity: 0;
         -webkit-transform: scale(1);
         transform: scale(1);
     }
     50% {
-        opacity: 0.8;
-        -webkit-transform: scale(1.3);
-        transform: scale(1.3);
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
     }
     100% {
         opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
     }
 }
 .show-tips {
-    animation: loading-img 0.5s 2s infinite;
-    -webkit-animation: loading-img 0.5s 2s infinite;
+    animation: loading-img 1.2s 0s infinite;
+    -webkit-animation: loading-img 1.2s 0s infinite;
 }
 
 /* line 6, ../sass/loading.scss */
@@ -584,8 +579,6 @@ div .slide-text h3 {
     background-color: yellow;
     z-index: 777;
 }
-.tip-text{
+.tip-text {
     display: none;
 }
-
-

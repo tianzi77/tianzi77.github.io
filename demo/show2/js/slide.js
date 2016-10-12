@@ -66,6 +66,12 @@ Zepto(function ($) {
                                 //重置动画
 //                                $('.' + div + ' div div ul').eq(indexs).children('li').children('.img1').removeClass("flash animated");
 //                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').addClass("flash animated");
+                                $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').css({
+                                    'width': '1.75rem',
+                                    'height': '1.75rem'
+                                }).addClass("show-tips");
+                                
+                                
                                 $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2 - 1).children('.img1').on("click", function () {
                                     $(this).removeClass("show-tips").hide();
                                     $('.' + div + ' div div ul').eq(indexs).children('li').eq(index2).show().siblings().hide();
