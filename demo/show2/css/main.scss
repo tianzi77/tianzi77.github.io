@@ -308,7 +308,7 @@ div .slide-text h3 {
     position: absolute;
     width: px2rem(70) !important;
     height: px2rem(70) !important;
-//        display: none !important;
+        display: none 
 }
 
 /* loading */
@@ -372,8 +372,8 @@ div .slide-text h3 {
     }
 }
 .show-tips {
-    animation: loading-img 0.5s .2s infinite;
-    -webkit-animation: loading-img 0.5s .2s infinite;
+    animation: loading-img 0.5s 2s infinite;
+    -webkit-animation: loading-img 0.5s 2s infinite;
 }
 
 /* line 6, ../sass/loading.scss */

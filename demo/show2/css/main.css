@@ -266,7 +266,8 @@ div .slide-text h3 {
 .slide-box ul li .img1 {
   position: absolute;
   width: 1.75rem !important;
-  height: 1.75rem !important; }
+  height: 1.75rem !important;
+  display: none; }
 
 /* loading */
 @-webkit-keyframes loading-ani {
@@ -314,8 +315,8 @@ div .slide-text h3 {
     -webkit-transform: scale(1);
     transform: scale(1); } }
 .show-tips {
-  animation: loading-img 0.5s .2s infinite;
-  -webkit-animation: loading-img 0.5s .2s infinite; }
+  animation: loading-img 0.5s 2s infinite;
+  -webkit-animation: loading-img 0.5s 2s infinite; }
 
 /* line 6, ../sass/loading.scss */
 .loading {
