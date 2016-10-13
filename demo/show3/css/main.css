@@ -263,6 +263,7 @@ div .slide-text h3 {
   padding: 0.25rem 0; }
 
 .slide-nav {
+  -webkit-transform: translate3d(-200%, -50%, 0);
   transform: translate3d(-200%, -50%, 0); }
 
 .slide-box ul li .img1 {
