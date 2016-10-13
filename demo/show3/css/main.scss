@@ -256,7 +256,7 @@ div .slide-text .curv h3 {
             background-repeat: no-repeat;
             left: 50%;
             top: -175%;
-            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);transform: translateX(-50%);
         }
     }
     &:last-child,
@@ -279,7 +279,7 @@ div .slide-text .curv h3 {
             background-repeat: no-repeat;
             left: 50%;
             top: -175%;
-            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);transform: translateX(-50%);
         }
     }
     &::after {
@@ -292,7 +292,7 @@ div .slide-text .curv h3 {
         position: absolute;
         left: 50%;
         bottom: -(px2rem(22));
-        transform: translate(-50%, 50%);
+        -webkit-transform: translate(-50%, 50%);transform: translate(-50%, 50%);
     }
 }
 div .slide-text h3 {

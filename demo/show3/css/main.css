@@ -228,6 +228,7 @@ div .slide-text .curv h3 {
       background-repeat: no-repeat;
       left: 50%;
       top: -175%;
+      -webkit-transform: translateX(-50%);
       transform: translateX(-50%); }
   .slide-text li:last-child, .slide-text li:nth-child(4) {
     margin-bottom: 0; }
@@ -246,6 +247,7 @@ div .slide-text .curv h3 {
       background-repeat: no-repeat;
       left: 50%;
       top: -175%;
+      -webkit-transform: translateX(-50%);
       transform: translateX(-50%); }
   .slide-text li::after {
     content: "";
@@ -257,6 +259,7 @@ div .slide-text .curv h3 {
     position: absolute;
     left: 50%;
     bottom: -0.55rem;
+    -webkit-transform: translate(-50%, 50%);
     transform: translate(-50%, 50%); }
 
 div .slide-text h3 {
