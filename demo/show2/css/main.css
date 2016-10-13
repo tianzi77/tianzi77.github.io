@@ -144,8 +144,8 @@ em {
 .slide-text {
   display: none;
   font-size: 0.9rem;
-  -webkit-transition: all ease-in-out .15s;
-  transition: all ease-in-out .15s;
+  -webkit-transition: all cubic-bezier(0, 0, 0.2, 1) 0.2s;
+  transition: all cubic-bezier(0, 0, 0.2, 1) 0.2s;
   background-color: #fff;
   border-radius: 0.25rem;
   z-index: 100;
@@ -261,7 +261,7 @@ div .slide-text h3 {
   padding: 0.25rem 0; }
 
 .slide-nav {
-  transform: translate3d(-200%, 0, 0); }
+  transform: translate3d(-200%, -50%, 0); }
 
 .slide-box ul li .img1 {
   position: absolute;
@@ -419,6 +419,14 @@ div .slide-text h3 {
   bottom: -0.35rem;
   left: 18%;
   top: auto; }
+
+.type-right-down:before {
+  border-width: 0.4rem 0.25rem 0 0.25rem;
+  border-color: #3468af transparent transparent transparent;
+  bottom: -0.35rem;
+  right: 18%;
+  top: auto;
+  left: auto; }
 
 .type-down:before {
   border-width: 0.4rem 0.25rem 0 0.25rem;

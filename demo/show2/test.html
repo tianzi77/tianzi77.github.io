@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>携程商旅功能演示demo</title>
+    <title>携程商旅全流程演示</title>
     <script src="js/zepto.js"></script>
     <script src="js/fastclick.js"></script>
 </head>
@@ -17,8 +17,7 @@
                     <div class="inner" id="progress-bar"></div>
                 </div>
             </div>
-            <div class="loading-text" data-rp="4"></div>
-            <!--				<div class="loading-jdc" data-rp="4"></div>-->
+            <div class="loading-text shake animated" data-rp="4" style="animation-iteration-count:infinite;animation-duration:3s;"></div>
         </div>
         <div class="pages" id="pages"></div>
         <!-- 渲染DOM S -->
@@ -27,12 +26,12 @@
                 <div class="content-box">
                     <h2><a class="demo" href="jacascript:void(0)">返回目录</a><a href="jacascript:void(0)" class="title">haha</a></h2>
                     <div class="c-start">
-                        <img src="./images/logo.png" alt="" class="c-logo">
+                        <img src="./images/logo.png" alt="" class="c-logo fadeIn animated">
                         <a class="c-ready">立刻体验</a>
                     </div>
                     <ul class="slide-text">
                         <li class="curv">
-                            <h3>差旅申请</h3></li>
+                            <h3>出差申请</h3></li>
                         <li class="">
                             <h3>预 订</h3></li>
                         <li class="">
@@ -40,14 +39,14 @@
                         <li class="">
                             <h3>费用报销</h3></li>
                         <li class="">
-                            <h3>审 批</h3></li>
+                            <h3>授权审批</h3></li>
 
                     </ul>
                     <div class="slide-box">
                         <!-- 出差申请  -->
                         <ul class="ul1" style="">
                             <li class="cur1"><img src="./images/slide11.png"><img src="./images/click.png" width="0" height="0" class="img1" style="left: 0.45rem; top: 13.1rem;">
-                                <div class="click-tips type-left-down zoomIn animated" style="top:11.2rem;left:0.4rem;">点击出差申请</div>                   
+                                <div class="click-tips type-left-down zoomIn animated" style="top:11.2rem;left:0.4rem;">点击出差申请</div>
                             </li>
                             <li style="display:none;"><img src="./images/slide111.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.0rem; top: 2.2rem; ">
                                 <div class="click-tips zoomIn animated" style="top:4.5rem;left:1.9rem">点击创建新申请单</div>
@@ -61,53 +60,167 @@
                             <li style="display:none;"><img src="./images/slide12.png"><img src="./images/click.png" width="0" height="0" class="img1" style="left: 4.0rem; top: 14.9rem; display:none;">
                                 <div class="click-tips type-down zoomIn animated" style="top:13.2rem;left:3.0rem">点击下一步</div>
                                 <div class="tip-text">
-                                    <div class="up-text fadeInUp animated">测试测试测试</div>
+                                    <div class="up-text fadeInUp animated">填写“出差申请详细信息”</div>
                                 </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide13.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.8rem; top: 0.5rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips type-right zoomIn animated" style="top:2.6rem;left:5.8rem">点击添加</div>
                                 <div class="tip-text">
-                                    <div class="up-text fadeInUp animated">测试测试测试</div>
+                                    <div class="up-text fadeInUp animated">添加创建出行计划</div>
                                 </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide14.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2.8rem; top: 6.0rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips type-down zoomIn animated" style="top:4.0rem;left:1.9rem">点击机票</div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">选择对应的产品类型</div>
+                                </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide15.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.8rem; top: 0.6rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips type-right zoomIn animated" style="top:2.6rem;left:6rem;">点击完成</div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">填入出发地，目的地，舱位，金额</div>
+                                </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide16.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4rem; top: 15rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips type-down zoomIn animated" style="top:13.2rem;left:2.8rem;">点击下一步</div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">本次出行计划列表</div>
+                                </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide17.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4rem; top: 15rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips type-down zoomIn animated" style="top:13.2rem;left:3.2rem;">点击提交</div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">选择授权人进行出差申请授权审批</div>
+                                </div>
                             </li>
                             <li style="display:none;"><img src="./images/slide18.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4rem; top: 4.6rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips zoomIn animated" style="top:6.8rem;left:1.3rem;">点击查看出差申请列表</div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">查看已提交的出差申请及授权审批状态</div>
+                                </div>
                             </li>
-                            <li style="display:none;"><img src="./images/slide19.png"></li>
+                            <li style="display:none;"><img src="./images/slide19.png">
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">显示申请的详细信息</div>
+                                </div>
+                            </li>
                         </ul>
                         <!-- 预定  -->
                         <ul style="display: none;" class="">
                             <li class="cur1"><img src="./images/slide201.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2.8rem; top: 13rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips type-down zoomIn animated" style="top:11rem;left:1.8rem;">点击预定</div>
                             </li>
-                            <li class="cur1"><img src="./images/slide202.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.8rem; top: 10rem; height: 0px; width: 0px; display: none;">
-                                <div class="click-tips zoomIn animated" style="top:6.8rem;left:1.3rem;">点击查看出差申请列表</div>
+                            <li style="display:none;"><img src="./images/slide202.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 3.8rem; top: 9rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:11rem;left:2.3rem;">点击新建行程</div>
                             </li>
-                            <li style="display:none;"><img src="./images/slide23.png"></li>
+                            <li style="display:none;"><img src="./images/slide203.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2.8rem; top: 8.2rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:6.4rem;left:1.9rem;">点击机票</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide204.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 3.8rem; top: 8rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:10rem;left:2.9rem;">点击查询</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide205.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.8rem; top: 14rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:12rem;left:3.9rem;">选择机票</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide206.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.7rem; top: 15rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right-down zoomIn animated" style="top:13rem;left:6rem;">点击提交</div>
+                                <div class="tip-text">
+                                    <div class="up-text fadeInUp animated">完善机票信息</div>
+                                </div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide207.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.8rem; top: 1.5rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips  type-right zoomIn animated" style="top:3.6rem;left:4.6rem;">点击继续预定</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide208.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5.1rem; top: 5rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:3rem;left:4.1rem;">点击酒店</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide209.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 3.8rem; top: 8.3rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:10.3rem;left:2.9rem;">点击查询</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide210.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.8rem; top: 10rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:12rem;left:3.9rem;">选择酒店</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide211.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.2rem; top: 14rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right-down zoomIn animated" style="top:11.8rem;left:5.6rem;">点击预订</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide212.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 0.9rem; top: 5.9rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-left zoomIn animated" style="top:8.0rem;left:1.1rem;">选择入住人</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide213.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.6rem; top: 15rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right-down zoomIn animated" style="top:13.2rem;left:5.9rem;">点击提交</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide214.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.5rem; top: 15rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right-down zoomIn animated" style="top:13.2rem;left:5.3rem;">点击下一步</div>
+                            </li>
+
+
+                            <li style="display:none;"><img src="./images/slide215.png"></li>
                         </ul>
+                        <!-- 补单  -->
                         <ul style="display: none;" class="">
-                            <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5rem; top: 9rem; height: 0px; width: 0px; display: none;"></li>
-                            <li style="display:none;"><img src="./images/slide31.png"></li>
+                            <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5.1rem; top: 13rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:11rem;left:4.3rem;">点击补单</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide31.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.1rem; top: 2.2rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips  zoomIn animated" style="top:4.3rem;left:2.6rem;">点击新增补单</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide32.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2.85rem; top: 4.7rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:2.7rem;left:2rem;">点击机票</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide33.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.7rem; top: 0.3rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right zoomIn animated" style="top:2.5rem;left:5.8rem;">点击保存</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide34.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.1rem; top: 8.5rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:10.5rem;left:3.2rem;">点击保存</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide35.png"></li>
                         </ul>
+                        <!-- 费用报销  -->
                         <ul style="display: none;" class="">
-                            <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5rem; top: 9rem; height: 0px; width: 0px; display: none;"></li>
-                            <li style="display:none;"><img src="./images/slide31.png"></li>
+                            <li class="cur1"><img src="./images/slide401.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.5rem; top: 13rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right-down zoomIn animated" style="top:11.1rem;left:4.6rem;">点击费用报销</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide402.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.2rem; top: 2.2rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:4.4rem;left:2.1rem;">点击创建费用报销</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide403.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5rem; top: 11rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:9.1rem;left:3.2rem;">点击导入费用项</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide404.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5.1rem; top: 7.4rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:10rem;left:4.1rem;">点击补单</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide405.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.8rem; top: 0.5rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right zoomIn animated" style="top:2.5rem;left:5.8rem;">点击导入</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide406.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4rem; top: 15rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:13rem;left:2.8rem;">点击下一步</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide407.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4rem; top: 15rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:13rem;left:3.2rem;">点击提交</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide408.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4rem; top: 8.5rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:10.5rem;left:2.8rem;">点击知道了</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide409.png"></li>
                         </ul>
+                        <!-- 授权审批  -->
                         <ul style="display: none;" class="">
-                            <li class="cur1"><img src="./images/slide30.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 5rem; top: 9rem; height: 0px; width: 0px; display: none;"></li>
-                            <li style="display:none;"><img src="./images/slide31.png"></li>
+                            <li class="cur1"><img src="./images/slide51.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2.8rem; top: 15rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:13.1rem;left:1.8rem;">点击授权</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide52.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 7.3rem; top: 4rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-right zoomIn animated" style="top:6rem;left:5.5rem;">点击授权</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide53.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2rem; top: 15rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:13.2rem;left:1.2rem;">点击通过</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide54.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4rem; top: 3rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:5.0rem;left:3.1rem;">点击确定</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide55.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4rem; top: 3rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips zoomIn animated" style="top:5rem;left:2.0rem;">点击返回授权列表</div>
+                            </li>
+                            <li style="display:none;"><img src="./images/slide56.png"></li>
                         </ul>
                         <img src="./images/down.png" class="meng">
                     </div>
@@ -169,23 +282,62 @@
                     'js/hotcss.js',
                     'js/fastclick.js',
                     'js/zepto.js',
-                    'js/slide.js',
+                    'js/main.js',
+                    'http://www.zhangweiwei.cn/demo/show2/images/body.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/boss.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/car.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/click.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/down.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/loading-text.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/logo.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide11.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide12.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide13.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide14.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide15.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide16.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide17.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide18.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide19.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide30.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide31.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide32.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide33.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide34.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide35.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide51.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide52.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide53.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide54.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide55.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide56.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide111.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide201.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide202.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide203.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide204.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide205.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide206.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide207.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide208.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide209.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide210.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide211.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide212.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide213.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide214.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide215.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide401.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide402.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide403.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide404.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide405.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide406.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide407.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide408.png',
+                    'http://www.zhangweiwei.cn/demo/show2/images/slide409.png',
                     'http://www.zhangweiwei.cn/demo/show2/images/start-bg.png',
-                    'http://127.0.0.1:34577/images/body.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/click.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/phone.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide11.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide12.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide13.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide14.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide15.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide16.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide16.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide21.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide22.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide23.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide30.png',
-                    'http://www.zhangweiwei.cn/demo/show/images/slide31.png',
+                    'http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png'
 
                 ];
                 new PreLoad(resource_list, {
@@ -203,15 +355,15 @@
                         if (count == total) {
                             var el = document.querySelector('#loading')
                             $(el).one('webkitAnimationEnd animationEnd', function() {
-                                this.parentNode.removeChild(this)
+                                this.parentNode.removeChild(this);
                             })
                             $('#pages').html($('#tmpl').html())
-                            $('#tmpl').remove()
+                            $('#tmpl').remove();
                             $(".c-ready").on("click", function() {
                                 $(this).parents(".c-start").hide("fast").siblings(".slide-text").show("fast");
-                            })
-                            $(el).addClass('complete')
-                            window.pageInit && window.pageInit()
+                            });
+                            $(el).addClass('complete');
+                            window.pageInit && window.pageInit();
                         }
                     }
                 });
