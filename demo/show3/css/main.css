@@ -497,3 +497,13 @@ div .slide-text h3 {
 
 .tip-text {
   display: none; }
+
+.c-words {
+  text-align: center;
+  color: #fff;
+  padding-top: 2.2rem; }
+  .c-words p:first-child {
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem; }
+  .c-words p:last-child {
+    font-size: 0.9rem; }

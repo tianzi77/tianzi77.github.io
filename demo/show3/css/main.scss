@@ -591,3 +591,15 @@ div .slide-text h3 {
 .tip-text {
     display: none;
 }
+.c-words {
+    text-align: center;
+    color: #fff;
+    padding-top: px2rem(88);
+    p:first-child {
+        font-size: px2rem(42);
+        margin-bottom: px2rem(10);
+    }
+    p:last-child {
+        font-size: px2rem(36);
+    }
+}
