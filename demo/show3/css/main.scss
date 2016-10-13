@@ -147,7 +147,7 @@ $designWidth: 640;
     font-size: px2rem(36);
     -webkit-transition: all cubic-bezier(0, 0, 0.2, 1) .2s;
     transition: all cubic-bezier(0, 0, 0.2, 1) .2s;
-    background-color: #fff;
+    background-color: rgba(0,0,0,.3);
     border-radius: px2rem(10);
     z-index: 100;
     position: fixed;
@@ -238,9 +238,9 @@ div .slide-text .curv h3 {
     margin: px2rem(44) auto;
     width: px2rem(460);
     position: relative;
-    border-radius: px2rem(10);
-    border: 1px solid #bfbfbf;
-    background-color: #eeeeee;
+ //   border-radius: px2rem(10);
+//    border: 1px solid #bfbfbf;
+ //   background-color: #eeeeee;
     text-align: center;
     color: #333333;
     &:first-child {
@@ -249,13 +249,13 @@ div .slide-text .curv h3 {
             content: "";
             position: absolute;
             display: block;
-            width: px2rem(77);
-            height: px2rem(114);
+            width: px2rem(100);
+            height: px2rem(76);
             background-image: url(../images/car.png);
             background-size: cover;
             background-repeat: no-repeat;
             left: 50%;
-            top: -175%;
+            top: -150%;
             -webkit-transform: translateX(-50%);transform: translateX(-50%);
         }
     }
@@ -272,13 +272,13 @@ div .slide-text .curv h3 {
             content: "";
             position: absolute;
             display: block;
-            width: px2rem(89);
-            height: px2rem(114);
+            width: px2rem(103);
+            height: px2rem(76);
             background-image: url(../images/boss.png);
             background-size: cover;
             background-repeat: no-repeat;
             left: 50%;
-            top: -175%;
+            top: -150%;
             -webkit-transform: translateX(-50%);transform: translateX(-50%);
         }
     }
@@ -297,6 +297,10 @@ div .slide-text .curv h3 {
 }
 div .slide-text h3 {
     padding: px2rem(10) 0;
+    border-radius: px2rem(10);
+    border: 1px solid #646464;
+    background-color: #eeeeee;
+    
 }
 .slide-nav {
     //    left: -100%;
@@ -596,7 +600,7 @@ div .slide-text h3 {
 .c-words {
     text-align: center;
     color: #fff;
-    padding-top: px2rem(88);
+    padding-top: px2rem(120);
     p:first-child {
         font-size: px2rem(42);
         margin-bottom: px2rem(10);
@@ -604,4 +608,9 @@ div .slide-text h3 {
     p:last-child {
         font-size: px2rem(36);
     }
+}
+.body-bg{
+    background-image: url(../images/body_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

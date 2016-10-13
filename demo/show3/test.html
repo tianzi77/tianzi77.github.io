@@ -27,23 +27,23 @@
                     <h2><a class="demo" href="jacascript:void(0)">返回目录</a><a href="jacascript:void(0)" class="title">haha</a></h2>
                     <div class="c-start">
                         <div class="c-words">
-                            <p class="fadeInDown animated">体验前所未有的差旅升级</p>
-                            <p class="fadeInUp animated">携程商旅-差旅管控全流程</p>
+                            <p class="fadeInDown animated" style="">体验前所未有的差旅升级</p>
+                            <p class="fadeInUp animated" style="">携程商旅-差旅管控全流程</p>
                         </div>
                         <img src="./images/logo.png" alt="" class="c-logo fadeIn animated">
                         <a class="c-ready">立刻体验</a>
                     </div>
                     <ul class="slide-text">
                         <li class="curv">
-                            <h3>出差申请</h3></li>
+                            <h3 class="fadeInLeft animated">出差申请</h3></li>
                         <li class="">
-                            <h3>预 订</h3></li>
+                            <h3 class="fadeInRight animated">预 订</h3></li>
                         <li class="">
-                            <h3>补 单</h3></li>
+                            <h3 class="fadeInLeft animated">补 单</h3></li>
                         <li class="">
-                            <h3>费用报销</h3></li>
+                            <h3 class="fadeInRight animated">费用报销</h3></li>
                         <li class="">
-                            <h3>授权审批</h3></li>
+                            <h3 class="fadeInLeft animated">授权审批</h3></li>
 
                     </ul>
                     <div class="slide-box">
@@ -112,7 +112,7 @@
                         <!-- 预定  -->
                         <ul style="display: none;" class="">
                             <li class="cur1"><img src="./images/slide201.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2.8rem; top: 13rem; height: 0px; width: 0px; display: none;">
-                                <div class="click-tips type-down zoomIn animated" style="top:11rem;left:1.8rem;">点击预定</div>
+                                <div class="click-tips type-down zoomIn animated" style="top:11rem;left:1.8rem;">点击预订</div>
                             </li>
                             <li style="display:none;"><img src="./images/slide202.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 3.8rem; top: 9rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips zoomIn animated" style="top:11rem;left:2.3rem;">点击新建行程</div>
@@ -341,7 +341,8 @@
                     'http://www.zhangweiwei.cn/demo/show3/images/slide408.png',
                     'http://www.zhangweiwei.cn/demo/show3/images/slide409.png',
                     'http://www.zhangweiwei.cn/demo/show3/images/start-bg.png',
-                    'http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png'
+                    'http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png',
+                    'http://www.zhangweiwei.cn/demo/show3/images/body-bg.png'
 
                 ];
                 new PreLoad(resource_list, {
@@ -364,6 +365,7 @@
                             $('#pages').html($('#tmpl').html())
                             $('#tmpl').remove();
                             $(".c-ready").on("click", function() {
+                                $(".container").addClass("body-bg")
                                 $(this).parents(".c-start").hide("fast").siblings(".slide-text").show("fast");
                             });
                             $(el).addClass('complete');
