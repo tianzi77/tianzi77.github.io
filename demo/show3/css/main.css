@@ -202,8 +202,8 @@ em {
   height: 22.4rem; }
 
 div .slide-text .curv h3 {
-  background-color: #3468af;
-  color: #fff !important;
+  background-color: #eeeeee;
+  color: #333333;
   border-radius: 0.25rem; }
 
 .slide-text li {
@@ -264,6 +264,9 @@ div .slide-text h3 {
   border-radius: 0.25rem;
   border: 1px solid transparent;
   background-color: #eeeeee; }
+  div .slide-text h3:hover {
+    background-color: #3468af;
+    color: #fff; }
 
 .slide-nav {
   -webkit-transform: translate3d(-200%, -50%, 0);
@@ -331,12 +334,12 @@ div .slide-text h3 {
 /* line 11, ../sass/loading.scss */
 .loading img {
   position: absolute;
-  width: 114px;
-  height: 46px;
+  width: 172px;
+  height: 70px;
   top: 50%;
   left: 50%;
-  margin-top: 4px;
-  margin-left: -45px; }
+  margin-top: -20px;
+  margin-left: -65px; }
 
 /* line 20, ../sass/loading.scss */
 .loading .progress {
@@ -369,10 +372,10 @@ div .slide-text h3 {
   top: 50%;
   left: 50%;
   margin-top: 90px;
-  margin-left: -56px;
+  margin-left: -2.1rem;
   position: absolute;
-  width: 112px;
-  height: 30px;
+  width: 4.2rem;
+  height: 1.1rem;
   background: url("http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png") no-repeat;
   background-size: 100%; }
 
