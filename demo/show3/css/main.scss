@@ -388,12 +388,12 @@ div .slide-text h3 {
 
 .loading img {
     position: absolute;
-    width: px2rem(168);
-    height: px2rem(44);
+    width: 114px;
+    height: 46px;
     top: 50%;
     left: 50%;
-    margin-top: -(px2rem(44/2));
-    margin-left: -(px2rem(168/2));
+    margin-top: 4px;
+    margin-left: -53px;
 }
 
 /* line 20, ../sass/loading.scss */
@@ -434,30 +434,16 @@ div .slide-text h3 {
     top: 50%;
     left: 50%;
     margin-top: 90px;
-    margin-left: -(px2rem(172/2));
+    margin-left: -56px;
     position: absolute;
-    width: px2rem(172);
-    height: px2rem(70);
-    background: url('../images/loading-text.png') no-repeat;
+    width: 112px;
+    height: 30px;
+    background: url('http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png') no-repeat;
     background-size: 100%;
 }
 
 /* line 52, ../sass/loading.scss */
 
-//
-//.loading .loading-jdc {
-//    top: 50%;
-//    left: 50%;
-//    margin-top: 140px;
-//    margin-left: -122px;
-//    position: absolute;
-//    width: 244px;
-//    height: 30px;
-//    background: url('http://wqs.jd.com/promote/CH77/2015/paper/images/loading-jdc.png') no-repeat;
-//    background-size: 100%;
-//}
-
-/* line 60, ../sass/loading.scss */
 
 .complete {
     -webkit-animation: loading-ani 0.5s both;

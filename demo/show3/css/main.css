@@ -331,12 +331,12 @@ div .slide-text h3 {
 /* line 11, ../sass/loading.scss */
 .loading img {
   position: absolute;
-  width: 4.2rem;
-  height: 1.1rem;
+  width: 114px;
+  height: 46px;
   top: 50%;
   left: 50%;
-  margin-top: -0.55rem;
-  margin-left: -2.1rem; }
+  margin-top: 4px;
+  margin-left: -53px; }
 
 /* line 20, ../sass/loading.scss */
 .loading .progress {
@@ -369,15 +369,14 @@ div .slide-text h3 {
   top: 50%;
   left: 50%;
   margin-top: 90px;
-  margin-left: -2.15rem;
+  margin-left: -56px;
   position: absolute;
-  width: 4.3rem;
-  height: 1.75rem;
-  background: url("../images/loading-text.png") no-repeat;
+  width: 112px;
+  height: 30px;
+  background: url("http://pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png") no-repeat;
   background-size: 100%; }
 
 /* line 52, ../sass/loading.scss */
-/* line 60, ../sass/loading.scss */
 .complete {
   -webkit-animation: loading-ani 0.5s both;
   animation: loading-ani 0.5s both; }
