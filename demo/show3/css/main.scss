@@ -611,4 +611,9 @@ div .slide-text h3 {
     position: fixed !important;
     left: 0.6rem !important;
     top: 2.3rem !important;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    &:before {
+        border-color: transparent transparent rgba(0, 0, 0, 0.4) transparent !important;
+        top: -0.4rem!important;
+    }
 }
