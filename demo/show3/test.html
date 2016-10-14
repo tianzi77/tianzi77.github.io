@@ -386,11 +386,11 @@
                             var el = document.querySelector('#loading')
                             $(el).one('webkitAnimationEnd animationEnd', function() {
                                 this.parentNode.removeChild(this);
-                            })
-                            $('#pages').html($('#tmpl').html())
+                            });
+                            $('#pages').html($('#tmpl').html());
                             $('#tmpl').remove();
                             $(".c-ready").on("click", function() {
-                                $(".container").addClass("body-bg")
+                                $(".container").addClass("body-bg");
                                 $(this).parents(".c-start").hide("fast").siblings(".slide-text").show("fast");
                             });
                             $(el).addClass('complete');
