@@ -174,8 +174,8 @@
                             <li style="display:none;"><img src="./images/slide31.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.1rem; top: 2.2rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips  zoomIn animated" style="top:4.3rem;left:2.6rem;">点击新增补单</div>
                             </li>
-                            <li style="display:none;"><img src="./images/slide32.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2.85rem; top: 4.7rem; height: 0px; width: 0px; display: none;">
-                                <div class="click-tips type-down zoomIn animated" style="top:2.7rem;left:2rem;">点击机票</div>
+                            <li style="display:none;"><img src="./images/slide32.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 2.9rem; top: 10.1rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips  zoomIn animated" style="top:12.2rem;left:2rem;">点击餐饮</div>
                                 <div class="tip-text">
                                     <div class="up-text fadeInUp animated">选择需要补单的产品类别</div>
                                 </div>
@@ -189,8 +189,9 @@
                             <li style="display:none;"><img src="./images/slide34.png"><img src="./images/click.png" width="32" height="32" class="img1" style="left: 4.1rem; top: 8.5rem; height: 0px; width: 0px; display: none;">
                                 <div class="click-tips zoomIn animated" style="top:10.5rem;left:3.2rem;">点击保存</div>
                             </li>
-                            <li style="display:none;"><img src="./images/slide35.png">
-                                <div class="click-tips type-left last-tips zoomIn animated" style="top:-1.2rem;left:-2.4rem;">补单演示完成,点击返回目录</div>
+                            <li style="display:none;"><img src="./images/slide35.png"><img src="./images/click.png" width="32" height="32" class="img1 gobx" style="left: 4.1rem; top: 15.2rem; height: 0px; width: 0px; display: none;">
+                                <div class="click-tips type-down zoomIn animated" style="top:13.3rem;left:3.0rem;">点击去报销</div>
+
                             </li>
                         </ul>
                         <!-- 费用报销  -->
@@ -403,6 +404,17 @@
                             });
                             $(el).addClass('complete');
                             window.pageInit && window.pageInit();
+                            $('.gobx').on('click', function(e) {
+                                $('.container').addClass('body-bg');
+                                $('.click-tips').hide();
+                                $('.demo').parent('h2').hide();
+                                $('.slide-box ul li img').hide();
+                                $('.tip-text').hide();
+                                $('.meng').hide();
+                                $('.slide-box').hide();
+                                $('.slide-text').removeClass('slide-nav');
+                                e.preventDefault();
+                            });
                         }
                     }
                 });

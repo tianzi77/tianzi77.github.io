@@ -576,12 +576,12 @@ div .slide-text h3 {
     left: 0;
     bottom: 0;
     height: auto;
-    background-color: #fff;
+    background-color: rgba(0,0,0,.7);
     ;
     z-index: 777;
     font-size: px2rem(26);
     padding: px2rem(10) 0;
-    color: #666;
+    color: #fff;
     .up-text {
         padding: 0 2em;
     }

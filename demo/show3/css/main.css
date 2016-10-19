@@ -495,11 +495,11 @@ div .slide-text h3 {
   left: 0;
   bottom: 0;
   height: auto;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 777;
   font-size: 0.65rem;
   padding: 0.25rem 0;
-  color: #666; }
+  color: #fff; }
   .tip-text .up-text {
     padding: 0 2em; }
 
