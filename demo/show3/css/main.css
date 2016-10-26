@@ -530,7 +530,7 @@ div .slide-text h3 {
 .know-more {
     position: absolute;
     width: 100%;
-    bottom: 10px;
+    bottom: 0;
     display: block;
     text-align: center;
     font-size: .8rem;
