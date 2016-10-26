@@ -152,9 +152,6 @@ em {
   position: fixed;
   left: 50%;
   top: 50%;
-  -ms-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 90%;
@@ -530,3 +527,12 @@ div .slide-text h3 {
   .last-tips:before {
     border-color: transparent transparent rgba(0, 0, 0, 0.4) transparent !important;
     top: -0.4rem !important; }
+.know-more {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+}

@@ -17,6 +17,7 @@ Zepto(function ($) {
         //幻灯片
         slide: function () {
             $('.demo').on('click', function (e) {
+                $('.know-more').show();
                 $('.container').addClass('body-bg');
                 $('.click-tips').hide();
                 $(this).parent('h2').hide();
@@ -37,6 +38,7 @@ Zepto(function ($) {
                         $('.container').removeClass('body-bg');
                         $('.content-box h2').show();
                         $('.slide-box ul li img').show();
+                        $('.know-more').hide();
                         $('.meng').show();
                         $('.title').text($(this).text());
                         $('.slide-box').show();
