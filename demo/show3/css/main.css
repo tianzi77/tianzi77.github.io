@@ -533,6 +533,7 @@ div .slide-text h3 {
     bottom: 10px;
     display: block;
     text-align: center;
-    font-size: 22px;
+    font-size: .8rem;
     color: #fff;
+    
 }
