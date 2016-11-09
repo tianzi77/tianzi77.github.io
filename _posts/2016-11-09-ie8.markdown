@@ -1,0 +1,105 @@
+---
+layout:     post
+title:      "ie8以下的浏览器怎么适应"
+subtitle:   " \"给ie浏览器添加类名\""
+date:       2016-11-09 21:55:00
+author:     "ZWW"
+header-img: "img/home-bg.jpeg"
+tags:
+    - ie8
+---
+
+> ** 本文涉及的代码是有前同事写的，现在已经去了饿了么。今天偶尔看到，用来解决ie浏览器的适配问题还是挺好的 **
+
+具体思路就是判断ie版本，然后在html根节点注入相应的类别。
+
+说起来简单。代码还是有那么几行
+
+```javascript
+
+    ;(function(){
+    
+    // 移除字符串两侧的空白字符的函数
+  
+    function trim(str) {
+  
+    if (String.prototype.trim) {
+      return str.trim()
+    }
+
+    return str.replace(/^\s+|\s+$/g, '')
+    }
+
+    // 添加类名函数
+    function addClass(elem, className) {
+    if (elem.nodeType === 1 && typeof className === "string" && className) {
+      var cur = elem.className ? ( " " + elem.className + " " ) : " "
+      var classList = className.split(" ")
+      var i = 0, tempClass
+
+      while ( (tempClass = classList[i++]) ) {
+        if (cur.indexOf(" " + tempClass + " ") === -1) {
+          cur +=  tempClass + " "
+        }
+      }
+
+      elem.className = trim(cur)
+    }
+    }
+
+    // 移除类名函数
+    function removeClass(elem, className) {
+    if (elem.nodeType === 1 && typeof className === "string" && className) {
+      var cur = elem.className ? ( " " + elem.className + " " ) : " "
+      var classList = className.split(" ")
+      var i = 0, tempClass
+
+      while ( (tempClass = classList[i++]) ) {
+        if (cur.indexOf(" " + tempClass + " ") !== -1) {
+          cur = cur.replace(" " + tempClass + " ", " ")
+        }
+      }
+
+      elem.className = trim(cur)
+    }
+    }
+
+    // 获取IE版本函数
+    function getIeVersion(){
+    var retVal = -1,
+      ua, re
+    if(navigator.appName === 'Microsoft Internet Explorer'){
+      ua = navigator.userAgent
+      re = new RegExp('MSIE ([0-9]{1,})')
+      if(re.exec(ua) !== null){
+        retVal = parseInt(RegExp.$1)
+      }
+    }
+    return retVal
+        }
+
+    // 如果是IE9以下，为body标签添加tablet类名
+    var ieVersion = getIeVersion()
+
+    if (ieVersion !== -1 && ieVersion < 9) {
+    function resizeHandler() {
+      if (document.body.clientWidth <= 1200) {
+        addClass(document.body, 'tablet')
+      } else {
+        removeClass(document.body, 'tablet')
+      }
+    }
+    window.attachEvent('onresize', resizeHandler)
+
+    resizeHandler()
+    }
+                    })()
+
+
+```
+
+
+
+来上海都一年了。一年，我浪费得起，但是，这将是我生命中浪费的最后一年，我发誓。
+
+        
