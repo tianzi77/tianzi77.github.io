@@ -4,7 +4,7 @@ title:      "ie8以下的浏览器怎么适应"
 subtitle:   " \"给ie浏览器添加类名\""
 date:       2016-11-09 21:55:00
 author:     "ZWW"
-header-img: "img/home-bg.jpeg"
+header-img: "img/home-bg.jpg"
 tags:
     - ie8
 ---
