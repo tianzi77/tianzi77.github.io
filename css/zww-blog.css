@@ -1815,7 +1815,7 @@ body {
     .post-preview > .post-meta {
         margin-top: -12px;
     }
-    .new-row::-webkit-scrollbar {
+    body::-webkit-scrollbar {
         width: 10px;
     }
     body::-webkit-scrollbar-track {
