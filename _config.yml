@@ -22,7 +22,7 @@ facebook_username:  tianzi77
 # Build settings
 highlighter: rouge
 permalink: pretty
-paginate: 20
+paginate: 25
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true      # if you want to customize anchor. check out line:129 of `post.html`
 
