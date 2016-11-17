@@ -1785,6 +1785,7 @@ body {
     }
     .post-preview > a > .post-title{
         margin-top: 0;
+        margin-bottom: 0;
     }
     .post-preview a{
         float: left;
@@ -1800,5 +1801,10 @@ body {
     .post-preview p{
         float: right;
         margin: 0;
+    }
+    .post-preview > .post-meta{
+        font-family: 'Hiragino Sans GB','Microsoft YaHei',Simsun,Mingliu,Arial,Helvetica,sans-serif;
+        color: #333333;
+        font-size: 12px;
     }
 }
