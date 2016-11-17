@@ -29,12 +29,15 @@
     background-color: #0085a1;
     border-radius: 10px 0 10px 0;
 }
+.sidebar-container h5 a:hover{
+    color: #98f30c
+}
 .sidebar-container a {
     color: #666 !important;
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
-    color: #98f30c !important;
+    color: #0085a1 !important;
 }
 .sidebar-container .tags a {
     border-color: #bfbfbf;
@@ -1375,8 +1378,8 @@ body {
     overflow: visible;
 }
 .show-tips .t-img {
-    width: 220px;
-    height: 148px;
+    width: 64px;
+    height: 64px;
     background-image: url(../img/left-nav.png);
     cursor: pointer;
 }
