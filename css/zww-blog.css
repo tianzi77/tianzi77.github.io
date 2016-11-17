@@ -625,6 +625,8 @@ pre,
     font-size: 16px;
     font-style: italic;
     margin-top: 0;
+    line-height: 33px;
+    display: inline;
 }
 
 .post-preview > .post-meta > a {
