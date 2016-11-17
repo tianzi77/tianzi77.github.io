@@ -2,14 +2,15 @@
 layout: default
 ---
 
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
-                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-                    <!--<hr class="small">-->
+                    <h1 class="link link--yaku">
+                        <span>Z</span><span>V</span><span>V</span><span>V</span>
+                    </h1>
                     <span class="subheading">{{ page.description }}</span>
                 </div>
             </div>
@@ -17,93 +18,112 @@ layout: default
     </div>
 </header>
 
-<!-- Main Content -->
+
 <div class="container">
 	<div class="row">
         {% if site.sidebar == false %}
 <!-- NO SIDEBAR -->
-    <!-- PostList Container -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
                 {{ content }}
-            </div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <!-- no hr -->
-                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
-                    <div class="tags">
-        				{% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                				<a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
-        				{% endfor %}
-        			</div>
-                </section>
-                {% endif %}
-
-                <!-- Friends Blog -->
+                <!-- friends -->
                 {% if site.friends %}
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    {% endfor %}
-                </ul>
+                <div class="sidebar-container">
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        {% for friend in site.friends %}
+                            <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
                 {% endif %}
             </div>
         {% else %}
-
 <!-- USE SIDEBAR -->
-    <!-- PostList Container -->
+            <!-- Main -->
     		<div class="
                 col-lg-8 col-lg-offset-1
                 col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
+                col-sm-10 col-sm-offset-1
+                post-container new-page
+            " >
     			{{ content }}
     		</div>
-    <!-- Sidebar Container -->
+            <!-- SideBar -->
             <div class="
                 col-lg-3 col-lg-offset-0
                 col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
+                col-sm-10 col-sm-offset-1
                 sidebar-container
             ">
+               
+               <!-- weather  -->
+               <section>
+                   <h5><a href="###">音乐</a></h5>
+                   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="http://music.163.com/outchain/player?type=0&id=102978561&auto=1&height=430"></iframe>
+               </section>
+               
                 <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
+                <section >
+                    <h5><a href="/tags/">标签</a></h5>
                     <div class="tags">
-                        {% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                                <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
+                        <a href="/tags/#css" title="css" rel="2">
+                                    css
                                 </a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                        <a href="/tags/#background" title="background" rel="2">
+                                    background
+                                </a>
+                        <a href="/tags/#三角" title="三角" rel="2">
+                                    三角
+                                </a>
+                        <a href="/tags/#数组" title="数组" rel="2">
+                                    数组
+                                </a>
+                        <a href="/tags/#幻灯片" title="幻灯片" rel="2">
+                                    幻灯片
+                                </a>
+                        <a href="/tags/#css中的框" title="css中的框" rel="2">
+                                    css中的框
+                                </a>
+                        <a href="/tags/#css动画" title="css动画" rel="2">
+                                    css动画
+                                </a>
+                        <a href="/tags/#瀑布流" title="瀑布流" rel="2">
+                                    瀑布流
+                                </a>
+                        <a href="/tags/#nav导航" title="nav导航" rel="2">
+                                    nav导航
+                                </a>
+                        <a href="/tags/#强制换行" title="强制换行" rel="2">
+                                    强制换行
+                                </a>
+                        <a href="/tags/#css动画" title="css动画" rel="2">
+                                    css动画
+                                </a>
+                        
+        			</div>
                 </section>
-                {% endif %}
-
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
-                    <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
+                    <h5><a href="/about/">关于</a></h5>
                     <div class="short-about">
                         {% if site.sidebar-avatar %}
-                            <img src="{{site.sidebar-avatar}}" />
+                                <div class="wrap">
+                                    <div class="zww-about">
+                                        <div class="about-front about-face">
+                                            <img src="/img/intro.png" alt="搏上一切" width="200" height="150">
+                                        </div>
+                        <div class="about-back about-face">
+                            <div class="back-mask"><img src="{{site.sidebar-avatar}}" alt="" width="200" height="150">
+                            </div>
+                <div class="back-content">
+                    <h4 class="title"><a>TZ</a></h4>
+                    <div class="des">一个喜欢玩样式的页面仔</div>
+                    <div class="des">就职：携程旅行网</div>
+                    <div class="des">QQ：512932926</div>
+                </div>
+            </div>
+        </div>
+    </div>
                         {% endif %}
                         {% if site.sidebar-about-description %}
                             <p>{{site.sidebar-about-description}}</p>
@@ -170,29 +190,18 @@ layout: default
                                 </a>
                             </li>
                             {% endif %}
-                            {% if site.linkedin_username %}
-                            <li>
-                                <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
                         </ul>
                     </div>
                 </section>
                 <!-- Friends Blog -->
                 {% if site.friends %}
-                <hr>
-                <h5>FRIENDS</h5>
+                <h5><a href="javascript:void(0)">友链</a></h5>
                 <ul class="list-inline">
                     {% for friend in site.friends %}
                         <li><a href="{{friend.href}}">{{friend.title}}</a></li>
                     {% endfor %}
                 </ul>
-                {% endif %}
+                {% endif %}   
     		</div>
         {% endif %}
 	</div>
