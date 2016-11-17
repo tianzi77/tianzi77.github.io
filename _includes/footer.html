@@ -68,79 +68,53 @@
                         </a>
                     </li>
                     {% endif %}
+                    {% if site.linkedin_username %}
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}<script language="javascript" type="text/javascript" src="http://js.users.51.la/18667930.js"></script>
+                    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
                     <br>
-                    Theme by <a href="http://www.zhangweiwei.cn">ZhangWeiWei</a> ｜<span class="heart">♥</span>
-                    <!--<iframe-->
-                    <!--    style="margin-left: 2px; margin-bottom:-5px;"-->
-                    <!--    frameborder="0" scrolling="0" width="91px" height="20px"-->
-                    <!--    src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >-->
-                    <!--</iframe>-->
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
                 </p>
             </div>
         </div>
     </div>
 </footer>
-<div class="show-tips">
-    <div class="t-img">
-        
-    </div>
-<div class="tools">
-    <div class="tools_box">
-        <span class="t-close">&times;</span>
-        <a href="/demo/tools/border/index.html" class="hvr-bounce-to-bottom" target="_blank">三角形生成器</a>
-        <a href="/demo/tools/hover/index.html" class="hvr-bounce-to-bottom" target="_blank">Tips</a>
-        <a href="/demo/tools/hover/img.html" class="hvr-bounce-to-bottom" target="_blank">图片放大</a>
-        <a href="/demo/tools/more/more.html" class="hvr-bounce-to-bottom" target="_blank">手风琴</a>
-        <a href="/demo/tools/more/index.html" class="hvr-bounce-to-bottom" target="_blank">展开收起</a>
-        <a href="/demo/tools/tab/index.html" class="hvr-bounce-to-bottom" target="_blank">tab组件</a>
-        <a href="/demo/tools/touch/index.html" class="hvr-bounce-to-bottom" target="_blank">touch</a>
-        <a href="/tools/cool-nav.html" class="hvr-bounce-to-bottom" target="_blank">nav</a>
-        <a href="/tools/copy.html" class="hvr-bounce-to-bottom" target="_blank">copy</a>
-        <a href="/tools/spa/index.html" class="hvr-bounce-to-bottom" target="_blank">单页spa</a>
-        <a href="/demo/slide/slide.html" class="hvr-bounce-to-bottom" target="_blank">手机幻灯</a>
-        <a href="/demo/slide/dd.html" class="hvr-bounce-to-bottom" target="_blank">手机幻灯2</a>
-    </div>
-</div>
-</div>
 
-<!-- search add by zww 20160720 -->
-<div class="search-tool" style="position: fixed; width:100%;height:100%;top:-100%;left:0;
-      opacity: 0.9;filter:alpha(opacity=90); background-color: #051223; z-index: 777; ">
-    <input type="text" class="form-control search-content" id="search-content" style="" 
-           placeholder="输入文章标题 日期 标签"
-           >
-
-    <div style="" class="search-close">
-        <img src="/search/img/cb-close.png"  id="close-btn"/>
-    </div>
-</div>
-
-
-<link rel="stylesheet" href="{{ "/search/css/cb-search.css" | prepend: site.baseurl }}">
 <!-- jQuery -->
-<script src="{{ "/demo/jquery.js " | prepend: site.baseurl }}"></script>
-<script src="{{ "/search/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/search/js/cb-search.js" | prepend: site.baseurl }}"></script>
-
-
-
+<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
-<!-- Custom Theme JavaScript  -->
-<script src="{{ "/js/zw.js " | prepend: site.baseurl }}"></script>
-<script src="/js/jquery.lazyload.js"></script>
-<script>
-    $(function(){
-        $("img").lazyload({ 
-            effect : "fadeIn" 
-        }); 
-    })
+<!-- Custom Theme JavaScript -->
+<script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
+
+<!-- Service Worker -->
+{% if site.service-worker %}
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
 </script>
+{% endif %}
 
 
 <!-- async load function -->
@@ -155,14 +129,31 @@
     }
 </script>
 
-<!-- Highlight.js -->
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
 <script>
-    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-        hljs.initHighlightingOnLoad();
-    })
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("/js/jquery.tagcloud.js",function(){
+        async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}',function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -171,12 +162,98 @@
         })
     }
 </script>
-<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
 
 <!--fastClick.js -->
 <script>
-    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
         if($nav) FastClick.attach($nav);
     })
 </script>
+
+
+<!-- Google Analytics -->
+{% if site.ga_track_id %}
+<script>
+    // dynamic User by Hux
+    var _gaId = '{{ site.ga_track_id }}';
+    var _gaDomain = '{{ site.ga_domain }}';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+{% endif %}
+
+
+<!-- Baidu Tongji -->
+{% if site.ba_track_id %}
+<script>
+    // dynamic User by Hux
+    var _baId = '{{ site.ba_track_id }}';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+{% endif %}
+
+
+
+<!-- Side Catalog -->
+{% if page.catalog %}
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+{% endif %}
+
