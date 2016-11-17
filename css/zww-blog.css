@@ -1433,7 +1433,11 @@ body {
     -webkit-transition: all .6s ease-in-out .3s;
     transition: all .6s ease-in-out .3s;
 }
-
+.tools .t-title {
+	margin: 10px 0;
+    margin-left: .4em;
+    color: #fff;
+}
 .tools .tools_box {
     position: relative;
     margin: auto;
