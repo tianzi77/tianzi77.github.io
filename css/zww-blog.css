@@ -35,8 +35,7 @@
 }
 
 .sidebar-container h5 a:hover {
-    color: #98f30c
-}
+    color: #98f30c !important;
 
 .sidebar-container a {
     color: #666 !important;
