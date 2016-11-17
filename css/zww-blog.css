@@ -1201,7 +1201,7 @@ body {
     margin: 10px 0
 }
 
-/*top*/
+/*top  去掉*/
 
 .actGotop {
     position: fixed;
@@ -1545,5 +1545,13 @@ body {
 }
 .overflow {
     overflow: hidden;
+}
+/*首页重构2016 11 17*/
+@media (min-width: 1024px){
+    .post-subtitle,.post-content-preview{
+        display: none;
+    }
+}
+    
 }
 
