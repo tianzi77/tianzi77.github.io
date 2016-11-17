@@ -1,4 +1,29 @@
 # Site settings
+title: ZWW Blog
+SEOTitle: 张威博客|页面重构爱好者|csser|记录一个UI工程师的成长之路
+shareTitle: "@张威的博客 | zhangweiwei Blog"
+header-img: img/home-bg.jpg
+email: 512932926@qq.com
+description: "张威个人博客，关于页面重构与前端开发,分享工作中的css技巧,如何快速学前端开发?尽在张威页面重构网"
+keyword: "css技巧,张魏魏,张威,UI开发,UED,前端开发,UX/UI工程师,网页布局,页面仔"
+baseurl: ""
+url: "http://tianzi77.github.io"
+
+
+# SNS settings
+RSS: false
+weibo_username:     3782080907
+#zhihu_username:     huxpro
+github_username:    tianzi77
+twitter_username:  tianzi77
+facebook_username:  tianzi77
+
+
+# Build settings
+highlighter: rouge
+permalink: pretty
+paginate: 20
+# Site settings
 title: Hux Blog
 SEOTitle: 黄玄的博客 | Hux Blog
 header-img: img/home-bg.jpg
@@ -122,5 +147,62 @@ friends: [
     },{
         title: "前端神盾局",
         href: "http://wepiaofei.github.io/blog/"
+    }
+]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true      # if you want to customize anchor. check out line:129 of `post.html`
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM        # use Github Flavored Markdown !important
+
+
+# Duoshuo settings
+# please set your own DuoShuo account in `post.html` and `about.html`
+useDuoshuo: true    # use both Comment and Share
+useShare: true      # use Comment only. seeing the Share component is depend on Comment so we can NOT use share only.
+
+
+# Todo: Analysis settings
+# Please set your own analysis account in `head.html`(Baidu) and `default.html`(QQ)
+useBaiduAnalysis: true
+useTencentAnalysis: true
+useGoogleAnalysis: true     # TODO
+
+
+# Sidebar settings
+sidebar: true
+sidebar-featured-tags: true
+sidebar-about-description: "写写代码，做做设计，看看商界。游泳资深玩家，拜仁死忠。"
+sidebar-avatar: /img/avatar-hux.jpg     # use absolute URL.
+
+# Friends
+friends: [
+    {
+        title: "比赛直播",
+        href: "http://tv-online.in/"
+    },
+    {
+        title: "腾讯博客",
+        href: "http://512932926.qzone.qq.com/"
+    },{
+        title: "csdn",
+        href: "http://blog.csdn.net/u011263845"
+    },
+    {
+        title: "完美",
+        href: "http://www.zxycc.cc/"
+    },
+    {
+        title: "CSS森林",
+        href: "http://blog.cssforest.org/"
+    },
+    {
+        title: "柬埔寨语",
+        href: "http://www.7jpz.com/khmer/index.html"
     }
 ]
