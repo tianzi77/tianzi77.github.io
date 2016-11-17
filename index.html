@@ -4,7 +4,7 @@ description: "原谅我这一生不羁放纵爱自由"
 ---
 
 {% for post in paginator.posts %}
-<div class="post-preview">
+<div class="post-preview clearfix">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
             {{ post.title }}
@@ -22,7 +22,6 @@ description: "原谅我这一生不羁放纵爱自由"
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
-<hr>
 {% endfor %}
 
 <!-- Pager -->
