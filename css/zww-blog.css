@@ -549,7 +549,7 @@ pre,
     .navbar-header{
         overflow: hidden;
     }
-    .navbar-header{
+    .navbar-brand{
         margin-left: 0 !important;
     }
 }
