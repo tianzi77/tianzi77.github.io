@@ -29,7 +29,7 @@
 .sidebar-container h5 a {
     color: #fff !important;
     text-decoration: none;
-    padding: 2px 5px;
+    padding: 0 5px;
     background-color: #0085a1;
     border-radius: 10px 0 10px 0;
 }
