@@ -546,6 +546,12 @@ pre,
         font-size: 80px;
         font-weight: 200;
     }
+    .navbar-header{
+        overflow: hidden;
+    }
+    .navbar-header{
+        margin-left: 0 !important;
+    }
 }
 
 .intro-header .post-heading h1 {
