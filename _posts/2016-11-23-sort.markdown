@@ -1,0 +1,53 @@
+---
+layout:     post
+title:      "快速排序"
+subtitle:   " \"数组的快速排序\""
+date:       2016-11-23 12:55:00
+author:     "ZWW"
+header-img: "img/post-bg-rwd.jpg"
+tags:
+    - 数组
+---
+
+> ** arr.sort()如何进行快速排序 **
+
+前端经常对后台传过来的时间日期等就行排序，那么玩玩Array.sort();
+
+```javascript
+
+    function sortRules(x,y){
+        return x - y //从小到大进行排序相当于return x-y>0
+        return y - x //从大到小进行排序相当于return x-y<0
+    }
+    
+```
+
+这个都是内置方法，快速排序的算法自己写一个，思路就是抽出中间项，左右两端进行赛选比较，然后装进数组里
+
+```javascript
+
+    ;function quickSort(arr) {
+            if (arr.length < 1) {
+                return arr;
+            }
+            var flag = Math.floor(arr.length / 2);
+            var flag1 = arr.splice(flag, 1)[0];
+            var left = [];
+            var right = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < flag1) {
+                    left.push(arr[i]);
+                } else {
+                    right.push(arr[i]);
+                }
+            }
+            return quickSort(left).concat(flag1, quickSort(right));
+        }
+        console.log(quickSort([1, 2, 6, 3, 13, 4]));
+```
+
+
+
+
+
+        
