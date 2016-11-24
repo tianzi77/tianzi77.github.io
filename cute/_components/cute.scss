@@ -1,0 +1,1278 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// cute scss
+// 组件总文件，可按照模块拆开
+//-----------------------------------------------------
+//-----------------------------------------------------
+// author:      阿威 (http://www.zhangweiwei.cn)
+// version:     1.0
+// time:        2016-11-30
+//-----------------------------------------------------
+// 导入所有功能类相关文件,注意导入顺序
+//-----------------------------------------------------
+@import "../_common/_setting.scss";
+@import "../_common/_reset.scss";
+@import "../_common/_css3.scss";
+@import "../_common/_mixin.scss";
+
+/* -------------------------------------------------
+ * en：layout  cn：布局
+ * -------------------------------------------------
+
+*/
+
+.g-bd {
+    margin: 0;
+    @include clearfix;
+    /* 两列右侧自适应布局 */
+    .g-left {
+        position: relative;
+        float: left;
+        width: 190px;
+        margin-right: -190px;
+    }
+    .g-right-auto {
+        float: right;
+        width: 100%;
+        .g-right-inner {
+            margin-left: 200px;
+        }
+    }
+    /* 两列左侧自适应布局 */
+    .g-right-fix {
+        position: relative;
+        float: right;
+        width: 230px;
+        margin-left: -230px;
+    }
+    .g-left-auto {
+        float: left;
+        width: 100%;
+        .g-left-inner {
+            margin-right: 240px;
+        }
+    }
+    /* 三列中间自适应布局 */
+    .g-three-left,
+    .g-three-left {
+        position: relative;
+        float: left;
+        width: 230px;
+        margin: 0 -230px 0 0;
+    }
+    .g-three-right {
+        float: right;
+        width: 190px;
+        margin: 0 0 0 -190px;
+    }
+    .g-three-auto {
+        float: left;
+        width: 100%;
+        .g-three-inner {
+            margin: 0 200px 0 240px;
+        }
+    }
+    /* 三列左侧自适应布局 */
+    .g-three-fix {
+        position: relative;
+        float: right;
+        width: 190px;
+    }
+    .g-three-cfix {
+        width: 230px;
+        margin-left: 10px;
+    }
+    .g-left-con {
+        float: left;
+        width: 100%;
+        margin-right: -430px;
+        .g-con-inner {
+            margin-right: 440px;
+        }
+    }
+    /* 三列右侧自适应布局 */
+    .g-l-left {
+        position: relative;
+        float: left;
+        width: 230px;
+    }
+    .g-r-right {
+        width: 190px;
+        margin-right: 10px;
+    }
+    .g-r-auto {
+        float: right;
+        width: 100%;
+        margin-left: -430px;
+        .g-r-inner {
+            margin-left: 440px;
+        }
+    }
+}
+
+
+/* -------------------------------------------------
+ * en：word  cn：文本
+ * -------------------------------------------------
+
+*/
+
+.o-red {
+    color: #d43f3a;
+}
+
+.o-yellow {
+    color: #eea236;
+}
+
+.o-blue {
+    color: #2e6da4;
+}
+
+.o-lightblue {
+    color: #4dc3e7;
+}
+
+.o-green {
+    color: #4cae4c;
+}
+
+.o-brown {
+    color: #aa6708;
+}
+
+.o-darkgray {
+    color: #333;
+}
+
+.o-gray {
+    color: #666;
+}
+
+.o-lightgray {
+    color: #999;
+}
+
+.o-27c {
+    color: #27c;
+}
+
+.o-f1 {
+    color: #f1f1f1;
+}
+
+.o-a9 {
+    color: #a9a9a9;
+}
+
+.o-333 {
+    color: #333;
+}
+
+.o-underline {
+    text-decoration: underline;
+}
+
+.o-bold {
+    font-weight: bold;
+}
+
+
+/* -------------------------------------------------
+ * en：button  cn：按钮
+ * -------------------------------------------------
+
+*/
+
+// 变量
+//----------------------------------
+$btnBaseClass: btn !default; //按钮的基本class
+$btnFormBaseClass: formbtn !default; //form中input和button元素按钮的class
+$btnNormalSize: 16px 28px 14px !default; //默认按钮的左右padding，高度，字体大小，圆角
+$btnSizeClass: () !default; //(small 5px 21px 12px) 每个括号为一组，里面四个参数分别为：class 左右padding，高度，字体大小
+$btnColorClass: () !default; //(primary $primary #fff) 每个括号为一组，里面三个参数分别为：class 背景色 文本色
+// 开关按钮
+$btnBgGradientSwitch: false !default; //是否启用渐变背景
+// btn placeholder selectors and mixin
+//----------------------------------
+// btn common style
+// 按钮基本样式，联合申明
+%btn-basic {
+    @include inline-block;
+    cursor: pointer;
+    text-align: center;
+    border: 0 none;
+}
+
+// btn-gradient
+// 半透明到全透明的白色渐变，通过设置不同的背景色来表示不同的渐变
+%btn-gradient {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    @extend %gradient-linear-light;
+}
+
+// btn-size
+@mixin btn-size($padding:nth($btnNormalSize, 1), $height:nth($btnNormalSize, 2), $fontSize:nth($btnNormalSize, 3), $formbtn: false) {
+    padding: 0 $padding;
+    font-size: $fontSize;
+    @if $formbtn {
+        // form元素按钮（如button,input:submit），设置height来反应其高度
+        height: $height;
+    }
+    @else {
+        // 普通按钮，通过设置line-height来反应其高度
+        line-height: $height;
+    }
+}
+
+// btn-color
+// 包括按钮背景，文本色，是否有边框
+@mixin btn-color($bgColor:#e6e6e6, $textColor:#333) {
+    color: $textColor;
+    background-color: $bgColor;
+    @if $btnBgGradientSwitch {
+        border: 1px solid darken($bgColor, 5%);
+        border-color: lighten($bgColor, 2%) darken($bgColor, 5%) darken($bgColor, 5%) lighten($bgColor, 2%);
+    }
+    &:hover {
+        background-color: darken($bgColor, 5%);
+        color: $textColor;
+    }
+}
+
+// 两种类别按钮，普通的和form表单元素的
+//----------------------------------
+.#{$btnBaseClass} {
+    @extend %btn-basic;
+    @include btn-size;
+    @include btn-color;
+}
+
+.#{$btnFormBaseClass} {
+    @extend %btn-basic;
+    @include btn-size($formbtn: true);
+    @include btn-color;
+}
+
+// 如果启用渐变背景，引入%btn-gradient；
+@if $btnBgGradientSwitch {
+    .#{$btnBaseClass},
+    .#{$btnFormBaseClass} {
+        @extend %btn-gradient;
+    }
+}
+
+// 不同大小的btn class
+//----------------------------------
+// 如果输出单个大小按钮，直接调用btn-size
+// @include btn-size($padding, $height, $fontSize, $formbtn)
+// 最后一个$formbtn参数，如果是普通按钮可以忽略（默认为false），如果是form表单元素按钮则传入true
+// 如果输出多个大小按钮，则直接调用下面的mixin
+// @include btn-size-multi();
+@mixin btn-size-multi($sizeLists: $btnSizeClass) {
+    @each $size in $sizeLists {
+        $class: nth($size, 1);
+        $padding: nth($size, 2);
+        $height: nth($size, 3);
+        $fontSize: nth($size, 4);
+        .#{$btnBaseClass}-#{$class} {
+            @include btn-size($padding, $height, $fontSize);
+        }
+        .#{$btnFormBaseClass}-#{$class} {
+            @include btn-size($padding, $height, $fontSize, true);
+        }
+    }
+}
+
+// 不同颜色的btn class
+//----------------------------------
+// 如果输出单个颜色按钮，直接调用btn-color
+// @include btn-color($bgColor,$textColor);
+.#{$btnBaseClass}-primary {
+    @include btn-color($primary, #fff);
+}
+
+//如果输出至少两个不同颜色按钮，则调用下面的mixin
+// @include btn-color-multi();
+@mixin btn-color-multi($colorLists: $btnColorClass) {
+    @each $color in $colorLists {
+        $class: nth($color, 1);
+        $bgColor: nth($color, 2);
+        $textColor: nth($color, 3);
+        .#{$btnBaseClass}-#{$class} {
+            @include btn-color($bgColor, $textColor);
+        }
+    }
+}
+
+$btnSizeClass: (small 5px 21px 12px) (large 40px 40px 18px);
+$btnColorClass: (blue $blue #fff) (orange $orange #fff) (red $red #fff) (green $green #fff) (gray-light $grayLight #333) (gray-dark $grayDark #fff);
+.btn,
+.formbtn {
+    margin: 20px;
+}
+
+.btns-group {
+    margin-bottom: 20px;
+    .btn {
+        margin: 0
+    }
+}
+
+@include btn-color-multi();
+@include btn-size-multi();
+
+/* offline btn*/
+
+.o-btn {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    height: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid transparent;
+    background-color: #e6e6e6;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    overflow: visible;
+    outline: none;
+}
+
+a.o-btn {
+    height: 26px;
+    line-height: 26px;
+}
+
+.o-btn:hover {
+    background-color: #c7c7c7;
+    text-decoration: none;
+}
+
+.o-btn-emphasis {
+    background-color: #ff9a14;
+    color: #fff;
+}
+
+.o-btn-emphasis:hover {
+    background-color: #ffb24c;
+}
+
+.o-btn-primary {
+    background-color: #0084f3;
+    color: #fff;
+}
+
+.o-btn-primary:hover {
+    background-color: #4faeff;
+}
+
+.o-btn-secondary {
+    border-color: #ccc;
+    background-color: #fff;
+    color: #333;
+}
+
+.o-btn-secondary:hover {
+    border-color: #0084f3;
+    background-color: #0084f3;
+    color: #fff;
+}
+
+.o-btn-link {
+    background-color: transparent;
+    color: #06c;
+}
+
+.o-btn-link:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.o-btn-lg {
+    height: 34px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    line-height: 34px;
+}
+
+a.o-btn-lg {
+    height: 32px;
+    line-height: 32px;
+}
+
+.o-btn-sm {
+    height: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+a.o-btn-sm {
+    height: 26px;
+    line-height: 26px;
+}
+
+.o-btn-xs {
+    height: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+a.o-btn-xs {
+    height: 22px;
+    line-height: 22px;
+}
+
+.o-btn-disabled {
+    border-color: #ddd;
+    background-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed !important;
+}
+
+.o-btn-disabled:hover {
+    border-color: #ddd;
+    background-color: #ddd;
+}
+
+.o-btn-link-disabled {
+    background-color: transparent;
+    color: #aaa;
+    cursor: default;
+}
+
+.o-btn-link-disabled:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.o-close {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font: bold 20px simsun;
+    color: #aaa;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.o-close:hover {
+    color: #2d9fff;
+    text-decoration: none;
+}
+
+button.o-close {
+    padding: 0;
+    border: 0 none;
+    background-color: transparent;
+    outline: none;
+}
+
+
+/* -------------------------------------------------
+ * en：form  cn：表单
+ * -------------------------------------------------
+
+*/
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: not-allowed;
+}
+
+.o-input {
+    padding: 0 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    height: 26px;
+    width: 143px;
+    line-height: 26px\9;
+    vertical-align: middle;
+    font-size: 12px;
+    resize: none;
+}
+
+.o-input:hover {
+    border-color: #999;
+}
+
+textarea.o-input {
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
+
+.o-input-date {
+    width: 93px;
+}
+
+.o-select {
+    outline: none;
+    border: 1px solid #ccc;
+    width: 155px;
+    height: 28px;
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+.o-select:focus,
+.o-input:focus {
+    border-color: #5d9de5;
+}
+
+.o-input[disabled] {
+    border-color: #ccc;
+    background-color: #ddd;
+    color: #999;
+}
+
+.o-input.o-input-err {
+    border: 1px solid #d80000;
+    background-color: #fff3f3;
+}
+
+.o-label {
+    padding-bottom: 2px;
+    margin-right: 10px;
+    border-bottom: 1px dashed transparent;
+    vertical-align: middle;
+}
+
+.o-label:hover {
+    border-bottom-color: #aaa;
+}
+
+.o-label input {
+    margin: -2px 3px 0 0;
+    vertical-align: middle;
+}
+
+.o-form {
+    margin: 15px 0;
+    font-size: 12px;
+}
+
+.o-form-label,
+.o-form-cont,
+.o-form-info {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.o-form-label {
+    margin: 3px 10px 0 0;
+    width: 100px;
+    vertical-align: middle;
+    text-align: right;
+    color: #777;
+}
+
+.o-form-cont {
+    vertical-align: top;
+    white-space: normal;
+}
+
+.o-form-conn {
+    vertical-align: middle;
+}
+
+.o-form-cont .o-input+.o-btn,
+.o-form-cont .o-btn+.o-btn {
+    margin-left: 10px;
+}
+
+.o-form-info {
+    vertical-align: middle;
+    color: #777;
+}
+
+.o-form-info-bottom {
+    margin-top: 5px;
+}
+
+.o-form-texterr {
+    color: #d80000;
+}
+
+.o-form-label-mark {
+    margin-right: 2px;
+    color: #f00;
+    vertical-align: middle;
+}
+
+
+/* -------------------------------------------------
+ * en：icon  cn：图标
+ * -------------------------------------------------
+
+*/
+
+.o-ico {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    background-image: url(http://pic.c-ctrip.com/corp_niv/cui/un_icons.png);
+    background-repeat: no-repeat;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+.o-ico-suc-64 {
+    width: 66px;
+    height: 66px;
+    background-position: 1px 1px;
+}
+
+.o-ico-suc-48 {
+    width: 50px;
+    height: 50px;
+    background-position: 1px -69px;
+}
+
+.o-ico-suc-32 {
+    width: 34px;
+    height: 34px;
+    background-position: 1px -119px;
+}
+
+.o-ico-suc-24 {
+    width: 26px;
+    height: 26px;
+    background-position: 1px -159px;
+}
+
+.o-ico-suc-16 {
+    width: 18px;
+    height: 18px;
+    background-position: 1px -189px;
+}
+
+.o-ico-info-64 {
+    width: 66px;
+    height: 66px;
+    background-position: -69px 1px;
+}
+
+.o-ico-info-48 {
+    width: 50px;
+    height: 50px;
+    background-position: -69px -69px;
+}
+
+.o-ico-info-32 {
+    width: 34px;
+    height: 34px;
+    background-position: -69px -119px;
+}
+
+.o-ico-info-24 {
+    width: 26px;
+    height: 26px;
+    background-position: -69px -159px;
+}
+
+.o-ico-info-16 {
+    width: 18px;
+    height: 18px;
+    background-position: -69px -189px;
+}
+
+.o-ico-info-12 {
+    width: 14px;
+    height: 14px;
+    background-position: -69px -209px;
+}
+
+.o-ico-alert-64 {
+    width: 66px;
+    height: 66px;
+    background-position: -139px 1px;
+}
+
+.o-ico-alert-48 {
+    width: 50px;
+    height: 50px;
+    background-position: -139px -69px;
+}
+
+.o-ico-alert-32 {
+    width: 34px;
+    height: 34px;
+    background-position: -139px -119px;
+}
+
+.o-ico-alert-24 {
+    width: 26px;
+    height: 26px;
+    background-position: -139px -159px;
+}
+
+.o-ico-alert-16 {
+    width: 18px;
+    height: 18px;
+    background-position: -139px -189px;
+}
+
+.o-ico-alert-12 {
+    width: 14px;
+    height: 14px;
+    background-position: -139px -209px;
+}
+
+.o-ico-error-64 {
+    width: 66px;
+    height: 66px;
+    background-position: -209px 1px;
+}
+
+.o-ico-error-48 {
+    width: 50px;
+    height: 50px;
+    background-position: -209px -69px;
+}
+
+.o-ico-error-32 {
+    width: 34px;
+    height: 34px;
+    background-position: -209px -119px;
+}
+
+.o-ico-error-24 {
+    width: 26px;
+    height: 26px;
+    background-position: -209px -159px;
+}
+
+.o-ico-error-16 {
+    width: 18px;
+    height: 18px;
+    background-position: -209px -189px;
+}
+
+.o-ico-error-12 {
+    width: 14px;
+    height: 14px;
+    background-position: -209px -209px;
+}
+
+
+/* -------------------------------------------------
+ * en：messgae  cn：提示交互
+ * -------------------------------------------------
+
+*/
+
+.o-msg {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.o-msg .o-ico {
+    margin-right: 5px;
+}
+
+.o-msg .msg-cont {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin: 0 0 0 5px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.o-msg .msg-cont p {
+    font-size: 12px;
+    color: #777;
+}
+
+.o-msg .msg-cont p strong {
+    font-size: 14px;
+    color: #333;
+}
+
+.o-msg-mutiple .msg-cont {
+    max-width: 80%;
+    padding-top: 5px;
+    vertical-align: top;
+}
+
+
+/* -------------------------------------------------
+ * en：model  cn：静态框
+ * -------------------------------------------------
+
+*/
+
+.o-modal {
+    display: none;
+    position: relative;
+    width: 450px;
+    border: 5px solid #ddd;
+    background-color: #fff;
+}
+
+.o-modal .modal-header {
+    min-height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+    *zoom: 1;
+}
+
+.o-modal .modal-header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.o-modal .o-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+}
+
+.o-modal .modal-title {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.o-modal .modal-body {
+    padding: 30px 15px 15px;
+}
+
+.o-modal .modal-header+.modal-body {
+    padding-top: 15px;
+}
+
+.o-modal .o-form-cont .o-input {
+    width: 203px;
+}
+
+.o-modal .o-msg div {
+    max-width: 300px;
+}
+
+.o-modal .modal-footer {
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.o-modal .modal-footer button {
+    margin: 0 10px;
+}
+
+.o-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+
+/* -------------------------------------------------
+ * en：tag  cn：标签过滤
+ * -------------------------------------------------
+
+*/
+
+// 变量
+//----------------------------------
+$tagsLabelWidth: 50px !default; //label宽度
+$tagsSelector: span !default; //如果不支持ie6，使用span标签，如果支持ie6，使用a标签
+// 样式
+//----------------------------------
+.tags-filter-item {
+    @extend %clearfix;
+    padding-top: 5px;
+    @if $lte7 {
+        padding-bottom: 5px;
+    }
+    .tags-label {
+        @include float;
+        width: $tagsLabelWidth;
+    }
+    .tags-content {
+        overflow: hidden;
+        @extend %zoom;
+        #{$tagsSelector} {
+            @include float;
+            margin-right: 10px;
+            padding: 0 2px;
+            cursor: pointer;
+            white-space: nowrap;
+            margin-bottom: 5px;
+            &.active,
+            &:hover {
+                background-color: $primary;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+/* -------------------------------------------------
+ * en：table  cn：表格
+ * -------------------------------------------------
+
+*/
+
+.o-table,
+.o-table-simple {
+    width: 100%;
+    font-size: 12px;
+}
+
+.o-table th,
+.o-table td,
+.o-table-simple th,
+.o-table-simple td {
+    padding: 7px 10px;
+    text-align: center;
+}
+
+.o-table th {
+    background-color: #2782cf;
+    border-left: 1px solid #3d8fd4;
+    border-right: 1px solid #3d8fd4;
+    font-weight: bold;
+    color: #fff;
+}
+
+.o-table td {
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+
+.o-table tr:hover td {
+    border-color: #eeeff0;
+    background-color: #daeaf7;
+}
+
+.o-table-simple {
+    border-bottom: 1px solid #ccc;
+}
+
+.o-table-simple th {
+    background-color: #e5e9ed;
+}
+
+.o-table-simple td {
+    border-bottom: 1px dotted #ccc;
+}
+
+.o-table .o-btn-link,
+.o-table-simple .o-btn-link {
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 1.5;
+    vertical-align: baseline;
+    *vertical-align: -4px;
+    border: 0;
+}
+
+
+/* -------------------------------------------------
+ * en：tips  cn：提示
+ * -------------------------------------------------
+
+*/
+
+.o-tooltip {
+    position: absolute;
+    z-index: 999;
+    max-width: 300px;
+    padding: 5px;
+    text-align: left;
+    font: 12px Tahoma;
+    color: #333;
+    border: 1px solid #06c;
+    background-color: #fff;
+}
+
+.o-tooltip-arrow {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-repeat: no-repeat;
+}
+
+.o-tooltip.top .o-tooltip-arrow {
+    bottom: -6px;
+    left: 50%;
+    margin-left: -6px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAsSURBVChTY2BIO/OfGABSxwAGBDQgFEKU49SAqRCHBtwK0TQQVoikAcZEpgHqxXu4vyL4DwAAAABJRU5ErkJggg==);
+    background-position: bottom center;
+}
+
+.o-tooltip.right .o-tooltip-arrow {
+    top: 50%;
+    left: -6px;
+    margin-top: -6px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAALCAYAAABcUvyWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVChTY2DABtLO/McUBgqCAKoEVBBVAkkQIYEmCJHAIkhAB8x6rHZgkSTSH0g6AUkbe7hWf1KZAAAAAElFTkSuQmCC);
+    background-position: center left;
+}
+
+.o-tooltip.bottom .o-tooltip-arrow {
+    top: -6px;
+    left: 50%;
+    margin-left: -6px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAtSURBVChTY2DABtLO/McqjiEIVAgCDAQ1QBWCVePVgKYQtwYcCjE1EFCIrAEAdKd7uAcvZ0MAAAAASUVORK5CYII=);
+    background-position: top center;
+}
+
+.o-tooltip.left .o-tooltip-arrow {
+    top: 50%;
+    right: -6px;
+    margin-top: -6px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAALCAYAAABcUvyWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVChTY2BIO/OfARv4DwRYJUESWCVhEhiSyBIokugScEmidKC4Dq+rsHsSh88BgRt7uF2h9i8AAAAASUVORK5CYII=);
+    background-position: center right;
+}
+
+.o-tooltip.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -moz-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear
+}
+
+.o-tooltip.in {
+    opacity: 1
+}
+
+
+/* -------------------------------------------------
+ * en：common  cn：公共
+ * -------------------------------------------------
+
+*/
+
+.fl {
+    @include float($float: left);
+}
+
+.fr {
+    @include float($float: right);
+}
+
+.ib {
+    @include inline-block;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.hidden {
+    @include hidden;
+}
+
+.ellipsis {
+    @extend %ellipsis-basic;
+}
+
+//-----------------------------------------------------
+// tabs scss
+//-----------------------------------------------------
+// 统一变量
+$tabsBorderColor: $gray !default;
+$tabsRadius: true !default; //是否开启圆角
+$tabsPrimarySwitch: true !default; //是否开启一级导航样式
+$tabsColorSwitch: true !default; //是否开启二级导航样式之tabs-color 
+$tabsBorderSwitch: true !default; //是否开启二级导航样式之tabs-border     
+// tabs-primary
+//---------------------------------
+// 变量
+$tabsPrimaryClass: tabs-primary !default; //一级tabs的class
+$tabsPrimaryFontSize: 16px !default; //字体大小
+$tabsPrimaryHeight: 36px !default; //总高度
+$tabsPrimaryPadding: 15px !default; //tabs标题的左右padding
+$tabsPrimaryTextColor: #333 $primary !default; //文本色：默认，激活
+$tabsPrimaryBgColor: #fff #fff !default; //背景色：默认，激活
+// 样式
+@if $tabsPrimarySwitch {
+    .#{$tabsPrimaryClass} {
+        @extend %clearfix;
+        border-bottom: 1px solid $tabsBorderColor;
+        font-size: $tabsPrimaryFontSize;
+        line-height: $tabsPrimaryHeight - 2px; //去掉2px的border
+        a {
+            @include float;
+            padding: 0 $tabsPrimaryPadding;
+            border: 1px solid $tabsBorderColor;
+            margin-bottom: -1px;
+            margin-left: 10px;
+            color: nth($tabsPrimaryTextColor, 1);
+            background-color: nth($tabsPrimaryBgColor, 1);
+            @if $lte7 {
+                *position: relative;
+            }
+            @if $tabsRadius {
+                @include border-radius($baseRadius $baseRadius 0 0);
+            }
+            &.active {
+                border-bottom-color: nth($tabsPrimaryBgColor, 2);
+                background-color: nth($tabsPrimaryBgColor, 2);
+                color: nth($tabsPrimaryTextColor, 2);
+            }
+            &:hover {
+                color: nth($tabsPrimaryTextColor, 2);
+            }
+        }
+    }
+}
+
+// tabs-secondary
+//---------------------------------
+// tabs-color
+//------------------
+// 变量
+$tabsColorClass: tabs-color !default;
+$tabsColorFontSize: 14px !default; //字体大小
+$tabsColorHeight: 36px !default;
+$tabsColorPadding: 20px !default;
+$tabsColorTextColor: #333 #fff !default;
+$tabsColorBgColor: $grayLight $primary !default;
+// 样式
+@if $tabsColorSwitch {
+    .#{$tabsColorClass} {
+        @extend %clearfix;
+        border-top: 2px solid nth($tabsColorBgColor, 2);
+        border-right: 1px solid $tabsBorderColor;
+        border-left: 1px solid $tabsBorderColor;
+        background-color: nth($tabsColorBgColor, 1);
+        font-size: $tabsColorFontSize;
+        line-height: $tabsColorHeight;
+        a,
+        li {
+            @include float;
+            margin-right: 1px;
+            padding: 0 $tabsColorPadding;
+            color: nth($tabsColorTextColor, 1);
+            text-align: center;
+            cursor: pointer;
+            &.active,
+            &:hover {
+                background-color: nth($tabsColorBgColor, 2);
+                color: nth($tabsColorTextColor, 2);
+            }
+        }
+        @if $tabsRadius {
+            & {
+                @include border-radius($baseRadius $baseRadius 0 0);
+            }
+            & a:first-child {
+                @include border-radius($baseRadius 0 0 0);
+            }
+        }
+    }
+}
+
+// tabs-border
+//------------------
+// 变量
+$tabsBorderClass: tabs-border !default;
+$tabsBorderFontSize: 14px !default;
+$tabsBorderHeight: 36px !default;
+$tabsBorderPadding: 20px !default;
+$tabsBorderTextColor: #333 $primary !default;
+$tabsBorderBgColor: $grayLight #fff !default;
+// 样式
+@if $tabsBorderSwitch {
+    .#{$tabsBorderClass} {
+        @extend %clearfix;
+        border: 1px solid $tabsBorderColor;
+        background-color: nth($tabsBorderBgColor, 1);
+        font-size: $tabsBorderFontSize;
+        line-height: $tabsBorderHeight - 2px;
+        a,
+        li {
+            @include float;
+            border: 1px solid $tabsBorderColor;
+            border-left: none;
+            margin: -1px 0;
+            padding: 0 $tabsBorderPadding;
+            color: nth($tabsBorderTextColor, 1);
+            text-align: center;
+            @if $lte7 {
+                *position: relative;
+            }
+            &.active {
+                background-color: nth($tabsBorderBgColor, 2);
+                border-bottom-color: nth($tabsBorderBgColor, 2);
+                border-top-color: nth($tabsBorderTextColor, 2);
+                color: nth($tabsBorderTextColor, 2);
+            }
+            &:hover {
+                color: nth($tabsBorderTextColor, 2);
+            }
+        }
+        @if $tabsRadius {
+            & {
+                @include border-radius($baseRadius $baseRadius 0 0);
+            }
+            & a:first-child {
+                @include border-radius($baseRadius 0 0 0);
+            }
+        }
+    }
+}
+
+// tabs-content-wrap
+//---------------------------------
+.tabs-content-wrap {
+    border: 1px solid $tabsBorderColor;
+    border-top: none;
+    padding: 10px;
+    @if $tabsRadius {
+        @include border-radius(0 0 $baseRadius $baseRadius);
+    }
+}
+
+.tab_box .hide {
+    display: none;
+}
+
+.tab_menu li.current {
+    background-color: nth($tabsColorBgColor, 2);
+    color: nth($tabsColorTextColor, 2);
+}

@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CuTeUI - UED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="weiwzhang@ctrip.com" content="www.zhangweiwei.com" />
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./component.css">
+    <link rel="stylesheet" href="../SyntaxHighlighter/syntax-theme-gray.css">
+    <script src="../SyntaxHighlighter/shCore.js"></script>
+    <script src="../SyntaxHighlighter/shBrushCSharp.js"></script>
+    <script src="../SyntaxHighlighter/shBrushXml.js"></script>
+    <style>
+        .dp-highlighter {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .dp-highlighter .bar {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../_components/cute.css">
+</head>
+
+<body>
+    <div id="body-wrapper">
+
+        <div class="head-area normal">
+
+            <div class="head-content ">
+                <div class="title-area">
+                    <h1><a href="/">CuTe UI</a></h1></div>
+                <div class="nav-area">
+                    <a class="nav-toggle"></a>
+                    <ol class="main-nav">
+                        <li><a href="start.html">快速开始</a></li>
+                        <li><a href="base.html">基础组件</a></li>
+                        <li><a href="ui.html">UI 组件</a></li>
+                        <li><a href="http://www.zhangweiwei.cn">博客首页</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+
+            <div class="banner">
+                <div class="banner-content">
+                    <h1>基础样式</h1>
+                    <p class="info">为活动、营销而生</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="side-area">
+                    <ul>
+
+                        <li data-id="layout">
+                            <a href="#laylot" class="avtive">布局</a>
+                        </li>
+
+
+                        <li data-id="word">
+                            <a href="#word">文字排版</a>
+                        </li>
+
+
+                        <li data-id="button">
+                            <a href="#button">按钮</a>
+                        </li>
+
+
+                        <li data-id="form">
+                            <a href="#form">表单</a>
+                        </li>
+
+                        <li data-id="table">
+                            <a href="#table">表格</a>
+                        </li>
+
+
+                        <li data-id="icon">
+                            <a href="#icon">图标</a>
+                        </li>
+
+
+                        <li data-id="message">
+                            <a href="#message">提示信息</a>
+                        </li>
+
+
+                        <li data-id="model">
+                            <a href="#model">静态框</a>
+                        </li>
+
+
+                        <li data-id="tag">
+                            <a href="#tag">标签过滤</a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+
+                <div class="content-area">
+                    <div class="module-group" id="laylot">
+                        <div class="group-head">
+                            <h1 class="group-title"> 
+          <a href="###">布局</a>
+        </h1>
+                        </div>
+
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            两列右侧自适应布局   
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <div class="g-bd">
+                                            <div class="g-left">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#ff0097;">左侧定宽</p>
+                                            </div>
+                                            <div class="g-right-auto">
+                                                <div class="g-right-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#4eb3b9;">右侧自适应</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <div class="g-bd">
+                                            <div class="g-left">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#ff0097;">左侧定宽</p>
+                                            </div>
+                                            <div class="g-right-auto">
+                                                <div class="g-right-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#4eb3b9;">右侧自适应</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </pre>
+                            </div>
+                        </div>
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            两列左侧自适应布局
+            
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <div class="g-bd">
+                                            <div class="g-left-auto">
+                                                <div class="g-left-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#e671bb;">左侧自适应</p>
+                                                </div>
+                                            </div>
+                                            <div class="g-right-fix">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">右侧定宽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">
+                                      <div class="g-bd">
+                                            <div class="g-left-auto">
+                                                <div class="g-left-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#e671bb;">左侧自适应</p>
+                                                </div>
+                                            </div>
+                                            <div class="g-right-fix">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">右侧定宽</p>
+                                            </div>
+                                      </div>
+                                </pre>
+                            </div>
+                        </div>
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            三列中间自适应布局
+            
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content" style="width:auto">
+                                        <div class="g-bd">
+                                            <div class="g-three-left">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#ff0097;">左侧定宽</p>
+                                            </div>
+                                            <div class="g-three-auto">
+                                                <div class="g-three-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#ff0097;">中间自适应</p>
+                                                </div>
+                                            </div>
+                                            <div class="g-three-right">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#ff0097;">右侧定宽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">
+                                        <div class="g-bd">
+                                            <div class="g-three-left">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#ff0097;">左侧定宽</p>
+                                            </div>
+                                            <div class="g-three-auto">
+                                                <div class="g-three-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#ff0097;">中间自适应</p>
+                                                </div>
+                                            </div>
+                                            <div class="g-three-right">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#ff0097;">右侧定宽</p>
+                                            </div>
+                                        </div>
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            三列左侧自适应布局
+            
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content" style="width:auto">
+                                        <div class="g-bd">
+                                            <div class="g-left-con">
+                                                <div class="g-con-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">左侧自适应</p>
+                                                </div>
+                                            </div>
+                                            <div class="g-three-fix g-three-cfix ">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">右侧定宽</p>
+                                            </div>
+                                            <div class="g-three-fix">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">右侧定宽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">
+                                        <div class="g-bd">
+                                            <div class="g-left-con">
+                                                <div class="g-con-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">左侧自适应</p>
+                                                </div>
+                                            </div>
+                                            <div class="g-three-fix g-three-cfix ">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">右侧定宽</p>
+                                            </div>
+                                            <div class="g-three-fix">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">右侧定宽</p>
+                                            </div>
+                                        </div>
+                                </pre>
+                            </div>
+                        </div>
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            三列右侧自适应布局
+            
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content" style="width:auto">
+                                        <div class="g-bd">
+                                            <div class="g-l-left g-r-right">
+
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">左侧定宽</p>
+
+                                            </div>
+                                            <div class="g-l-left  ">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">左侧定宽</p>
+                                            </div>
+                                            <div class="g-r-auto">
+                                                <div class="g-r-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">右侧自适应</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">
+                                        <div class="g-bd">
+                                            <div class="g-l-left g-r-right">
+
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">左侧定宽</p>
+
+                                            </div>
+                                            <div class="g-l-left  ">
+                                                <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">左侧定宽</p>
+                                            </div>
+                                            <div class="g-r-auto">
+                                                <div class="g-r-inner">
+                                                    <p style="height:150px;padding:10px;color:#fff;background:#1ba1e2;">右侧自适应</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </pre>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="module-group" id="word">
+                        <div class="group-head">
+                            <h1 class="group-title"> 
+          <a href="###">文字排版</a>
+        </h1>
+                        </div>
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            文本颜色 
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <p class="o-red">文本示例 o-red</p>
+                                        <p class="o-yellow">文本示例 o-yellow</p>
+                                        <p class="o-blue">文本示例 o-blue</p>
+                                        <p class="o-lightblue">文本示例 o-lightblue</p>
+                                        <p class="o-green">文本示例 o-green</p>
+                                        <p class="o-brown">文本示例 o-brown</p>
+                                        <p class="o-darkgray">文本示例 o-darkgray</p>
+                                        <p class="o-gray">文本示例 o-gray</p>
+                                        <p class="o-lightgray">文本示例 o-lightgray</p>
+                                        <p class="o-27c">文本示例 o-#27c27c</p>
+                                        <p class="o-f1">文本示例 o-#f1f1f1</p>
+                                        <p class="o-a9">文本示例 o-#a9a9a9</p>
+                                        <p class="o-333">文本示例 o-#333</p>
+                                        <p class="o-underline">下划线</p>
+                                        <p class="o-bold">强调</p>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <p class="o-red">文本示例 o-red</p>  
+                                        <p class="o-yellow">文本示例 o-yellow</p>  
+                                        <p class="o-blue">文本示例 o-blue</p>  
+                                        <p class="o-lightblue">文本示例 o-lightblue</p>  
+                                        <p class="o-green">文本示例 o-green</p>  
+                                        <p class="o-brown">文本示例 o-brown</p>  
+                                        <p class="o-darkgray">文本示例 o-darkgray</p>  
+                                        <p class="o-gray">文本示例 o-gray</p>  
+                                        <p class="o-lightgray">文本示例 o-lightgray</p>
+                                        <p class="o-27c">文本示例 o-#27c27c</p> 
+                                        <p class="o-f1">文本示例 o-#f1f1f1</p> 
+                                        <p class="o-a9">文本示例 o-#a9a9a9</p>   
+                                        <p class="o-333">文本示例 o-#333</p>  
+                                        <p class="o-underline">下划线</p> 
+                                        <p class="o-bold">强调</p>  
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module-group" id="button">
+                        <div class="group-head">
+                            <h1 class="group-title"> 
+          <a href="###">按钮</a>
+        </h1>
+                        </div>
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            不同的元素a,button,submit
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <a href="#" class="btn">normal btn</a>
+                                        <button class="formbtn">form button btn</button>
+                                        <input type="submit" value="form submit btn" class="formbtn">
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <a href="#" class="btn">normal btn</a>
+                                        <button class="formbtn">form button btn</button>
+                                        <input type="submit" value="form submit btn" class="formbtn">
+                                </pre>
+                            </div>
+                        </div>
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            不同颜色
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <a href="#" class="btn btn-primary">primary btn</a>
+                                        <a href="#" class="btn btn-green">green btn</a>
+                                        <a href="#" class="btn btn-red">red btn</a>
+                                        <a href="#" class="btn btn-orange">orange btn</a>
+                                        <a href="#" class="btn btn-blue">blue btn</a>
+                                        <a href="#" class="btn">gray btn</a>
+                                        <a href="#" class="btn btn-gray-light">gray light btn</a>
+                                        <a href="#" class="btn btn-gray-dark">gray dark btn</a>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <a href="#" class="btn btn-primary">primary btn</a>
+                                        <a href="#" class="btn btn-green">green btn</a>
+                                        <a href="#" class="btn btn-red">red btn</a>
+                                        <a href="#" class="btn btn-orange">orange btn</a>
+                                        <a href="#" class="btn btn-blue">blue btn</a>
+                                        <a href="#" class="btn">gray btn</a>
+                                        <a href="#" class="btn btn-gray-light">gray light btn</a>
+                                        <a href="#" class="btn btn-gray-dark">gray dark btn</a>
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            不同大小
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <a href="#" class="btn btn-small">small btn</a>
+                                        <a href="#" class="btn">nomal btn</a>
+                                        <a href="#" class="btn btn-large">large btn</a>
+                                        <br>
+                                        <button class="formbtn formbtn-small">small form button btn</button>
+                                        <button class="formbtn">form button btn</button>
+                                        <button class="formbtn formbtn-large">large form button btn</button>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <a href="#" class="btn btn-small">small btn</a>
+                                        <a href="#" class="btn">nomal btn</a>
+                                        <a href="#" class="btn btn-large">large btn</a><br>
+                                        <button class="formbtn formbtn-small">small form button btn</button>
+                                        <button class="formbtn">form button btn</button>
+                                        <button class="formbtn formbtn-large">large form button btn</button>
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            offline常用
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <button type="button" class="o-btn">默认按钮</button>
+                                        <button type="button" class="o-btn o-btn-emphasis">一级按钮</button>
+                                        <button type="button" class="o-btn o-btn-primary">二级按钮</button>
+                                        <button type="button" class="o-btn o-btn-secondary">三级按钮</button>
+                                        <input type="submit" class="o-btn o-btn-emphasis" value="提交按钮">
+                                        <a href="javascript:" class="o-btn o-btn-primary" title="链接按钮">链接按钮</a> <a href="javascript:" class="o-btn o-btn-link" title="超链接">超链接</a>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <button type="button" class="o-btn">默认按钮</button>  
+                                        <button type="button" class="o-btn o-btn-emphasis">一级按钮</button>  
+                                        <button type="button" class="o-btn o-btn-primary">二级按钮</button>  
+                                        <button type="button" class="o-btn o-btn-secondary">三级按钮</button>  
+                                        <input type="submit" class="o-btn o-btn-emphasis" value="提交按钮">  
+                                        <a href="javascript:" class="o-btn o-btn-primary" title="链接按钮">链接按钮</a> 
+                                        <a href="javascript:" class="o-btn o-btn-link" title="超链接">超链接</a> 
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            offline尺寸
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <button type="button" class="o-btn o-btn-lg">默认按钮</button>
+                                        <button type="button" class="o-btn">默认按钮</button>
+                                        <button type="button" class="o-btn o-btn-xs">默认按钮</button>
+                                        <button type="button" class="o-btn o-btn-emphasis o-btn-lg">一级按钮</button>
+                                        <button type="button" class="o-btn o-btn-emphasis">一级按钮</button>
+                                        <button type="button" class="o-btn o-btn-emphasis o-btn-xs">一级按钮</button>
+                                        <a href="javascript:" class="o-btn o-btn-link o-btn-lg" title="超链接">超链接</a>
+                                        <a href="javascript:" class="o-btn o-btn-link" title="超链接">超链接</a>
+                                        <a href="javascript:" class="o-btn o-btn-link o-btn-xs" title="超链接">超链接</a>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <button type="button" class="o-btn o-btn-lg">默认按钮</button>  
+                                        <button type="button" class="o-btn">默认按钮</button>  
+                                        <button type="button" class="o-btn o-btn-xs">默认按钮</button>  
+                                        <button type="button" class="o-btn o-btn-emphasis o-btn-lg">一级按钮</button>  <button type="button" class="o-btn o-btn-emphasis">一级按钮</button>  
+                                        <button type="button" class="o-btn o-btn-emphasis o-btn-xs">一级按钮</button> 
+                                        <a href="javascript:" class="o-btn o-btn-link o-btn-lg" title="超链接">超链接</a>  
+                                        <a href="javascript:" class="o-btn o-btn-link" title="超链接">超链接</a>  
+                                        <a href="javascript:" class="o-btn o-btn-link o-btn-xs" title="超链接">超链接</a>
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            按钮状态
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <button type="button" class="o-btn o-btn-disabled">默认按钮</button>
+                                        <input type="submit" class="o-btn o-btn-disabled" value="提交按钮">
+                                        <a href="javascript:" class="o-btn o-btn-disabled" title="链接按钮">链接按钮</a> <a href="javascript:" class="o-btn o-btn-link-disabled" title="超链接">超链接</a>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <button type="button" class="o-btn o-btn-disabled">默认按钮</button>  
+                                        <input type="submit" class="o-btn o-btn-disabled" value="提交按钮">  
+                                        <a href="javascript:" class="o-btn o-btn-disabled" title="链接按钮">链接按钮</a>
+                                        <a href="javascript:" class="o-btn o-btn-link-disabled" title="超链接">超链接</a>  
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            关闭按钮
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content">
+                                        <a href="javascript:" class="o-close">×</a>
+                                        <button type="button" class="o-close">×</button>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">  
+                                        <a href="javascript:" class="o-close">×</a>  
+                                        <button type="button" class="o-close">×</button>   
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module-group" id="form">
+                        <div class="group-head">
+                            <h1 class="group-title"> 
+          <a href="###">表单</a>
+        </h1>
+                        </div>
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            基本构成 
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content" style="">
+                                        <input type="text" class="o-input" placeholder="填写内容" value="">
+                                        <br>
+                                        <input type="text" class="o-input o-input-err" value="">
+                                        <br>
+                                        <input type="text" disabled="disabled" class="o-input" value="">
+                                        <textarea style="width:400px;height:100px;" class="o-input" placeholder="填写内容"></textarea>
+                                        <label class="o-label">
+                                            <input type="radio" id="" name="r1">单选</label>
+                                        <label class="o-label">
+                                            <input type="checkbox" id="">多选</label>
+                                        <select class="o-select">
+                                            <option value="">请选择</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html" style="display: none;">  
+                                        <input type="text" class="o-input" placeholder="填写内容" value="">   
+                                        <input type="text" class="o-input o-input-err" value="">  
+                                        <input type="text" disabled="disabled" class="o-input" value="">  
+                                        <textarea style="width:400px;height:100px;" class="o-input" placeholder="填写内容"></textarea>  
+                                        <label class="o-label"><input type="radio" id="" name="r1">单选</label>  
+                                        <label class="o-label"><input type="checkbox" id="">多选</label>  
+                                        <select class="o-select">  
+                                            <option value="">请选择</option>  
+                                        </select>    
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            组合组件 
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content" style="width:auto;">
+
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input" placeholder="" value="填写内容">
+                                                <button type="button" class="o-btn o-btn-emphasis">一级按钮</button>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input o-input-date" placeholder="" value="2015-04-03">
+                                                <span class="o-form-conn">-</span>
+                                                <input type="text" class="o-input o-input-date" placeholder="" value="2015-04-04">
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input o-input-err" placeholder="">
+                                                <div class="o-form-info  o-form-texterr"><i class="o-ico o-ico-error-12"></i> 错啦！ 粗错啦！ 粗错啦！</div>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                <span class="o-form-label-mark">*</span>必填项
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input " placeholder="">
+                                                <div class="o-form-info "><i class="o-ico o-ico-info-12"></i> 提示信息</div>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input o-input-err" placeholder="">
+                                                <div class="o-form-info "><i class=""></i> 提示信息</div>
+                                                <div class="o-form-info-bottom o-form-texterr"><i class="o-ico o-ico-error-12"></i> 粗错啦！ 粗错啦！ 粗错啦！</div>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <label class="o-label">
+                                                    <input type="checkbox" id="">多项选择1</label>
+                                                <label class="o-label">
+                                                    <input type="checkbox" id="">多项选择2</label>
+                                                <label class="o-label">
+                                                    <input type="checkbox" id="">多项选择3</label>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <label class="o-label">
+                                                    <input type="radio" name="single" id="">单项选择1</label>
+                                                <label class="o-label">
+                                                    <input type="radio" name="single" id="">单项选择2</label>
+                                                <label class="o-label">
+                                                    <input type="radio" name="single" id="">单项选择3</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <pre name="code" class="html" style="display: none;">  
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input" placeholder="" value="填写内容">
+                                                <button type="button" class="o-btn o-btn-emphasis">一级按钮</button>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input o-input-date" placeholder="" value="2015-04-03">
+                                                <span class="o-form-conn">-</span>
+                                                <input type="text" class="o-input o-input-date" placeholder="" value="2015-04-04">
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input o-input-err" placeholder="">
+                                                <div class="o-form-info  o-form-texterr"><i class="o-ico o-ico-error-12"></i> 错啦！ 粗错啦！ 粗错啦！</div>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                <span class="o-form-label-mark">*</span>必填项
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input " placeholder="">
+                                                <div class="o-form-info "><i class="o-ico o-ico-info-12"></i> 提示信息</div>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <input type="text" class="o-input o-input-err" placeholder="">
+                                                <div class="o-form-info "><i class=""></i> 提示信息</div>
+                                                <div class="o-form-info-bottom o-form-texterr"><i class="o-ico o-ico-error-12"></i> 粗错啦！ 粗错啦！ 粗错啦！</div>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <label class="o-label">
+                                                    <input type="checkbox" id="">多项选择1</label>
+                                                <label class="o-label">
+                                                    <input type="checkbox" id="">多项选择2</label>
+                                                <label class="o-label">
+                                                    <input type="checkbox" id="">多项选择3</label>
+                                            </div>
+                                        </div>
+                                        <div class="o-form">
+                                            <label class="o-form-label">
+                                                标签名称
+                                            </label>
+                                            <div class="o-form-cont">
+                                                <label class="o-label">
+                                                    <input type="radio" name="single" id="">单项选择1</label>
+                                                <label class="o-label">
+                                                    <input type="radio" name="single" id="">单项选择2</label>
+                                                <label class="o-label">
+                                                    <input type="radio" name="single" id="">单项选择3</label>
+                                            </div>
+                                        </div> 
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module-group" id="table">
+                        <div class="group-head">
+                            <h1 class="group-title"> 
+          <a href="###">表格</a>
+        </h1>
+                        </div>
+
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            一级表格
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content" style="width:auto;">
+
+                                        <table class="o-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <input type="checkbox">
+                                                    </th>
+                                                    <th>酒店ID</th>
+                                                    <th>酒店名称</th>
+                                                    <th>酒店房型</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox">
+                                                    </td>
+                                                    <td>123456</td>
+                                                    <td>上海洲际大酒店</td>
+                                                    <td>豪华大床房</td>
+                                                    <td>
+                                                        <a href="javascript:">编辑</a>
+                                                        <button type="button" class="o-btn o-btn-link o-btn-xs">删除</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">
+                                    <table class="o-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <input type="checkbox">
+                                                    </th>
+                                                    <th>酒店ID</th>
+                                                    <th>酒店名称</th>
+                                                    <th>酒店房型</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox">
+                                                    </td>
+                                                    <td>123456</td>
+                                                    <td>上海洲际大酒店</td>
+                                                    <td>豪华大床房</td>
+                                                    <td>
+                                                        <a href="javascript:">编辑</a>
+                                                        <button type="button" class="o-btn o-btn-link o-btn-xs">删除</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="frozen-module">
+                            <div class="frozen-module-head">
+                                <h2 class="frozen-module-title">
+            二级表格
+          </h2>
+                                <p class="introduce"></p>
+                            </div>
+                            <div class="frozen-module-demo">
+                                <div class="module-tags">
+                                    <span class="example module-tags">Example</span>
+                                </div>
+                                <div class="frozen-module-dom">
+                                    <div class="dom-content" style="width:auto;">
+
+                                        <table class="o-table-simple">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <input type="checkbox">
+                                                    </th>
+                                                    <th>酒店ID</th>
+                                                    <th>酒店名称</th>
+                                                    <th>酒店房型</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox">
+                                                    </td>
+                                                    <td>123456</td>
+                                                    <td>上海洲际大酒店</td>
+                                                    <td>豪华大床房</td>
+                                                    <td>
+                                                        <a href="javascript:">编辑</a>
+                                                        <a href="javascript:">删除</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <pre name="code" class="html">
+                                    <table class="o-table-simple">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <input type="checkbox">
+                                                    </th>
+                                                    <th>酒店ID</th>
+                                                    <th>酒店名称</th>
+                                                    <th>酒店房型</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox">
+                                                    </td>
+                                                    <td>123456</td>
+                                                    <td>上海洲际大酒店</td>
+                                                    <td>豪华大床房</td>
+                                                    <td>
+                                                        <a href="javascript:">编辑</a>
+                                                        <a href="javascript:">删除</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="module-group" id="icon">
+                            <div class="group-head">
+                                <h1 class="group-title"> 
+          <a href="###">图标</a>
+        </h1>
+                            </div>
+
+                            <div class="frozen-module">
+                                <div class="frozen-module-head">
+                                    <h2 class="frozen-module-title">
+            常用图标汇总 
+          </h2>
+                                    <p class="introduce"></p>
+                                </div>
+                                <div class="frozen-module-demo">
+                                    <div class="module-tags">
+                                        <span class="example module-tags">Example</span>
+                                    </div>
+                                    <div class="frozen-module-dom">
+                                        <div class="dom-content" style="width:auto;">
+
+                                            <i class="o-ico o-ico-suc-64"></i>
+                                            <i class="o-ico o-ico-suc-48"></i>
+                                            <i class="o-ico o-ico-suc-32"></i>
+                                            <i class="o-ico o-ico-suc-24"></i>
+                                            <i class="o-ico o-ico-suc-16"></i>
+                                            <br>
+                                            <i class="o-ico o-ico-error-64"></i>
+                                            <i class="o-ico o-ico-error-48"></i>
+                                            <i class="o-ico o-ico-error-32"></i>
+                                            <i class="o-ico o-ico-error-24"></i>
+                                            <i class="o-ico o-ico-error-16"></i>
+                                            <br>
+                                            <i class="o-ico o-ico-info-64"></i>
+                                            <i class="o-ico o-ico-info-48"></i>
+                                            <i class="o-ico o-ico-info-32"></i>
+                                            <i class="o-ico o-ico-info-24"></i>
+                                            <i class="o-ico o-ico-info-16"></i>
+                                            <i class="o-ico o-ico-info-12"></i>
+                                            <br>
+                                            <i class="o-ico o-ico-alert-64"></i>
+                                            <i class="o-ico o-ico-alert-48"></i>
+                                            <i class="o-ico o-ico-alert-32"></i>
+                                            <i class="o-ico o-ico-alert-24"></i>
+                                            <i class="o-ico o-ico-alert-16"></i>
+                                            <i class="o-ico o-ico-alert-12"></i>
+
+                                        </div>
+                                    </div>
+                                    <pre name="code" class="html" style="display: none;">  
+                                        <i class="o-ico o-ico-suc-64"></i>
+                                        <i class="o-ico o-ico-suc-48"></i>
+                                        <i class="o-ico o-ico-suc-32"></i>
+                                        <i class="o-ico o-ico-suc-24"></i>
+                                        <i class="o-ico o-ico-suc-16"></i>
+                                        <br>
+                                        <i class="o-ico o-ico-error-64"></i>
+                                        <i class="o-ico o-ico-error-48"></i>
+                                        <i class="o-ico o-ico-error-32"></i>
+                                        <i class="o-ico o-ico-error-24"></i>
+                                        <i class="o-ico o-ico-error-16"></i>
+                                        <br>
+                                        <i class="o-ico o-ico-info-64"></i>
+                                        <i class="o-ico o-ico-info-48"></i>
+                                        <i class="o-ico o-ico-info-32"></i>
+                                        <i class="o-ico o-ico-info-24"></i>
+                                        <i class="o-ico o-ico-info-16"></i>
+                                        <i class="o-ico o-ico-info-12"></i>
+                                        <br>
+                                        <i class="o-ico o-ico-alert-64"></i>
+                                        <i class="o-ico o-ico-alert-48"></i>
+                                        <i class="o-ico o-ico-alert-32"></i>
+                                        <i class="o-ico o-ico-alert-24"></i>
+                                        <i class="o-ico o-ico-alert-16"></i>
+                                        <i class="o-ico o-ico-alert-12"></i>
+                                </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module-group" id="message">
+                            <div class="group-head">
+                                <h1 class="group-title"> 
+          <a href="###">提示信息</a>
+        </h1>
+                            </div>
+
+                            <div class="frozen-module">
+                                <div class="frozen-module-head">
+                                    <h2 class="frozen-module-title">
+            默认样式
+          </h2>
+                                    <p class="introduce"></p>
+                                </div>
+                                <div class="frozen-module-demo">
+                                    <div class="module-tags">
+                                        <span class="example module-tags">Example</span>
+                                    </div>
+                                    <div class="frozen-module-dom">
+                                        <div class="dom-content" style="">
+
+                                            <div class="o-msg">
+                                                <i class="o-ico o-ico-info-24"></i> 提示信息提示信息提示信息
+                                            </div>
+                                            <div class="o-msg">
+                                                <i class="o-ico o-ico-error-48"></i>
+                                                <div class="msg-cont">
+                                                    <p><strong>出错提示出错提示！</strong></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <pre name="code" class="html" style="display: none;">  
+                                        <div class="o-msg">
+                                            <i class="o-ico o-ico-info-24"></i> 提示信息提示信息提示信息
+                                        </div>
+                                        <div class="o-msg">
+                                            <i class="o-ico o-ico-error-48"></i>
+                                            <div class="msg-cont">
+                                                <p><strong>出错提示出错提示！</strong></p>
+                                            </div>
+                                        </div>
+                                </pre>
+                                </div>
+                            </div>
+                            <div class="frozen-module">
+                                <div class="frozen-module-head">
+                                    <h2 class="frozen-module-title">
+            多行提示
+          </h2>
+                                    <p class="introduce"></p>
+                                </div>
+                                <div class="frozen-module-demo">
+                                    <div class="module-tags">
+                                        <span class="example module-tags">Example</span>
+                                    </div>
+                                    <div class="frozen-module-dom">
+                                        <div class="dom-content" style="">
+
+                                            <div class="o-msg o-msg-mutiple">
+                                                <i class="o-ico o-ico-info-48"></i>
+                                                <div class="msg-cont">
+                                                    <p><strong>提示信息提示信息提示信息</strong></p>
+                                                    <p>提示信息提示信息提示信息提示信息提示信息提示信息提示信息提示信息提示信息</p>
+                                                    <p>提示信息提示信息提示信息</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <pre name="code" class="html" style="display: none;">  
+                                        <div class="o-msg o-msg-mutiple">
+                                            <i class="o-ico o-ico-info-48"></i>
+                                            <div class="msg-cont">
+                                                <p><strong>提示信息提示信息提示信息</strong></p>
+                                                <p>提示信息提示信息提示信息提示信息提示信息提示信息提示信息提示信息提示信息</p>
+                                                <p>提示信息提示信息提示信息</p>
+                                            </div>
+                                        </div>
+                                </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module-group" id="model">
+                            <div class="group-head">
+                                <h1 class="group-title"> 
+          <a href="###">静态框</a>
+        </h1>
+                            </div>
+
+                            <div class="frozen-module">
+                                <div class="frozen-module-head">
+                                    <h2 class="frozen-module-title">
+            默认样式
+          </h2>
+                                    <p class="introduce"></p>
+                                </div>
+                                <div class="frozen-module-demo">
+                                    <div class="module-tags">
+                                        <span class="example module-tags">Example</span>
+                                    </div>
+                                    <div class="frozen-module-dom">
+                                        <div class="dom-content" style="">
+
+                                            <div class="o-modal" style="display:block">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">模态框-标题</h4>
+                                                </div>
+                                                <div class="modal-body">请在此处加载具体内容...</div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="o-btn o-btn-primary">确认</button>
+                                                    <button type="button" class="o-btn o-btn-secondary">取消</button>
+                                                </div>
+                                                <a href="javascript:" class="o-close">×</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <pre name="code" class="html" style="display: none;">  
+                                        <div class="o-modal">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">模态框-标题</h4>
+                                            </div>
+                                            <div class="modal-body">请在此处加载具体内容...</div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="o-btn o-btn-primary">确认</button>
+                                                <button type="button" class="o-btn o-btn-secondary">取消</button>
+                                            </div>
+                                            <a href="javascript:" class="o-close">×</a>
+                                        </div>
+                                </pre>
+                                </div>
+                            </div>
+                            <div class="frozen-module">
+                                <div class="frozen-module-head">
+                                    <h2 class="frozen-module-title">
+            警示框
+          </h2>
+                                    <p class="introduce"></p>
+                                </div>
+                                <div class="frozen-module-demo">
+                                    <div class="module-tags">
+                                        <span class="example module-tags">Example</span>
+                                    </div>
+                                    <div class="frozen-module-dom">
+                                        <div class="dom-content" style="">
+
+                                            <div class="o-modal" style="display:block">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">取消订单</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="o-msg o-msg-mutiple">
+                                                        <i class="o-ico o-ico-alert-48"></i>
+                                                        <div class="msg-cont">
+                                                            <p><strong>你是否确认取消本次预定？</strong></p>
+                                                            <p>次要提示说明信息次要提示说明信息次要提示说明信息次要提示说明信息次要提示说明信息</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="o-btn o-btn-primary">确认</button>
+                                                    <button type="button" class="o-btn o-btn-secondary">取消</button>
+                                                </div>
+                                                <a href="javascript:" class="o-close">×</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <pre name="code" class="html" style="display: none;">  
+                                        <div class="o-modal">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">取消订单</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="o-msg o-msg-mutiple">
+                                                    <i class="o-ico o-ico-alert-48"></i>
+                                                    <div class="msg-cont">
+                                                        <p><strong>你是否确认取消本次预定？</strong></p>
+                                                        <p>次要提示说明信息次要提示说明信息次要提示说明信息次要提示说明信息次要提示说明信息</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="o-btn o-btn-primary">确认</button>
+                                                <button type="button" class="o-btn o-btn-secondary">取消</button>
+                                            </div>
+                                            <a href="javascript:" class="o-close">×</a>
+                                        </div>
+                                </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module-group" id="tag">
+                            <div class="group-head">
+                                <h1 class="group-title"> 
+          <a href="###">标签过滤</a>
+        </h1>
+                            </div>
+
+                            <div class="frozen-module">
+                                <div class="frozen-module-head">
+                                    <h2 class="frozen-module-title">
+            默认样式
+          </h2>
+                                    <p class="introduce"></p>
+                                </div>
+                                <div class="frozen-module-demo">
+                                    <div class="module-tags">
+                                        <span class="example module-tags">Example</span>
+                                    </div>
+                                    <div class="frozen-module-dom">
+                                        <div class="dom-content" style="">
+
+                                            <div class="tags-filter-list">
+                                                <div class="tags-filter-item">
+                                                    <strong class="tags-label">携程：</strong>
+                                                    <div class="tags-content">
+                                                        <span class="active">不限</span><span>海口（17）</span>
+                                                    </div>
+                                                </div>
+                                                <div class="tags-filter-item">
+                                                    <strong class="tags-label">饿了：</strong>
+                                                    <div class="tags-content">
+                                                        <span>不限</span><span class="active">80-100万</span><span>100-120万</span><span>120-150万</span><span>150-200万</span><span>200-300万</span>
+                                                    </div>
+                                                </div>
+                                                <div class="tags-filter-item">
+                                                    <strong class="tags-label">百度：</strong>
+                                                    <div class="tags-content">
+                                                        <span>不限</span><span class="active">二居</span><span>三居</span><span>四居</span><span>五居</span></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <pre name="code" class="html" style="display: none;">  
+                                        <div class="tags-filter-list">
+                                            <div class="tags-filter-item">
+                                                <strong class="tags-label">携程：</strong>
+                                                <div class="tags-content">
+                                                    <span class="active">不限</span><span>海口（17）</span>
+                                                </div>
+                                            </div>
+                                            <div class="tags-filter-item">
+                                                <strong class="tags-label">饿了么：</strong>
+                                                <div class="tags-content">
+                                                    <span>不限</span><span class="active">80-100万</span><span>100-120万</span><span>120-150万</span><span>150-200万</span><span>200-300万</span>
+                                                </div>
+                                            </div>
+                                            <div class="tags-filter-item">
+                                                <strong class="tags-label">百度：</strong>
+                                                <div class="tags-content">
+                                                    <span>不限</span><span class="active">二居</span><span>三居</span><span>四居</span><span>五居</span></div>
+                                            </div>
+                                        </div>
+                                </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="foot-area">
+                <div class="fr-info">
+                    <div class="info-item">
+                        <span class="qq-logo"></span>：512932926
+                    </div>
+                </div>
+
+                <div class="fr-introduce">
+                    <div class="introduce-content">
+                        <h3>CuTEUI是什么</h3>
+                        <p>用于营销活动项目专用ui</p>
+                        <p>快速构建活动页面以及相关交互</p>
+
+                        <div class="bottom-info">
+                            <div class="links">
+                                <a href="">阿威</a> • <a href="">阿威</a> • <a href="">阿威</a> • <a href="">阿威</a>
+                            </div>
+                            <div class="copyright">
+                                © 2016 ctripcorp ued
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <a href="#" class="scroll-top-btn" style="display: inline;">回到顶部</a>
+</body>
+
+</html>
+<script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+<script src="/_example/example.js"></script>
+<script type="text/javascript">
+    dp.SyntaxHighlighter.HighlightAll("code");
+</script>
+
