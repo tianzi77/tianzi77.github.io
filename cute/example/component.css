@@ -124,7 +124,7 @@ li.side-highlight {
 	font-size: 12px;
 	line-height: 23px;
 
-	z-index: 999;
+	z-index: 7;
 }
 .module-tags span.example {
 	border-bottom-right-radius: 2px;
