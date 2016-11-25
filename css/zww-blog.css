@@ -1795,34 +1795,34 @@ body {
     .post-content-preview {
         display: none;
     }
-    .post-preview > a > .post-title {
+    .article-title > a > .post-title {
         margin-top: 0;
         margin-bottom: 0;
     }
-    .post-preview a {
+    .article-title a {
         float: left;
         color: #54BAF3;
         transition: color .25s linear;
         padding: 0 5px;
     }
-    .post-preview a:hover {
+    .article-title a:hover {
         background-color: #F27B2E;
         border-radius: 3px;
         color: #fff;
     }
-    .post-preview p {
+    .article-title p {
         margin: 0;
     }
-    .post-preview > .post-meta {
+    .article-title > .post-meta {
         font-family: 'Hiragino Sans GB', 'Microsoft YaHei', Simsun, Mingliu, Arial, Helvetica, sans-serif;
         color: #333333;
         font-size: 12px;
     }
-    .post-preview {
+    .article-title {
         text-align: right;
         margin: 20px 0;
     }
-    .post-preview > .post-meta {
+    .article-title > .post-meta {
         margin-top: -12px;
     }
     body::-webkit-scrollbar {
