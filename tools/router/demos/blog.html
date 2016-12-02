@@ -45,6 +45,7 @@
         color: #fff;
         cursor: pointer;
     }
+    
     .demo-show {
         width: 100px;
         height: 50px;
@@ -85,7 +86,7 @@
 
 <div id="m"></div>
 <script id="tmpl" type="text/template" style="display:none;">
-    <span>我就是大哥我就是大哥</span>
+    <span class="test">我就是大哥我就是大哥</span>
 </script>
 <script src="../q.js"></script>
 <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
@@ -102,6 +103,7 @@
     }).reg([
   ['about', function () {
             M.innerHTML = document.getElementById('tmpl').innerHTML;
+            //这里可以写路由页面的脚本
   }],
   ['friend', function () {
             M.innerHTML = '我的朋友们都在这~';
