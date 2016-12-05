@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>博客</title>
+<link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+
+<head>
+    <style>
+        .corp-demo {
+            position: fixed;
+            top: 0;
+            left: -100px;
+            height: 100%;
+            width: 100px;
+            background-color: black;
+            background-color: rgba(0, 0, 0, .8);
+            text-align: center;
+            transition: all .6s ease-in-out .3s;
+        }
+        
+        ul.demo-nav {
+            line-height: 1em;
+            position: relative;
+            height: 100%;
+        }
+        
+        ul.demo-nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 0;
+            font-size: 12px;
+            transition: all .2s;
+        }
+        
+        ul.demo-nav a:hover,
+        ul.demo-nav a.active {
+            background: #fff;
+            color: #3085cd;
+        }
+        
+        ul.demo-nav .demo-close {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            font-size: 22px;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .demo-show {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            line-height: 50px;
+            background-color: black;
+            background-color: rgba(0, 0, 0, .8);
+            color: #fff;
+            transition: all ease-in-out .3s;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .corp-demo-show {
+            left: 0;
+        }
+        
+        .demo-delay {
+            -webkit-transition-delay: 0.9s;
+            transition-delay: 0.9;
+        }
+        
+        .demo-tips-hide {
+            left: -100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="corp-demo">
+        <ul class="demo-nav">
+            <a href="#/" class="active">首页</a>
+            <a href="#/test">关于</a>
+            <!--        <a href="#!friend">友情链接</a>-->
+            <span class="demo-close">&times;</span>
+        </ul>
+    </div>
+    <span class="demo-show">展开交互</span>
+
+    <div id="main" style="text-align:center"></div>
+    <script id="tmpl" type="text/template" style="display:none;">
+        <span class="test">我就是大哥我就是大哥</span>
+    </script>
+</body>
+<script src="../../vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../lib/sammy.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    ;
+    (function ($) {
+        var app = $.sammy(function () {
+
+            this.get('#/', function () {
+                $('#main').html($('#tmpl').html());
+            });
+
+            this.get('#/test', function () {
+                $.ajax({
+                    url: 'tmp.html',
+                    dataType: 'html',
+                    cache: false,
+                    success: function (html) {
+                        $('#main').html(html);
+                        //这个页面私有方法
+                    },
+                    error: function () {
+                        alert('网络错误，请刷新页面重试！');
+                    }
+                });
+
+
+            });
+
+        });
+
+        $(function () {
+            app.run('#/')
+        });
+    })(jQuery);
+
+    //导航高亮
+    $('.demo-nav a').on('click', function () {
+            $(this).addClass('active').siblings('a').removeClass('active');
+        })
+        //展开收起交互
+    $(".demo-show").on("click", function () {
+        $(this).removeClass("demo-delay").addClass("demo-tips-hide");
+        $(this).siblings(".corp-demo").addClass("corp-demo-show");
+    });
+    $(".demo-close").on("click", function () {
+        $(this).parents(".corp-demo").removeClass("corp-demo-show");
+        $('.demo-show').addClass("demo-delay").removeClass("demo-tips-hide");
+    });
+</script>
