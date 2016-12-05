@@ -1,0 +1,52 @@
+---
+layout:     post
+title:      "前端路由,陈酒新酿"
+subtitle:   " \"兼容到ie7+的路由实现\""
+date:       2016-12-05 11:55:00
+author:     "ZWW"
+header-img: "img/post-bg-universe.jpg"
+tags:
+    - 路由
+---
+
+> ** 前端路由，老话新谈，单页面spa项目，如果页面过多，路由就是必然的 **
+
+现在很多框架路由都只支持到ie8及其以上，那我们有的项目要支持到ie7，怎么玩？
+还有好jq，还好有sammy.js。构造了一个小小的列子：
+
+<a href="http://www.zhangweiwei.cn/tools/router7/examples/hello_world/ie7.html#/" target="_blank">在线测试</a>
+
+支持路由页面的事件及方法调用。<br>
+支持ajax<br>
+
+兼容性就不说了，支持一般的项目没问题。
+
+```javascript
+
+    this.get('#/test', function () {
+                $.ajax({
+                    url: 'tmp.html',
+                    dataType: 'html',
+                    cache: false,
+                    success: function (html) {
+                        $('#main').html(html);
+                        //这个页面私有方法
+                    },
+                    error: function () {
+                        alert('网络错误，请刷新页面重试！');
+                    }
+                });
+
+
+            });
+    
+```
+
+一个简单路由的代码，我完全可以把需要路由的页面放在tmp文件夹里面，便于项目后期的维护和迭代。
+更多的话直接看demo源代码吧。
+
+
+
+
+
+        
