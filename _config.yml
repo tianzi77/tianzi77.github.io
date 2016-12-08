@@ -51,7 +51,7 @@ useGoogleAnalysis: true     # TODO
 # Sidebar settings
 sidebar: true
 sidebar-featured-tags: true
-sidebar-about-description: "写写代码，做做设计，看看商界。游泳资深玩家，拜仁死忠。"
+sidebar-about-description: "此刻开始，我只想做个好人"
 sidebar-avatar: /img/avatar-hux.jpg     # use absolute URL.
 
 # Friends
