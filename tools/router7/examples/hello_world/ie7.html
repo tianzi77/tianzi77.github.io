@@ -75,6 +75,44 @@
         .demo-tips-hide {
             left: -100%;
         }
+        
+        @-webkit-keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+            }
+            to {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+            }
+            to {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+        
+        .fadeInLeft {
+            -webkit-animation-name: fadeInLeft;
+            animation-name: fadeInLeft;
+        }
+        
+        .animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
     </style>
 </head>
 
@@ -88,7 +126,7 @@
             <span class="demo-close">&times;</span>
         </ul>
     </div>
-    <span class="demo-show">展开交互</span>
+    <span class="demo-show fadeInLeft animated">展开交互</span>
 
     <div id="main" style="text-align:center"></div>
     <script id="tmpl" type="text/template" style="display:none;">
@@ -126,7 +164,7 @@
         });
 
         $(function () {
-            app.run('#/')
+            app.run('#/');
         });
     })(jQuery);
 
