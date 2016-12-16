@@ -1,0 +1,22 @@
+---
+layout:     post
+title:      "非设计人ps总结"
+subtitle:   " \"长期更新一下ps小技巧\""
+date:       2016-12-16 15:55:00
+author:     "ZWW"
+header-img: "img/post-bg-alitrip.jpg"
+tags:
+    - ps
+---
+
+> ** 不是专业的设计师，所以拿烂笔头记下来 **
+
+<p>1，下载一个Web_Design_Actions.atn插件，放在Presets\Actions目录，然后选中任意图层ctrl+shift+F2快速切片</p>
+<p>2，ctrl+鼠标左键选中图层不用说吧</p>
+<p>3，替换图片背景（非psd），双击解锁图片，魔棒选中需要修改的区域，更换前景色，ctrl+delete修改</p>
+
+
+
+
+
+        
