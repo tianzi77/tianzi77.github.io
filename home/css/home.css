@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+/**
+* @Desc  : 结算平台首页
+* @Build : 2016/12/16
+* @Author: zww
+* @Update: 2016/12/16 by ZWW
+*/
+
+/* RESET */
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button { margin: 0; padding: 0; }
+body { color: #333; font: normal 12px/1.5 "Microsoft Yahei", "PingFang SC", Tahoma, Arial, Simsun, Sans-serif; -webkit-font-smoothing: antialiased; }
+img, fieldset { border: 0; margin: 0; padding: 0; }
+input, textarea, select, button { font-size: 12px; }
+table { border-collapse: collapse; border-spacing: 0; }
+a { color: #0066cc; text-decoration: none; outline: none; }
+a:hover { text-decoration: none; }
+h1, h2, h3, h4, h5 { font-weight: normal; }
+li { list-style: none; }
+dfn { font-style: normal; font-family: arial; }
+i, em { font-style: normal; }
+.fl { float: left; }
+.fr { float: right; }
+.clear { clear: both; }
+.clearfix { *zoom: 1; }
+.clearfix:after { display: block; clear: both; height: 0; content: '\0020'; }
+.wrap { width: 1180px; margin: auto; }
+body { background: #1890e2 url(//pic.c-ctrip.com/corp_niv/cbooking/c-bg.png) 0 60px no-repeat; }
+
+/* ==========================================================================
+   header
+   ========================================================================== */
+.c-header { background-color: #fff; height: 60px; min-width: 1180px; }
+.c-header .c-logo, .c-header .c-text { float: left; }
+.c-header .c-logo { margin: 8px 15px 8px 0; }
+.c-header .c-text { font-size: 18px; color: #363a47; padding-left: 10px; border-left: 1px solid #363a47; margin: 16px 0; }
+
+/* ==========================================================================
+   content
+   ========================================================================== */
+.c-content { }
+.c-content .c-login { float: right; margin: 120px 135px 0 0; background-color: #fff; padding: 25px; *width: 262px; }
+.c-login .login-t { text-align: left; font-size: 20px; color: #007dd2; }
+.c-login p { margin-top: 20px; }
+.c-login .login-list { position: relative; }
+.c-login .hide-text { position: absolute; text-indent: -9999em; display: block; }
+.c-login input { height: 38px; line-height: 38px; width: 220px; padding-left: 40px; font-size: 14px; border: 1px solid #d7d7d7; }
+.c-login .small-input { width: 72px; vertical-align: middle; }
+.c-login .forget-pass { text-align: right; color: #007dd2; margin-top: 5px; }
+.c-login .change-code { float: right; margin-top: 2px; }
+.c-login .v-img { width: 90px; height: 40px; vertical-align: middle; margin-left: 10px; }
+.login-error { background-color: #fffcd8; border: 1px solid #ddccaa; padding: 2px 4px; }
+.login-btn { background-color: #007dd2; color: #fff; font-size: 20px; display: inline-block; text-align: center; width: 100%; height: 35px; line-height: 35px; transition: .2s; }
+.login-btn:hover { background-color: #269cec; }
+.pass-btn { width: 262px; margin: 10px 0 0 80px; }
+.no-icon .pass-btn { width: 310px; }
+
+/* ==========================================================================
+   icon
+   ========================================================================== */
+.hide-text, .login-error i, .help-pass i, .o-ico { background: url(//pic.c-ctrip.com/corp_niv/cbooking/c-icon.png) no-repeat; }
+.i-user { background-position: 0 -115px; width: 18px; height: 12px; top: 15px; left: 13px; }
+.i-pass { background-position: 0 -26px; width: 14px; height: 17px; left: 14px; top: 12px; }
+.i-check { background-position: 0 -79px; width: 16px; height: 18px; left: 13px; top: 11px; }
+i.error-tips { width: 12px; height: 12px; background-position: 0 -182px; display: inline-block; vertical-align: middle; margin: -1px 3px 0 0; }
+.i-right { width: 14px; height: 14px; background-position: 0 -12px; right: 12px; top: 12px; }
+.pwd-row .help-pass i.xuico-warn-pass { background-position: 0 -43px; width: 16px; height: 18px; display: inline-block; vertical-align: -4px; *vertical-align: middle; }
+.pwd-row .help-pass i.xuico-warn-f { background-position: 0 -61px; }
+.pwd-row .help-pass i.xuico-warn-x { background-position: 0 -97px; }
+.o-ico-info-48 { background-position: 0 -127px; width: 55px; height: 55px; display: inline-block; vertical-align: middle; }
+
+/* ==========================================================================
+   footer
+   ========================================================================== */
+.footer { text-align: center; color: #363a47; position: absolute; width: 100%; bottom: 80px; }
+
+/* ==========================================================================
+   忘记密码
+   ========================================================================== */
+.forget-pass .c-header { background-color: transparent; margin: 35px 0; }
+.forget-pass .c-header .c-text { color: #fff; border-left-color: #fff; }
+.forget-pass .c-login { float: none; margin: 0 80px; *width: auto; padding: 70px 100px; }
+.c-progress { }
+.c-step { color: #b7b7b7; padding: 0 60px; margin-bottom: 65px; position: relative; }
+.c-step:after { display: block; content: ""; height: 0; font-size: 0; clear: both; overflow: hidden; visibility: hidden; }
+.c-step li { float: left; position: relative; }
+.c-step .step-end { width: 128px; position: absolute; top: 0; right: -66px; }
+.c-step-line { height: 2px; background-color: #eeeeee; margin: 27px 35px; }
+.step-end .c-step-line { display: none; }
+.c-step-cont { width: 128px; position: absolute; top: 0; left: -27px; text-align: center; }
+.c-step-cont-number { display: inline-block; *zoom: 1; position: absolute; left: 0; top: 0; width: 55px; height: 55px; line-height: 55px; color: #7a7a7a; border-radius: 50%; font-size: 18px; background-color: #eeeeee; }
+.c-step-cont-text { position: relative; top: 65px; left: -35px; font-size: 16px; color: #a2a2a2; }
+
+/** 步骤数定义 **/
+.c-step-3 li { width: 50%; }
+.c-step-4 li { width: 33.3%; }
+.c-step-5 li { width: 25%; }
+.c-step-6 li { width: 20%; }
+.c-step-2 li { width: 100%; }
+.c-length { width: 55%; margin-left: auto; margin-right: auto; }
+.c-title { text-align: center; color: #007dd2; font-size: 20px; margin-bottom: -30px; }
+
+/* Done */
+.step-done .c-step-cont-number { background-color: #1890e2; color: #fff; }
+.step-done .c-step-cont-text { color: #007dd2; }
+.step-done .c-step-line { background-color: #1890e2; }
+
+/* active */
+.step-active .c-step-cont-number { background-color: #1890e2; color: #fff; }
+.step-active .c-step-cont-text { color: #007dd2; }
+.c-login .e-error { border-color: #1890e2; }
+.pwd-row { overflow: hidden; *zoom: 1; }
+.pwd-row:after { clear: both; display: table; height: 0; content: ""; }
+.pwd-row .pwd-col-label { float: left; width: 70px; padding-right: 10px; font-size: 16px; line-height: 38px; text-align: right; }
+.pwd-row .pwd-col-form { float: left; width: 305px; position: relative; }
+.pwd-row .inner-control { width: 190px; height: 26px; padding: 0 4px; line-height: 26px; border: 1px solid #BBBBBB; }
+.pwd-row .help-block { margin: 5px 0; color: #4b4b4b; clear: both; }
+.pwd-row .help-block i { margin-right: 1px; vertical-align: -1px; *vertical-align: 3px; }
+.pwd-no { line-height: 38px; color: #363a47; font-size: 14px; }
+.xuico-warn-xsm { display: inline-block; vertical-align: middle; background-image: url(http://pic.c-ctrip.com/corp_niv/com/un_icon_round.png?20150206); background-repeat: no-repeat; }
+.xuico-warn-xsm { width: 12px; height: 12px; background-position: -224px -69px; }
+.forget-pass .c-login .small-input { width: 119px; }
+.pass-form { width: 385px; margin: 0 auto 10px; padding-top: 50px; }
+.new-form { width: 395px; }
+.no-icon input { padding-left: 8px; padding-right: 18px; width: 280px; }
+.no-icon .pwd-row .pwd-col-form { width: 315px; }
+
+/* TIPS */
+.o-msg { padding: 10px 20px; text-align: center; }
+.o-msg .o-ico { margin-right: 5px; }
+.o-msg .msg-cont { display: inline-block; *display: inline; *zoom: 1; margin: 0 0 0 5px; text-align: left; vertical-align: middle; }
+.o-msg .msg-cont p { font-size: 14px; color: #4b4b4b; margin: 0; }
+.o-msg .msg-cont .ms-ok { font-size: 30px; color: #1890e2; }
+.o-msg .msg-cont .new-btn { margin-top: 50px; }
+.new-btn .login-btn { width: 96%; *width: 270px; }
+.o-msg .ye { color: #f39800; }
+.o-msg-mutiple .msg-cont { max-width: 80%; padding-top: 5px; vertical-align: top; }
+
+/* --------------------------------------------------------------------------
+   Media 
+   -------------------------------------------------------------------------- */
+@media screen and (max-width:1200px) {
+	.wrap { width: 980px }
+	.c-header { min-width: 980px; }
+}

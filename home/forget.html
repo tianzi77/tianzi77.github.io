@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>忘记密码</title>
+	<link rel="stylesheet" href="css/home.css">
+</head>
+
+<body class="forget-pass">
+	<div class="c-header">
+		<div class="wrap clearfix">
+			<a href="###" class="c-logo"><img src="//pic.c-ctrip.com/corp_niv/logo_corpbiz_white.png" alt=""></a>
+			<a href="###" class="c-text">携程商旅结算客户端</a>
+		</div>
+	</div>
+	<div class="c-content">
+		<div class="wrap clearfix">
+			
+			<div class="c-login">
+				<!-- 所有的节点将会路由进这个div -->
+			</div>
+			<!-- 第一步 S -->
+			<script id="forget1" type="text/template" style="display:none;">
+				<ol class="c-step c-step-3">
+					<!-- 正在完成当前步骤step-active 已完成step-done -->
+					<li class="step-start step-active step-active">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">1</span>
+							<span class="c-step-cont-text">第一步：验证信息</span>
+						</div>
+					</li>
+					<li class="">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">2</span>
+							<span class="c-step-cont-text">第二步：重置密码</span>
+						</div>
+					</li>
+					<li class="step-end">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">3</span>
+							<span class="c-step-cont-text">第三步：完成</span>
+						</div>
+					</li>
+				</ol>
+				<form action="" class="pass-form">
+					<div class="login-list">
+						<dl>
+							<dt>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">用户名</div>
+                    				<div class="pwd-col-form">
+                    					<label for="user-login" class="hide-text i-user">用户名</label>
+                        				<input type="text" id="user-login" placeholder="请输入邮箱" class="e-error">
+                        				<div class="help-block">
+                            			<i class="xuico-warn-xsm"></i> 邮箱格式有误。
+                        			</div>
+                    				</div>
+                				</div>
+							</dt>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">验证码</div>
+                    				<div class="pwd-col-form">
+                    					<div class="clearfix">
+                        					<label for="" class="hide-text i-check">验证码</label>
+											<input type="text" placeholder="请输入验证码" class="small-input fl">
+											<img src="https://www.corporatetravel.ctrip.com/crptravel/checkcode.aspx?b=6&t=1505" alt="" class="v-img fl">
+											<a href="###" class="change-code">看不清<br>换一张</a>
+										</div>
+                        				<div class="help-block">
+                            				<i class="xuico-warn-xsm"></i> 验证码不正确或验证码已过期。
+                        				</div>
+                    				</div>
+                				</div>
+							</dd>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-form">
+                        				<a href="###" class="login-btn pass-btn">发送密码重置邮件</a>
+                					</div>
+                				</div>
+							</dd>
+						</dl>
+					</div>
+				</form>
+				</script>
+			<!-- 第一步 E -->
+			
+			<!-- 第二步 S -->
+			<script id="forget2" type="text/template" style="display:none;">
+				<ol class="c-step c-step-3">
+					<!-- 正在完成当前步骤step-active 已完成step-done -->
+					<li class="step-start step-active step-done">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">1</span>
+							<span class="c-step-cont-text">第一步：验证信息</span>
+						</div>
+					</li>
+					<li class="step-active">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">2</span>
+							<span class="c-step-cont-text">第二步：重置密码</span>
+						</div>
+					</li>
+					<li class="step-end">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">3</span>
+							<span class="c-step-cont-text">第三步：完成</span>
+						</div>
+					</li>
+				</ol>
+				<form action="" class="pass-form new-form">
+					<div class="login-list no-icon">
+						<dl>
+							<dt>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">新密码</div>
+                    				<div class="pwd-col-form">
+                    					<label for="user-login" class="hide-text i-right">新密码</label>
+                        				<input type="password" id="user-login" placeholder="请输入新密码" class="e-error">
+                        				<div class="help-block">
+                            				<i class="xuico-warn-xsm"></i> 请输入6-20位数字、字母。
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass"></i> 密码很安全
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass xuico-warn-f"></i> 安全强度适中，可使用三种以上的组合来提高安全强度
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass xuico-warn-x"></i> 有被盗风险,建议使用字母、数字和符号两种及以上组合
+                        				</div>
+                    				</div>
+                				</div>
+							</dt>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">确认密码</div>
+                    				<div class="pwd-col-form">
+                    					<label for="user-login" class="hide-text i-right">确认密码</label>
+                        				<input type="password" id="user-login" placeholder="再次输入密码" class="">
+                        				<div class="help-block">
+                            			<i class="xuico-warn-xsm"></i> 两次输入密码不一致。
+                        			</div>
+                    				</div>
+                				</div>
+							</dd>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-form">
+                        				<a href="###" class="login-btn pass-btn">下一步</a>
+                					</div>
+                				</div>
+							</dd>
+						</dl>
+					</div>
+				</form>
+				</script>
+			<!-- 第二步 E -->
+			<!-- 第三步 S -->
+			<script id="forget3" type="text/template" style="display:none;">
+				<ol class="c-step c-step-3">
+					<!-- 正在完成当前步骤step-active 已完成step-done -->
+					<li class="step-start step-active step-done">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">1</span>
+							<span class="c-step-cont-text">第一步：验证信息</span>
+						</div>
+					</li>
+					<li class="step-done">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">2</span>
+							<span class="c-step-cont-text">第二步：重置密码</span>
+						</div>
+					</li>
+					<li class="step-end step-active">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">3</span>
+							<span class="c-step-cont-text">第三步：完成</span>
+						</div>
+					</li>
+				</ol>
+				<form action="" class="pass-form">
+					<div class="login-list no-icon">
+						<div class="o-msg o-msg-mutiple">
+                          	<i class="o-ico o-ico-info-48"></i>
+                           	<div class="msg-cont">
+                                <p class="ms-ok">恭喜你，激活成功！</p>
+                                <p><span class="ye">5</span>秒后自动跳转登录页...</p>
+                                <p class="new-btn"><a href="###" class="login-btn">请使用新密码登录</a></p>
+                            </div>
+                        </div>
+					</div>
+				</form>
+			</script>
+			<!-- 第三步 E -->
+			<!-- 激活用户1 S -->
+			<script id="live1" type="text/template" style="display:none;">
+				<ol class="c-step c-step-2 c-length">
+					<!-- 正在完成当前步骤step-active 已完成step-done -->
+					<li class="step-start step-active step-active">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">1</span>
+							<span class="c-step-cont-text">第一步：设置密码</span>
+						</div>
+					</li>
+					<li class="step-end">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">2</span>
+							<span class="c-step-cont-text">第二步：激活完成</span>
+						</div>
+					</li>
+				</ol>
+				<form action="" class="pass-form new-form">
+					<div class="login-list no-icon">
+						<dl>
+							<dt>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">用户名</div>
+                    				<div class="pwd-col-form pwd-no">
+                    					arron@ctrip.com
+                    				</div>
+                				</div>
+							</dt>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">新密码</div>
+                    				<div class="pwd-col-form">
+                    					<label for="user-login" class="hide-text i-right">新密码</label>
+                        				<input type="password" id="user-login" placeholder="请输入新密码" class="e-error">
+                        				<div class="help-block">
+                            				<i class="xuico-warn-xsm"></i> 请输入6-20位数字、字母。
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass"></i> 密码很安全
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass xuico-warn-f"></i> 安全强度适中，可使用三种以上的组合来提高安全强度
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass xuico-warn-x"></i> 有被盗风险,建议使用字母、数字和符号两种及以上组合
+                        				</div>
+                    				</div>
+                				</div>
+							</dd>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">确认密码</div>
+                    				<div class="pwd-col-form">
+                    					<label for="user-login" class="hide-text i-right">确认密码</label>
+                        				<input type="password" id="user-login" placeholder="再次输入密码" class="">
+                        				<div class="help-block">
+                            			<i class="xuico-warn-xsm"></i> 两次输入密码不一致。
+                        			</div>
+                    				</div>
+                				</div>
+							</dd>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-form">
+                        				<a href="###" class="login-btn pass-btn">下一步</a>
+                					</div>
+                				</div>
+							</dd>
+						</dl>
+					</div>
+				</form>
+			</script>
+			<!-- 激活用户1 E -->
+			<!-- 激活用户2 S -->
+			<script id="live2" type="text/template" style="display:none;">
+				<ol class="c-step c-step-2 c-length">
+					<!-- 正在完成当前步骤step-active 已完成step-done -->
+					<li class="step-start step-active step-done">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">1</span>
+							<span class="c-step-cont-text">第一步：设置密码</span>
+						</div>
+					</li>
+					<li class="step-end step-active">
+						<div class="c-step-line"></div>
+						<div class="c-step-cont">
+							<span class="c-step-cont-number">2</span>
+							<span class="c-step-cont-text">第二步：激活完成</span>
+						</div>
+					</li>
+				</ol>
+				<form action="" class="pass-form">
+					<div class="login-list no-icon">
+						<div class="o-msg o-msg-mutiple">
+                          	<i class="o-ico o-ico-info-48"></i>
+                           	<div class="msg-cont">
+                                <p class="ms-ok">恭喜你，激活成功！</p>
+                                <p><span class="ye">5</span>秒后自动跳转登录页...</p>
+                                <p class="new-btn"><a href="###" class="login-btn">请使用新密码登录</a></p>
+                            </div>
+                        </div>
+					</div>
+				</form>
+			</script>
+			<!-- 激活用户2 E -->
+
+			<!-- 直接修改密码1 S -->
+			<script id="change1" type="text/template" style="display:none;">
+				<ol class="c-step-2 c-title">
+					<li>修改密码</li>
+				</ol>
+				<form action="" class="pass-form new-form">
+					<div class="login-list no-icon">
+						<dl>
+							<dt>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">当前密码</div>
+                    				<div class="pwd-col-form">
+                    					<label for="user-login" class="hide-text i-right">当前密码</label>
+                        				<input type="password" id="user-login" placeholder="请输入密码" class="e-error">
+                        				<div class="help-block">
+                            				<i class="xuico-warn-xsm"></i> 当前密码错误。
+                        				</div>
+                    				</div>
+                				</div>
+							</dt>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">新密码</div>
+                    				<div class="pwd-col-form">
+                    					<label for="user-login" class="hide-text i-right">新密码</label>
+                        				<input type="password" id="user-login" placeholder="请输入新密码" class="e-error">
+                        				<div class="help-block">
+                            				<i class="xuico-warn-xsm"></i> 请输入6-20位数字、字母。
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass"></i> 密码很安全
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass xuico-warn-f"></i> 安全强度适中，可使用三种以上的组合来提高安全强度
+                        				</div>
+                        				<div class="help-block help-pass">
+                            				<i class="xuico-warn-pass xuico-warn-x"></i> 有被盗风险,建议使用字母、数字和符号两种及以上组合
+                        				</div>
+                    				</div>
+                				</div>
+							</dd>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-label">确认密码</div>
+                    				<div class="pwd-col-form">
+                    					<label for="user-login" class="hide-text i-right">确认密码</label>
+                        				<input type="password" id="user-login" placeholder="再次输入密码" class="">
+                        				<div class="help-block">
+                            			<i class="xuico-warn-xsm"></i> 两次输入密码不一致。
+                        			</div>
+                    				</div>
+                				</div>
+							</dd>
+							<dd>
+								<div class="pwd-row">
+                    				<div class="pwd-col-form">
+                        				<a href="###" class="login-btn pass-btn">下一步</a>
+                					</div>
+                				</div>
+							</dd>
+						</dl>
+					</div>
+				</form>
+			</script>
+			<!-- 直接修改密码1 E -->
+
+			<!-- 直接修改密码2 S -->
+			<script id="change2" type="text/template" style="display:none;">
+				<form action="" class="pass-form">
+					<div class="login-list no-icon">
+						<div class="o-msg o-msg-mutiple">
+                          	<i class="o-ico o-ico-info-48"></i>
+                           	<div class="msg-cont">
+                                <p class="ms-ok">恭喜你，激活成功！</p>
+                                <p><span class="ye">5</span>秒后自动跳转登录页...</p>
+                                <p class="new-btn"><a href="###" class="login-btn">请使用新密码登录</a></p>
+                            </div>
+                        </div>
+					</div>
+				</form>
+			</script>
+			<!-- 直接修改密码2 E -->
+		</div>
+	</div>
+	<div class="footer">
+			<p>Copyright 2012-2016 Ctrip.com All rights reserved.</p>
+			<p>携程旅行网 版权所有 2012-2016 保留所有权利</p>
+	</div>
+
+
+	<!-- ued交互 ***开发忽略 S*** -->
+	<div class="corp-demo">
+        <ul class="demo-nav">
+            <a href="#/" class="">忘记密码1</a>
+            <a href="#/forget2" class="">忘记密码2</a>
+            <a href="#/forget3" class="">忘记密码3</a>
+            <a href="#/live1">激活1</a>
+            <a href="#/live2">激活2</a>
+            <a href="#/change1">修改1</a>
+            <a href="#/change2">修改2</a>
+            <span class="demo-close">&times;</span>
+        </ul>
+    </div>
+    <span class="demo-show fadeInLeft animated">展开交互</span>
+        <style>
+.corp-demo { position: fixed; top: 0; left: -100px; height: 100%; width: 100px; background-color: black; background-color: rgba(0, 0, 0, .8); text-align: center; transition: all .6s ease-in-out .3s; }
+ul.demo-nav { line-height: 1em; position: relative; height: 100%; }
+ul.demo-nav a { display: block; color: #fff; text-decoration: none; padding: 10px 0; font-size: 12px; transition: all .2s; }
+ul.demo-nav a:hover, ul.demo-nav a.active { background: #fff; color: #3085cd; transform:skewX(-20deg); width: 80%; margin: auto; width: 100%\9; }
+ul.demo-nav .demo-close { position: absolute; bottom: 20px; left: 50%; transform: translate(-50%, 0); font-size: 22px; color: #fff; cursor: pointer; }
+.demo-show { width: 100px; height: 50px; position: absolute; bottom: 20px; left: 0; line-height: 50px; background-color: black; background-color: rgba(0, 0, 0, .8); color: #fff; transition: all ease-in-out .3s; cursor: pointer; text-align: center; }
+.corp-demo-show { left: 0; }
+.demo-delay { -webkit-transition-delay: 0.9s; transition-delay: 0.9; }
+.demo-tips-hide { left: -100%; }
+@-webkit-keyframes fadeInLeft {
+	from { opacity: 0; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); }
+	to { opacity: 1; -webkit-transform: none; transform: none; }
+}
+@keyframes fadeInLeft {
+	from { opacity: 0; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); }
+	to { opacity: 1; -webkit-transform: none; transform: none; }
+}
+.fadeInLeft { -webkit-animation-name: fadeInLeft; animation-name: fadeInLeft; }
+.animated { -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+    </style>
+    <script src="../../../../online/master/lib/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/sammy.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8" src="js/route.js"></script>
+    <!-- ued交互 ***开发忽略 E*** -->
+</body>
+</html>
