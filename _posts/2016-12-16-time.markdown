@@ -1,0 +1,49 @@
+---
+layout:     post
+title:      "倒计时"
+subtitle:   " \"空闲写一下倒计时\""
+date:       2016-12-20 14:55:00
+author:     "ZWW"
+header-img: "img/post-bg-alitrip.jpg"
+tags:
+    - 倒计时
+---
+
+> ** 难道这么基础的东西不多练一下，插件用多了只能是累赘 **
+
+
+        function remainTime(year, month, day) {
+            var date = new Date(),
+                newDate = new Date(year, month - 1, day),
+                left = newDate.getTime() - date.getTime() //毫秒
+            ;
+            if (left >= 0) {
+                var leftsecond = parseInt(left / 1000) //秒
+                    ,
+                    leftday = Math.floor(leftsecond / (24 * 60 * 60)) //天
+                    ,
+                    leftour = Math.floor((leftsecond - leftday * 60 * 60 * 24) / (60 * 60)) //小时
+                    ,
+                    leftmin = Math.floor((leftsecond - leftday * 60 * 60 * 24 - leftour * (60 * 60)) / 60) //分
+                    ,
+                    leftsc = Math.floor(leftsecond - leftday * 60 * 60 * 24 - leftour * 60 * 60 - leftmin * 60)
+                console.log('剩余:' + leftday + '天' + leftour + '小时' + leftmin + '分' + leftsc + '秒');
+            } else {
+                console.log("输入正确的时间");
+                clearInterval(timer);
+                return;
+            }
+            //秒
+        }
+        var timer = setInterval(function () {
+            remainTime(2017, 1, 0)
+        }, 1000)
+        
+本来准备封装一下，没时间折腾。只是练练，写成一个函数足以。如果作为一个工程师，思路永远活在找插件里，那还要脑子干嘛呢？
+
+<p style="color:#e74448;font-size:24px;">十年饮冰，难凉热血</p>
+
+
+
+
+        
