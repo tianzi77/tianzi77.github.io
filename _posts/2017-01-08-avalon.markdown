@@ -1,0 +1,79 @@
+---
+layout:     post
+title:      "avalon"
+subtitle:   " \"avalon很好的mvvm框架\""
+date:       2017-01-08 19:55:00
+author:     "ZWW"
+header-img: "img/home-bg-art.jpg"
+tags:
+    - avalon
+---
+
+> ** 今天是17年1月8日，吉祥的日子。倒霉的2016也终究过去，不管输了多少金钱，万幸的是身体健康，平平安安。自己走错的路诡着也要走完。 **
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5" ms-controller="todos">
+                <form action="" id="todoForm" ms-on-submit="add">
+                    <div class="form-group">
+                        <label for="">输入tudolist</label>
+                        <input type="text" type="text" id="todoInput" class="form-container" ms-duplex="@txt">
+                    </div>
+                </form>
+                <p id="todoCount" ms-if="test.length>0">现有{{test.length}}项</p>
+                <ol id="todoList">
+                    <li ms-for="($index, el) in @test">
+                        {{el}}
+                        <a href="#" class="delete" ms-click="test.splice($index,1)">&times;</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+        
+自己是一个喜欢搞事的人，既然喜欢搞死，不管玩什么，输了都要站起来。2016年想搞点事，结果搞的自己一身灰，2017年，还要想搞点事，有积累的事。
+回到正题，这样一个简单的todo list，如果用jq实现，代码是这样：
+
+                $(function(){
+                    var $todoForm = $('#todoForm');
+                    var $todoInput = $('#todoInput');
+                    var todoList = $('#todoList');
+                    var $todoCount = $('#todoCount');
+                    function count(){
+                        var len = todoList.children().length;
+                        $todoCount.html(len>0?'现有'+len +'项list':'');
+                    }
+                    $todoForm.submit(function(e){
+                        var input_value = $todoInput.val();
+                        todoList.append('<li>'+input_value+'&nbsp;<a href="#" class="delete">&times;</a></li>');
+                        $todoInput.val('');
+                        count();
+                    })
+                    
+                   todoList.on('click','.delete',function(){
+                        $(this).parent().remove();
+                        count();
+                    })
+                })
+                
+看起来挺简单的，但是如果用mvvm框架，其实更显而易举。这也是ng react为什么发展这么快，肯定是有他的用处的，很多时候一个编码人员，真的，不应该否认框架带来的好处与便利，你玩不转只是你不行别他妈抱怨不方便。今年玩玩avalon，后面都会玩玩，觉得这款mvvm挺不错。
+
+        var vm = avalon.define({
+            $id: "todos",
+            txt: '',
+            test: [],
+            add: function(e) {
+                !!vm.txt.trim() && vm.test.push(vm.txt);
+                vm.txt = '';
+                e.preventDefault();
+            }
+        })
+
+如此清爽的代码，难免让人想玩玩，就是这么简单。
+<p style="color:#dd25dd;font-size:24px;">痛定思痛，从头再来，2017，开个好头</p>
+
+
+
+
+        
