@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>mmRouter组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.2.4/avalon.js"></script>
+    <style>
+        .ddd {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div ms-controller="tianzi">
+
+        <div ms-visible="@curIndex == 1">tab1内容 {{hello}}</div>
+        <div ms-visible="@curIndex == 2">tab2内容{{hello}}</div>
+        <div ms-visible="@curIndex == 3">tab3内容{{hello}}</div>
+        <p>
+            <button type="button" ms-on-mouseenter='changeTab(1)' ms-class="@curIndex == 1 ? @active : ''">tab1</button>
+
+            <button type="button" ms-on-mouseenter='changeTab(2)' ms-class="@curIndex == 2 ? @active : ''">tab2</button>
+
+            <button type="button" ms-on-mouseenter='changeTab(3)' ms-class="@curIndex == 3 ? @active : ''">tab3</button>
+        </p>
+    </div>
+
+</body>
+<script>
+    avalon.ready(function () {
+        var vm = avalon.define({
+            $id: "tianzi",
+            tian: true,
+            hello: 'hello avalon',
+            curIndex: 1,
+            active: 'ddd',
+            changeTab: function (index) {
+                vm.curIndex = index;
+            }
+        })
+
+        avalon.scan(document.body);
+    })
+</script>
+
+</html>
