@@ -3,7 +3,7 @@ layout:     post
 title:      "如何用js操作伪元素"
 subtitle:   " \"动态修改伪元素的内容\""
 date:       2017-01-11 19:55:00
-author:     "伪元素"
+author:     "zww"
 header-img: "img/contact-bg.jpg"
 tags:
     - 伪元素
