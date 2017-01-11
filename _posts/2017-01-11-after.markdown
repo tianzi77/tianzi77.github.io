@@ -1,0 +1,49 @@
+---
+layout:     post
+title:      "如何用js操作伪元素"
+subtitle:   " \"动态修改伪元素的内容\""
+date:       2017-01-11 19:55:00
+author:     "伪元素"
+header-img: "img/contact-bg.jpg"
+tags:
+    - 伪元素
+---
+
+> ** 不知不觉又要下班了，忙了一天，刚才逛sf的时候看见有人提问怎样操作伪元素，觉得挺有意思 **
+
+都知道伪元素是不能直接被JavaScript选中了，那如果想修改伪元素我们通过都会用真实的dom去替换掉这种选择器，但如果非要操作他呢？
+办法还是有的，我选不中伪元素，我可以选中伪元素的父亲，然后增删类别进行替换。还有一个技巧就是伪元素支持data-content属性。
+
+    <p data-content="haha" id="p">来打我呀</p>
+    p:after {
+            content: attr(data-content);
+        }
+
+这样伪元素就指向了data-content这个变量，这可以利用这一点动态去改变变量的内容。
+        
+
+        window.onload = function () {
+        
+        var flag = true;
+        document.getElementById('p').onclick = function () {
+            var initial = 'hello double click';
+            if (flag) {
+                this.className = 'change';
+                this.setAttribute('data-content', 'hello world');
+                flag = false;
+            } else {
+                this.className = '';
+                this.setAttribute('data-content', initial);
+                flag = true;
+            }
+
+        }
+    }
+                
+这样就实现了一个类似toggle的效果，每次点击伪元素的content会进行切换。
+    
+
+
+
+
+        
