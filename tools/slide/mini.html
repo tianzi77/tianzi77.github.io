@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>循环轮播</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style type="text/css">
+        .mini-slide {
+            width: 600px;
+            height: 400px;
+            border: 3px solid #333;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #list {
+            height: 400px;
+        }
+        
+        #list img {
+            float: left;
+            width: 600px;
+            height: 400px;
+        }
+        
+        #buttons {
+            position: absolute;
+            height: 10px;
+            width: 100px;
+            z-index: 2;
+            bottom: 20px;
+            left: 250px;
+        }
+        
+        #buttons span {
+            cursor: pointer;
+            float: left;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #0AB0E8;
+            margin-right: 5px;
+        }
+        
+        #buttons .on {
+            background: #F8CD47;
+        }
+        
+        .arrow {
+            cursor: pointer;
+            display: none;
+            line-height: 39px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            margin-top: -20px;
+            background-color: RGBA(0, 0, 0, .3);
+            color: #fff;
+        }
+        
+        .arrow:hover {
+            background-color: RGBA(0, 0, 0, .7);
+        }
+        
+        .mini-slide:hover .arrow {
+            display: block;
+        }
+        
+        #prev {
+            left: 20px;
+        }
+        
+        #next {
+            right: 20px;
+        }
+        /* 以下忽略，样式可自调 */
+        .mini-slide {
+            margin: auto;
+        }
+    </style>
+    <script type="text/javascript" src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+</head>
+
+<body >
+    <p style="width:600px;margin:auto;color:orange;font-size:18px;">miniSlide(slideBox, len, interval, slideTime, btnEv, autoTurn)
+           <br>变量说明：
+            <br>slidebox： 幻灯片容器
+            <br>len： 幻灯图片个数
+            <br>interval: 自动播放时间
+            <br>slideTime: 手动切换时间
+            <br>btnEv: 按钮时间类型 click， mouseenter等
+            <br>autoTurn: 自动播放开关 
+</p>
+    <!-- 3屏demo -->
+    <div id="mini-slide" class="mini-slide">
+        <div id="list" style="margin-left: -600px;">
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="1" />
+            <img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="2" />
+            <img src="http://www.zhangweiwei.cn/img/post-bg-rwd.jpg" alt="3" />
+        </div>
+        <div id="buttons">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+        </div>
+        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+    </div>
+    <br>
+    <!-- 4屏demo -->
+    <div id="mini-slide1" class="mini-slide">
+        <div id="list" style="margin-left: -600px;">
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="1" />
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="2" />
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="3" />
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" />
+        </div>
+        <div id="buttons">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+        </div>
+        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+    </div>
+
+    <br>
+    <!-- 5屏demo -->
+    <div id="mini-slide2" class="mini-slide">
+        <div id="list" style="margin-left: -600px;">
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="1" />
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="2" />
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="3" />
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" />
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" />
+        </div>
+        <div id="buttons">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+            <span index="5"></span>
+        </div>
+        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+
+            /*
+             * @author      : weiwzhang@Ctrip.com
+             * @updated     : 2017.01.13
+             * @description : 迷你幻灯片
+             
+            变量说明：
+            slidebox： 幻灯片容器
+            len： 幻灯图片个数
+            interval: 自动播放时间
+            slideTime: 手动切换时间
+            btnEv: 按钮时间类型 click， mouseenter等
+            autoTurn: 自动播放开关 
+            */
+
+            function miniSlide(slideBox, len, interval, slideTime, btnEv, autoTurn) {
+                var container = slideBox;
+                var list = container.find('#list');
+                var buttons = container.find('#buttons span');
+                var prev = container.find('#prev');
+                var next = container.find('#next');
+                var index = 1;
+                var len;
+                var interval;
+                var slideTime;
+                var timer;
+                var btnEv;
+                var first = list.children(':first');
+                var last = list.children(':last');
+                var slideWidth = container.width() * (len + 2);
+                var autoTurn;
+                //渲染幻灯
+                function randerSlide(obj) {
+                    first.clone().addClass('f-clone').appendTo(obj);
+                    last.clone().addClass('l-clone').prependTo(obj);
+                    list.css('width', slideWidth);
+                }
+                randerSlide(list);
+                //轮播切换
+                function animate(offset) {
+                    var left = parseInt(list.css('marginLeft')) + offset;
+
+                    if (offset > 0) {
+                        offset = '+=' + offset;
+                    } else {
+                        offset = '-=' + Math.abs(offset);
+                    }
+
+
+                    list.animate({
+                        'marginLeft': offset
+
+                    }, slideTime, function () {
+                        if (left > -200) {
+                            list.css('marginLeft', -600 * len);
+                        }
+                        if (left < (-600 * len)) {
+                            list.css('marginLeft', -600);
+                        }
+                    });
+
+                }
+
+                function showButton() {
+                    buttons.eq(index - 1).addClass('on').siblings().removeClass('on');
+                }
+
+                function play() {
+                    timer = setTimeout(function () {
+                        next.trigger('click');
+                        play();
+                    }, interval);
+                }
+
+                function stop() {
+                    clearTimeout(timer);
+                }
+                //向后
+                next.bind('click', function () {
+                    if (list.is(':animated')) {
+                        return;
+                    }
+
+                    if (index == len) {
+                        index = 1;
+                    } else {
+                        index += 1;
+                    }
+                    animate(-600);
+                    showButton();
+                });
+                //向前
+                prev.bind('click', function () {
+                    if (list.is(':animated')) {
+                        return;
+                    }
+
+                    if (index == 1) {
+                        index = len;
+                    } else {
+                        index -= 1;
+                    }
+                    animate(600);
+                    showButton();
+                });
+                //按钮事件绑定
+                buttons.each(function () {
+                    $(this).bind(btnEv, function () {
+                        if (list.is(':animated') || $(this).attr('class') == 'on') {
+                            return;
+                        }
+                        var myIndex = parseInt($(this).attr('index'));
+                        var offset = -600 * (myIndex - index);
+
+                        animate(offset);
+                        index = myIndex;
+                        showButton();
+                    })
+                });
+                //自动播放开关
+                if (autoTurn) {
+                    play();
+                    container.hover(stop, play);
+                } else {
+                    container.mouseenter(function () {
+                        stop();
+                    })
+                    return;
+                }
+            }
+
+            miniSlide($('#mini-slide'), 3, 3000, 400, 'click', false);
+            miniSlide($('#mini-slide1'), 4, 5000, 200, 'click', true);
+            miniSlide($('#mini-slide2'), 5, 6000, 500, 'mouseenter', false);
+
+        });
+    </script>
+</body>
+
+</html>
