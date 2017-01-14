@@ -9,33 +9,30 @@
         .mini-slide {
             width: 600px;
             height: 400px;
-            border: 3px solid #333;
             overflow: hidden;
             position: relative;
+            -webkit-transition: all linear .2s;
+            transition: all linear .2s;
         }
         
-        #list {
-            height: 400px;
-        }
-        
-        #list img {
+        .mini-list img {
             float: left;
             width: 600px;
             height: 400px;
         }
         
-        #buttons {
+        .mini-btn {
             position: absolute;
             height: 10px;
-            width: 100px;
+            width: 100%;
             z-index: 2;
             bottom: 20px;
-            left: 250px;
+            text-align: center;
         }
         
-        #buttons span {
+        .mini-btn span {
             cursor: pointer;
-            float: left;
+            display: inline-block;
             border: 1px solid #fff;
             width: 10px;
             height: 10px;
@@ -44,11 +41,11 @@
             margin-right: 5px;
         }
         
-        #buttons .on {
+        .mini-btn .on {
             background: #F8CD47;
         }
         
-        .arrow {
+        .mini-slide .arrow {
             cursor: pointer;
             display: none;
             line-height: 39px;
@@ -63,9 +60,12 @@
             margin-top: -20px;
             background-color: RGBA(0, 0, 0, .3);
             color: #fff;
+            font-family: sans-serif;
+            -webkit-transition: all linear .1s;
+            transition: all linear .1s;
         }
         
-        .arrow:hover {
+        .mini-slide .arrow:hover {
             background-color: RGBA(0, 0, 0, .7);
         }
         
@@ -73,14 +73,15 @@
             display: block;
         }
         
-        #prev {
+        .mini-slide .mini-prev {
             left: 20px;
         }
         
-        #next {
+        .mini-slide .mini-next {
             right: 20px;
         }
         /* 以下忽略，样式可自调 */
+        
         .mini-slide {
             margin: auto;
         }
@@ -88,69 +89,70 @@
     <script type="text/javascript" src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
 </head>
 
-<body >
+<body>
     <p style="width:600px;margin:auto;color:orange;font-size:18px;">miniSlide(slideBox, len, interval, slideTime, btnEv, autoTurn)
-           <br>变量说明：
-            <br>slidebox： 幻灯片容器
-            <br>len： 幻灯图片个数
-            <br>interval: 自动播放时间
-            <br>slideTime: 手动切换时间
-            <br>btnEv: 按钮时间类型 click， mouseenter等
-            <br>autoTurn: 自动播放开关 
-</p>
+        <br>变量说明：
+        <br>imgW：幻灯图片宽度
+        <br>slidebox： 幻灯片容器 用id识别可在一个项目引入多个幻灯
+        <br>len： 幻灯图片个数
+        <br>interval: 自动播放时间
+        <br>slideTime: 手动切换时间
+        <br>btnEv: 按钮时间类型 click， mouseenter等
+        <br>autoTurn: 自动播放开关
+    </p>
     <!-- 3屏demo -->
     <div id="mini-slide" class="mini-slide">
-        <div id="list" style="margin-left: -600px;">
+        <div id="list" style="margin-left: -600px;" class="mini-list">
             <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="1" />
             <img src="http://www.zhangweiwei.cn/img/home-bg.jpg" alt="2" />
             <img src="http://www.zhangweiwei.cn/img/post-bg-rwd.jpg" alt="3" />
         </div>
-        <div id="buttons">
+        <div id="buttons" class="mini-btn">
             <span index="1" class="on"></span>
             <span index="2"></span>
             <span index="3"></span>
         </div>
-        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
-        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+        <a href="javascript:;" id="prev" class="arrow mini-prev">&lt;</a>
+        <a href="javascript:;" id="next" class="arrow mini-next">&gt;</a>
     </div>
     <br>
     <!-- 4屏demo -->
-    <div id="mini-slide1" class="mini-slide">
-        <div id="list" style="margin-left: -600px;">
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="1" />
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="2" />
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="3" />
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" />
+    <div id="mini-slide1" class="mini-slide" style="width:800px;">
+        <div id="list" style="margin-left: -800px;" class="mini-list">
+            <a href=""><img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="1" / style="width:800px;"></a>
+            <a href=""><img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="2" / style="width:800px;"></a>
+            <a href=""><img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="3" / style="width:800px;"></a>
+            <a href=""><img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" / style="width:800px;"></a>
         </div>
-        <div id="buttons">
+        <div id="buttons" class="mini-btn">
             <span index="1" class="on"></span>
             <span index="2"></span>
             <span index="3"></span>
             <span index="4"></span>
         </div>
-        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
-        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+        <a href="javascript:;" id="prev" class="arrow mini-prev">&lt;</a>
+        <a href="javascript:;" id="next" class="arrow mini-next">&gt;</a>
     </div>
 
     <br>
     <!-- 5屏demo -->
-    <div id="mini-slide2" class="mini-slide">
-        <div id="list" style="margin-left: -600px;">
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="1" />
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="2" />
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="3" />
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" />
-            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" />
+    <div id="mini-slide2" class="mini-slide" style="width:1000px;">
+        <div id="list" style="margin-left: -1000px;" class="mini-list">
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="1" / style="width:1000px;">
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="2" / style="width:1000px;">
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="3" / style="width:1000px;">
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" / style="width:1000px;">
+            <img src="http://www.zhangweiwei.cn/img/index-bg.jpg" alt="4" / style="width:1000px;">
         </div>
-        <div id="buttons">
+        <div id="buttons" class="mini-btn">
             <span index="1" class="on"></span>
             <span index="2"></span>
             <span index="3"></span>
             <span index="4"></span>
             <span index="5"></span>
         </div>
-        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
-        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+        <a href="javascript:;" id="prev" class="arrow mini-prev">&lt;</a>
+        <a href="javascript:;" id="next" class="arrow mini-next">&gt;</a>
     </div>
     <script type="text/javascript">
         $(function () {
@@ -161,6 +163,7 @@
              * @description : 迷你幻灯片
              
             变量说明：
+            imgW:单个幻灯长度
             slidebox： 幻灯片容器
             len： 幻灯图片个数
             interval: 自动播放时间
@@ -169,7 +172,7 @@
             autoTurn: 自动播放开关 
             */
 
-            function miniSlide(slideBox, len, interval, slideTime, btnEv, autoTurn) {
+            function miniSlide(imgW, slideBox, len, interval, slideTime, btnEv, autoTurn) {
                 var container = slideBox;
                 var list = container.find('#list');
                 var buttons = container.find('#buttons span');
@@ -185,6 +188,8 @@
                 var last = list.children(':last');
                 var slideWidth = container.width() * (len + 2);
                 var autoTurn;
+                var imgW;
+                var newW = Number('-' + imgW);
                 //渲染幻灯
                 function randerSlide(obj) {
                     first.clone().addClass('f-clone').appendTo(obj);
@@ -207,11 +212,11 @@
                         'marginLeft': offset
 
                     }, slideTime, function () {
-                        if (left > -200) {
-                            list.css('marginLeft', -600 * len);
+                        if (left > newW) {
+                            list.css('marginLeft', newW * len);
                         }
-                        if (left < (-600 * len)) {
-                            list.css('marginLeft', -600);
+                        if (left < (newW * len)) {
+                            list.css('marginLeft', newW);
                         }
                     });
 
@@ -242,7 +247,7 @@
                     } else {
                         index += 1;
                     }
-                    animate(-600);
+                    animate(newW);
                     showButton();
                 });
                 //向前
@@ -256,7 +261,7 @@
                     } else {
                         index -= 1;
                     }
-                    animate(600);
+                    animate(imgW);
                     showButton();
                 });
                 //按钮事件绑定
@@ -266,7 +271,7 @@
                             return;
                         }
                         var myIndex = parseInt($(this).attr('index'));
-                        var offset = -600 * (myIndex - index);
+                        var offset = newW * (myIndex - index);
 
                         animate(offset);
                         index = myIndex;
@@ -285,9 +290,9 @@
                 }
             }
 
-            miniSlide($('#mini-slide'), 3, 3000, 400, 'click', false);
-            miniSlide($('#mini-slide1'), 4, 5000, 200, 'click', true);
-            miniSlide($('#mini-slide2'), 5, 6000, 500, 'mouseenter', false);
+            miniSlide(600, $('#mini-slide'), 3, 3000, 400, 'click', false);
+            miniSlide(800, $('#mini-slide1'), 4, 5000, 200, 'click', true);
+            miniSlide(1000, $('#mini-slide2'), 5, 6000, 500, 'mouseenter', false);
 
         });
     </script>
