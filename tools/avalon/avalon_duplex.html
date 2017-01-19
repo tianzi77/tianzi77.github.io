@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>avalon test</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.2.4/avalon.js"></script>
+</head>
+
+<body>
+    <table ms-controller="test">
+        <tr>
+            <td>
+                <input type="checkbox" ms-duplex-checked="@allChecked" data-duplex-changed="@checkALL">全选</td>
+        </tr>
+        <tr ms-for="($index,el) in @data">
+            <td>
+                <input type="checkbox" ms-duplex-checked="el.checked" data-duplex-changed="@checkOne">{{$index}}::{{el.checked}}</td>
+        </tr>
+        <tr>
+            <td>
+                <div ms-for="($index,el) in @data1 | orderBy(@filE,@filer)">{{el.name}}</div>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    var vm = avalon.define({
+        $id: "test",
+        data: [
+            {
+                checked: false
+            },
+            {
+                checked: false
+            },
+            {
+                checked: false
+            }
+        ],
+        filE: 'name',
+        filer:1,//false降 true 升
+        data1: [
+            {
+                name: 1
+            },
+            {
+                name: 2
+            },
+            {
+                name: 3
+            }
+        ],
+        allChecked: false,
+        checkALL: function (e) {
+            var checked = e.target.checked;
+            vm.data.forEach(function (el) {
+                el.checked = checked;
+            })
+        },
+        checkOne: function (e) {
+            var checked = e.target.checked
+            if (checked === false) {
+                vm.allChecked = false;
+            } else {
+                vm.allChecked = vm.data.every(function (el) {
+                    return el.checked;
+                })
+            }
+        }
+
+    })
+</script>
+
+</html>
