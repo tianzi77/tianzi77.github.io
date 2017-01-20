@@ -1,0 +1,265 @@
+  button::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .easyDialog_wrapper {
+      width: 750px;
+      color: #444;
+      display: none;
+      font-family: "Microsoft yahei", Arial;
+  }
+  
+  .easyDialog_wrapper .easyDialog_content {
+      background: #fff;
+      padding: 20px 0;
+  }
+  
+  .easyDialog_wrapper .easyDialog_title {
+      overflow: hidden;
+      color: #666;
+      width: 90%;
+      padding-bottom: 5px;
+      margin: auto;
+      font-size: 16px;
+      background-color: #fff;
+      border-bottom: 1px solid #abcdef;
+  }
+  
+  .easyDialog_wrapper .close_btn {
+      font-family: serif;
+      font-size: 20px;
+      _font-size: 12px;
+      font-weight: 700;
+      color: #999;
+      text-decoration: none;
+      float: right;
+      -webkit-transition: all .2s;
+      transition: all .2s;
+  }
+  
+  .easyDialog_wrapper .close_btn:hover {
+      color: #4787ed;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transform-origin: center center;
+      transform-origin: center center;
+  }
+  
+  .easyDialog_wrapper .easyDialog_text {
+      padding: 10px 0 25px 0;
+      width: 90%;
+      margin: auto;
+      font-size: 14px;
+      line-height: 22px;
+  }
+  
+  .easyDialog_wrapper .easyDialog_footer {
+      width: 90%;
+      margin: auto;
+      *zoom: 1;
+  }
+  
+  .easyDialog_wrapper .easyDialog_footer:after {
+      content: '';
+      display: block;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      clear: both;
+  }
+  
+  .easyDialog_wrapper .btn_highlight,
+  .easyDialog_wrapper .btn_normal {
+      border: 1px solid;
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: "Microsoft yahei", Arial;
+      float: right;
+      font-size: 12px;
+      padding: 0 12px;
+      height: 26px;
+      vertical-align: middle;
+  }
+  
+  .easyDialog_wrapper .btn_highlight {
+      background: #4787ed;
+      background: -webkit-gradient(linear, center bottom, center top, from(#4787ed), to(#0084f3));
+      background: -moz-linear-gradient(90deg, #4787ed, #0084f3);
+      border-color: #3079ed;
+      color: #fff;
+  }
+  
+  .easyDialog_wrapper .btn_highlight:hover {
+      background: #4f8ff5;
+      border-color: #4f8ff5;
+  }
+  
+  .easyDialog_wrapper .btn_normal {
+      margin-left: 10px;
+      border-color: #c3c3c3;
+      background: #ececec;
+      color: #333;
+      background: -webkit-gradient(linear, center bottom, center top, from(#ececec), to(#f4f4f4));
+      background: -moz-linear-gradient(90deg, #ececec, #f4f4f4);
+      transition: all .2s;
+  }
+  
+  .easyDialog_wrapper .btn_normal:hover {
+      background: #0084f3;
+      border-color: #0084f3;
+      color: #fff;
+  }
+  /* 增加弹出框动画效果 by zww*/
+  /* effect-fade */
+  
+  .effect-fade .easyDialog_wrapper {
+      -webkit-transform: scale(0.6);
+      -ms-transform: scale(0.6);
+      transform: scale(0.6);
+      opacity: 0;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+  }
+  
+  .show.effect-fade .easyDialog_wrapper {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+  /* effect-newspaper */
+  
+  .effect-newspaper .easyDialog_wrapper {
+      -webkit-transform: scale(0) rotate(720deg);
+      -ms-transform: scale(0) rotate(720deg);
+      transform: scale(0) rotate(720deg);
+      opacity: 0;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  
+  .show.effect-newspaper .easyDialog_wrapper {
+      -webkit-transform: scale(1) rotate(0deg);
+      -ms-transform: scale(1) rotate(0deg);
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+  }
+  /* effect-fall */
+  
+  .effect-fall {
+      -webkit-perspective: 1300px;
+      perspective: 1300px;
+  }
+  
+  .effect-fall .easyDialog_wrapper {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform: translateZ(600px) rotateX(20deg);
+      -ms-transform: translateZ(600px) rotateX(20deg);
+      transform: translateZ(600px) rotateX(20deg);
+      opacity: 0;
+  }
+  
+  .show.effect-fall .easyDialog_wrapper {
+      -webkit-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+      -webkit-transform: translateZ(0px) rotateX(0deg);
+      -ms-transform: translateZ(0px) rotateX(0deg);
+      transform: translateZ(0px) rotateX(0deg);
+      opacity: 1;
+  }
+  /* effect-scaled */
+  
+  .effect-scaled .easyDialog_wrapper {
+      -webkit-transform: scale(2);
+      -ms-transform: scale(2);
+      transform: scale(2);
+      opacity: 0;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  
+  .show.effect-scaled .easyDialog_wrapper {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+  /* effect-flip-horizontal */
+  
+  .effect-flip-horizontal {
+      -webkit-perspective: 1300px;
+      -moz-perspective: 1300px;
+      perspective: 1300px;
+  }
+  
+  .effect-flip-horizontal .easyDialog_wrapper {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform: rotateY(-70deg);
+      -ms-transform: rotateY(-70deg);
+      transform: rotateY(-70deg);
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      opacity: 0;
+  }
+  
+  .show.effect-flip-horizontal .easyDialog_wrapper {
+      -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      opacity: 1;
+  }
+  /* effect-flip-vertical */
+  
+  .effect-flip-vertical {
+      -webkit-perspective: 1300px;
+      -moz-perspective: 1300px;
+      perspective: 1300px;
+  }
+  
+  .effect-flip-vertical .easyDialog_wrapper {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform: rotateX(-70deg);
+      -ms-transform: rotateX(-70deg);
+      transform: rotateX(-70deg);
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      opacity: 0;
+  }
+  
+  .show.effect-flip-vertical .easyDialog_wrapper {
+      -webkit-transform: rotateX(0deg);
+      -ms-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+      opacity: 1;
+  }
+  /* effect-sign */
+  
+  .effect-sign {
+      -webkit-perspective: 1300px;
+      perspective: 1300px;
+  }
+  
+  .effect-sign .easyDialog_wrapper {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform: rotateX(-60deg);
+      -ms-transform: rotateX(-60deg);
+      transform: rotateX(-60deg);
+      -webkit-transform-origin: 50% 0;
+      transform-origin: 50% 0;
+      opacity: 0;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  
+  .show.effect-sign .easyDialog_wrapper {
+      -webkit-transform: rotateX(0deg);
+      -ms-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+      opacity: 1;
+  }
