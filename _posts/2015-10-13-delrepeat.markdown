@@ -75,7 +75,23 @@ tags:
         document.write([9, 9, 9, 0, 1, 2].distinct2())
         
         
-        
+新增方法4：       
+
+   
+    Array.prototype.equene = function(){
+            this.sort();
+            var re = [this[0]];
+            for(var i = 1;i<this.length;i++){
+                if(this[i]!==re[re.length-1]){
+                    re.push(this[i]);
+                }
+            }
+            return re;
+        }
+       console.log( [1,2,2,1].equene())
+
+
+
 方法1性能不是很高，方法2，3有小小的bug，碰到一些2逼数组比如
 
      [ 'javascript', 1, '1', 1 ];
