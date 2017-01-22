@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>mobile nav</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        body {
+            background-color: pink;
+            height: 2000px;
+        }
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 43px;
+            background: #090a0e;
+        }
+        
+        .mobile-nav.home {
+            background: transparent;
+        }
+        
+        .alway-show {
+            background: #090a0e;
+            transition: background .4s ease-in-out
+        }
+        
+        .c-table {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .c-table-row {
+            display: table-row;
+        }
+        
+        .c-table-cell {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 10px;
+        }
+        
+        .navbar-toggler {
+            border: 1px solid transparent;
+            background: transparent no-repeat 100%;
+            outline: none;
+        }
+        
+        .mobile-nav .navbar-toggler {
+            width: 50px;
+            height: 43px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            vertical-align: middle;
+        }
+        
+        .mobile-nav .navbar-brand {
+            display: inline-block;
+            float: left;
+            white-space: nowrap;
+            position: relative;
+            font-size: 1.25rem;
+            color: #fff;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+        
+        .mobile-nav .navbar-brand.show {
+            opacity: 1;
+        }
+        
+        .mobile-nav .navbar-logo {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            background-image: url(http://www.zhangweiwei.cn/img/logo.png);
+            background-size: contain;
+            margin-left: 10px;
+        }
+        
+        .mobile-nav .collapse {
+            position: absolute;
+            top: 43px;
+            width: 100%;
+            left: 0;
+            background: rgba(9, 10, 14, .9);
+            display: none;
+        }
+        
+        .mobile-nav .nav-item {
+            border-top: 1px solid #38393c;
+            padding: 0 14px;
+            position: relative;
+        }
+        
+        .mobile-nav .nav-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .mobile-nav .nav-item-ename {
+            font-size: 16px;
+            color: #fff;
+            line-height: 43px;
+        }
+        
+        .mobile-nav .nav-item .rightarrow {
+            right: 20px;
+            top: 12px;
+            position: absolute;
+        }
+        
+        .mobile-nav .collapsed .path1 {
+            transform: translateY(0);
+        }
+        
+        .mobile-nav .path1 {
+            transform: translateY(20px);
+        }
+        
+        .mobile-nav .collapsed .path2 {
+            opacity: 1;
+        }
+        
+        .mobile-nav .path2 {
+            opacity: 0;
+        }
+        
+        .mobile-nav .collapsed .path3 {
+            transform: translateY(0);
+        }
+        
+        .mobile-nav .path3 {
+            transform: translateY(-20px);
+        }
+        
+        .mobile-nav .collapsed .path3 path,
+        .mobile-nav .collapsed .path1 path {
+            transform: rotate(0);
+        }
+        
+        .mobile-nav .path1 path {
+            transform: rotate(-45deg);
+            transform-origin: center center;
+        }
+        
+        .mobile-nav .path3 path {
+            transform: rotate(45deg);
+            transform-origin: center center;
+        }
+        
+        .mobile-nav .path,
+        .mobile-nav .path path {
+            transition: all .2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="mobile-nav alway-show home">
+        <div class="c-table">
+            <div class="c-table-row">
+                <div class="c-table-cell">
+                    <a href="" class="navbar-brand">logo area
+                    <b class="navbar-logo"></b>
+                    </a>
+                    <button class="navbar-toggler collapsed " type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 56 45">
+                            <g class="path path1">
+                                <path fill="#fff" d="M0 0v5h56v-5h-56z"></path>
+                            </g>
+                            <g class="path path2">
+                                <path fill="#fff" d="M0 20v5h56v-5h-56z"></path>
+                            </g>
+                            <g class="path path3">
+                                <path fill="#fff" d="M0 40v5h56v-5h-56z"></path>
+                            </g>
+                        </svg>
+                    </button>
+                    <div class="collapse" id="exCollapsingNavbar" aria-expanded="false">
+                        <ul class="nav">
+                            <li class="nav-item active">
+                                <a href="/">
+                                    <span class="nav-item-ename">HOME</span><span class="nav-item-cname">首页</span>
+                                    <svg class="rightarrow" xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 0 31 57">
+                                        <path clip-rule="evenodd" fill="#909193" d="M30.625 27.436L2.855.688l-2.55 2.55L25.61 27.61.43 53.692l2.543 2.543 27.652-28.64-.078-.08"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/case">
+                                    <span class="nav-item-ename">CASE</span><span class="nav-item-cname">文章</span>
+                                    <svg class="rightarrow" xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 0 31 57">
+                                        <path clip-rule="evenodd" fill="#909193" d="M30.625 27.436L2.855.688l-2.55 2.55L25.61 27.61.43 53.692l2.543 2.543 27.652-28.64-.078-.08"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/job">
+                                    <span class="nav-item-ename">JOB</span><span class="nav-item-cname">招聘</span>
+                                    <svg class="rightarrow" xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 0 31 57">
+                                        <path clip-rule="evenodd" fill="#909193" d="M30.625 27.436L2.855.688l-2.55 2.55L25.61 27.61.43 53.692l2.543 2.543 27.652-28.64-.078-.08"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about">
+                                    <span class="nav-item-ename">ABOUT</span><span class="nav-item-cname">关于</span>
+                                    <svg class="rightarrow" xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 0 31 57">
+                                        <path clip-rule="evenodd" fill="#909193" d="M30.625 27.436L2.855.688l-2.55 2.55L25.61 27.61.43 53.692l2.543 2.543 27.652-28.64-.078-.08"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    </script>
+    <script>
+        $(function () {
+            $('.c-table-cell').on('click', '.navbar-toggler', function () {
+                var cNav = $('#exCollapsingNavbar');
+                if (cNav.is(':animated')) {
+                    return;
+                }
+
+                $(this).toggleClass('collapsed', 200);
+                if ($(this).hasClass('collapsed')) {
+                    cNav.slideUp(200, function () {
+                        $(this).attr('aria-expanded', false);
+                    });
+                } else {
+                    cNav.slideDown(500, function () {
+                        $(this).attr('aria-expanded', true);
+                    });
+                }
+            })
+            $(window).scroll(function () {
+                var H = $(window).height(),
+                    h = $(window).scrollTop();
+
+                if (h >= H) {
+                    $('.mobile-nav').removeClass('home').find('.navbar-brand').addClass('show');
+                } else {
+                    $('.mobile-nav').addClass('home').find('.navbar-brand').removeClass('show');
+                }
+            })
+            $(document.body).on('touchstart click mousedown', function (e) {
+                if ($('#exCollapsingNavbar').is(':animated')) {
+                    return;
+                }
+                if ($('#exCollapsingNavbar').attr('aria-expanded') === 'true' && !$('.navbar-toggler').hasClass('collapsed')) {
+                    $('#exCollapsingNavbar').slideUp(200, function () {
+                        $(this).attr('aria-expanded', false);
+                    });
+                    $('.navbar-toggler').addClass('collapsed');
+                }
+                e.stopPropagation();
+            })
+        })
+    </script>
+</body>
+
+</html>
