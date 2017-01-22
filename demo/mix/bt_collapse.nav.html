@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+         body {
+            background-color: pink;
+            height: 2000px;
+        }
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 43px;
+            background: #090a0e;
+        }
+        
+        .mobile-nav.home {
+            background: transparent;
+        }
+        
+        .alway-show {
+            background: #090a0e;
+            transition: background .4s ease-in-out
+        }
+        
+        .c-table {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .c-table-row {
+            display: table-row;
+        }
+        
+        .c-table-cell {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 10px;
+        }
+        
+        .navbar-toggler {
+            border: 1px solid transparent;
+            background: transparent no-repeat 100%;
+            outline: none;
+            cursor: default;
+        }
+        .navbar-toggler:focus, .navbar-toggler:hover{
+            text-decoration:none;
+        }
+        .mobile-nav .navbar-toggler {
+            width: 50px;
+            height: 43px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            vertical-align: middle;
+        }
+        
+        .mobile-nav .navbar-brand {
+            display: inline-block;
+            float: left;
+            white-space: nowrap;
+            position: relative;
+            font-size: 1.25rem;
+            color: #fff;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+        
+        .mobile-nav .navbar-brand.show {
+            opacity: 1;
+        }
+        
+        .mobile-nav .navbar-logo {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            background-image: url(http://www.zhangweiwei.cn/img/logo.png);
+            background-size: contain;
+            margin-left: 10px;
+        }
+        
+        .mobile-nav #exCollapsingNavbar {
+            position: absolute;
+            top: 43px;
+            width: 100%;
+            left: 0;
+           background: rgba(9, 10, 14, .9);
+            display: none;
+        }
+        
+        .mobile-nav .nav-item {
+            border-top: 1px solid #38393c;
+            padding: 0 14px;
+            position: relative;
+        }
+        
+        .mobile-nav .nav-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .mobile-nav .nav-item-ename {
+            font-size: 16px;
+            color: #fff;
+            line-height: 43px;
+        }
+        
+        .mobile-nav .nav-item .rightarrow {
+            right: 20px;
+            top: 12px;
+            position: absolute;
+        }
+        
+        .mobile-nav .collapsed .path1 {
+            transform: translateY(0);
+        }
+        
+        .mobile-nav .path1 {
+            transform: translateY(20px);
+        }
+        
+        .mobile-nav .collapsed .path2 {
+            opacity: 1;
+        }
+        
+        .mobile-nav .path2 {
+            opacity: 0;
+        }
+        
+        .mobile-nav .collapsed .path3 {
+            transform: translateY(0);
+        }
+        
+        .mobile-nav .path3 {
+            transform: translateY(-20px);
+        }
+        
+        .mobile-nav .collapsed .path3 path,
+        .mobile-nav .collapsed .path1 path {
+            transform: rotate(0);
+        }
+        
+        .mobile-nav .path1 path {
+            transform: rotate(-45deg);
+            transform-origin: center center;
+        }
+        
+        .mobile-nav .path3 path {
+            transform: rotate(45deg);
+            transform-origin: center center;
+        }
+        
+        .mobile-nav .path,
+        .mobile-nav .path path {
+            transition: all .2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top navbar-inverse mobile-nav" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggler collapsed " type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 56 45">
+                            <g class="path path1">
+                                <path fill="#fff" d="M0 0v5h56v-5h-56z"></path>
+                            </g>
+                            <g class="path path2">
+                                <path fill="#fff" d="M0 20v5h56v-5h-56z"></path>
+                            </g>
+                            <g class="path path3">
+                                <path fill="#fff" d="M0 40v5h56v-5h-56z"></path>
+                            </g>
+                        </svg>
+                    </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Dialog</a></li>
+            <li><a href="#">User</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li class="divider"></li>                    
+                </ul>
+            </li>
+        </ul>     
+    </div>
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
