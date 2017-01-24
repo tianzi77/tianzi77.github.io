@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs </title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <style>
+        .active {
+            background-color: red;
+        }
+        
+        .tianzi a {
+            padding: 0 10px;
+            margin: 0 10px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        {{msg}}
+        <input type="text" v-model="msg">
+        <h1 v-if="man">{{age}}</h1>
+        <h2 v-if="age>30">{{age}}</h2>
+        <h2 v-else>{{eage}}</h2>
+        <ul>
+            <li v-for="item in form ">{{item.id}}+{{item.name}}+{{item.user}}</li>
+        </ul>
+        <div v-bind:class="pape">
+            <a href="#" v-show="activeNumber != 1" v-on:click="activeNumber--&&pageShow(activeNumber)">上一页</a>
+            <a href="#" v-for="el in pages" v-on:click="pageShow(el);return false;" v-bind:class="activeNumber==el?'active':''">{{el}}</a>
+            <a href="#" v-show="page != activeNumber && page != 0" v-on:click="activeNumber++&&pageShow(activeNumber++)">下一页</a>
+        </div>
+    </div>
+
+    <script>
+        
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello 2017',
+                age: 26,
+                eage: 77,
+                man: true,
+                page: 10, //分页总数
+                pageshow: 5, //展示个数
+                pape: 'tianzi',
+                activeNumber: 1,
+                form: [{
+                        id: '4',
+                        name: 'zhangsan',
+                        user: 'test'
+                        },
+                    {
+                        id: '2',
+                        name: 'lisi',
+                        user: 'test1'
+                        },
+                    {
+                        id: '3',
+                        name: 'wangwu',
+                        user: 'test2'
+                        }]
+
+            },
+            computed: {
+                pages: function () {
+                    var pag = [];
+                    if (this.activeNumber < this.pageshow) { //如果当前的激活的项 小于要显示的条数
+                        //总页数和要显示的条数那个大就显示多少条
+                        var i = Math.min(this.pageshow, this.page);
+                        while (i) {
+                            pag.unshift(i--);
+                        }
+                    } else { //当前页数大于显示页数了
+                        var middle = this.activeNumber - Math.floor(this.pageshow / 2), //从哪里开始
+                            i = this.pageshow;
+                        if (middle > (this.page - this.pageshow)) {
+                            middle = (this.page - this.pageshow) + 1
+                        }
+                        while (i--) {
+                            pag.push(middle++);
+                        }
+                    }
+                    return pag
+                }
+            },
+            methods: {
+
+                pageShow: function (el) {
+                    if (vm.activeNumber == el) return;
+                    vm.activeNumber = el;
+                    //ajax 可传值
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

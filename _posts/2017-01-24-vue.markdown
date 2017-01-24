@@ -1,0 +1,102 @@
+---
+layout:     post
+title:      "vue初体验"
+subtitle:   " \"vue分页器\""
+date:       2017-01-24 19:00:00
+author:     "ZWW"
+header-img: "img/post-bg-rwd.jpg"
+tags:
+    - vue
+---
+
+> **“vue”**
+
+一款MVVM轻量级框架，学习一下vue的常用指令，并用这些指令和方法写一个简单的分页器。
+和avalon类似，vue也自定义了很多指令，基于viewmodel的框架都是拦截动态修改了数据，从而实现view层的实时更新。
+Vue.js的常用指令：
+    v-if指令
+    v-show指令
+    v-else指令
+    v-for指令
+    v-bind指令
+    v-on指令
+
+这些基本指令官方文档介绍的很清楚。
+v-for倒是很有意思
+
+    <div id="app">
+        <a v-for="index in string">{{index}}</a>
+    </div>
+    
+    new Vue({
+        el:'#app',
+        string:20, //这样会渲染出1-20依次a标签
+        string:[1,2,3,4,5],                 //这样也是一样的效果，循环可以是数字，也可以是遍历数组的元素
+        data:{
+            
+        }
+    })
+
+
+computed也有很大用处，字面意思就是实时计算。如果实时计算里关联了对象，那么当对象的某个值改变的时候，同事会出发实时计算。简单的列子
+
+       <div id="app">
+            <a >{{salary}}</a>
+        </div>
+    
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                 salary:2000,
+            }
+            computed:{
+                salary:function(){
+                    return this.salary + 10;
+                }
+            }
+        })
+        vm.$data.salary = 20000; //输出20000+10
+
+ 
+ 
+其他就是分页的计算
+    
+    
+         computed: {
+                pages: function () {
+                    var pag = [];
+                    if (this.activeNumber < this.pageshow) { //如果当前的激活的项 小于要显示的条数
+                        //总页数和要显示的条数那个大就显示多少条
+                        var i = Math.min(this.pageshow, this.page);
+                        while (i) {
+                            pag.unshift(i--);
+                        }
+                    } else { //当前页数大于显示页数了
+                        var middle = this.activeNumber - Math.floor(this.pageshow / 2), //从哪里开始
+                            i = this.pageshow;
+                        if (middle > (this.page - this.pageshow)) {
+                            middle = (this.page - this.pageshow) + 1
+                        }
+                        while (i--) {
+                            pag.push(middle++);
+                        }
+                    }
+                    return pag
+                }
+            },
+            methods: {
+                pageShow: function (el) {
+                    if (vm.activeNumber == el) return;
+                    vm.activeNumber = el;
+                    //ajax 可传值
+                }
+            }
+ 
+ 
+ 
+   这个我也是参考了一下别人的列子，刚开始写出来的不懂动态计算，所以记录一下。
+   这是今年最后一篇技术文字了，今年失去了很多，逆境中要感谢很多的人，17年要走更稳的路，那么2016最后一次说再见吧！新年快乐。
+   
+<a href="http://www.zhangweiwei.cn/demo/vue/vue1.html" target="_blank">vue</a>	
+
+ 
