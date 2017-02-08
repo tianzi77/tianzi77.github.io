@@ -14,6 +14,7 @@ tags:
 <p>1，下载一个Web_Design_Actions.atn插件，放在Presets\Actions目录，然后选中任意图层ctrl+shift+F2快速切片</p>
 <p>2，ctrl+鼠标左键选中图层不用说吧</p>
 <p>3，替换图片背景（非psd），双击解锁图片，魔棒选中需要修改的区域，更换前景色，ctrl+delete修改</p>
+<p>4，指向自动选择，alt+鼠标右键选中一个图层，然后alt+shift+鼠标右键再次选中另一个图层</p>
 
 
 
