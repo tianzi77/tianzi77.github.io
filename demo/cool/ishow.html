@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>多张图动画弹出层</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        .mon-car.show-r-t {
+            opacity: 1;
+            -webkit-opacity: 1;
+            top: 76%;
+            right: 20px;
+            transition: 0s;
+            -moz-transition: 0s;
+            -ms-transition: 0s;
+            -o-transition: 0s;
+            -webkit-transition: 0s;
+            -webkit-animation: acitivitybox-shake 6s ease 0s infinite;
+            animation: acitivitybox-shake 5s ease 0s infinite
+        }
+        
+        @-webkit-keyframes acitivitybox-shake {
+            0% {
+                -webkit-transform: rotate(0deg) scale(1)
+            }
+            2% {
+                -webkit-transform: rotate(-20deg) scale(1.2)
+            }
+            4% {
+                -webkit-transform: rotate(20deg) scale(1.2)
+            }
+            6% {
+                -webkit-transform: rotate(-20deg) scale(1.2)
+            }
+            8% {
+                -webkit-transform: rotate(20deg) scale(1.2)
+            }
+            10% {
+                -webkit-transform: rotate(-20deg) scale(1.2)
+            }
+            12% {
+                -webkit-transform: rotate(20deg) scale(1.2)
+            }
+            14% {
+                -webkit-transform: rotate(0deg) scale(1)
+            }
+            100% {
+                -webkit-transform: rotate(0deg) scale(1)
+            }
+        }
+        
+        @keyframes acitivitybox-shake {
+            0% {
+                transform: rotate(0deg) scale(1)
+            }
+            2% {
+                transform: rotate(-20deg) scale(1.2)
+            }
+            4% {
+                transform: rotate(20deg) scale(1.2)
+            }
+            6% {
+                transform: rotate(-20deg) scale(1.2)
+            }
+            8% {
+                transform: rotate(20deg) scale(1.2)
+            }
+            10% {
+                transform: rotate(-20deg) scale(1.2)
+            }
+            12% {
+                transform: rotate(20deg) scale(1.2)
+            }
+            14% {
+                transform: rotate(0deg) scale(1)
+            }
+            100% {
+                transform: rotate(0deg) scale(1)
+            }
+        }
+        
+        @-webkit-keyframes swing {
+            20% {
+                -webkit-transform: rotate3d(0, 0, 1, 15deg);
+                transform: rotate3d(0, 0, 1, 15deg)
+            }
+            40% {
+                -webkit-transform: rotate3d(0, 0, 1, -10deg);
+                transform: rotate3d(0, 0, 1, -10deg)
+            }
+            60% {
+                -webkit-transform: rotate3d(0, 0, 1, 5deg);
+                transform: rotate3d(0, 0, 1, 5deg)
+            }
+            80% {
+                -webkit-transform: rotate3d(0, 0, 1, -5deg);
+                transform: rotate3d(0, 0, 1, -5deg)
+            }
+            to {
+                -webkit-transform: rotate3d(0, 0, 1, 0deg);
+                transform: rotate3d(0, 0, 1, 0deg)
+            }
+        }
+        
+        @keyframes swing {
+            20% {
+                -webkit-transform: rotate3d(0, 0, 1, 15deg);
+                transform: rotate3d(0, 0, 1, 15deg)
+            }
+            40% {
+                -webkit-transform: rotate3d(0, 0, 1, -10deg);
+                transform: rotate3d(0, 0, 1, -10deg)
+            }
+            60% {
+                -webkit-transform: rotate3d(0, 0, 1, 5deg);
+                transform: rotate3d(0, 0, 1, 5deg)
+            }
+            80% {
+                -webkit-transform: rotate3d(0, 0, 1, -5deg);
+                transform: rotate3d(0, 0, 1, -5deg)
+            }
+            to {
+                -webkit-transform: rotate3d(0, 0, 1, 0deg);
+                transform: rotate3d(0, 0, 1, 0deg)
+            }
+        }
+        
+        .mon-car.show-r-c {
+            opacity: 0;
+            -webkit-opacity: 0;
+            right: 0;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+            -webkit-animation-name: swing;
+            animation-name: swing;
+            animation-delay: .4s;
+            -webkit-animation-delay: .4s
+        }
+        
+        .mon-car {
+            opacity: 0;
+            -webkit: 0;
+            z-index: 99999;
+            position: fixed;
+            right: -50px;
+            display: block;
+            width: 50px;
+            height: 50px;
+            top: 60%;
+        }
+        
+        .mon-car img {
+            width: 100%
+        }
+        
+        .mark-cover-mkt-xui-img img {
+            width: 100%;
+            border-radius: 4px
+        }
+        
+        .mark-cover-mkt-xui {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            background-image: url(http://images3.c-ctrip.com/dj/201611/car/img/opx_04.png);
+            background-repeat: repeat;
+            z-index: 99999999
+        }
+        
+        .mark-cover-mkt-xui .ins {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 18%;
+            left: 50%;
+            margin-left: -200px;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="mon-car show-r-t"><img src="https://images3.c-ctrip.com/dj/201611/car/img/floatonline.png"></span>
+    <div class="mark-cover-mkt-xui" style="display: none;">
+        <div class="ins imgbox mark-cover-mkt-xui-img" style="display:none;"><img class="mkt_img_box" src="https://images3.c-ctrip.com/dj/201611/car/img/ausonline1_unlogin.png" alt=""></div>
+    </div>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script>
+        var imove = {
+            /*
+                ele 图片容器 克隆的图片对象
+                wrapEle 弹出层容器或遮罩层
+                clickEle 点击的容器或者图片
+            */
+            iShow: function (ele, wrapEle,clickEle) {
+                var iWidth = ele.width()+'px',
+                    iHeight = ele.height()+'px',
+                    iTop = ele.offset().top,
+                    iLeft = ele.offset().left,
+                    iClone = ele.clone();
+                clickEle.on('click', function (e) {
+                    var that = this;
+                    if (iClone) {
+                        iClone.addClass('i-test').css({
+                            width: '40px',
+                            height: '40px',
+                            top: '76%',
+                            left: '90%',
+                            opacity: '0',
+                            position: 'absolute'
+                        }).appendTo('body');
+                        wrapEle.css('opacity', 1).show();
+                        $('.i-test').show().animate({
+                            width: iWidth,
+                            height: iHeight,
+                            opacity: 1,
+                            left: '50%',
+                            top: '18%',
+                            marginLeft: '-200px'
+                        }, 200, 'linear', function () {
+                            $('.i-test').hide();
+                        });
+                        setTimeout(function () {
+                            wrapEle.find(ele).show();
+                        }, 200)
+                    } else {
+                        ele.css({
+                            opacity: 1,
+                            '-khtml-opacity': 1,
+                            '-moz-opacity': 1,
+                            '-webkit-opacity': 1,
+                            'filter': 'alpha(opacity=100)'
+                        })
+                    }
+                    e.stopPropagation();
+                })
+                wrapEle.on('click', function (e) {
+                    $(this).find(ele).hide();
+                    $('.i-test').show().animate({
+                        width: '40px',
+                        height: '40px',
+                        top: '76%',
+                        left: '95%'
+                    }, 200, 'linear', function () {
+                        $(this).remove();
+                        $('.mark-cover-mkt-xui').css('opacity', 0).hide();
+                    })
+                    e.stopPropagation();
+                })
+            }
+        }
+        $(function () {
+            imove.iShow($('.mark-cover-mkt-xui-img'), $('.mark-cover-mkt-xui'),$('.mon-car'))
+        })
+    </script>
+</body>
+
+</html>
