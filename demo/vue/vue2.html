@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>vue 2.0</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/cute/components/cute.css ">
+    <style>
+        #app table {
+            width: 100%;
+        }
+        
+        #app table td,
+        #app table th {
+            border: 1px solid green;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        #myModal {
+            position: fixed;
+            z-index: 999;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .md-show {
+            display: block !important;
+        }
+        
+        #myModal {
+            width: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>product</th>
+                    <th>money</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item,index) in listArr">
+                    <td>{{item.id}}</td>
+                    <td>{{item.product}}</td>
+                    <td>{{item.money | fixMoney(item.money ) }}</td>
+                    <td><a v-on:click.stop="delItem(item)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="o-modal" id="myModal" v-bind:class="{ 'md-show': showModel }" @click.stop="">
+            <div class="modal-header">
+                <h4 class="modal-title">模态框-标题</h4>
+            </div>
+            <div class="modal-body">请在此处加载具体内容...</div>
+            <div class="modal-footer">
+                <button type="button" class="o-btn o-btn-primary" @click.stop="delCurrentProduct()">确认</button>
+                <button type="button" class="o-btn o-btn-secondary" data-dismiss="modal" @click="showModel=false;">取消</button>
+            </div>
+            <a href="javascript:" class="o-close" data-dismiss="modal" @click="showModel=false;">×</a>
+        </div>
+        <div class="o-mask" v-show="showModel"></div>
+    </div>
+    <script src="//cdn.bootcss.com/vue/2.0.8/vue.min.js"></script>
+    <script src="vue-resource.min.js"></script>
+    <script>
+        var vm = new Vue({
+                el: '#app',
+                data: {
+                    listArr: [],
+                    showModel: false,
+                    currList: ""
+                },
+                filters: {
+                    fixMoney: function (value) {
+                        return "¥" + value + "元";
+                    }
+                },
+                mounted: function () {
+                    var _this = this;
+                    this.$nextTick(function () {
+                        _this.getlistArr();
+                    })
+                },
+                methods: {
+                    //获取数据
+                    getlistArr: function () {
+                        var _this = this;
+                        this.$http.get("date/dj.json").then(function (response) {
+                            _this.listArr = response.data.items;
+                        })
+                    },
+                    //删除哪一个存起来 然后删除
+                    delItem: function (item) {
+                        this.showModel = true;
+                        this.currList = item;
+                    },
+                    delCurrentProduct: function () {
+                        this.showModel = false;
+                        var index = this.listArr.indexOf(this.currList);
+                        this.listArr.splice(index, 1);
+                    }
+                }
+
+            })
+            //全局过滤
+//        Vue.filter("fixMoney", function (value) {
+//                    return "¥" + value + "元";
+//                });
+    </script>
+
+</body>
+
+</html>
