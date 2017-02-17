@@ -1,52 +1,57 @@
 ---
 layout:     post
-title:      "vue过滤器、vue-resource"
+title:      "原生绝对居中的简单封装"
 subtitle:   " \"vue分页器\""
-date:       2017-02-24 18:00:00
+date:       2017-02-25 18:00:00
 author:     "ZWW"
 header-img: "img/post-bg-rwd.jpg"
 tags:
-    - vue
+    - 定位
 ---
 
-> **“vue”**
+> **“position”**
 
-过滤器和1.X有很大的变化，感觉就是越变，对原生的js要求越严格。
+算是简单的一个控件，可以的话还可以封装一下遮罩层的，工作中都已经有封装好的组件，就不多此一举。
 
-全局过滤：
+    var setPosition = (function () {
+            var docElem = window.document.documentElement,
+                body = window.document.body,
+                docWidth = docElem.clientWidth,
+                docHeight = docElem.clientHeight;
+            return {
 
-    Vue.filter("fixMoney", function (value) {
-        return "¥" + value + "元";
-                });
+                capitalize: function (str) {
+                    var firstStr = str.charAt(0);
+                    return firstStr.toUpperCase() + str.replace(firstStr, '');
+                },
+                getScroll: function (type) {
+                    var upType = this.capitalize(type);
+                    return docElem['scroll' + upType] || body['scroll' + upType];
+                },
 
-
-局部过滤：自定义变量在value后面进行操作。
-
-       filters: {
-                    fixMoney: function (value) {
-                        return "¥" + value + "元";
-                    }
+                // 初始化位置
+                init: function (id) {
+                    var ele = document.getElementById(id),
+                        eWidth = ele.offsetWidth,
+                        eHeight = ele.offsetHeight,
+                        widthOverflow = eWidth > docWidth,
+                        heigthOverflow = eHeight > docHeight;
+                    ele.style.position = 'absolute';
+                    ele.style.top = docElem.clientHeight / 2 + this.getScroll('top') + 'px';
+                    ele.style.left = docElem.clientWidth / 2 + this.getScroll('left') + 'px';
+                    ele.style.marginLeft = '-' + (widthOverflow ? docWidth / 2 : eWidth / 2) + 'px';
+                    ele.style.marginTop = '-' + (heigthOverflow ? docHeight / 2 : eHeight / 2) + 'px';
                 }
-
- 
- vue-resource相当于jq中的ajax，用法是模块化的语法。与后端交互数据的工具，官方现在推荐axios。
-
-删除的时候有一个问题，我们需要知道删除的是哪一个数组，而不是像操作dom那样去绑定。所以我们需要一个变量去缓存需要删除的数组，demo中的currList
-    
-         delItem: function (item) {
-                this.showModel = true;
-                this.currList = item;
-                }
-        //具体删除这个数组的索引就可以
-        delCurrentProduct: function () {
-                this.showModel = false;
-                var index = this.listArr.indexOf(this.currList);
-                this.listArr.splice(index, 1);
-                    }
+            }
+        })();
  
         
- 的确，有点意思
-   
-<a href="http://www.zhangweiwei.cn/demo/vue/vue2.html" target="_blank">vue</a>	
+capitalize是首字母大写转化的函数。
+getScroll就是计算网页被卷起来的top和left值
+然后init就是具体的赋值了。
+
+需要使用的时候直接这样就可以调用。
+
+   setPosition.init('djdj')
 
  
