@@ -4,37 +4,16 @@
     <meta charset="UTF-8">
      <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Document</title>
+    <style>
+        .videoFrame {
+            margin: auto;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <a class="videoBtn" href="javascript:;"></a>
-
-<!--视频  弹窗-->
-<div class="dialogVideo none" id="dialogVideo">
-    <a class="videoClose " href="javascript:;"></a>
-    <div id="videoCon" class="video"></div>
-</div>
-<script src="http://wximg.gtimg.com/tmt/_events/20150202-dior/dist/js/zepto.min.js?max_age=31536000"></script>
-<script src="http://qzs.qq.com/tencentvideo_v1/js/tvp/tvp.player.js" charset="utf-8"></script>
-
-<script>
- var video = new tvp.VideoInfo();
- video.setVid("g0375gm7dr0");//视频vid
- var player = new tvp.Player(320, 190);//视频高宽
- player.setCurVideo(video);
- player.addParam("autoplay","0");//是否自动播放，1为自动播放，0为不自动播放
- player.addParam("wmode","opaque");
- player.addParam("pic","http://ossweb-img.qq.com/images/chanpin/moba/public/a20150716qmcsQ/video.jpg");//默认图片地址
- player.addParam("flashskin", "http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf");//是否调用精简皮肤，不使用则删掉此行代码
- player.write("videoCon");
-
-
-$("body").on("tap", ".videoBtn", function() {
-    $("#dialogVideo").show();
-});
-$("body").on("tap", ".videoClose", function() {
-    player.pause();
-    $("#dialogVideo").hide();
-});
-    </script>
+   <div class="videoFrame">
+        <iframe src="http://v.qq.com/iframe/player.html?vid=g0375gm7dr0&amp;tiny=0&amp;auto=0" frameborder="0" width="100%" height="208"></iframe>
+      </div>
 </body>
 </html>
