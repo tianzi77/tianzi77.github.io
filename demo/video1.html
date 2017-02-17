@@ -1,19 +1,107 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-     <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Document</title>
-    <style>
-        .videoFrame {
-            margin: auto;
-            width: 320px;
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta http-equiv="cache-control" content="no-cache" />
+<meta HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="320"/>
+<title>炫出挚爱 至美一拍</title>
+<!--移动端版本兼容 -->
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<!--移动端版本兼容 end -->
+<style>
+html, body, div, p {
+	margin: 0;
+	padding: 0;
+}
+img {
+	border: 0 none;
+	vertical-align: top;
+	display:inline-block;
+}
+body {
+	font-family:"Microsoft YaHei", helvetica, arial, verdana, tahoma, sans-serif;
+	font-weight:normal;
+	font-size:12px;
+	outline:none;
+	color:#fff;
+}
+a, p, div, img {
+	text-decoration: none;
+	-webkit-tap-highlight-color:rgba(255, 255, 255, 0);
+}
+body {
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+	width: 640px;
+	background:#d1aa73;
+	font-size:24px;
+}
+.main .tit {
+	background:#fbf3e8;
+}
+.main .con {
+	width:640px;
+	background:url(img/videoBg.jpg) no-repeat center top #fbf3e8;
+	padding-top:11px;
+}
+.videoFrame {
+	width:528px;
+	height:308px;
+	margin:0 auto;
+	background:url(img/video.jpg) no-repeat;
+}
+.video p {
+	text-align:center;
+	color:#9a9a9a;
+	font-size:18px;
+	line-height:65px;
+}
+.say {
+	color:#5e4c40;
+	text-align:left;
+	font-size:19px;
+	line-height:30px;
+	padding:35px 0 20px 60px;
+}
+.guaBox {
+	padding:30px 0;
+	text-align:center;
+}
+.tishi {
+	color:#fff;
+	padding:15px 0;
+	font-size:20px;
+}
+</style>
 </head>
 <body>
-   <div class="videoFrame">
-        <iframe src="http://v.qq.com/iframe/player.html?vid=g0375gm7dr0&amp;tiny=0&amp;auto=0" frameborder="0" width="320" height="208"></iframe>
+
+    <div class="video">
+      <div class="videoFrame">
+        <iframe src='http://v.qq.com/iframe/player.html?vid=g0375gm7dr0&width=528&height=308&tiny=0&auto=0' frameborder='0' width='528' height='308'></iframe>
       </div>
+      <p>视频约7M，建议在wifi环境下观看，体验更流畅。</p>
+    </div>
 </body>
 </html>
