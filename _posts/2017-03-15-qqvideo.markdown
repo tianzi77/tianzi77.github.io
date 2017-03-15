@@ -1,0 +1,53 @@
+---
+layout:     post
+title:      "调用腾讯视频的正确姿势"
+subtitle:   " \"腾讯视频\""
+date:       2017-03-15 18:00:00
+author:     "ZWW"
+header-img: "img/home-bg.jpg"
+tags:
+    - 视频
+---
+
+> **“腾讯视频”**
+
+首先iframe可以调，但是我很不喜欢这种方式，总觉得页面里iframe多了各种不爽，不知道是不是洁癖。
+
+首页要引入腾讯视频的库文件：
+
+    <script src="http://qzs.qq.com/tencentvideo_v1/js/tvp/tvp.player.js" charset="utf-8"></script>
+    
+腾讯视频没有专门的API文档，貌似以前有：
+
+                function () {
+                    //定义视频对象
+                    var video = new tvp.VideoInfo();
+                    //向视频对象传入视频vid
+                    video.setVid("l0376dumy61");
+                    //定义播放器对象
+                    var player;
+                        player = new tvp.Player('850', '500');
+                    //设置播放器初始化时加载的视频
+                    player.setCurVideo(video);
+                    //设置精简皮肤，仅点播有效
+                    player.addParam("flashskin", "http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf");
+                    //输出播放器,参数就是上面div的id，希望输出到哪个HTML元素里，就写哪个元素的id
+                    player.addParam("autoplay", "1");
+                    player.addParam("wmode", "transparent");
+                    player.addParam('showend', 0);
+                    player.write("sp-player");
+
+                }
+
+
+感觉没什么写的。在手机上视频还是有很多的问题，关键是带广告，是时候自己封装一个播放器了。哈哈
+
+有个哥们把调用第三方视频都整合了一下。还是挺方便的：
+
+GitHub地址：https://github.com/zhouxitian/playVideo 
+
+收工，基本够用
+   
+<a href="http://ct.ctrip.com/crptravel/default/process" target="_blank">线上列子</a>	
+
+ 
