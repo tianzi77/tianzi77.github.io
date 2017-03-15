@@ -42,6 +42,35 @@ tags:
 
 感觉没什么写的。在手机上视频还是有很多的问题，关键是带广告，是时候自己封装一个播放器了。哈哈
 
+
+其中addParam方法可接受的参数和参数值类型为：
+
+    参数
+    参数值和说明
+
+        player
+        播放器类别；有4种参数，auto：自动，ocx：控件播放器，flash：flash播放器，html5：html5播放器，默认为auto，程序自动根据操作系统、平台以及浏览器选择最合适的播放器。
+        type
+        播放器使用场景；1表示直播，2表示点播；默认为2点播。
+        adplay
+        是否播放广告；1播放，0不播放，默认为1
+        showcfg
+        是否显示控制列表；1显示，0不显示，默认为1
+        loadingswf
+        加载视频时的swf动画; 不传入则使用默认样式
+        autoplay
+        是否自动播放；1自动播放，0不自动播放，默认是1
+        pic
+        播放器默认图，当autoplay=0时有效；不传入则使用视频截图
+        flashskin
+        flash播放器皮肤；不传入则使用默认皮肤；点播状态下可选值（注意仅限点播，直播无效）：链接地址
+        wmode
+        flash播放器的wmode设置，仅对flash播放器有效
+        swfurl
+        点播状态flash播放器的swf文件路径，仅对flash播放器有效，如果您有专门定制的swf点播播放器，可以通过这个参数来指定路径
+        controls
+        html5播放器是否显示控制栏，仅对html5播放器有效；设置为controls显示，disabled不显示，默认显示。
+
 有个哥们把调用第三方视频都整合了一下。还是挺方便的：
 
 GitHub地址：https://github.com/zhouxitian/playVideo 
