@@ -1,0 +1,82 @@
+---
+layout:     post
+title:      "展示项目及横竖屏"
+subtitle:   " \"展示项目\""
+date:       2017-03-20 14:00:00
+author:     "ZWW"
+header-img: "img/index-bg.jpg"
+tags:
+    - 组件
+---
+
+> **“组件展示”**
+
+视觉同学定义好了一些设计规范，需要展示出来给前端同学参考。
+搭建一个原型展示的网站。
+
+用到了html5的download属性，非常方便：
+
+    <a href="http://www.w3cways.com/demo/1/some-realy-crazy-file-name-389247823879472398.txt" download="test">点击下载</a>
+
+要监测当前浏览器是否支持download属性，一行JS代码就可以了，如下：
+    
+    var isSupportDownload = 'download' in document.createElement('a');
+    
+其他的就是树形菜单的构造以及动态插入图片，没有任何后台交互，纯展示的玩意，直接demo。
+
+<a href="http://www.zhangweiwei.cn/tools/ued/" target="_blank">线上列子</a>
+
+
+
+聊聊横竖屏，有时候用css判断有bug，很有意思：
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    
+针对上述viewport标签有如下说明
+1)、content中的width指的是虚拟窗口的宽度。
+
+2)、user-scalable=no就一定可以保证页面不可以缩放吗？NO，有些浏览器不吃这一套，还有一招就是minimum-scale=1.0, maximum-scale=1.0 最大与最小缩放比例都设为1.0就可以了。
+
+3)、initial-scale=1.0 初始缩放比例受user-scalable控制吗？不一定，有些浏览器会将user-scalable理解为用户手动缩放，如果user-scalable=no，initial-scale将无法生效。
+
+4)、手机页面可以触摸移动，但是如果有需要禁止此操作，就是页面宽度等于屏幕宽度是页面正好适应屏幕才可以保证页面不能移动。
+
+5)、如果页面是经过缩小适应屏幕宽度的，会出现一个问题，当文本框被激活（获取焦点）时，页面会放大至原来尺寸。
+
+
+
+1.CSS判断横屏竖屏
+
+    @media screen and (orientation: portrait) {
+    /*竖屏 css*/
+    } 
+    @media screen and (orientation: landscape) {
+    /*横屏 css*/
+    }
+    或者这样
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="portrait.css">
+    <link rel="stylesheet" media="all and (orientation:landscape)" href="landscape.css">
+    
+这样真的没问题吗？做项目的时候发现还是有bug。就是横盘的时候输入法不一定横屏。
+
+解决办法就是加一个 min-height 
+     
+     @media screen and (orientation: landscape) and (min-height: 450px) {
+    
+        }
+2.js监听
+
+    //判断手机横竖屏状态：
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+        if (window.orientation === 180 || window.orientation === 0) { 
+            alert('竖屏状态！');
+        } 
+        if (window.orientation === 90 || window.orientation === -90 ){ 
+            alert('横屏状态！');
+        }  
+    }, false); 
+    //移动端的浏览器一般都支持window.orientation这个参数，通过这个参数可以判断出手机是处在横屏还是竖屏状态。
+
+这个目前是没问题的~
+
+ 
