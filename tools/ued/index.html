@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>商旅VI规范展示</title>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script src="js/content_zoom.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: #ededed;
+            font-family: '微软雅黑', "Lato", sans-serif;
+            min-height: 1200px;
+            font-size: 14px;
+            min-width: 980px;
+        }
+        
+        .vi-wrap {
+            max-width: 1180px;
+            min-width: 980px;
+            overflow: hidden;
+            margin: auto;
+            position: relative;
+        }
+        
+        .content {
+            width: 100%;
+            float: left;
+        }
+        
+        .content .img-box {
+            padding-left: 165px;
+        }
+        
+        .st_tree ul li a.cur:before {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            display: block\9;
+        }
+        
+        .cur {
+            background-color: #fff;
+        }
+        
+        .title {
+            width: 100%;
+            text-align: center;
+            background-color: #000000;
+        }
+        
+        .title img {
+            vertical-align: top;
+        }
+        
+        .st_tree ul li a {
+            color: black;
+            display: block;
+            padding: 15px 10px 15px 10px;
+            border-bottom: 1px solid #ededed;
+            position: relative;
+        }
+        
+        .st_tree ul li a:before {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            content: "";
+            width: 3px;
+            background-color: #0295ff;
+            top: 0;
+            left: 0;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition: -webkit-transform ease-in-out .3s;
+            transition: -webkit-transform ease-in-out .3s;
+            transition: transform ease-in-out .3s;
+            transition: transform ease-in-out .3s, -webkit-transform ease-in-out .3s;
+            display: none\9;
+        }
+        
+        .st_tree {
+            width: 135px;
+            position: relative;
+            float: left;
+            margin-right: -100%;
+            background-color: #f7f7f7;
+            box-sizing: border-box;
+        }
+        
+        .st_tree a {
+            text-decoration: none;
+        }
+        
+        .st_tree a:hover {
+            text-decoration: none;
+            background-color: #fff;
+        }
+        
+        .st_tree ul {
+            margin: 0;
+        }
+        
+        .st_tree ul li {
+            font-size: 14px;
+            color: #222;
+            line-height: 1;
+            cursor: pointer;
+            list-style: none;
+            /*            background: url(./imgs/st_node.gif);*/
+            background-repeat: no-repeat;
+        }
+        
+        .st_tree .folder {
+            /*
+            list-style-image: url(./imgs/st_icon.png);
+            background: url(./imgs/st_folder.gif);
+            background-repeat: no-repeat;
+            padding: 0 0 0 20px;
+*/
+            background: none;
+        }
+        
+        .st_tree .open {
+            /*
+            list-style-image: url(./imgs/st_icon_open.png);
+            background: url(./imgs/st_folder_open.gif);
+            background-repeat: no-repeat;
+            padding: 0 0 0 20px;
+*/
+            background-color: #fff;
+        }
+        /*自适应圆角投影*/
+        
+        .round_shade_box {
+            width: 1px;
+            height: 1px;
+            font-size: 0;
+            display: none;
+            _background: white;
+            _border: 1px solid #cccccc;
+        }
+        
+        .round_shade_top {
+            margin: 0 12px 0 10px;
+            background: url(./imgs/zxx_round_shade.png) repeat-x -20px -40px;
+            _background: white;
+            zoom: 1;
+        }
+        
+        .round_shade_topleft {
+            width: 11px;
+            height: 10px;
+            background: url(./imgs/zxx_round_shade.png) no-repeat 0 0;
+            _background: none;
+            float: left;
+            margin-left: -11px;
+            position: relative;
+        }
+        
+        .round_shade_topright {
+            width: 12px;
+            height: 10px;
+            background: url(./imgs/zxx_round_shade.png) no-repeat -29px 0;
+            _background: none;
+            float: right;
+            margin-right: -12px;
+            position: relative;
+        }
+        
+        .round_shade_centerleft {
+            background: url(./imgs/zxx_round_shade.png) no-repeat 0 -1580px;
+            _background: none;
+        }
+        
+        .round_shade_centerright {
+            background: url(./imgs/zxx_round_shade.png) no-repeat right -80px;
+            _background: none;
+        }
+        
+        .round_shade_center {
+            font-size: 14px;
+            margin: 0 12px 0 10px;
+            padding: 10px;
+            background: white;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+        
+        .round_shade_bottom {
+            margin: 0 12px 0 11px;
+            background: url(./imgs/zxx_round_shade.png) repeat-x -20px bottom;
+            _background: white;
+            zoom: 1;
+        }
+        
+        .round_shade_bottomleft {
+            width: 11px;
+            height: 10px;
+            background: url(./imgs/zxx_round_shade.png) no-repeat 0 -30px;
+            _background: none;
+            float: left;
+            margin-left: -11px;
+            position: relative;
+        }
+        
+        .round_shade_bottomright {
+            width: 12px;
+            height: 10px;
+            background: url(./imgs/zxx_round_shade.png) no-repeat -29px -30px;
+            _background: none;
+            float: right;
+            margin-right: -12px;
+            position: relative;
+        }
+        
+        .round_shade_top:after,
+        .round_shade_bottom:after,
+        .zxx_zoom_box:after {
+            display: block;
+            content: ".";
+            height: 0;
+            clear: both;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        
+        .round_box_close {
+            padding: 2px 5px;
+            font-size: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            border: 1px solid #cccccc;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            background: #000000;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            position: absolute;
+            right: -5px;
+            top: -5px;
+        }
+        
+        .round_box_close:hover {
+            opacity: 0.95;
+            filter: alpha(opacity=95);
+        }
+        /*自适应圆角投影结束*/
+        
+        .open-icon {
+            width: 40px;
+            height: 35px;
+            background-image: url(./imgs/open.png);
+            background-repeat: no-repeat;
+            display: block;
+            margin: 0 auto 5px;
+        }
+        
+        .vi-img-box {
+            background-color: #fff;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-radius: 10px;
+            min-height: 500px;
+        }
+        
+        .vi-bounce {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .vi-img-titlw {
+            font-size: 18px;
+            border-bottom: 1px solid #eeeeee;
+            padding: 0 0 20px 20px;
+        }
+        
+        .vi-img-titlw a {
+            width: 89px;
+            height: 27px;
+            display: inline-block;
+            background-image: url(./imgs/down.png);
+            cursor: pointer;
+            vertical-align: middle;
+            margin-left: 75px;
+        }
+        
+        #choose-box {
+            position: absolute;
+            left: 385px;
+            top: 48px;
+        }
+        .ui-box1 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <div class="vi-wrap">
+            <img src="./imgs/banner.png" alt="">
+            <select name="" id="choose-box">
+                <option value="1">组件</option>
+                <option value="2">元件</option>
+            </select>
+        </div>
+    </div>
+    <div class="vi-wrap">
+        <div class="st_tree" style="">
+            <ul>
+                <li><a href="#" ref="xtgl"><i class="open-icon"></i>All components</a></li>
+                <li show="true" class="test">
+                    <ul style="*margin-top:-20px;" class="ui-box">
+                        <li><a href="#" ref="./components/PullDownList_1.jpg">PullDownList</a></li>
+                        <li><a href="#" ref="./components/select.jpg">select</a></li>
+                        <li><a href="#" ref="./components/Error-Tips.jpg">Error-Tips</a></li>
+                        <li><a href="#" ref="./components/tips_1.jpg">Tips</a></li>
+                        <li><a href="#" ref="./components/弹层.jpg">弹层</a></li>
+                        <li><a href="#" ref="./components/订单详情、填写页、明细.jpg">订单详情、填写页、明细</a></li>
+                        <li><a href="#" ref="./components/面包屑、侧边导航、头尾.jpg">面包屑、侧边导航、头尾</a></li>
+                        <li><a href="#" ref="./components/进度条、组合间距、飞行卡片.jpg">进度条、组合间距、飞行卡片</a></li>
+                        <li><a href="#" ref="./components/日历.jpg">日历</a></li>
+                        <li><a href="#" ref="./components/悬浮框以及OA.jpg">悬浮框以及OA</a></li>
+                    </ul>
+                    <!-- 元件 -->
+                    <ul style="*margin-top:-20px;" class="ui-box ui-box1">
+                        <li><a href="#" ref="./components/按钮.jpg">按钮</a></li>
+                        <li><a href="#" ref="./components/+-和开关.jpg">+-和开关</a></li>
+                        <li><a href="#" ref="./components/checkbox.jpg">checkbox</a></li>
+                        <li><a href="#" ref="./components/Icon_1.jpg">Icon</a></li>
+                        <li><a href="#" ref="./components/input.jpg">input</a></li>
+                        <li><a href="#" ref="./components/标签.jpg">标签</a></li>
+                        <li><a href="#" ref="./components/文字&价格.jpg">文字&价格</a></li>
+                        <li><a href="#" ref="./components/文字链.jpg">文字链</a></li>
+                        <li><a href="#" ref="./components/圆.jpg">圆</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="img-box">
+                <div href="" class="vi-img-box" style="">
+                    <div class="vi-bounce" href="#pic"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 要放大显示的div -->
+    <div id="pic" style="display:none;"><img src="" /></div>
+    <script>
+        $(function () {
+            /*
+            Author：weiwzhang@Ctrip.com
+            Date：2017.03.16
+            Version：ctripCorp VI show function
+            */
+            $.fn.extend({
+                SimpleTree: function (options) {
+                    var option = $.extend({
+                        click: function (a) {}
+                    }, options);
+                    option.tree = this;
+                    option._init = function () {
+                        this.tree.find("ul .test").hide();
+                        this.tree.find("ul .test").prev("li").removeClass("open");
+                        this.tree.find("ul .test[show='true']").show();
+                        this.tree.find("ul .test[show='true']").prev("li").addClass("open");
+                    }
+                    this.find("a").click(function () {
+                        $(this).parent("li").click();
+                        return false;
+                    });
+
+
+                    this.find("li").click(function () {
+
+                        if (typeof ($(this).find("a")[0]) != "undefined") {
+                            //链接部位underfine点击生效
+                            option.click($(this).find("a")[0]); /* 触发单击 */
+                        }
+
+                        /* 
+                         * 如果当前节点下面包含子菜单，并且其 show 属性的值为 true，则修改其 show 属性为 false
+                         * 否则修改其 show 属性为 true
+                         */
+                        if ($(this).next(".test").attr("show") == "true") {
+                            $(this).next(".test").attr("show", "false");
+                        } else {
+                            $(this).next(".test").attr("show", "true");
+                        }
+
+                        option._init();
+                        return false;
+                    });
+                    /* 设置节点“是否包含子节点”属性 */
+                    this.find(".test").prev("li").addClass("folder");
+                    this.find("li").find("a").attr("hasChild", false);
+                    this.find(".test").prev("li").find("a").attr("hasChild", true);
+                    option._init();
+
+                }
+
+            });
+            //初始化
+            $(".st_tree").SimpleTree({
+                /* 可无视代码部分*/
+                click: function (a) {
+                    if (!$(a).attr("hasChild")) {
+                        var text = $(a).text(),
+                            downHref = $(a).attr("ref").split("jpg")[0] + "psd";
+                        $(".vi-img-box").fadeIn();
+                        $("#pic>img").attr('src', $(a).attr("ref"));
+
+                        if ($(".img-box").has("img").length == 0) {
+                            $("<img/>", {
+                                src: $(a).attr("ref")
+
+                            }).css("maxWidth", "1000px").appendTo('.img-box .vi-bounce');
+                            $("<div/>", {
+                                'class': "vi-img-titlw",
+                                html: text + "<a download></a>"
+                            }).css("maxWidth", "1000px").insertBefore('.img-box .vi-bounce');
+                            $(".img-box .vi-img-titlw a").attr("href", downHref);
+                        } else {
+                            $(".img-box .vi-bounce img").attr('src', $(a).attr("ref"));
+                            $(".img-box .vi-img-titlw").html(text + "<a download></a>");
+                            $(".img-box .vi-img-titlw a").attr("href", downHref);
+                        }
+                        $(a).addClass("cur").parent("li").siblings().children("a").removeClass("cur");
+                    } else {
+                        reset();
+                    }
+
+                }
+            });
+
+            function reset() {
+                $(".vi-img-box").fadeOut();
+                $("ul li[show='true']").find("a").removeClass("cur"); //重置
+                $(".round_box_close").trigger("click"); //关闭放大效果
+            }
+            $(".img-box .vi-bounce").fancyZoom({
+                scaleImg: false,
+                closeOnClick: true
+            });
+            //选择组件元件
+            $("#choose-box").change(function () {
+                reset();
+                var item = $(this).children('option:selected').val();
+                if (item == 1) {
+                    $(".ui-box").hide().eq(0).show();
+                } else if (item == 2) {
+                    $(".ui-box").hide().eq(1).show();
+                }
+            })
+            window.addEventListener("load", function(){
+                //触发第一个
+                $(".ui-box").eq(0).find("li:first-child").children("a").trigger("click");
+            }, false);
+        });
+    </script>
+</body>
+
+</html>
