@@ -1808,8 +1808,8 @@ body {
         content: "";
         height: 2px;
         display: block;
-        -webkit-transition: ease-in all .15s;
-        transition: ease-in all .15s;
+        -webkit-transition: ease-in all .25s;
+        transition: ease-in all .25s;
     }
     .article-title a:hover {
 /*        background-color: #F27B2E;*/
