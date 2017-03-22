@@ -118,7 +118,6 @@ a:focus {
 
 a img:hover,
 a img:focus {
-    cursor: -webkit-zoom-in;
     cursor: zoom-in;
 }
 
@@ -1605,14 +1604,12 @@ body {
     }
     .container-fluid {
         display: -webkit-box;
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         /* 主轴对齐 */
         -ms-flex-pack: center;
         -webkit-box-pack: center;
         box-pack: center;
-        -webkit-justify-content: center;
         justify-content: center;
     }
 }
@@ -1704,14 +1701,11 @@ body {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
 }
@@ -1801,14 +1795,31 @@ body {
     }
     .article-title a {
         float: left;
-        color: #54BAF3;
+        color: #4A4A4A;
+        -webkit-transition: color .25s linear;
         transition: color .25s linear;
         padding: 0 5px;
+        position: relative;
+    }
+    .article-title a:after{
+        position: absolute;
+        left: 50%;
+        width: 0;
+        content: "";
+        height: 2px;
+        display: block;
+        -webkit-transition: ease-in all .15s;
+        transition: ease-in all .15s;
     }
     .article-title a:hover {
-        background-color: #F27B2E;
+/*        background-color: #F27B2E;*/
         border-radius: 3px;
-        color: #fff;
+        color: #1e88e5;
+    }
+    .article-title a:hover:after{
+        width: 100%;
+        margin-left: -50%;
+        background-color: #1e88e5;
     }
     .article-title p {
         margin: 0;
