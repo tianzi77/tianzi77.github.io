@@ -48,27 +48,10 @@ layout: default
                 <hr>
 
                 {% if site.useDuoshuo && site.useShare %}
-                <!-- 多说 Share start -->
+                <!-- 百度 Share start -->
                 
-                <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="{{page.id}}" data-title="{{page.title}}"
-                    data-images="{{ site.url }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}"
-                    data-content="{{ content | strip_html | truncate:80 }} | {{ site.shareTitle }} "
-                    data-url="{{site.url}}{{page.url}}">
-                    <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
-                    </div>
-                <hr>
-                </div>
-                <!-- 多少 Share end-->
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a></div>
+                <!-- 百度 Share end-->
                 {% endif %}
 
 
@@ -88,9 +71,9 @@ layout: default
 
                 {% if site.useDuoshuo %}
 
-                <!-- UY BEGIN -->
+                <!-- 163 BEGIN -->
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                <!-- UY END -->
+                <!-- 163 END -->
 
                 {% endif %}
 
@@ -164,7 +147,7 @@ layout: default
 
 
 {% if site.useDuoshuo %}
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!-- 163评论+百度分享 start (一个网页只需插入一次) -->
 <script>
   var cloudTieConfig = {
     url: document.location.href, 
@@ -174,7 +157,8 @@ layout: default
   };
 </script>
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<!-- 多说公共JS代码 end -->
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!-- 163评论+百度分享 end -->
 {% endif %}
 
 
