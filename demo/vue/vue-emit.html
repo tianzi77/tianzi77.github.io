@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+    <div id="app">
+        <component-a></component-a>
+    </div>
+</body>
+
+</html>
+<script src="//cdn.bootcss.com/vue/2.0.8/vue.min.js"></script>
+<script src="vue-resource.min.js"></script>
+<script>
+    let bus = new Vue();
+    let componnetA = {
+        template: '<button @click="clickFn">{{meg}}</button>',
+        data() {
+            return {
+                meg: '组件测试'
+            }
+        },
+        created() {
+            bus.$on('clickFn', (text) => {
+                alert(text);
+            })
+        },
+        methods: {
+            clickFn: function () {
+                bus.$emit('clickFn', '777')
+            }
+        }
+    }
+    let vm = new Vue({
+        "el": '#app',
+        components: {
+            componentA: componnetA,
+        }
+    });
+    Vue.config.devtools = true;
+</script>
