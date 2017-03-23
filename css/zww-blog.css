@@ -1562,7 +1562,7 @@ body {
 
 .show-tips {
     position: fixed;
-    z-index: 3;
+    z-index: 9;
     width: 100%;
     left: 50px;
     bottom: 30px;
