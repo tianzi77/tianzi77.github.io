@@ -252,7 +252,7 @@ JavaScript钩子函数
     }
     
 此外可以根据this.$route.params进行业务逻辑的判断，例子用的第三方的动效库也是可以的。
-<a href="tianzi77.github.io/demo/vue/vue-ruter.html">router demo</a>
+<a href="http://tianzi77.github.io/demo/vue/vue-ruter.html">router demo</a>
 
 Link：
 vue2官方：https://cn.vuejs.org/v2/guide/migration-vue-router.html
