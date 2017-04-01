@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue router</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            <router-link to="/user/foo">main</router-link>
+            <router-link to="/user/foo/profile">main的孩子</router-link>
+            <router-link to="/user/foo/posts">main的孩子</router-link>
+            <router-link to="/other/">other与main同级</router-link>
+        </p>
+        <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:after-leave="afterLeave" v-bind:css="false">
+            <router-view></router-view>
+        </transition>
+    </div>
+    <script>
+        const User = {
+            template: `
+            <div class="user">
+                <h2>User {{ $route.params.id }}</h2>
+                <router-view></router-view>
+            </div>
+                    `
+        }
+        const UserHome = {
+            template: '<div>Home</div>'
+        }
+        const UserProfile = {
+            template: '<div>Profile</div>'
+        }
+        const UserPosts = {
+            template: '<div>Posts</div>'
+        }
+        const OtherTest = {
+            template: `
+            <div class="user">
+                <h2>{{msg}}</h2>
+            </div>
+                    `,
+            data() {
+                return {
+                    msg: '其他路由'
+                }
+            }
+        }
+        const router = new VueRouter({
+            linkActiveClass: 'test',
+            routes: [
+                {
+                    path: '/user/:id',
+                    component: User,
+                    children: [
+        // UserHome will be rendered inside User's <router-view>
+        // when /user/:id is matched
+                        {
+                            path: '',
+                            component: UserHome
+                        },
+
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+                        {
+                            path: 'profile',
+                            component: UserProfile
+                        },
+
+        // UserPosts will be rendered inside User's <router-view>
+        // when /user/:id/posts is matched
+                        {
+                            path: 'posts',
+                            component: UserPosts
+                        }
+                ]
+        },
+                {
+                    path: '/Other/',
+                    component: OtherTest
+        },
+                //2.0升级
+                {
+                    path: '/',
+                    redirect: '/Other/'
+        }
+
+        ]
+
+        })
+        const app = new Vue({
+            router,
+            methods: {
+                beforeEnter: function (el) {
+                    el.style.opacity = 0
+                },
+                enter: function (el, done) {
+                    Velocity(el, {
+                        fontSize: '1em'
+                    }, {
+                        duration: 300
+                    })
+                    Velocity(el, {
+                        fontSize: '1em',
+                        opacity: 1
+                    }, {
+                        complete: done
+                    })
+                },
+                afterLeave: function () {
+
+                }
+            }
+        }).$mount('#app')
+    </script>
+    <style>
+        .test {
+            color: red;
+        }
+        
+        .user {
+            height: 500px;
+            background: red;
+        }
+        
+        .fade-enter-active {
+            opacity: 1;
+        }
+        
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: all linear .5s
+        }
+        
+        .fade-enter,
+        .fade-leave-active {
+            opacity: 0
+        }
+        
+        .slide-fade-enter-active {
+            transition: all .3s ease;
+        }
+        
+        .slide-fade-leave-active {
+            transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        
+        .slide-fade-enter,
+        .slide-fade-leave-active {
+            padding-left: 0;
+            opacity: 0;
+        }
+        
+        .bounce-enter-active {
+            animation: bounce-in .5s;
+        }
+        
+        .bounce-leave-active {
+            animation: bounce-out .5s;
+        }
+        
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes bounce-out {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+    </style>
+</body>
+
+</html>
