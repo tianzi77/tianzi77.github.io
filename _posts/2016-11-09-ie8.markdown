@@ -104,7 +104,8 @@ tags:
 
 补充另外一种方式：
 
-   <!--[if lte IE 8]>
+   
+     <!--[if lte IE 8]>
     <script>
         window.onload = function () {
             // 移除字符串两侧的空白字符的函数
