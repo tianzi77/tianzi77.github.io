@@ -102,4 +102,68 @@ tags:
 
 来上海都一年了。一年，我浪费得起，但是，这将是我生命中浪费的最后一年，我发誓。
 
+补充另外一种方式：
+
+   <!--[if lte IE 8]>
+    <script>
+        window.onload = function () {
+            // 移除字符串两侧的空白字符的函数
+            function trim(str) {
+
+                if (String.prototype.trim) {
+                    return str.trim()
+                }
+
+                return str.replace(/^\s+|\s+$/g, '')
+            }
+
+            // 添加类名函数
+            function addClass(elem, className) {
+                if (elem.nodeType === 1 && typeof className === "string" && className) {
+                    var cur = elem.className ? (" " + elem.className + " ") : " ";
+                    var classList = className.split(" ");
+                    var i = 0,
+                        tempClass;
+
+                    while ((tempClass = classList[i++])) {
+                        if (cur.indexOf(" " + tempClass + " ") === -1) {
+                            cur += tempClass + " ";
+                        }
+                    }
+
+                    elem.className = trim(cur);
+                }
+            }
+
+            // 移除类名函数
+            function removeClass(elem, className) {
+                if (elem.nodeType === 1 && typeof className === "string" && className) {
+                    var cur = elem.className ? (" " + elem.className + " ") : " ";
+                    var classList = className.split(" ");
+                    var i = 0,
+                        tempClass;
+
+                    while ((tempClass = classList[i++])) {
+                        if (cur.indexOf(" " + tempClass + " ") !== -1) {
+                            cur = cur.replace(" " + tempClass + " ", " ");
+                        }
+                    }
+
+                    elem.className = trim(cur);
+                }
+            }
+
+            function resizeHandler() {
+                if (document.body.clientWidth <= 1200) {
+                    addClass(document.body, 'killie');
+                } else {
+                    removeClass(document.body, 'killie');
+                }
+            }
+            resizeHandler();
+            window.attachEvent('onresize', resizeHandler);
+        }
+    </script>
+    <![endif]--> 
+
         
