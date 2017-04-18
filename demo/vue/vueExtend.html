@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue.extend</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.6/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <zw></zw>
+    </div>
+    <div id="direction">
+        <div v-zw="color">{{ num }}</div>
+        <div>
+            <button @click="add"> {{ msg }}</button>
+            <button @click="unbind">{{ msg1}}</button>
+        </div>
+    </div>
+    <script>
+        //扩展模版
+        var vueExtend = Vue.extend({
+            template: '<a :href="zwHref">{{blogName}}</a>',
+            data: function () {
+                return {
+                    blogName: 'awei',
+                    zwHref: 'http://www.zhangweiwei.cn'
+                }
+            }
+        })
+        new vueExtend().$mount('zw');
+        //自定义指令
+        Vue.directive('zw', {
+            bind: function (el, binding, vnode) { //被绑定
+                /**
+                        var s=JSON.stringify;
+                        el.innerHTML = 
+                            'name:'        + s(binding.name) +'<br>' + 
+                            'value:'       + s(binding.value) +'<br>' + 
+                            'expression:'  + s(binding.expression) +'<br>' ;
+                **/
+                el.style = 'color:' + binding.value;
+
+                console.log('1 - bind');
+            },
+            inserted: function () { //绑定到节点
+                console.log('2 - inserted');
+            },
+            update: function () { //组件更新
+                console.log('3 - update');
+            },
+            componentUpdated: function () { //组件更新完成
+                console.log('4 - componentUpdated');
+            },
+            unbind: function () { //解绑
+                console.log('5 - unbind');
+            }
+        })
+        var demo = new Vue({
+            el: '#direction',
+            data: {
+                msg: 'add',
+                num: 0,
+                color: 'red',
+                msg1: '解绑'
+            },
+            methods: {
+                add: function () {
+                    this.num < 10 ? this.num++ : this.num;
+                },
+                unbind: function () {
+                    this.$destroy();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
