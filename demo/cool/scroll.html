@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <style>
+        body {
+            height: 2000px;
+        }
+        
+        .navbar-fixed-top {
+            display: block;
+            text-align: center;
+            background-color:black;
+            background-color: rgba(80, 80, 80, 1);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            overflow-y: hidden;
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            top: 0px;
+            color: #fff;
+            padding: 20px 0;
+            transition: all cubic-bezier(.15, 1, .5, 1) 0.8s;
+            will-change: transform;
+        }
+        
+        .nav-up {
+            -webkit-transform: translate3d(0, -100%, 0);transform: translate3d(0, -100%, 0);
+            top: -58px\9;
+        }
+        
+        .nav-down {
+           -webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);
+            top: 0\9;
+        }
+        
+        .nav-top {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar-fixed-top nav-top">
+        NAV
+    </nav>
+    <script>
+        $(document).ready(function () {
+            var demo = {
+                scroll: function () {
+                    var scrollFlag,
+                        lastScrollTop = 0,
+                        scrollHeight = 5,
+                        navbarHeight = $('.navbar-fixed-top').outerHeight();
+                    $(window).scroll(function () {
+                        scrollFlag = true;
+                    });
+                    setInterval(function () {
+                        if (scrollFlag) {
+                            scrollFlag = false;
+                            hasScrolled();
+                        }
+                    }, 250);
+
+                    function hasScrolled() {
+                        var scrollTop = $(this).scrollTop();
+
+                        if (Math.abs(lastScrollTop - scrollTop) <= scrollHeight) {
+                            return;
+                        }
+                        //scroll down
+                        if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
+                            $('.navbar-fixed-top').removeClass('nav-down nav-top').addClass('nav-up');
+                        } else {
+                            //scroll up
+                            //console.log($(window).height(), $(document).height())
+                            if (scrollTop + $(window).height() < $(document).height() && scrollTop > 0) {
+                                $('.navbar-fixed-top').removeClass('nav-up nav-top').addClass('nav-down');
+                            } else {
+                                //top near screen
+                                $('.navbar-fixed-top').removeClass('nav-up nav-down').addClass('nav-top');
+                            }
+                        }
+                        lastScrollTop = scrollTop;
+                    }
+                },
+                init: function () {
+                    this.scroll();
+                }
+            }
+            demo.init();
+        })
+    </script>
+</body>
+
+</html>

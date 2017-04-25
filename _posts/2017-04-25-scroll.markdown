@@ -1,0 +1,80 @@
+---
+layout:     post
+title:      "向上向下滚动小交互"
+subtitle:   " \"滚动\""
+date:       2017-04-25 20:00:00
+author:     "ZWW"
+header-img: "img/contact-bg.jpg"
+tags:
+    - 滚动
+---
+
+> **“向上向下滚动”**
+
+滚动的交互也是越来越有趣，演变出来一系列的效果。
+本文实现在浏览器窗口顶部的时候导航是样式1，向下滚动的时候隐藏导航样式2，向上滚动的时候显示样式3
+
+我们采取优雅降级的办法写一下样式：
+        
+        //固定样式
+        .navbar-fixed-top {
+            display: block;
+            text-align: center;
+            background-color:black;
+            background-color: rgba(80, 80, 80, 1);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            overflow-y: hidden;
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            top: 0px;
+            color: #fff;
+            padding: 20px 0;
+            transition: all cubic-bezier(.15, 1, .5, 1) 0.8s;
+            will-change: transform;
+        }
+        //样式1
+        .nav-top {
+            background-color: red;
+        }
+        //样式2
+        .nav-up {
+            -webkit-transform: translate3d(0, -100%, 0);transform: translate3d(0, -100%, 0);
+            top: -58px\9;
+        }
+        //样式3
+        .nav-down {
+           -webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);
+            top: 0\9;
+        }
+
+> **“交互事件？判断滚动方向”**
+
+                    //核心方法
+                    function hasScrolled() {
+                        var scrollTop = $(this).scrollTop();
+
+                        if (Math.abs(lastScrollTop - scrollTop) <= scrollHeight) {
+                            return;
+                        }
+                        //scroll down
+                        if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
+                            $('.navbar-fixed-top').removeClass('nav-down nav-top').addClass('nav-up');
+                        } else {
+                            //scroll up
+                            //console.log($(window).height(), $(document).height())
+                            if (scrollTop + $(window).height() < $(document).height() && scrollTop > 0) {
+                                $('.navbar-fixed-top').removeClass('nav-up nav-top').addClass('nav-down');
+                            } else {
+                                //top near screen
+                                $('.navbar-fixed-top').removeClass('nav-up nav-down').addClass('nav-top');
+                            }
+                        }
+                        lastScrollTop = scrollTop;
+                    }
+    
+首先判断方向是向下还是向上，如果是上则分为到顶部和没到顶部的情况，判断的基准就是最后一次滚动高度，lastScrollTop。
+
+<a href="http://tianzi77.github.io/demo/cool/scroll.html">demo</a>
+
