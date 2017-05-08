@@ -1,0 +1,366 @@
+        html,
+        body,
+        div,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul,
+        ol {
+            list-style: none;
+        }
+        
+        img {
+            border: none;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .g-header {
+            width: 100%;
+            height: 425px;
+            background: #eaeaea;
+        }
+        
+        .head-in {
+            margin: 0 auto;
+            width: 1003px;
+            height: 425px;
+            background-image: -webkit-linear-gradient(to left, #eaeaea, #fff, #eaeaea);
+            background-image: -webkit-linear-gradient(right, #eaeaea, #fff, #eaeaea);
+            background-image: linear-gradient(to left, #eaeaea, #fff, #eaeaea);
+        }
+        
+        .g-nav {
+            width: 100%;
+            height: 100px;
+            background: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/nav_bg.png?20150906) repeat-x;
+        }
+        
+        .nav-in {
+            margin: 0 auto;
+            width: 1003px;
+            height: 100px;
+        }
+        
+        .g-img {
+            width: 100%;
+        }
+        
+        .img-in {
+            margin: 0 auto;
+            width: 1003px;
+        }
+        
+        .g-footer {
+            width: 100%;
+            height: 130px;
+            padding-top: 10px;
+            -ms-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            box-sizing: border-box;
+            background: #ebebeb;
+        }
+        
+        .m-wirless .right,
+        .m-wirless .img-control,
+        .m-wirless .img-fly,
+        .m-wirless .img-appr,
+        .m-wirless .img-order,
+        .m-wirless .foot-in {
+            background-image: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/online.png?20150911);
+            _background-image: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/online.png?20150911);
+            background-repeat: no-repeat;
+            _background-repeat: no-repeat;
+        }
+        
+        .m-wirless .left {
+            float: left;
+            margin-top: 50px;
+            margin-left: 60px;
+            width: 450px;
+            height: 360px;
+        }
+        
+        .m-wirless .right {
+            float: right;
+            margin-top: 15px;
+            margin-right: 70px;
+            width: 315px;
+            height: 394px;
+            background-position: -8px -12px;
+        }
+        
+        .m-wirless .logo {
+            width: 390px;
+            height: 145px;
+            background-image: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/logo.png?20150911);
+            _background-image: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/logo.png?20150911);
+            background-repeat: no-repeat;
+            _background-repeat: no-repeat;
+        }
+        
+        .m-wirless .td {
+            width: 390px;
+            height: 68px;
+            background-image: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/td.png?20150911);
+            _background-image: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/td.png?20150911);
+        }
+        
+        .m-wirless .download {
+            position: relative;
+            margin-top: 15px;
+            width: 394px;
+            height: 110px;
+        }
+        
+        .m-wirless .nav-in span,
+        .m-wirless .btn-iphone,
+        .m-wirless .btn-android {
+            background-image: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/button.png?20150912);
+            _background-image: url(http://webresource.c-ctrip.com/ResCorpMobile/R2/img/AppSpread/button.png?20150912);
+            background-repeat: no-repeat;
+            _background-repeat: no-repeat;
+        }
+        /* 点击ios，加.ios；点击安卓，加.adr*/
+        
+        .m-wirless .download.ios .btn-iphone,
+        .m-wirless .download.adr .btn-android {
+            display: block;
+        }
+        
+        .m-wirless .download.ios .btn-android,
+        .m-wirless .download.adr .btn-iphone {
+            display: none;
+        }
+        /* 点击访问wap时*/
+        
+        .m-wirless .download.wap .btn,
+        .m-wirless .download.wap .tip {
+            display: none;
+        }
+        
+        .m-wirless .btn {
+            float: left;
+            margin-right: 10px;
+        }
+        
+        .m-wirless .tip {
+            position: absolute;
+            display: none;
+            top: 120px;
+            left: 0;
+            width: 258px;
+            padding: 13px 19px;
+            border: 1px solid #edd176;
+            background: #fff4d1;
+            color: #2d303a;
+            font-size: 14px;
+            font-family: "Microsoft Yahei";
+        }
+        
+        .m-wirless .tip em {
+            display: block;
+            position: absolute;
+            top: -7px;
+            left: 43px;
+            width: 11px;
+            height: 11px;
+            border-style: solid;
+            border-width: 1px 1px 0 0;
+            border-color: #edd176;
+            background: #fff4d1;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            top: -18px \9;
+            _top: -38px;
+            left: 40px \9;
+            width: 0 \9;
+            height: 0 \9;
+            border-style: dashed dashed solid dashed \9;
+            border-width: 9px \9;
+            border-color: transparent transparent #fff4d1 transparent \9;
+            background: none \9;
+        }
+        
+        :root .m-wirless .tip em {
+            top: -7px\0;
+            left: 43px\0;
+            width: 11px\0;
+            height: 11px\0;
+            border-style: solid\0;
+            border-width: 1px 1px 0 0\0;
+            border-color: #edd176\0;
+            background: #fff4d1\0;
+        }
+        
+        .m-wirless .btn-iphone,
+        .m-wirless .btn-android {
+            width: 230px;
+            height: 104px;
+        }
+        
+        .m-wirless .btn-iphone {
+            display: none;
+            background-position: -237px -903px;
+        }
+        
+        .m-wirless .btn-iphone:hover {
+            background-position: -237px -1007px;
+        }
+        
+        .m-wirless .btn-iphone:hover+.tip {
+            display: block;
+        }
+        
+        .m-wirless .btn-android {
+            background-position: 0 -903px;
+        }
+        
+        .m-wirless .btn-android:hover {
+            background-position: 0 -1007px;
+        }
+        
+        .m-wirless .code {
+            float: left;
+            width: 95px;
+            height: 95px;
+        }
+        
+        .m-wirless .nav-in span {
+            display: block;
+            float: left;
+            width: 334px;
+            height: 100px;
+            cursor: pointer;
+        }
+        
+        .m-wirless .iphone {
+            background-position: 0 -800px;
+        }
+        
+        .m-wirless .iphone:hover {
+            background-position: 0 -700px;
+        }
+        
+        .m-wirless .iphone.cur,
+        .m-wirless .cur .iphone {
+            background-position: 0 -600px;
+        }
+        
+        .m-wirless .android {
+            background-position: 0 -200px;
+        }
+        
+        .m-wirless .android:hover {
+            background-position: 0 -100px;
+        }
+        
+        .m-wirless .android.cur,
+        .m-wirless .cur .android {
+            background-position: 0 0;
+        }
+        
+        .m-wirless .wap {
+            background-position: 0 -500px;
+        }
+        
+        .m-wirless .wap:hover {
+            background-position: 0 -400px;
+        }
+        
+        .m-wirless .wap.cur,
+        .m-wirless .cur .wap {
+            background-position: 0 -300px;
+        }
+        
+        .m-wirless .img-in li {
+            height: 412px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .m-wirless .img-in li:last-child {
+            border-width: 8px;
+        }
+        
+        .m-wirless .img-control {
+            float: left;
+            margin: 30px 0 0 25px;
+            width: 477px;
+            height: 326px;
+            background-position: 0 -413px;
+        }
+        
+        .m-wirless .describ {
+            float: left;
+            margin: 120px 0 0 20px;
+            width: 410px;
+            font-family: "Microsoft Yahei";
+        }
+        
+        .m-wirless .describ p {
+            color: #666;
+        }
+        
+        .m-wirless .img-order {
+            float: right;
+            margin: 28px 16px 0 0;
+            width: 460px;
+            height: 323px;
+            background-position: -5px -748px;
+        }
+        
+        .m-wirless .img-appr {
+            float: left;
+            margin: 41px 0 0 25px;
+            width: 460px;
+            height: 325px;
+            background-position: -479px -413px;
+        }
+        
+        .m-wirless .img-fly {
+            float: right;
+            margin: 44px 16px 0 0;
+            width: 516px;
+            height: 339px;
+            background-position: -457px -737px;
+        }
+        
+        .m-wirless .foot-in {
+            position: relative;
+            margin: 0 auto;
+            width: 697px;
+            height: 111px;
+            background-position: 0 -1077px;
+        }
+        
+        .ios .btn-iphone,
+        .android .btn-android {
+            display: block;
+        }
+        
+        .ios .btn-android,
+        .android .btn-ios {
+            display: none;
+        }
+        
+        .ios .right {
+            width: 310px;
+            background-position: -324px -12px;
+        }
+        
+        .android .right {
+            background-position: -618px -14px;
+        }
+        
+        .g-footer .freeDown {
+            position: absolute;
+            top: 55px;
+            left: 425px;
+            width: 162px;
+            height: 45px;
+            cursor: pointer;
+        }
