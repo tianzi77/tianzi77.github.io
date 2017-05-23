@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>纵向无缝滚动</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+    <div>站内公告</div>
+    <hr/>
+    <div id="demo" style="OVERFLOW: hidden; height: 100px;">
+        <div id="marquePic1">
+            第1行<br/> 第2行
+            <br/> 第3行
+            <br/> 第4行
+            <br/> 第5行
+            <br/> 第6行
+            <br/> 第7行
+            <br/> 第8行
+            <br/> 第9行
+            <br/> 第10行
+        </div>
+        <div id="marquePic2" valign="top">
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+    //纵向滚动 需要设置div的高度
+    function scrollAd(time, adbox, clonebox, container) {
+        var time,
+            adBox = document.getElementById(adbox),
+            cloneBox = document.getElementById(clonebox),
+            container = document.getElementById(container);
+        /*
+            time 滚动时间即速度
+            adbox 滚动的容器
+            clonebox 无缝滚动克隆的容器，内容和滚动的容器一致，滚动容器高度滚完后克隆的容器交替滚动
+            container 滚动外层容器
+        */
+        cloneBox.innerHTML = adBox.innerHTML;
+
+        function Marquee() {
+            if (container.scrollTop >= adBox.scrollHeight) {
+                container.scrollTop = 0
+            } else {
+                container.scrollTop++
+            }
+        }
+        var verticalAd = setInterval(Marquee, time);
+        container.onmouseover = function() {
+            clearInterval(verticalAd)
+        }
+        container.onmouseout = function() {
+            verticalAd = setInterval(Marquee, time)
+        }
+    }
+    scrollAd(35, 'marquePic1', 'marquePic2', 'demo');
+</script>

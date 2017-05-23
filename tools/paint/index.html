@@ -6,12 +6,68 @@
     <title>单页page</title>
     <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
     <link rel="stylesheet" href="link.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
 </head>
 
 <body>
-    <div id="pg_wirless"></div>
-    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
-    <script src="page.js"></script>
+    <h1>Slot content extend Demo</h1>
+    <hr>
+    <div id="app">
+        <zw>
+            <span slot="bolgUrl">{{zwBlog.url}}</span>
+            <span slot="netName">{{zwBlog.name}}</span>
+            <span slot="skill">{{zwBlog.job}}</span>
+            <span slot="age">{{zwBlog.age}}</span>
+            <span slot="sex">{{zwBlog.sex}}</span>
+        </zw>
+    </div>
+
+
+    <template id="tmp">
+        <div>
+            <p>博客地址：
+                <slot name="bolgUrl"></slot>
+            </p>
+            <p>网名：
+                <slot name="netName"></slot>
+            </p>
+            <p>技术类型：
+                <slot name="skill"></slot>
+            </p>
+            <p>
+                年龄：
+                <slot name='age'></slot>
+            </p>
+            <p>
+                性别：
+                <slot name='sex'></slot>
+            </p>
+            
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        var zw = {
+            template: '#tmp'
+        }
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                zwBlog: {
+                    url: 'http://www.zhangweiwei.cn',
+                    name: '阿威博客',
+                    job: 'Web前端',
+                    age: 24,
+                    sex: '男'
+                }
+            },
+            components: {
+                "zw": zw
+            }
+        })
+    </script>
 </body>
 
 </html>
