@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dialog</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/tools/dialog/dialog.css">
+    <script src="http://www.zhangweiwei.cn/tools/dialog/easydialog.js"></script>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li data-index="0" class="test">1</li>
+        <li data-index="1">2</li>
+    </ul>
+
+</body>
+<script>
+    var headArr = [
+            '张三',
+            '李四'
+        ],
+        contentArr = [
+            '测试',
+            '测试2'
+        ];
+    $(function() {
+        var btnFn = function() {
+            alert(e.target);
+            return false;
+        };
+        $('ul>li').each(function() {
+            $(this).click(function() {
+                var curIndex = $(this).attr("data-index");
+                console.log(curIndex);
+                var headHtml = headArr[curIndex];
+                var contentHtml = contentArr[curIndex];
+                easyDialog.open({
+                    container: {
+                        header: headHtml,
+                        content: contentHtml,
+                    },
+                    drag: false,
+                    yesFn: btnFn,
+                    effect: 'effect-flip-vertical',
+                    callback: function() {
+                        //alert(1)
+                    },
+                });
+            })
+        })
+
+    })
+</script>
+
+</html>

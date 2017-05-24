@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>casual dialog</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <link rel="stylesheet" href="http://content.tujia.com/style/About.css?v=1113">
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script src="http://content.tujia.com/js/jq.carousel.js"></script>
+</head>
+
+<body>
+    <div><a href="" data-index="1">1</a><a href="" data-index="2">2</a></div>
+    <div class="modal-bg" style="">
+
+        <div class="carousel carousel-wrap">
+            <div id="carousel" class="carousel_inner">
+                <div class="carousel_box">
+                    <h2 class="hd">包晓明 </h2>
+                    <div class="info-box">
+                        <img src="/Images/team_bxm.jpg" alt="">
+                        <h3>包晓明</h3>
+                        <p>
+                            业务发展事业部总经理
+                        </p>
+                    </div>
+                    <div class="intro-box">
+                        <p>包晓明先生，现任本公司业务发展事业部总经理。曾就职于IBM、CISCO、Avaya等全球500强外资企业以及科达等国内领先的IT公司，担任过销售经理、销售总监、副总经理等各类职务，在销售管理、业务开拓、渠道管理等方面都接受过先进理念的熏陶并拥有二十余年丰富且令人信服的工作经验。包晓明先生毕业于上海工程技术大学自动化控制专业，并获得工科学士学位。</p>
+                    </div>
+                </div>
+                <div class="carousel_box">
+                    <h2 class="hd">石绍东 </h2>
+                    <div class="info-box">
+                        <img src="/Images/team_ssd.jpg" alt="">
+                        <h3>石绍东</h3>
+                        <p>
+                            途远CEO
+                        </p>
+                    </div>
+                    <div class="intro-box">
+                        <p>石绍东先生，现任途远公司CEO。石绍东先生熟悉互联网、媒体、房地产等相关行业的运营与管理，对房地产、旅游度假产品的发展有独特的见解。曾就职于新浪乐居并担任福建区域总经理职位，2012年转战途家，拓疆闽赣，与众多知名房企、旅游局达成深度合作。2016年正式出任途远公司CEO，定位乡村旅游综合服务平台，整合各方资源重新定义中国乡村度假。</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="btns">
+                <input type="button" id="carousel_prev" value="">
+                <input type="button" id="carousel_next" value="">
+            </p>
+            <div class="closed"></div>
+        </div>
+    </div>
+    <script>
+        var $carousel = $('#carousel').carousel({
+            start: 1,
+            indicator: true
+        });
+        $('#carousel_prev').click(function(ev) {
+            ev.preventDefault();
+            $carousel.carousel('prev');
+        });
+        $('#carousel_next').click(function(ev) {
+            ev.preventDefault();
+            $carousel.carousel('next');
+        });
+        $(".modal-bg").hide();
+
+
+        $(function() {
+            $("div>a").each(function() {
+                $(this).click(function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    var curIndex = $(this).attr("data-index");
+                    $carousel.setIndex(Number(curIndex));
+                    $(".modal-bg").show();
+
+                })
+            });
+
+            $(".closed").click(function() {
+                $(".modal-bg").hide();
+            });
+        })
+    </script>
+</body>
+
+</html>
