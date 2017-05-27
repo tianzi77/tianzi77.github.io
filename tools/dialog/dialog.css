@@ -103,6 +103,7 @@
       color: #333;
       background: -webkit-gradient(linear, center bottom, center top, from(#ececec), to(#f4f4f4));
       background: -moz-linear-gradient(90deg, #ececec, #f4f4f4);
+      -webkit-transition: all .2s;
       transition: all .2s;
   }
   
@@ -116,7 +117,6 @@
   
   .effect-fade .easyDialog_wrapper {
       -webkit-transform: scale(0.6);
-      -ms-transform: scale(0.6);
       transform: scale(0.6);
       opacity: 0;
       -webkit-transition: all .3s;
@@ -125,15 +125,28 @@
   
   .show.effect-fade .easyDialog_wrapper {
       -webkit-transform: scale(1);
-      -ms-transform: scale(1);
       transform: scale(1);
       opacity: 1;
+  }
+  /* effect-up-fade*/
+  
+  .fade-up .easyDialog_wrapper {
+      -webkit-transition: -webkit-transform .3s ease-out;
+      transition: -webkit-transform .3s ease-out;
+      transition: transform .3s ease-out;
+      transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+      -webkit-transform: translate(0, -25%);
+      transform: translate(0, -25%);
+  }
+  
+  .show.fade-up .easyDialog_wrapper {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
   }
   /* effect-newspaper */
   
   .effect-newspaper .easyDialog_wrapper {
       -webkit-transform: scale(0) rotate(720deg);
-      -ms-transform: scale(0) rotate(720deg);
       transform: scale(0) rotate(720deg);
       opacity: 0;
       -webkit-transition: all 0.3s;
@@ -142,7 +155,6 @@
   
   .show.effect-newspaper .easyDialog_wrapper {
       -webkit-transform: scale(1) rotate(0deg);
-      -ms-transform: scale(1) rotate(0deg);
       transform: scale(1) rotate(0deg);
       opacity: 1;
   }
@@ -157,7 +169,6 @@
       -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
       -webkit-transform: translateZ(600px) rotateX(20deg);
-      -ms-transform: translateZ(600px) rotateX(20deg);
       transform: translateZ(600px) rotateX(20deg);
       opacity: 0;
   }
@@ -166,7 +177,6 @@
       -webkit-transition: all 0.3s ease-in;
       transition: all 0.3s ease-in;
       -webkit-transform: translateZ(0px) rotateX(0deg);
-      -ms-transform: translateZ(0px) rotateX(0deg);
       transform: translateZ(0px) rotateX(0deg);
       opacity: 1;
   }
@@ -174,7 +184,6 @@
   
   .effect-scaled .easyDialog_wrapper {
       -webkit-transform: scale(2);
-      -ms-transform: scale(2);
       transform: scale(2);
       opacity: 0;
       -webkit-transition: all 0.3s;
@@ -183,7 +192,6 @@
   
   .show.effect-scaled .easyDialog_wrapper {
       -webkit-transform: scale(1);
-      -ms-transform: scale(1);
       transform: scale(1);
       opacity: 1;
   }
@@ -191,7 +199,6 @@
   
   .effect-flip-horizontal {
       -webkit-perspective: 1300px;
-      -moz-perspective: 1300px;
       perspective: 1300px;
   }
   
@@ -199,7 +206,6 @@
       -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
       -webkit-transform: rotateY(-70deg);
-      -ms-transform: rotateY(-70deg);
       transform: rotateY(-70deg);
       -webkit-transition: all 0.3s;
       transition: all 0.3s;
@@ -208,7 +214,6 @@
   
   .show.effect-flip-horizontal .easyDialog_wrapper {
       -webkit-transform: rotateY(0deg);
-      -ms-transform: rotateY(0deg);
       transform: rotateY(0deg);
       opacity: 1;
   }
@@ -216,7 +221,6 @@
   
   .effect-flip-vertical {
       -webkit-perspective: 1300px;
-      -moz-perspective: 1300px;
       perspective: 1300px;
   }
   
@@ -224,7 +228,6 @@
       -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
       -webkit-transform: rotateX(-70deg);
-      -ms-transform: rotateX(-70deg);
       transform: rotateX(-70deg);
       -webkit-transition: all 0.3s;
       transition: all 0.3s;
@@ -233,7 +236,6 @@
   
   .show.effect-flip-vertical .easyDialog_wrapper {
       -webkit-transform: rotateX(0deg);
-      -ms-transform: rotateX(0deg);
       transform: rotateX(0deg);
       opacity: 1;
   }
@@ -248,7 +250,6 @@
       -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
       -webkit-transform: rotateX(-60deg);
-      -ms-transform: rotateX(-60deg);
       transform: rotateX(-60deg);
       -webkit-transform-origin: 50% 0;
       transform-origin: 50% 0;
@@ -259,7 +260,6 @@
   
   .show.effect-sign .easyDialog_wrapper {
       -webkit-transform: rotateX(0deg);
-      -ms-transform: rotateX(0deg);
       transform: rotateX(0deg);
       opacity: 1;
   }

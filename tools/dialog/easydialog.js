@@ -45,7 +45,7 @@ Dialog.prototype = {
 				autoClose:   0,				// number            自动关闭弹出层的时间
 				lock:        false,			// boolean           是否允许ESC键来关闭弹出层
 				callback:    null,			// function          关闭弹出层后执行的回调函数
-                effect:      'effect-fade'  // string            弹出层动画效果//effect-fade,effect-newspaper,effect-fall,effect-scaled,effect-flip-horizontal,effect-flip-vertical,effect-sign等，更多效果可自行在css中封装。
+                effect:      'effect-fade'  // string            弹出层动画效果//effect-fade,effect-newspaper,effect-fall,effect-scaled,effect-flip-horizontal,effect-flip-vertical,effect-sign,fade-up等，更多效果可自行在css中封装。
 				/** 
 				 *  container为object时的参数格式
 				 *	container : {
