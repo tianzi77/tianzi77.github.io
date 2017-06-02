@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>slide test</title>
+
+    <style>
+        .slidewrap {
+            background-color: #000;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            color: #b2b2b2;
+            *position: relative;
+        }
+        
+        .scroll-wrap {
+            width: 1000px;
+            position: relative;
+            margin-left: -500px;
+            left: 50%;
+            _overflow-x: hidden;
+            *zoom: 1;
+        }
+        
+        .scroll-wrap .left {
+            position: absolute;
+            width: 42px;
+            height: 62px;
+            left: 0;
+            _left: 0;
+            top: 300px;
+            background: url(http://p0.ifengimg.com/fe/news_livingHd/images/btnL_abd36f87.png) no-repeat;
+            cursor: pointer;
+            z-index: 99
+        }
+        
+        .scroll-wrap .right {
+            position: absolute;
+            width: 42px;
+            height: 62px;
+            right: 0;
+            _right: 0;
+            top: 300px;
+            background: url(http://p0.ifengimg.com/fe/news_livingHd/images/btnR_eca86bd1.png) no-repeat;
+            cursor: pointer;
+            z-index: 99
+        }
+        
+        .scrollUl {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 80000px;
+            height: 650px;
+            z-index: 1
+        }
+        
+        .scrollUl li {
+            width: 1000px;
+            text-align: center;
+            margin-right: 10px;
+            display: inline-block;
+            *display: inline;
+            opacity: .5;
+            cursor: pointer
+        }
+        
+        .scrollUl .current {
+            opacity: 1;
+            cursor: auto
+        }
+        
+        .scroll-content {
+            width: 100%;
+            margin-top: 30px;
+            height: 260px;
+            position: relative
+        }
+        
+        .scrollUl .discribe {
+            width: 548px;
+            height: 100%;
+            font-size: 12px;
+            line-height: 18px;
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+        
+        .scrollUl .scrollIndex {
+            width: 80px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 90px;
+        }
+        
+        #scrollIndex .current {
+            background: #fff;
+            cursor: auto
+        }
+    </style>
+    <script src="http://y1.ifengimg.com/fe/jQuery/jquery-1.8.1.min.js"></script>
+
+</head>
+
+<body>
+    <div id="initTo">
+        <div class="slidewrap">
+            <div class="scroll-wrap" id="scrollWrap">
+                <span class="left" id="left"></span>
+                <span class="right" id="right"></span>
+                <span class="x"></span>
+                <ul id="scrollUl" class="scrollUl">
+                </ul>
+                <div class="scroll-content">
+                    <p id="discribe"></p>
+                    <p id="scrollIndex"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /**
+         *可以添加描述describe link等
+         *请创建出以下格式的json对象即可。
+         */
+        var scrollImgs = [];
+        scrollImgs[0] = {
+            src: 'http://p0.ifengimg.com/a/2017_22/b80dff40be264f8_size426_w1000_h667.jpg',
+            width: '1000',
+            height: '667',
+            describe: '' + '我是图片1的描述',
+            link: 'http://www.zhangweiwei.cn'
+        };
+        scrollImgs[1] = {
+            src: 'http://p3.ifengimg.com/a/2017_22/168f4cff51c2bcf_size222_w1000_h667.jpg',
+            width: '1000',
+            height: '667',
+            describe: '' + '我是图片2的描述',
+            link: ''
+        };
+        scrollImgs[2] = {
+            src: 'http://p2.ifengimg.com/a/2017_22/0bd61eea642b5fc_size354_w1000_h667.jpg',
+            width: '1000',
+            height: '667',
+            describe: '' + '我是图片3的描述',
+            link: ''
+        };
+        scrollImgs[3] = {
+            src: 'http://p0.ifengimg.com/a/2017_22/7765e3a073d56e5_size400_w1000_h667.jpg',
+            width: '1000',
+            height: '667',
+            describe: '' + '我是图片4的描述',
+            link: ''
+        };
+    </script>
+    <script>
+        /* filePath fetchtemp\scripts\slide_b2346d12.js*/
+
+        // JavaScript Document
+        //重写trim方法
+        Function.prototype.method = function(name, func) {
+            this.prototype[name] = func;
+            return this;
+        };
+        if (!String.prototype.trim) { //判断下浏览器是否自带有trim()方法
+            String.method('trim', function() {
+                return this.replace(/^\s+|\s+$/g, '');
+            });
+            String.method('ltrim', function() {
+                return this.replace(/^\s+/g, '');
+            });
+            String.method('rtrim', function() {
+                return this.replace(/\s+$/g, '');
+            });
+        }
+
+        var staSign = true;
+        var unitSign = true;
+        var swiper = {
+            init: function(initData) {
+                this.index = 1; //记录显示的图片的index
+                this.initDom(initData);
+                this.eventHandle(initData);
+                this.initWrap(initData);
+            }
+        };
+        swiper.init.prototype = {
+            parseObj: function(hash) {
+                var rhash = /[#&]([^&=]+)=([^?&=]+)/ig,
+                    a = rhash.exec(hash),
+                    o = {};
+                while (a) {
+                    o[a[1]] = a[2];
+                    a = rhash.exec(hash);
+                }
+                return o;
+            },
+            initDom: function(initData) {
+                this.container = $("." + initData.container);
+                this.swiperUl = $("#scrollUl");
+                this.contBox = $("#" + initData.contentClassname);
+                this.tuji = $("#tuji");
+                //结构插入
+                var data = initData.data;
+                var lis = "";
+                for (var i = 0; i < data.length; i++) {
+                    lis += '<li data-p="' + (i + 1) + '" style="opacity: 0.5;"><a href="' + data[i].link + '"><img src="' + data[i].src + '" width="' + data[i].width + '" height="' + data[i].height + '" alt="' + data[i].describe + '" data-link="' + data[i].link + '"/></a></li>';
+                };
+                this.swiperUl.html(lis);
+                var swiper = this.swiperUl.find("li");
+                var length = swiper.length;
+                this.total = length;
+                //左右翻页按钮
+                if (initData.buttonId) {
+                    this.prev = this.container.find('#' + initData.buttonId[0]);
+                    this.next = this.container.find('#' + initData.buttonId[1]);
+                };
+                //翻页对应显示的内容
+                this.contentInfo = initData.contentClassname ? this.container.find('.' + initData.contentClassname) : "";
+                if (initData.loop) {
+                    //循环模式需要给前后各添加2张幻灯
+                    swiper.eq(0).clone(true).attr("data-p", length + 1).appendTo(this.swiperUl);
+                    swiper.eq(1).clone(true).attr("data-p", length + 2).appendTo(this.swiperUl);
+                    swiper.eq(length - 2).clone(true).attr("data-p", -1).insertBefore(swiper.eq(0));
+                    swiper.eq(length - 1).clone(true).attr("data-p", 0).insertBefore(swiper.eq(0));
+
+                    length = length + 4;
+                };
+
+                //修改父元素的宽度
+                this.width = swiper.eq(0).width() + initData.imgSpacing; //每个图片宽度
+                var widthTotal = this.width * length;
+                var _this = this;
+                this.swiperUl.width(widthTotal);
+                //初始化第一张显示，改变hash
+                var oHash = this.parseObj(window.location.hash);
+                if (staSign) {
+                    var oIndex = parseInt(oHash.p);
+                    if (!oHash.p) {
+                        oIndex = 1;
+                    }
+                    this.bigpicSwiper(oIndex)
+                    this.changeHash("p=" + oIndex);
+                };
+                this.initTo(); //导航滑上
+            },
+
+            changeHash: function(hash) {
+                window.location.hash = hash;
+
+                //统计探针
+                if (staSign == true) {
+                    try {
+                        if (typeof hook === 'function') {
+                            var str__ = window.location.href.replace(/&/g, '|');
+                            hook('&uri=' + encodeURIComponent(str__) + '&HD=HD');
+                        }
+                    } catch (ex) {}
+                }
+                staSign = true;
+            },
+            initTo: function() {
+                $('html, body').animate({
+                    scrollTop: $("#initTo").offset().top + 2
+                }, 1000);
+            },
+            eventHandle: function(initData) {
+                var _this = this;
+                _this.prev.on('click', function() {
+                    prev();
+                });
+                _this.next.on('click', function() {
+                    next();
+                });
+                _this.tuji.on('click', function() {
+                    tujiSkip();
+                });
+                $(document).on('keydown', function(event) {
+                    if (event.keyCode == '37') {
+                        prev();
+                    }
+                    if (event.keyCode == '39') {
+                        next();
+                    }
+                });
+
+                function prev() {
+                    _this.swiperUl.stop(true, true);
+                    _this.index -= 1;
+                    var index = _this.index;
+                    _this.bigpicSwiper(index);
+
+                }
+
+                function next() {
+                    _this.swiperUl.stop(true, true);
+                    _this.index += 1;
+                    var index = _this.index;
+                    _this.bigpicSwiper(index);
+                }
+
+                function prevCall() {
+                    _this.swiperUl.stop(true, true);
+                    var unitIndex = 1;
+                    _this.index = 1;
+                    _this.bigpicSwiper(unitIndex);
+                }
+
+                function tujiSkip() {
+                    var unitIndex = 0,
+                        index = _this.index;
+                    var currentIndex = _this.swiperUl.find("li:not(.clone)[data-p = " + index + "]").index();
+                    if (currentIndex == 2) {
+                        return;
+                    } else {
+                        if (unitIndex < currentIndex) {
+                            prevCall();
+                        }
+                    }
+                }
+
+            },
+            writeDiscribe: function(index) {
+                //动态插入摘要
+                var realIndex = this.swiperUl.find("li:not(.clone)[data-p = " + index + "]").index();
+                var curImg = this.swiperUl.find("li").eq(realIndex).find("img");
+                var imgLink = (curImg.attr('data-link') && curImg.attr('data-link').trim() != '') ? '<a href="' + curImg.attr('data-link') + '" target="_blank">[详细]</a>' : '';
+                var dis = curImg.attr("alt") + imgLink; // TODO
+                $("#discribe").html(dis); //描述
+                $('#scrollIndex').html(index); //张数
+            },
+            discribeNone: function() {
+                $("#discribe").fadeOut();
+            },
+            discribeOn: function() {
+                $("#discribe").fadeIn();
+                $('#scrollIndex').fadeIn();
+            },
+            bigpicSwiper: function(index) {
+
+                var _this = this;
+                var width = this.width;
+                var index = parseInt(index); //data-p 真数据索引
+                var realIndex = this.swiperUl.find("li:not(.clone)[data-p = " + index + "]").index(); //真正的索引
+
+                if (unitSign) {
+                    //初始化
+                    this.swiperUl.css('margin-left', -this.width * realIndex);
+                    update();
+                    _this.index = index;
+                    staSign = false;
+                    unitSign = false;
+                } else {
+                    _this.discribeNone();
+                    if (index > this.total) {
+                        this.swiperUl.animate({
+                            marginLeft: -width * realIndex + 'px'
+                        }, function() {
+                            var firstRealIndex = _this.swiperUl.find("li:not(.clone)[data-p = 1]").index();
+                            $(this).css('margin-left', -width * firstRealIndex);
+                            _this.index = index = 1;
+
+                            realIndex = firstRealIndex;
+                            update();
+                            _this.changeHash("p=" + _this.index);
+                            return false;
+                        });
+                    } else if (index < 1) {
+                        this.swiperUl.animate({
+                            marginLeft: -width * realIndex + 'px'
+                        }, function() {
+                            var lastRealIndex = _this.swiperUl.find("li:not(.clone)[data-p = " + _this.total + "]").index();
+                            $(this).css('margin-left', -(_this.total + 1) * width);
+                            _this.index = index = _this.total;
+
+                            realIndex = lastRealIndex;
+                            update();
+                            _this.changeHash("p=" + _this.index);
+                            return false;
+                        });
+                    } else {
+                        this.swiperUl.animate({
+                            marginLeft: -width * realIndex + 'px'
+                        }, function() {
+                            update();
+                            _this.changeHash("p=" + _this.index);
+                            return false;
+                        });
+                    };
+                }
+
+                function update() {
+                    $("#scrollUl").find("li").eq(realIndex).css("opacity", 1).siblings().css("opacity", "0.5");
+                    //操作对应的handler
+                    if (_this.contentInfo) {
+                        setTimeout(function() {
+                            if (!$("#scrollUl").is(":animated")) {
+                                _this.writeDiscribe(_this.index);
+                                $("#discribe").fadeIn();
+                            };
+                        }, 2)
+                    }
+                }
+            },
+            //新增计算高度和方向按钮定位
+            initWrap: function(initData) {
+                var data = initData.data;
+                var h = parseInt(data[0]["height"]);
+                $("#scrollUl").css({
+                    "height": h
+                })
+                $("#initTo").css({
+                    "height": h + 65 + 30 + 260
+                });
+                var top = h / 2 - 31;
+                $(".left").css({
+                    "top": top
+                });
+                $(".right").css({
+                    "top": top
+                });
+
+            }
+        }
+
+        var initData = {
+            "container": "scroll-wrap",
+            "imgSpacing": 10, //注意和css同步
+            "contentClassname": "discribe",
+            "buttonId": ["left", "right"],
+            "loop": true,
+            "device": "pc",
+            "data": scrollImgs
+        };
+
+        new swiper.init(initData);
+    </script>
+</body>
+
+</html>
