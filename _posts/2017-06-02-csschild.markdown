@@ -1,0 +1,35 @@
+---
+layout:     post
+title:      "伪类选择器还可以这样玩"
+subtitle:   " \"CSS选择器\""
+date:       2017-06-02 20:00:00
+author:     "ZWW"
+header-img: "img/contact-bg.jpg"
+tags:
+    - 选择器
+---
+
+> **“nth-last-child的玩法”**
+
+这东西挺有意思的，之前看过一遍文章，选择第三个到第十个可以这样玩
+
+    li:nth-child(n + 3):nth-child(-n+10)
+
+今天一个群里有这样一个问题，3个li以下的时候li为红色，3个及其以上的时候li为蓝色，怎么玩？
+        
+        ul>li {
+            background: pink;
+        }
+        
+        ul li:nth-last-child(-n + 3):first-child,
+        ul li:nth-last-child(-n + 3):first-child~li {
+            background: yellow;
+            color: #fff;
+        }
+
+挺有意思的，自动匹配既是第一个也是最后一个，纯css搞定，哈哈。
+
+参考：
+<a href="http://lukyvj.github.io/family.scss/" target="_blank">选择器</a>
+<a href="http://tgideas.qq.com/webplat/info/news_version3/804/7104/7106/m5723/201509/376300.shtml" target="_blank">css技巧</a>
+
