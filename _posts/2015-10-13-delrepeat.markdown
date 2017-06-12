@@ -91,6 +91,15 @@ tags:
        console.log( [1,2,2,1].equene())
 
 
+方法四，巧妙的应用对象：
+
+        var a = ['张三','李四','王五','张三','1','2'];
+        var c = {};
+        a.forEach((v,k) => {
+            //console.log(v,k)
+            if (!('a' + v in c)) c['a' + v] = v
+        })
+       console.log(Object.values(c)) ;
 
 方法1性能不是很高，方法2，3有小小的bug，碰到一些2逼数组比如
 
