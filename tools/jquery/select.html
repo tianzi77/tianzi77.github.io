@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Demo</title>
+    </head>
+    <body>
+        <ul id="cart">
+            <li class="product">
+                单价 $<span class="price">1</span>
+                <button class="incre">+</button> 
+                <input type="number" class="number" value="1">
+                <button class="decre" disabled>-</button>
+                单品总价：$<span class="total-price">1</span>
+            </li>
+            <li class="product">
+                单价 $<span class="price">3</span>
+                <button class="incre">+</button>
+                <input type="number" class="number" value="2">
+                <button class="decre">-</button>
+                单品总价：$<span class="total-price">6</span>
+            </li>
+        </ul>
+        <p>总数量：<span id="total-num">3</span></p>
+        <p>总价：$<span id="total-price">7</span></p>
+        <script src="http://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+            // 定义购物车数据模型
+            var cart = {
+                setProducts: (products) => {
+                    cart.products = products;
+ 
+                    cart.check();
+                },
+ 
+                check: () => {
+                    cart.num = 0;
+                    cart.price = 0;
+ 
+                    cart.products.forEach((product) => {
+                        cart.num += product.num;
+                        cart.price += product.getTotalPrice();
+                    });
+ 
+                    $(cart).trigger('checked');
+                },
+            };
+ 
+            class Product {
+                constructor(price, num) {
+                    this.price = price;
+                    this.num = num;
+                }
+ 
+                getTotalPrice() {
+                    return this.num * this.price;
+                }
+ 
+                setNum(num) {
+                    num = +num;
+ 
+                    if (this.num != num && num >= 1 && num <= 10) {
+                        this.num = num;
+ 
+                        cart.check();
+                    }
+ 
+                    $(this).trigger('num.set');
+                }
+ 
+                canIncre() {
+                    return this.num < 10; // 假设库存都是 10
+                }
+ 
+                canDecre() {
+                    return this.num > 1;
+                }
+ 
+                incre() {
+                    this.setNum(this.num + 1);
+                }
+ 
+                decre() {
+                    this.setNum(this.num - 1);
+                }
+            }
+ 
+            $(cart).on('checked', () => {
+                $('#total-price').html(cart.price);
+                $('#total-num').html(cart.num);
+            });
+ 
+            $(() => {
+                // 初始化数据和视图
+                var products = [];
+                $('#cart .product').each((i, elm) => {
+                    var $product = $(elm);
+                    var product = new Product(+$product.find('.price').text(), +$product.find('.number').val());
+ 
+                    // 视图改变数据
+                    $product.find('.incre').on('click', () => {
+                        product.incre();
+                    });
+ 
+                    $product.find('.decre').on('click', () => {
+                        product.decre();
+                    });
+ 
+                    $product.find('.number').on('change', (e) => {
+                        product.setNum($(e.target).val());
+                    });
+ 
+                    products.push(product);
+ 
+                    // 数据驱动视图
+                    $(product).on('num.set', () => {
+                        $product.find('.number').val(product.num);
+                        $product.find('.total-price').val(product.getTotalPrice());
+ 
+                        $product.find('.incre').prop('disabled', !product.canIncre());
+                        $product.find('.decre').prop('disabled', !product.canDecre());
+ 
+                        $product.find('.total-price').html(product.getTotalPrice());
+                    });
+                });
+ 
+                cart.setProducts(products);
+            });
+        </script>
+    </body>
+</html>
