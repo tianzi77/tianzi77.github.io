@@ -55,6 +55,6 @@ tags:
 jquery.ease有很多动画，引入这个库，可以使滚动效果更好，
 
 demo：
-<a href="tianzi77.github.io/demo/tools/scroll/index.html" target="_blank">demo</a>
+<a href="http://tianzi77.github.io/demo/tools/scroll/index.html" target="_blank">demo</a>
 
 
