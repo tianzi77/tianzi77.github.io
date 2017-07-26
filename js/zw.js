@@ -76,7 +76,7 @@
                     var win = $(window).width(),
                         winH = $(window).height();
                     if (win > 1024) {
-                        $('#home-bg').style('height', winH);
+                        $('#home-bg').css('height', winH);
                     }
                 })
         }
