@@ -78,5 +78,5 @@
                     if (win > 1024) {
                         $('#home-bg').css('height', winH);
                     }
-                })
+                }
         }
