@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jq scroll</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <style>
+        .section {
+            width: 100%;
+            height: 980px;
+            background-color: red;
+            text-align: center;
+        }
+        
+        .section:nth-child(2) {
+            background-color: yellow;
+        }
+        
+        .section:nth-child(3) {
+            background-color: blueviolet;
+        }
+        
+        .section:nth-child(4) {
+            background-color: orange;
+        }
+        
+        .nav {
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        
+        .nav a {
+            color: #08f55a;
+        }
+        
+        .nav a.active {
+            color: black;
+        }
+    </style>
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <script>
+        //扩展动画：linear，swing，jswing，easeInQuad，easeOutQuad，easeInOutQuad，easeInCubic， easeOutCubic，easeInOutCubic，easeInQuart，easeOutQuart，easeInOutQuart， easeInQuint，easeOutQuint，easeInOutQuint，easeInSine，easeOutSine， easeInOutSine，easeInExpo，easeOutExpo，easeInOutExpo，easeInCirc， easeOutCirc，easeInOutCirc，easeInElastic，easeOutElastic，easeInOutElastic， easeInBack，easeOutBack，easeInOutBack，easeInBounce，easeOutBounce，easeInOutBounce
+        $(function() {
+
+            var autoDirection = function(selector, timer, anim, max) {
+                /*
+                主要参数说明
+                selector滚动区域导航的dom
+                timer 动画运行的时间
+                anim滚动动画效果
+                max滚动区域数量-1，因为数组下标0开始计算
+                */
+                $(window).scroll(function() {
+                    selector.each(function() {
+                        if ($(document).scrollTop() > $(document).height() - $(window).height() - 5) {
+                            selector.eq(max).addClass("active").siblings().removeClass();
+                        } else if ($(document).scrollTop() > $("#" + $(this).attr("data-url")).offset().top - 5) {
+                            $(this).addClass("active").siblings().removeClass();
+                        }
+                    })
+                })
+
+                selector.on('click', function(e) {
+                    //动画在进行终止事件
+                    if ($("html, body").is(":animated")) {
+                        return false;
+                    } else {
+                        $("html, body").animate({
+                            scrollTop: $("#" + $(this).attr("data-url")).offset().top + "px"
+                        }, {
+                            duration: timer,
+                            easing: anim
+                        });
+                    }
+                    e.stopPropagation();
+                    e.preventDefault();
+                })
+
+            }
+            //构造一个实例
+            new autoDirection($(".nav a"), 600, 'easeInOutQuart', '3');
+        })
+    </script>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="" data-url="box1" class="active">link1</a>
+        <a href="" data-url="box2">link2</a>
+        <a href="" data-url="box3">link3</a>
+        <a href="" data-url="box4">link4</a>
+    </div>
+    <div class="section" id="box1">1</div>
+    <div class="section" id="box2">2</div>
+    <div class="section" id="box3">3</div>
+    <div class="section" id="box4">4</div>
+</body>
+
+</html>

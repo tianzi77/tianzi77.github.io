@@ -1,0 +1,60 @@
+---
+layout:     post
+title:      "滚动小插件的封装"
+subtitle:   " \"JQ滚动楼层\""
+date:       2017-07-26 15:00:00
+author:     "ZWW"
+header-img: "img/post-bg-rwd.jpg"
+tags:
+    - 滚动楼层
+---
+
+> **“封装一个滚动楼层”**
+
+            var autoDirection = function(selector, timer, anim, max) {
+                /*
+                主要参数说明
+                selector滚动区域导航的dom
+                timer 动画运行的时间
+                anim滚动动画效果
+                max滚动区域数量-1，因为数组下标0开始计算
+                */
+                $(window).scroll(function() {
+                    selector.each(function() {
+                        if ($(document).scrollTop() > $(document).height() - $(window).height() - 5) {
+                            selector.eq(max).addClass("active").siblings().removeClass();
+                        } else if ($(document).scrollTop() > $("#" + $(this).attr("data-url")).offset().top - 5) {
+                            $(this).addClass("active").siblings().removeClass();
+                        }
+                    })
+                })
+
+                selector.on('click', function(e) {
+                    //动画在进行终止事件
+                    if ($("html, body").is(":animated")) {
+                        return false;
+                    } else {
+                        $("html, body").animate({
+                            scrollTop: $("#" + $(this).attr("data-url")).offset().top + "px"
+                        }, {
+                            duration: timer,
+                            easing: anim
+                        });
+                    }
+                    e.stopPropagation();
+                    e.preventDefault();
+                })
+
+            }
+
+因为这个小玩意用的比较多，直接封装一下，注意的一个小点是滚动进行中的时候不要让点击生效，防止乱滚。哈哈
+
+这样用的时候直接new一个出来就ok，new autoDirection($(".nav a"), 600, 'easeInOutQuart', '3');
+结构变化也没关系，我们的selector做一下微调即可。
+
+jquery.ease有很多动画，引入这个库，可以使滚动效果更好，
+
+demo：
+<a href="tianzi77.github.io/demo/tools/scroll/index.html" target="_blank">demo</a>
+
+
