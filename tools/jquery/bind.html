@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://www.zhangweiwei.cn/demo/reset.css">
+    <script src="http://www.zhangweiwei.cn/demo/jquery.js"></script>
+    <script>
+        //es3
+        function dateBinding(dateId) {
+            var obj = $({});
+            var dateName = 'bind-' + dateId;
+            var message = dateId + '.val';
+
+            obj.on(message, function(e, propName, newVal) {
+                $('[data-' + dateName + ' = ' + propName + ']').each(function() {
+                    var _this = $(this);
+                    console.log(_this)
+                    if (_this.is('input, textarea, select')) {
+                        _this.val(newVal);
+                    } else {
+                        _this.html(newVal);
+                    }
+                })
+            });
+            $(document).on('input change', '[data-' + dateName + ']', function(e) {
+                var _that = $(this);
+                obj.trigger(message, [_that.data(dateName), _that.val()]);
+            })
+            return obj;
+        }
+        // es6
+
+        const dateBind = (dateId) => {
+            let obj = $({}),
+                dateName = 'bind-' + dateId,
+                message = dateId + '.val';
+            obj.on(message, (e, propName, newVal) => {
+                $('[data-' + dateName + ' = ' + propName + ']').each((i, ele) => {
+                    let _this = $(ele);
+                    if (_this.is('input, textarea, select')) {
+                        _this.val(newVal);
+                    } else {
+                        _this.html(newVal);
+                    }
+                })
+            });
+            $(document).on('input change', '[data-' + dateName + ']', (e) => {
+                let _that = $(e.target);
+                obj.trigger(message, [_that.data(dateName), _that.val()]);
+            })
+            return obj;
+        }
+        //new dateBinding('user');
+        //dateBind('user');
+    </script>
+    <script>
+        window.onload = function() {
+            //defineProperty
+            var obj = {};
+            var bind = [];
+            //触发obj对象set和get方法的时候，趁机来输出或修改bind数组的内容
+            Object.defineProperty(obj, 's', {
+                set: function(val) {
+                    bind['s'] = val;
+                },
+                get: function() {
+                    return bind['s'];
+                }
+            })
+            var demo = document.querySelector('#test1');
+            var display = document.querySelector('#test');
+            //#demo的value值与bind['s']绑定，#display的innerHTML也与bind['s']绑定。
+            demo.onchange = function() {
+                obj['s'] = demo.value; //触发了obj的set方法，等于#demo的value值赋值给bind['s']。
+                display.innerHTML = bind['s'];
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="item">
+        <label>用户名：</label><input type="text" data-bind-user="name" / id="test1"><span data-bind-user="name" id="test"></span>
+    </div>
+    <div class="item">
+        <input type="button" id="btnSet" value="Set" />
+    </div>
+</body>
+
+</html>

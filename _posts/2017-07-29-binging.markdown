@@ -1,0 +1,133 @@
+---
+layout:     post
+title:      "双工绑定的原理以及jq实现"
+subtitle:   " \"双向绑定\""
+date:       2017-07-29 22:00:00
+author:     "ZWW"
+header-img: "img/post-bg-rwd.jpg"
+tags:
+    - 双工绑定
+---
+
+> **“Object.defineProperty”**
+
+我们先来MDN上对 Object.defineProperty 方法的定义，
+The Object.defineProperty() method defines a new property directly on an object, or modifies an existing property on an object, and returns the object.
+意义很明确， Object.defineProperty 方法提供了一种直接的方式来定义对象属性或者修改已有对象属性。其方法原型如下，
+ 
+   
+    Object.defineProperty(obj, prop, descriptor)
+
+obj ，待修改的对象
+prop ，带修改的属性名称
+descriptor ，待修改属性的相关描述
+descriptor 要求传入一个对象，其默认值如下，
+
+  
+    /**
+    * @{param} descriptor
+    */
+    {
+      configurable: false,
+      enumerable: false,
+      writable: false,
+      value: null,
+      set: undefined,
+      get: undefined
+    }
+    
+configurable ，属性是否可配置。可配置的含义包括：是否可以删除属性（ delete ），是否可以修改属性的 writable 、 enumerable 、 configurable 属性。
+enumerable ，属性是否可枚举。可枚举的含义包括：是否可以通过 for...in 遍历到，是否可以通过 Object.keys() 方法获取属性名称。
+writable ，属性是否可重写。可重写的含义包括：是否可以对属性进行重新赋值。
+value ，属性的默认值。
+set ，属性的重写器（暂且这么叫）。一旦属性被重新赋值，此方法被自动调用。
+get ，属性的读取器（暂且这么叫）。一旦属性被访问读取，此方法被自动调用。
+
+对于如下结构
+ 
+    <div class="item">
+        <label>用户名：</label><input type="text" data-bind-user="name" / id="test1"><span data-bind-user="name" id="test"></span>
+    </div>
+    <div class="item">
+        <input type="button" id="btnSet" value="Set" />
+    </div>
+
+用他来实现双向绑定很方便，es5的方法只能兼容到ie9.
+
+            //defineProperty
+            var obj = {};
+            var bind = [];
+            //触发obj对象set和get方法的时候，趁机来输出或修改bind数组的内容
+            Object.defineProperty(obj, 's', {
+                set: function(val) {
+                    bind['s'] = val;
+                },
+                get: function() {
+                    return bind['s'];
+                }
+            })
+            var demo = document.querySelector('#test1');
+            var display = document.querySelector('#test');
+            //#demo的value值与bind['s']绑定，#display的innerHTML也与bind['s']绑定。
+            demo.onchange = function() {
+                obj['s'] = demo.value; //触发了obj的set方法，等于#demo的value值赋值给bind['s']。
+                display.innerHTML = bind['s'];
+            }
+
+这样直接就提供了set和get方法，实现视图自动跟随数据变化而变化，叫做『数据驱动视图』；相反，当视图发生事件（比如用户的点击）改变了数据，叫做『视图操作数据』。这两者结合起来就是『数据双向绑定』了。
+
+jquery来玩玩？
+
+    function dateBinding(dateId) {
+            var obj = $({});
+            var dateName = 'bind-' + dateId;
+            var message = dateId + '.val';
+
+            obj.on(message, function(e, propName, newVal) {
+                $('[data-' + dateName + ' = ' + propName + ']').each(function() {
+                    var _this = $(this);
+                    console.log(_this)
+                    if (_this.is('input, textarea, select')) {
+                        _this.val(newVal);
+                    } else {
+                        _this.html(newVal);
+                    }
+                })
+            });
+            $(document).on('input change', '[data-' + dateName + ']', function(e) {
+                var _that = $(this);
+                obj.trigger(message, [_that.data(dateName), _that.val()]);
+            })
+            return obj;
+        }
+    
+改造成es6的语法
+
+     const dateBind = (dateId) => {
+            let obj = $({}),
+                dateName = 'bind-' + dateId,
+                message = dateId + '.val';
+            obj.on(message, (e, propName, newVal) => {
+                $('[data-' + dateName + ' = ' + propName + ']').each((i, ele) => {
+                    let _this = $(ele);
+                    if (_this.is('input, textarea, select')) {
+                        _this.val(newVal);
+                    } else {
+                        _this.html(newVal);
+                    }
+                })
+            });
+            $(document).on('input change', '[data-' + dateName + ']', (e) => {
+                let _that = $(e.target);
+                obj.trigger(message, [_that.data(dateName), _that.val()]);
+            })
+            return obj;
+        }
+用的时候调用一个这个方法或者new一个构造函数就ok。
+
+demo：
+<a href="http://tianzi77.github.io/tools/jquery/bind.html" target="_blank">demo</a>
+<a href="https://www.chrisyue.com/2-way-data-binding-with-jquery.html" target="_blank">购物车绑定</a>
+<a href="http://eux.baidu.com/blog/2015/09/use-jquery-to-achieve-a-simple-data-binding" target="_blank">原理</a>
+
+
