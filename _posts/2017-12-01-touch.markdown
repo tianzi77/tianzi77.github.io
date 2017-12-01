@@ -1,0 +1,29 @@
+---
+layout:     post
+title:      "fastclick替代方案"
+subtitle:   " \"touch-action \""
+date:       2017-12-1 22:00:00
+author:     "ZWW"
+header-img: "img/post-bg-rwd.jpg"
+tags:
+    - touch-action 
+---
+
+> **“touch-action ”**
+
+manipulation
+浏览器只允许进行滚动和持续缩放操作。任何其它被auto值支持的行为不被支持。启用平移和缩小缩放手势，但禁用其他非标准手势，例如双击以进行缩放。 禁用双击可缩放功能可减少浏览器在用户点击屏幕时延迟生成点击事件的需要。 这是“pan-x pan-y pinch-zoom”（为了兼容性本身仍然有效）的别名。
+ 
+   
+    html {
+    touch-action: manipulation;
+    }
+
+触摸动作也经常用于完全解决由支持双击缩放手势引起的点击事件的延迟。
+
+ 
+更多：
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action" target="_blank">MDN</a>
+
+
+
