@@ -1,0 +1,44 @@
+---
+layout:     post
+title:      "JS中的柯里化和软绑定"
+subtitle:   " \"JS中的柯里化和软绑定\""
+date:       2018-01-19 17:00:00
+author:     "ZWW"
+header-img: "img/post-bg-e2e-ux.jpg"
+tags:
+    - JS中的柯里化和软绑定
+---
+
+> **“JS中的柯里化”**
+
+把函数当做变量来传递
+
+    Function.prototype.curry = function() {
+            var that = this;
+            var slice = Array.prototype.slice;
+            var agrs = slice.apply(arguments);
+            return function() {
+                return that.apply(null, args.concat(slice.apply(arguments)));
+            };
+        }
+ 
+> **“JS中的软绑定”**
+
+    Function.prototype.sofyBInd = function(obj) {
+            var likeArr = [].slice.call(arguments, 1);
+            var fn = this;
+            var bingFn = function() {
+                return fn.apply((!this || this == (window || global)) ? obj : this, likeArr.concat.apply(likeArr, arguments));
+            }
+            bingFn.prototype = Object.create(fn.prototype);
+            return bingFn;
+        }
+
+        function test() {
+            console.log('名字是:' + this.person);
+        }
+        var obj = {
+            person: '阿威'
+        }
+        var awei = test.sofyBInd(obj);
+        awei();
