@@ -1,0 +1,59 @@
+---
+layout:     post
+title:      "简单而又复杂的FizzBuzz"
+subtitle:   " \"简单而又复杂的FizzBuzz\""
+date:       2018-03-30 18:00:00
+author:     "ZWW"
+header-img: "img/post-bg-rwd.jpg"
+tags:
+    - 简单而又复杂的FizzBuzz
+---
+
+> **“FizzBuzz”**
+
+FizzBuzz”题目，就是：给你1——100的数字，如果能被3整除就将该数字改为Fizz，如果能被5整除就改为Buzz，如果既能被3又能被5整除就改为FizzBuzz。
+
+> **“首先想到用if”**
+
+    const calc = (new Array(100).fill(1)).map((n, i) => {
+            i = i + 1;
+            if (i % 3 === 0 && i % 5 === 0) {
+                return 'FizzBuzz';
+            } else if (i % 3 === 0) {
+                return 'Fizz';
+            } else if (i % 5 === 0) {
+                return 'Buzz';
+            }
+            return i;
+        })
+        console.log(calc.join(', ').trim());
+        
+> **“三木运算？”** 
+
+     (new Array(100).fill(1)).map((n, i) => {
+            i = i + 1;
+            console.log(i);
+            return (i % 3 == 0 && i % 5 == 0 ? 'FizzBuzz' : (i % 3 == 0 ? 'Fizz' : (i % 5 == 0 ? 'Buzz' : i)))
+        })
+        
+> **“都不用？”** 
+
+    const simpleRange = (start, len) =>
+            [...Array(len)].map((_, k) => start + k);
+            
+    const calculateFizzBuzz3 = (start, len) => {
+    let result = simpleRange(start, len).map(v =>
+        ((v % 3 === 0 && v % 5 === 0) && 'FizzBuzz')
+        || ((v % 3 === 0) && 'Fizz')
+        || ((v % 5 === 0) && 'Buzz')
+        || v
+    );
+
+    console.log(result.join(', ').trim());
+    };
+
+ 
+ 的确，有点意思，最后一种我不会，哈哈哈
+   
+<a href="https://zhuanlan.zhihu.com/p/27235764" target="_blank">参考</a>	
+        
