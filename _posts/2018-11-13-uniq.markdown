@@ -1,0 +1,37 @@
+---
+layout:     post
+title:      "数组去重"
+subtitle:   " \"es5\""
+date:       2018-11-13 10:20:00
+author:     "ZWW"
+header-img: "img/post-bg-unix-linux.jpg"
+tags:
+    - js
+---
+
+> **“快速去重 ”**
+
+
+```js
+    
+    Array.prototype.uniq = function(key){
+            if(key){
+                const keys = this.map(item=>item[key]);
+                return this.filter((item,index)=>keys.indexOf(item[key],index+1)===-1);
+            }else{
+                return this.filter((item,index,arr)=>arr.indexOf(item,index+1)===-1);
+            }
+        }
+        
+```
+
+
+
+
+
+
+
+
+ 
+
+
