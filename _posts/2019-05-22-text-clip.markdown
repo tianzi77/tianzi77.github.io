@@ -1,0 +1,71 @@
+---
+layout:     post
+title:      "多行文字的展开收起"
+subtitle:   " \"多行文字的展开收起\""
+date:       2019-01-21 17:55:00
+author:     "ZWW"
+header-img: "img/post-bg-os-metro.jpg"
+tags:
+    - css
+---
+
+> ** 多行文字的展开收起 **
+
+基本结构。
+
+    <div class="long-txt" data-text="我就是这条街上最靓的崽，我就是这条街上最靓的崽我就是这条街上最靓的崽，我就是这条街上最靓的崽，我就是这条街上最靓的崽，我就是这条街上最靓的崽，我就是这条街上最靓的崽，我就是这条街上最靓的崽，我就是这条街上最靓的崽，我就是这条街上最靓的崽">
+        <a href="" class="tips">展开</a>
+    </div>
+        
+控制几行出现展开也就是字符的多少。
+
+    //初始值为所有字段的0-60位
+        var btn = $('.tips'),
+            box = $('.long-txt'),
+            txtbool = true,
+            old = '',
+            randeText = box.attr('data-text').substring(0, 60);
+        btn.before(randeText)
+        btn.on('click', function move(e) {
+            if (txtbool) {
+                txtbool = false;
+                old = box.html();
+                box.html(box.attr('data-text') + '<a href="" class="tips">收起</a>');
+            } else {
+                txtbool = true;
+                box.html(old);
+            }
+            return false
+        })
+                
+
+反过来先展示出所有内容呢？（不常用）
+    
+    <div id="div1">
+      2005年以后，互联网进入Web2.0时代，各种类似桌面软件的Web应用大量涌现，网站的前端由此发生了翻天覆地的变化。网页不再只是承载单一的文字和图片，各种富媒体让网页的内容更加生动，网页上软件化的交互形式为用户提供了更好的使用体验，这些都是基于前端技术实现的。以前会Photoshop和Dreamweaver就可以制作网页，现在只掌握这些已经远远不够了。
+        <a href="javascript:;"><<收起</a>
+    </div>
+    
+    var oDiv=document.getElementById('div1');//获取文字的盒子
+      var oA=oDiv.getElementsByTagName('a');//获取 a 标签
+      var onOff=true;
+      var old='';
+      oA[0].onclick=function move(){ //a 链接点击后执行 move 函数
+          if(onOff){ //判断
+              onOff=false;
+              old=oDiv.innerHTML;
+              oDiv.innerHTML=oDiv.innerHTML.substring(0,65)+'...<a href="javascript:;"> >>展开 </a>';//默认显示65个字符，并且在65个字符末尾添加 “。。。>>展开”
+              oA=oDiv.getElementsByTagName('a');
+              oA[0].onclick=move;
+          }else{
+              onOff=true;
+              oDiv.innerHTML=old;
+              oA=oDiv.getElementsByTagName('a');
+              oA[0].onclick=move;
+          }
+      }
+
+
+
+
+        
