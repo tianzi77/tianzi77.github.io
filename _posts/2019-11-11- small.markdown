@@ -1,0 +1,24 @@
+---
+layout:     post
+title:      "小程序的一些总结"
+subtitle:   " \"小程序的一些总结\""
+date:       2019-11-11 18:55:00
+author:     "ZWW"
+header-img: "img/post-bg-os-metro.jpg"
+tags:
+    - 小程序
+---
+
+> ** 小程序的一些总结 **
+
+变量定义。
+
+    `${page}` 相当于定义变量page 注意是esc的`
+    { value } = obj 相当于定义变量value = obj.value
+        
+
+
+
+
+
+        
