@@ -129,7 +129,7 @@ frontend ss-in1
     default_backend ss-out1
 
 backend ss-out1
-    server server1 ${HaProxyip} maxconn 65535
+    server server1 ${HaProxyip} maxconn 100000
 EOF
 	restartHaProxy
 }
