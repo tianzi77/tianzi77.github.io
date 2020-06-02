@@ -116,7 +116,6 @@ setHaProxy(){
 	cat > ${HaProxy_cfg_file}<<-EOF
 global
 
-
 defaults
         log     global
         mode    tcp
