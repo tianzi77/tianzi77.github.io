@@ -2,10 +2,6 @@
     "Debug": true,
     "Retries": 0,
     "ServeNodes": [
-        "tcp://:443",
-        "udp://:443"
-    ],
-    "ChainNodes": [
-        "relay+tls://192.54.58.143:5678"
+        "udp://127.0.0.1:65532"
     ]
 }
